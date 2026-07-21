@@ -6,9 +6,7 @@ A collection of daily life skills, tools, and study notes.
 
 | Skill | Description |
 |-------|-------------|
-| `automate_notes.md` | Pipeline to convert YouTube videos into structured study notes |
-| `clean_vtt.py` | Extract & clean YouTube subtitle (VTT) files |
-| `split_chunks.py` | Split transcripts into chunks for parallel summarization |
+| `pipeline/` | YouTube video → structured notes pipeline (`automate_notes.md`, `clean_vtt.py`, `split_chunks.py`) |
 | `outputs/` | Generated notes from various topics |
 
 ### Notes Available

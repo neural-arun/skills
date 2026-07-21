@@ -1,5 +1,5 @@
 .opencode
 youtube.txt
-*.tmp.html
+*tmp.html
 __pycache__
 *.pyc

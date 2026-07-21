@@ -1,24 +1,18 @@
 # Skills
 
-A collection of daily life skills, tools, and study notes.
+Agent-ready workflows for daily life. Each skill is a documented pipeline a coding agent can follow to get things done.
 
-## Contents
+## Skills
 
-| Skill | Description |
+| Skill | What it does |
 |-------|-------------|
-| `youtube-to-notes-pipeline/` | YouTube video → structured notes pipeline (`automate_notes.md`, `clean_vtt.py`, `split_chunks.py`) |
-| `outputs/` | Generated notes from various topics |
+| [youtube-to-notes-pipeline](youtube-to-notes-pipeline/) | Turn any YouTube video into structured study notes |
 
-### Notes Available
+More skills coming.
 
-- **Articulacy: From Monkey to Monk** — full communication course notes ([PDF](outputs/ARTICULACY_From_Monkey_To_Monk_Full_Course))
-- **46 Years of Sales Knowledge in 76 Minutes** — sales training
-- **Think Fast, Talk Smart** — communication techniques
-- **Entire Map of Business** — business fundamentals
-- **Ultimate Sales Training** — compiled sales knowledge
+## How it works
 
-## Converting to PDF
-
-```bash
-pandoc notes.md --pdf-engine=weasyprint -c style.css -o notes.pdf
-```
+Each skill has:
+- A `README.md` with instructions
+- Scripts and configs the agent uses
+- An `outputs/` folder for results

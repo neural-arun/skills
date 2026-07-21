@@ -6,7 +6,7 @@ A collection of daily life skills, tools, and study notes.
 
 | Skill | Description |
 |-------|-------------|
-| `pipeline/` | YouTube video → structured notes pipeline (`automate_notes.md`, `clean_vtt.py`, `split_chunks.py`) |
+| `youtube-to-notes-pipeline/` | YouTube video → structured notes pipeline (`automate_notes.md`, `clean_vtt.py`, `split_chunks.py`) |
 | `outputs/` | Generated notes from various topics |
 
 ### Notes Available

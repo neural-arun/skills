@@ -6,13 +6,13 @@
 
 ## 🎯 My Identity
 
-> **I am not just "an AI engineer." I am a Systems Builder & Entrepreneur.**  
+> **I am not just "an AI engineer." I am a Systems Builder.**  
 > My goal is to understand complex domains deeply, identify high-value problems, and design complete systems that automate work, improve decisions, and scale human capability. AI is an enabling tool — the real product is the complete system (software + workflows + trust + distribution + business model).
 
 My objective is to help professionals make better decisions, reduce repetitive work, and expand access to high-quality healthcare and education.
 
 If I have to describe my mission in one sentence:
-> **An entrepreneur building high-value healthcare and education companies that solve important problems, not just AI applications.**
+> **A System Builder building high-value healthcare and education companies that solve important problems, not just AI applications.**
 
 ---
 

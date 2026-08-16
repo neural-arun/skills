@@ -136,7 +136,7 @@ Each subagent returns a confirmation. Collect all N confirmations before proceed
 
 ---
 
-## Step 8: Combine & Polish
+## Step 8: Combine, Stitch & Polish (Zero Content Loss)
 
 **8a. Concatenate:**
 
@@ -144,20 +144,19 @@ Each subagent returns a confirmation. Collect all N confirmations before proceed
 cat {output_dir}/summary_01.md ... {output_dir}/summary_{N}.md > {output_dir}/combined.md
 ```
 
-**8b. Restructure for coherence:**
+**8b. Seamless Stitching & Flow Connection:**
 
-Read `combined.md` and rewrite it so topics flow logically:
+Read `combined.md` and weave the chunks into a unified, unbroken master document without losing detail:
 
-1. Identify recurring themes across all summaries
-2. Group related concepts from different parts into unified sections
-3. Order them in a natural learning progression
-4. Remove redundant headings and section artifacts
-5. Merge duplicate topics into single sections
-6. Give each section a meaningful title
+1. **ZERO Content Loss Rule:** Do NOT summarize, compress, or delete the substance of the subagent summaries. Retain 100% of the granular frameworks, case studies, dialogue teardowns, mathematical models, and tactical steps.
+2. **Bridge Chunk Seams & Narrative Flow:** Where the end of Chunk $N$ transitions abruptly to Chunk $N+1$, craft smooth transition bridges so the narrative flows logically and continuously.
+3. **Clean Boundary Artifacts:** Remove isolated subagent boilerplate (e.g., redundant bio intros per chunk, repetitive header fragments) and eliminate only local verbatim overlaps where adjacent chunk boundaries repeated transcript lines.
+4. **Normalize Hierarchy & Architecture:** Unify header levels (`#`, `##`, `###`), ensure code/formula blocks are properly formatted, and insert a Master Table of Contents / Executive Roadmap at the top.
+5. **Preserve Deep Analogies:** Ensure all personal context mappings (e.g., trust engineering, AI systems architecture, clinical reasoning) remain rich, actionable, and prominent.
 
 **8c. Write final output:**
 
-Write the restructured document to `{output_dir}/{normalized_title}.md`.
+Write the comprehensive, seamlessly connected document to `{output_dir}/{normalized_title}.md`.
 
 ---
 

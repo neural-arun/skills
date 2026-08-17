@@ -1,0 +1,130 @@
+TWITTER TWEETS — ARUN YADAV
+AI Systems Architect for Healthcare & Education
+(value, aim & what I do — no project promo)
+based on who_am_i_for_clients.md + profile.md
+
+=============================================================
+FIRST TWEET (intro — includes all 3 links)
+=============================================================
+Hi, I'm Arun Yadav — AI Systems Architect for healthcare & education.
+I turn manual, scattered workflows into reliable, scalable AI systems.
+GitHub: https://github.com/neural-arun
+Portfolio: https://www.neuralarun.in
+LinkedIn: https://www.linkedin.com/in/neuralarun
+#BuildInPublic
+
+-------------------------------------------------------------
+# NOTE on first tweet: it should be posted alone as your intro.
+# All links count as 23 chars. Verified under 280 (~250).
+=============================================================
+
+TWEET 1 (the problem I solve)
+-------------------------------------------------------------
+I believe Organizations don't have an AI problem. They have a manual-work problem.
+Staff collecting info by hand. Copying it between systems. Chasing follow-ups.
+I build the workflow that does it for them — so experts spend time on expertise.
+#HealthcareAI
+
+-------------------------------------------------------------
+TWEET 2 (my aim)
+-------------------------------------------------------------
+My aim is simple:
+Healthcare professionals and educators should spend more time on people, not paperwork.
+The right information should reach the right person at the right time.
+Follow-ups shouldn't slip. Decisions shouldn't wait.
+That's the gap I build systems for.
+
+-------------------------------------------------------------
+TWEET 3 (my philosophy — workflow around the AI)
+-------------------------------------------------------------
+Everyone wants to "add AI" to their business.
+I ask a different question first: what's the workflow around it?
+AI without a workflow is just a demo.
+Workflow + data + automation + AI + human verification = a system that scales.
+#AI
+
+-------------------------------------------------------------
+TWEET 4 (who I help / what I look for)
+-------------------------------------------------------------
+If your team repeats the same manual task every single day, I'm the person to talk to.
+Scattered information. Manual follow-ups. Personalization that doesn't scale.
+I turn those into reliable, measurable systems.
+Founders, clinics, coaching institutes — DMs open.
+#BuildInPublic
+
+-------------------------------------------------------------
+TWEET 5 (the value I deliver)
+-------------------------------------------------------------
+Less manual work.
+Better information flow.
+Faster decisions.
+Better personalization.
+Higher capacity.
+Better outcomes.
+Not "we added AI" — a system that actually changes how work gets done.
+That's what I deliver.
+
+-------------------------------------------------------------
+TWEET 6 (one-sentence value)
+-------------------------------------------------------------
+My job in one sentence:
+Design and build AI-enabled workflow systems for healthcare and education — connecting data, software, automation, AI, and human expertise to turn fragmented processes into systems that scale.
+That's it. That's what I do.
+#AI #HealthcareAI
+
+-------------------------------------------------------------
+TWEET 7 (what I'm NOT about)
+-------------------------------------------------------------
+My aim isn't to build more AI.
+It's to build less busywork.
+The best project is the one that quietly removes a repetitive job from someone's day — and they never notice it's gone.
+That's how I help.
+
+-------------------------------------------------------------
+THREAD — WHY I DO THIS (3 posts, value/aim focused)
+-------------------------------------------------------------
+
+1/
+I spent years inside the medical education system as a student.
+I saw the friction firsthand: fragmented info, buried data, wasted hours.
+That's why I don't build AI for the hype. I build it to remove that friction.
+Here's what I actually do: 🧵
+
+2/
+I take manual, repetitive workflows — patient intake, follow-ups, assessments, information retrieval — and design the complete system around them.
+Data → software → automation → AI → human verification.
+Not a feature bolted on. A workflow rebuilt.
+
+3/
+The goal is measurable: less manual work, faster decisions, better outcomes.
+If you run a clinic, a coaching institute, or an EdTech platform — and your team does the same manual task daily — that's the problem I solve.
+DMs open.
+#HealthcareAI #EdTech
+
+=============================================================
+POSTING ORDER — ALL TODAY (spaced 2-3 hrs apart)
+=============================================================
+Posted as separate tweets, NOT one thread. Spacing = more
+impressions, avoids spam flag on a new account.
+
+1. 09:00 — FIRST TWEET (intro + 3 links)  → post, then PIN it
+2. 11:00 — TWEET 1 (the problem I solve)
+3. 14:00 — THREAD (why I do this, 3 posts) → compose as thread,
+           then "Post all" (NOT "Post")
+4. 17:00 — TWEET 2 (my aim)
+5. 20:00 — TWEET 3 (philosophy — workflow around the AI)
+6. 22:00 — TWEET 4 (who I help)
+7. next day 10:00 — TWEET 5 (the value I deliver)
+8. next day 13:00 — TWEET 6 (one-sentence value)
+9. next day 16:00 — TWEET 7 (what I'm NOT about)
+
+(If posting today only, compress 5-9 into 1-hr gaps late in the
+day. Best reach hours are ~9am-12pm and 6pm-9pm IST.)
+
+=============================================================
+NOTES
+- First tweet = your intro; post it alone with all 3 links.
+- All tweets under 280 chars (links count as 23, emoji = 2).
+- No markdown — X renders literal ** garbage.
+- Max 2 hashtags per post. No project/feature promo.
+- Verify each against X's live counter before posting.

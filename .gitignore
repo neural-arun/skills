@@ -3,6 +3,6 @@ youtube.txt
 *tmp.html
 __pycache__
 *.pyc
+.opencode/
 who_am_i.md
-who_am_i_for_clients.md
-personal_who_am_i.md
+

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>15-Min Revision CheatSheet | सम्पूर्ण बीजगणित</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+<style>
+@page { size: A4; margin: 12mm 10mm 12mm 10mm; }
+body {
+    font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #0f172a;
+    background-color: #ffffff;
+    margin: 0; padding: 0;
+}
+h1 { font-size: 19px; font-weight: 700; color: #1e3a8a; border-bottom: 2px solid #2563eb; padding-bottom: 4px; margin-top: 10px; margin-bottom: 8px; }
+h2 { font-size: 15px; font-weight: 700; color: #0f766e; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 3px; margin-top: 14px; margin-bottom: 8px; }
+ol, ul { padding-left: 18px; margin-top: 4px; margin-bottom: 8px; }
+li { margin-bottom: 4px; }
+blockquote { margin: 8px 0; padding: 8px 12px; background: #eff6ff; border-left: 4px solid #2563eb; border-radius: 4px; font-size: 11px; }
+table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 11px; }
+th { background: #1e293b; color: #fff; padding: 6px 8px; text-align: left; border: 1px solid #334155; }
+td { padding: 5px 8px; border: 1px solid #cbd5e1; }
+tr:nth-child(even) { background: #f8fafc; }
+.katex { font-size: 1.05em !important; }
+hr { border: 0; height: 1px; background: #cbd5e1; margin: 12px 0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1 id="समपरण-बजगणत-complete-algebra-15-मनट-सपर-कवक-रवजन-चट-शट">⚡ सम्पूर्ण
+बीजगणित (Complete Algebra) — 15-मिनट सुपर क्विक रिवीजन चीट शीट</h1>
+<blockquote>
+<p>[!IMPORTANT] <strong>क्विक रिवीजन चीट शीट</strong> |
+<strong>लक्ष्य:</strong> UP Super TET, UPTET, KVS, DSSSB |
+<strong>शिक्षक:</strong> Pawan Sir <strong>प्रयोग:</strong> परीक्षा से ठीक
+15 मिनट पहले पूरे 2.5 घंटे के व्याख्यान की त्वरित पुनरावृत्ति के लिए।</p>
+</blockquote>
+<hr />
+<h2 id="पवन-सर-क-10-मसटर-टरकस-direct-exam-shortcuts">1. 🚀 पवन सर की 10
+मास्टर ट्रिक्स (Direct Exam Shortcuts)</h2>
+<ol type="1">
+<li><strong><span class="math inline">$x + \frac{1}{x} = 2 \implies x =
+1$</span>:</strong> व्यंजक में <span
+class="math inline"><em>x</em> = 1</span> रखकर 5 सेकंड में उत्तर प्राप्त
+करें।</li>
+<li><strong><span class="math inline">$x + \frac{1}{x} = -2 \implies x =
+-1$</span>:</strong> <span
+class="math inline">(−1)<sup>सम</sup> = +1</span> तथा <span
+class="math inline">(−1)<sup>विषम</sup> = −1</span> लें।</li>
+<li><strong>वर्ग मौखिक ट्रिक:</strong> <span class="math inline">$x +
+\frac{1}{x} = k \implies x^2 + \frac{1}{x^2} = k^2 - 2$</span> | <span
+class="math inline">$x - \frac{1}{x} = k \implies x^2 + \frac{1}{x^2} =
+k^2 + 2$</span></li>
+<li><strong>घन मौखिक ट्रिक:</strong> <span class="math inline">$x +
+\frac{1}{x} = k \implies x^3 + \frac{1}{x^3} = k^3 - 3k$</span> | <span
+class="math inline">$x - \frac{1}{x} = k \implies x^3 - \frac{1}{x^3} =
+k^3 + 3k$</span></li>
+<li><strong><span class="math inline">$x + \frac{1}{x} = 1 \implies x^3
+= -1$</span> (<span
+class="math inline"><em>x</em><sup>3</sup> + 1 = 0</span>):</strong> 3 के
+अंतर वाले घातों का पद-युग्म कटकर 0 होता है।</li>
+<li><strong><span class="math inline">$x + \frac{1}{x} = \sqrt{3}
+\implies x^6 = -1$</span> (<span
+class="math inline"><em>x</em><sup>6</sup> + 1 = 0</span>):</strong> 6 के
+अंतर वाले घातों का पद-युग्म कटकर 0 होता है।</li>
+<li><strong>शेषफल प्रमेय (Zero Method):</strong> <span
+class="math inline"><em>P</em>(<em>x</em>)</span> को <span
+class="math inline">(<em>x</em> − <em>a</em>)</span> से भाग देने पर शेषफल
+<span class="math inline"><em>R</em> = <em>P</em>(<em>a</em>)</span>
+(अतः <span class="math inline"><em>x</em> = <em>a</em></span> व्यंजक में
+रखें).</li>
+<li><strong>द्विघात विविक्तकर जांच (<span
+class="math inline"><em>D</em> = <em>b</em><sup>2</sup> − 4<em>a</em><em>c</em></span>):</strong>
+<span class="math inline"><em>D</em> &gt; 0</span> (वास्तविक असमान),
+<span class="math inline"><em>D</em> = 0</span> (वास्तविक समान), <span
+class="math inline"><em>D</em> &lt; 0</span> (काल्पनिक).</li>
+<li><strong>रैखिक निकाय 10-सेकंड अनुपात तुलना:</strong> <span
+class="math inline">$\frac{a_1}{a_2} \neq \frac{b_1}{b_2}$</span>
+(अद्वितीय हल), <span class="math inline">$\frac{a_1}{a_2} =
+\frac{b_1}{b_2} = \frac{c_1}{c_2}$</span> (अनंत हल), <span
+class="math inline">$\frac{a_1}{a_2} = \frac{b_1}{b_2} \neq
+\frac{c_1}{c_2}$</span> (कोई हल नहीं).</li>
+<li><strong>त्रिघात <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span>
+नियम:</strong> यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0 ⟹ <em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span>
+तथा <span class="math inline">$\frac{a^2}{bc} + \frac{b^2}{ca} +
+\frac{c^2}{ab} = 3$</span>.</li>
+</ol>
+<hr />
+<h2 id="मसटर-फरमल-टबल-master-formula-reference">2. 📊 मास्टर फार्मूला टेबल
+(Master Formula Reference)</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>क्र.सं.</th>
+<th>स्थिति / पैटर्न</th>
+<th>परिणामी सूत्र / उत्तर</th>
+<th>मुख्य उदाहरण</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math inline">$x + \frac{1}{x} = 2$</span></td>
+<td><span class="math inline"><em>x</em> = 1</span></td>
+<td><span class="math inline">$x^{17} + \frac{1}{x^{20}} = 1 + 1 =
+2$</span></td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math inline">$x + \frac{1}{x} = -2$</span></td>
+<td><span class="math inline"><em>x</em> = −1</span></td>
+<td><span class="math inline">$x^{10} + \frac{1}{x^{15}} = (+1) + (-1) =
+0$</span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math inline">$x + \frac{1}{x} = 3$</span></td>
+<td><span class="math inline">$x^2 + \frac{1}{x^2} = 3^2 - 2 =
+7$</span></td>
+<td><span class="math inline">$x^3 + \frac{1}{x^3} = 3^3 - 3(3) =
+18$</span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math inline">$x - \frac{1}{x} = 4$</span></td>
+<td><span class="math inline">$x^2 + \frac{1}{x^2} = 4^2 + 2 =
+18$</span></td>
+<td><span class="math inline">$x^3 - \frac{1}{x^3} = 4^3 + 3(4) =
+76$</span></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="math inline">$x + \frac{1}{x} = 1$</span></td>
+<td><span
+class="math inline"><em>x</em><sup>3</sup> = −1, <em>x</em><sup>3</sup> + 1 = 0</span></td>
+<td><span
+class="math inline"><em>x</em><sup>18</sup> + <em>x</em><sup>15</sup> + <em>x</em><sup>12</sup> + <em>x</em><sup>9</sup> + 1 = 0 + 0 + 1 = 1</span></td>
+</tr>
+<tr>
+<td>6</td>
+<td><span class="math inline">$x + \frac{1}{x} = \sqrt{3}$</span></td>
+<td><span
+class="math inline"><em>x</em><sup>6</sup> = −1, <em>x</em><sup>6</sup> + 1 = 0</span></td>
+<td><span
+class="math inline"><em>x</em><sup>18</sup> + <em>x</em><sup>12</sup> + <em>x</em><sup>6</sup> + 1 = (−1)<sup>3</sup> + (−1)<sup>2</sup> + (−1) + 1 = 0</span></td>
+</tr>
+<tr>
+<td>7</td>
+<td>शेषफल प्रमेय</td>
+<td><span
+class="math inline"><em>R</em> = <em>P</em>(<em>a</em>)</span></td>
+<td><span
+class="math inline"><em>x</em><sup>3</sup> − 2<em>x</em> + 5</span> को
+<span class="math inline">(<em>x</em> − 1)</span> से भाग <span
+class="math inline"> ⟹ 1<sup>3</sup> − 2(1) + 5 = 4</span></td>
+</tr>
+<tr>
+<td>8</td>
+<td>द्विघात मूल</td>
+<td><span class="math inline">$\alpha + \beta = -\frac{b}{a},
+\alpha\beta = \frac{c}{a}$</span></td>
+<td><span
+class="math inline"><em>x</em><sup>2</sup> − 5<em>x</em> + 6 = 0 ⟹ <em>α</em> + <em>β</em> = 5, <em>α</em><em>β</em> = 6</span></td>
+</tr>
+<tr>
+<td>9</td>
+<td><span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span></td>
+<td><span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span></td>
+<td><span class="math inline">$\frac{a^2}{bc} + \frac{b^2}{ca} +
+\frac{c^2}{ab} = 3$</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="अधयय-मइकर-रकप-15-part-micro-recap">3. 🎯 15-अध्याय माइक्रो रीकैप
+(15-Part Micro Recap)</h2>
+<ul>
+<li><strong>भाग 01 (Pattern 1):</strong> <span
+class="math inline"><em>x</em> + 1/<em>x</em> = 2 ⟹ <em>x</em> = 1</span>.
+उदाहरण: <span
+class="math inline">3<em>x</em><sup>5</sup> − 2<em>x</em><sup>3</sup> + 5<em>x</em> − 2 = 3(1) − 2(1) + 5(1) − 2 = 4</span>.</li>
+<li><strong>भाग 02 (Pattern 2):</strong> <span
+class="math inline"><em>x</em> + 1/<em>x</em> = −2 ⟹ <em>x</em> = −1</span>.
+ध्यान रखें: <span class="math inline">(−1)<sup><em>n</em></sup> = +1</span>
+(यदि <span class="math inline"><em>n</em></span> सम) तथा <span
+class="math inline">−1</span> (यदि <span
+class="math inline"><em>n</em></span> विषम).</li>
+<li><strong>भाग 03 (Square &amp; Cube Rules):</strong> <span
+class="math inline"><em>x</em> + 1/<em>x</em> = <em>k</em> ⟹ <em>x</em><sup>2</sup> + 1/<em>x</em><sup>2</sup> = <em>k</em><sup>2</sup> − 2</span>
+एवं <span
+class="math inline"><em>x</em><sup>3</sup> + 1/<em>x</em><sup>3</sup> = <em>k</em><sup>3</sup> − 3<em>k</em></span>.</li>
+<li><strong>भाग 04 (Higher Powers):</strong> <span
+class="math inline"><em>x</em><sup>4</sup> + 1/<em>x</em><sup>4</sup> = (<em>k</em><sup>2</sup> − 2)<sup>2</sup> − 2</span>.
+<span
+class="math inline"><em>x</em><sup>5</sup> + 1/<em>x</em><sup>5</sup> = (<em>x</em><sup>2</sup> + 1/<em>x</em><sup>2</sup>)(<em>x</em><sup>3</sup> + 1/<em>x</em><sup>3</sup>) − (<em>x</em> + 1/<em>x</em>)</span>.</li>
+<li><strong>भाग 05 (<span
+class="math inline"><em>x</em><sup>3</sup> = −1</span> &amp; <span
+class="math inline"><em>x</em><sup>6</sup> = −1</span>):</strong> <span
+class="math inline"><em>x</em> + 1/<em>x</em> = 1 ⟹ <em>x</em><sup>3</sup> = −1</span>
+| <span class="math inline">$x + 1/x = \sqrt{3} \implies x^6 =
+-1$</span>.</li>
+<li><strong>भाग 06 (Quadratic Equations):</strong> <span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em> = 0</span>.
+मूल <span class="math inline">$x = \frac{-b \pm
+\sqrt{b^2-4ac}}{2a}$</span>.</li>
+<li><strong>भाग 07 (Remainder Theorem):</strong> <span
+class="math inline"><em>P</em>(<em>x</em>)</span> को <span
+class="math inline">(<em>x</em> − <em>a</em>)</span> से विभाजित करने पर शेष
+<span
+class="math inline"><em>R</em> = <em>P</em>(<em>a</em>)</span>.</li>
+<li><strong>भाग 08 (Polynomials &amp; Degree):</strong> चर की उच्चतम घात
+= बहुपद की घात. चर की घात केवल गैर-ऋणात्मक पूर्णांक होनी चाहिए.</li>
+<li><strong>भाग 09 (Linear Systems):</strong> <span
+class="math inline">$\frac{a_1}{a_2} \neq \frac{b_1}{b_2}$</span>
+(अद्वितीय), <span class="math inline">$\frac{a_1}{a_2} = \frac{b_1}{b_2}
+= \frac{c_1}{c_2}$</span> (अनंत), <span
+class="math inline">$\frac{a_1}{a_2} = \frac{b_1}{b_2} \neq
+\frac{c_1}{c_2}$</span> (कोई नहीं).</li>
+<li><strong>भाग 10 (Identity <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em></span>):</strong>
+यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span>, तो
+<span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span>.</li>
+<li><strong>भाग 11 (Simplification &amp; Value Put Method):</strong> जब
+विकल्प अचर हों, तो <span
+class="math inline"><em>a</em> = 1, <em>b</em> = 1, <em>c</em> = 1</span>
+रखकर 10 सेकंड में हल करें.</li>
+<li><strong>भाग 12 (Indices &amp; Surds):</strong> <span
+class="math inline"><em>a</em><sup><em>m</em></sup> ⋅ <em>a</em><sup><em>n</em></sup> = <em>a</em><sup><em>m</em> + <em>n</em></sup></span>,
+<span class="math inline">$\frac{a^m}{a^n} = a^{m-n}$</span>, <span
+class="math inline">(<em>a</em><sup><em>m</em></sup>)<sup><em>n</em></sup> = <em>a</em><sup><em>m</em><em>n</em></sup></span>,
+<span class="math inline"><em>a</em><sup>0</sup> = 1</span>.</li>
+<li><strong>भाग 13 (PYQ Practice):</strong> सुपर टेट के विगत प्रश्नों में <span
+class="math inline"><em>x</em> + 1/<em>x</em> = 2</span> एवं शेषफल प्रमेय से
+सर्वाधिक प्रश्न आए.</li>
+<li><strong>भाग 14 (Word Problems):</strong> <span
+class="math inline">(<em>x</em> − <em>y</em>)<sup>2</sup> = (<em>x</em> + <em>y</em>)<sup>2</sup> − 4<em>x</em><em>y</em></span>
+का प्रयोग कर संख्यात्मक समस्याएं हल करें.</li>
+<li><strong>भाग 15 (Final Exam Strategy):</strong> पहले आसान पैटर्न 1 एवं 2
+के प्रश्न चिन्हित कर हल करें, फिर शेषफल प्रमेय लागू करें.</li>
+</ul>
+<hr />
+<h2 id="परकष-हल-चकलसट-exam-hall-checklist">4. ✅ परीक्षा हॉल चेकलिस्ट (Exam
+Hall Checklist)</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />क्या <span
+class="math inline"><em>x</em> + 1/<em>x</em> = 2</span> है? <span
+class="math inline">→</span> सीधा <span
+class="math inline"><em>x</em> = 1</span> रखें।</label></li>
+<li><label><input type="checkbox" />क्या <span
+class="math inline"><em>x</em> + 1/<em>x</em> = −2</span> है? <span
+class="math inline">→</span> <span
+class="math inline"><em>x</em> = −1</span> रखकर सम/विषम घात
+देखें।</label></li>
+<li><label><input type="checkbox" />क्या <span
+class="math inline"><em>x</em> + 1/<em>x</em> = 1</span> है? <span
+class="math inline">→</span> <span
+class="math inline"><em>x</em><sup>3</sup> = −1</span> रखें एवं 3 के अंतर वाले
+पद काटें।</label></li>
+<li><label><input type="checkbox" />क्या <span class="math inline">$x +
+1/x = \sqrt{3}$</span> है? <span class="math inline">→</span> <span
+class="math inline"><em>x</em><sup>6</sup> = −1</span> रखें एवं 6 के अंतर वाले
+पद काटें।</label></li>
+<li><label><input type="checkbox" />क्या शेषफल पूछा है? <span
+class="math inline">→</span> <span
+class="math inline">(<em>x</em> − <em>a</em>) = 0 ⟹ <em>x</em> = <em>a</em></span>
+मान रखें।</label></li>
+<li><label><input type="checkbox" />क्या द्विघात मूलों का प्रकार पूछा है? <span
+class="math inline">→</span> <span
+class="math inline"><em>D</em> = <em>b</em><sup>2</sup> − 4<em>a</em><em>c</em></span>
+का चिन्ह देखें।</label></li>
+</ul>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ],
+            throwOnError: false
+        });
+    }
+});
+</script>
+</body>
+</html>

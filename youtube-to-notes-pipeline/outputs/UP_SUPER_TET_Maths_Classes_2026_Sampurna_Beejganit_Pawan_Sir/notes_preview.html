@@ -1,0 +1,2206 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>UP SUPER TET Maths 2026 | सम्पूर्ण बीजगणित</title>
+
+<!-- Google Fonts for Hindi (Noto Sans Devanagari) & English (Inter, Fira Code) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- KaTeX CSS & JS for Mathematical Equation Rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+<!-- Mermaid.js for Diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+<style>
+@page {
+    size: A4;
+    margin: 20mm 15mm 20mm 15mm;
+}
+
+body {
+    font-family: 'Noto Sans Devanagari', 'Inter', -apple-system, sans-serif;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #1e293b;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 3px solid #2563eb;
+    padding-bottom: 8px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1e3a8a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 6px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0d9488;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    page-break-after: avoid;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+/* Paragraphs & Lists */
+p {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding-left: 24px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Blockquotes & Callouts */
+blockquote {
+    margin: 16px 0;
+    padding: 12px 18px;
+    background-color: #f8fafc;
+    border-left: 5px solid #2563eb;
+    border-radius: 4px;
+    font-size: 13.5px;
+    color: #334155;
+    page-break-inside: avoid;
+}
+
+blockquote.important {
+    background-color: #eff6ff;
+    border-left-color: #2563eb;
+    color: #1e40af;
+}
+
+blockquote.note {
+    background-color: #f0fdf4;
+    border-left-color: #16a34a;
+    color: #166534;
+}
+
+blockquote.tip {
+    background-color: #fffbeb;
+    border-left-color: #d97706;
+    color: #92400e;
+}
+
+/* KaTeX Math Blocks */
+.katex-display {
+    margin: 16px 0 !important;
+    padding: 10px;
+    background-color: #f8fafc;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    page-break-inside: avoid;
+    overflow-x: auto;
+}
+
+.katex {
+    font-size: 1.1em !important;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 13px;
+    page-break-inside: avoid;
+}
+
+th {
+    background-color: #1e293b;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid #334155;
+}
+
+td {
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Horizontal Rule */
+hr {
+    border: 0;
+    height: 1px;
+    background: #cbd5e1;
+    margin: 24px 0;
+}
+
+/* Mermaid Diagram Styling */
+.mermaid {
+    text-align: center;
+    margin: 20px 0;
+    page-break-inside: avoid;
+}
+
+/* Code blocks */
+code {
+    font-family: 'Fira Code', monospace;
+    background-color: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #0f172a;
+}
+
+pre code {
+    display: block;
+    padding: 14px;
+    overflow-x: auto;
+    line-height: 1.5;
+}
+</style>
+</head>
+<body>
+
+<div id="content">
+<h1
+id="up-super-tet-maths-classes-2026-समपरण-बजगणत-complete-algebra-by-pawan-sir">UP
+SUPER TET Maths Classes 2026 | सम्पूर्ण बीजगणित (Complete Algebra) | By
+Pawan Sir</h1>
+<blockquote>
+<p>[!IMPORTANT] <strong>सम्पूर्ण बीजगणित (Complete Algebra) - मास्टर अध्ययन
+नोट्स</strong> <strong>लक्ष्य:</strong> UP Super TET, UPTET, KVS, DSSSB एवं
+अन्य प्रतियोगी परीक्षाओं के छात्रों के लिए विस्तृत गाइड <strong>विशेषता:</strong>
+स्पष्ट गणितीय सूत्र (<span class="math display">...</span>) | पवन सर की 10
+शॉर्ट ट्रिक्स | चरणबद्ध हल किए गए प्रश्न | सुस्पष्ट संरचना</p>
+</blockquote>
+<h2 id="वषय-सच-table-of-contents">विषय-सूची (Table of Contents)</h2>
+<ol type="1">
+<li><a href="#1-बीजगणितीय-माइंडमैप-एवं-फ्लोचार्ट">बीजगणितीय माइंडमैप एवं
+फ्लोचार्ट</a></li>
+<li><a
+href="#2-महत्वपूर्ण-बीजगणित-सूत्र-चीट-शीट-master-formula-cheat-sheet">महत्वपूर्ण
+बीजगणित सूत्र चीट शीट (Master Formula Cheat Sheet)</a></li>
+<li><a href="#3-पवन-सर-की-10-मास्टर-ट्रिक्स-एवं-शॉर्टकट-नियम">पवन सर की 10
+मास्टर ट्रिक्स एवं शॉर्टकट नियम</a></li>
+<li><a href="#4-सम्पूर्ण-15-अध्यायवार-विस्तृत-गणितीय-ब्रेकडाउन">सम्पूर्ण 15
+अध्यायवार विस्तृत गणितीय ब्रेकडाउन</a></li>
+</ol>
+<hr />
+<h2 id="बजगणतय-मइडमप-एव-फलचरट">1. बीजगणितीय माइंडमैप एवं फ्लोचार्ट</h2>
+<pre class="mermaid"><code>mindmap
+  root((सम्पूर्ण बीजगणित Complete Algebra))
+    बीजीय सर्वसमिकाएँ Algebraic Identities
+      Pattern 1: x + 1/x = 2 =&gt; x = 1
+      Pattern 2: x + 1/x = -2 =&gt; x = -1
+      Pattern 3: x + 1/x = 1 =&gt; x^3 = -1
+      Pattern 4: x + 1/x = sqrt3 =&gt; x^6 = -1
+      Higher Powers: x^2, x^3, x^4, x^5, x^6
+    द्विघात समीकरण Quadratic Equations
+      ax^2 + bx + c = 0
+      Shreedharacharya Formula
+      Discriminant D = b^2 - 4ac
+      Sum &amp; Product of Roots
+    बहुपद एवं शेषफल प्रमेय Polynomials &amp; Remainder Theorem
+      Degree of Polynomial
+      Remainder Theorem P(a)
+      Factor Theorem
+    रैखिक समीकरण निकाय System of Linear Equations
+      Unique Solution: a1/a2 != b1/b2
+      Infinitely Many: a1/a2 = b1/b2 = c1/c2
+      No Solution: a1/a2 = b1/b2 != c1/c2</code></pre>
+<pre class="mermaid"><code>graph TD
+    Input[बीजगणितीय प्रश्न Algebra Problem] --&gt; CheckPattern{पैटर्न पहचानिए Pattern Identification}
+    CheckPattern --&gt;|x + 1/x = 2| DirectSub1[x = 1 सीधे रखिए Direct Substitution]
+    CheckPattern --&gt;|x + 1/x = -2| DirectSub2[x = -1 सीधे रखिए Even/Odd Power Rule]
+    CheckPattern --&gt;|x + 1/x = k| FormulaSquare[x^2 + 1/x^2 = k^2 - 2 &amp; x^3 + 1/x^3 = k^3 - 3k]
+    CheckPattern --&gt;|x + 1/x = 1| CubeRule[x^3 = -1 स्थानपन्न कीजिए]
+    CheckPattern --&gt;|x + 1/x = sqrt3| SixthPowerRule[x^6 = -1 स्थानपन्न कीजिए]
+    CheckPattern --&gt;|ax^2 + bx + c = 0| DiscriminantEval[D = b^2 - 4ac से मूलों की प्रकृति जांचिए]
+    CheckPattern --&gt;|a1 x + b1 y + c1 = 0| RatioCheck[अनुपात तुलना a1/a2, b1/b2, c1/c2 कीजिए]
+    
+    DirectSub1 --&gt; Output[त्वरित उत्तर Fast Solution &lt; 10 sec]
+    DirectSub2 --&gt; Output
+    FormulaSquare --&gt; Output
+    CubeRule --&gt; Output
+    SixthPowerRule --&gt; Output
+    DiscriminantEval --&gt; Output
+    RatioCheck --&gt; Output</code></pre>
+<hr />
+<h2 id="महतवपरण-बजगणत-सतर-चट-शट-master-formula-cheat-sheet">2. महत्वपूर्ण
+बीजगणित सूत्र चीट शीट (Master Formula Cheat Sheet)</h2>
+<blockquote>
+<p>[!NOTE] <strong>परीक्षा में बार-बार पूछे जाने वाले प्रमुख सर्वसमिका
+सूत्र:</strong></p>
+</blockquote>
+<h3 id="a-मलभत-सरवसमकए-basic-identities">(A) मूलभूत सर्वसमिकाएँ (Basic
+Identities)</h3>
+<p><span
+class="math display">(<em>a</em> + <em>b</em>)<sup>2</sup> = <em>a</em><sup>2</sup> + 2<em>a</em><em>b</em> + <em>b</em><sup>2</sup></span></p>
+<p><span
+class="math display">(<em>a</em> − <em>b</em>)<sup>2</sup> = <em>a</em><sup>2</sup> − 2<em>a</em><em>b</em> + <em>b</em><sup>2</sup></span></p>
+<p><span
+class="math display"><em>a</em><sup>2</sup> − <em>b</em><sup>2</sup> = (<em>a</em> − <em>b</em>)(<em>a</em> + <em>b</em>)</span></p>
+<p><span
+class="math display">(<em>a</em> + <em>b</em> + <em>c</em>)<sup>2</sup> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> + 2(<em>a</em><em>b</em> + <em>b</em><em>c</em> + <em>c</em><em>a</em>)</span></p>
+<h3 id="b-वयतकरम-पद-सरवसमकए-x-frac1x-patterns">(B) व्युत्क्रम पद सर्वसमिकाएँ
+(<span class="math inline">$x + \frac{1}{x}$</span> Patterns)</h3>
+<ol type="1">
+<li>यदि <span class="math inline">$x + \frac{1}{x} = 2$</span> हो,
+तो:</li>
+</ol>
+<p><span class="math display"><em>x</em> = 1</span></p>
+<ol start="2" type="1">
+<li>यदि <span class="math inline">$x + \frac{1}{x} = -2$</span> हो,
+तो:</li>
+</ol>
+<p><span
+class="math display"><em>x</em> = −1  ⟹  (−1)<sup>सम</sup> = +1,  (−1)<sup>विषम</sup> = −1</span></p>
+<ol start="3" type="1">
+<li>यदि <span class="math inline">$x + \frac{1}{x} = k$</span> हो,
+तो:</li>
+</ol>
+<p><span class="math display">$$x^2 + \frac{1}{x^2} = k^2 -
+2$$</span></p>
+<p><span class="math display">$$x^3 + \frac{1}{x^3} = k^3 -
+3k$$</span></p>
+<ol start="4" type="1">
+<li>यदि <span class="math inline">$x - \frac{1}{x} = k$</span> हो,
+तो:</li>
+</ol>
+<p><span class="math display">$$x^2 + \frac{1}{x^2} = k^2 +
+2$$</span></p>
+<p><span class="math display">$$x^3 - \frac{1}{x^3} = k^3 +
+3k$$</span></p>
+<ol start="5" type="1">
+<li>यदि <span class="math inline">$x + \frac{1}{x} = 1$</span> हो,
+तो:</li>
+</ol>
+<p><span
+class="math display"><em>x</em><sup>3</sup> = −1  तथा  <em>x</em><sup>3</sup> + 1 = 0</span></p>
+<ol start="6" type="1">
+<li>यदि <span class="math inline">$x + \frac{1}{x} = \sqrt{3}$</span>
+हो, तो:</li>
+</ol>
+<p><span
+class="math display"><em>x</em><sup>6</sup> = −1  तथा  <em>x</em><sup>6</sup> + 1 = 0</span></p>
+<h3 id="c-तरघत-सरवसमकए-cubic-identities">(C) त्रिघात सर्वसमिकाएँ (Cubic
+Identities)</h3>
+<p><span
+class="math display"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em> = (<em>a</em> + <em>b</em> + <em>c</em>)(<em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> − <em>a</em><em>b</em> − <em>b</em><em>c</em> − <em>c</em><em>a</em>)</span></p>
+<p>विशेष स्थिति: यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> हो,
+तो:</p>
+<p><span
+class="math display"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span></p>
+<h3 id="d-दवघत-समकरण-सतर-quadratic-equations">(D) द्विघात समीकरण सूत्र
+(Quadratic Equations)</h3>
+<p>मानक रूप: <span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em> = 0</span></p>
+<ol type="1">
+<li>श्रीधराचार्य द्विघाती सूत्र:</li>
+</ol>
+<p><span class="math display">$$x = \frac{-b \pm \sqrt{b^2 -
+4ac}}{2a}$$</span></p>
+<ol start="2" type="1">
+<li>विविक्तकर (Discriminant):</li>
+</ol>
+<p><span
+class="math display"><em>D</em> = <em>b</em><sup>2</sup> − 4<em>a</em><em>c</em></span></p>
+<ul>
+<li><p>यदि <span class="math inline"><em>D</em> &gt; 0⟹</span> मूल
+वास्तविक एवं असमान (Real &amp; Distinct)</p></li>
+<li><p>यदि <span class="math inline"><em>D</em> = 0⟹</span> मूल वास्तविक
+एवं समान (Real &amp; Equal)</p></li>
+<li><p>यदि <span class="math inline"><em>D</em> &lt; 0⟹</span> मूल
+काल्पनिक (Imaginary)</p></li>
+</ul>
+<ol start="3" type="1">
+<li>मूलों का योग एवं गुणनफल:</li>
+</ol>
+<p><span class="math display">$$\alpha + \beta = -\frac{b}{a}, \quad
+\alpha \cdot \beta = \frac{c}{a}$$</span></p>
+<h3 id="e-द-चर-वल-रखक-समकरण-नकय-system-of-linear-equations">(E) दो चरों
+वाले रैखिक समीकरण निकाय (System of Linear Equations)</h3>
+<p>समीकरण: <span
+class="math inline"><em>a</em><sub>1</sub><em>x</em> + <em>b</em><sub>1</sub><em>y</em> + <em>c</em><sub>1</sub> = 0</span>
+तथा <span
+class="math inline"><em>a</em><sub>2</sub><em>x</em> + <em>b</em><sub>2</sub><em>y</em> + <em>c</em><sub>2</sub> = 0</span></p>
+<ol type="1">
+<li><p>अद्वितीय हल (Unique Solution): <span
+class="math inline">$\frac{a_1}{a_2} \neq
+\frac{b_1}{b_2}$</span></p></li>
+<li><p>अनंत हल (Infinitely Many Solutions): <span
+class="math inline">$\frac{a_1}{a_2} = \frac{b_1}{b_2} =
+\frac{c_1}{c_2}$</span></p></li>
+<li><p>कोई हल नहीं (No Solution): <span
+class="math inline">$\frac{a_1}{a_2} = \frac{b_1}{b_2} \neq
+\frac{c_1}{c_2}$</span></p></li>
+</ol>
+<hr />
+<h2 id="पवन-सर-क-10-मसटर-टरकस-एव-शरटकट-नयम">3. पवन सर की 10 मास्टर ट्रिक्स
+एवं शॉर्टकट नियम</h2>
+<blockquote>
+<p>[!TIP] <strong>कम समय में 100% सही उत्तर निकालने के लिए पवन सर के 10 गोल्डन
+रूल्स:</strong></p>
+</blockquote>
+<ol type="1">
+<li><p><strong>समीकरण में 2 दिखे तो सीधा <span
+class="math inline"><em>x</em> = 1</span> रखिए:</strong> जब भी <span
+class="math inline">$x + \frac{1}{x} = 2$</span> दिया हो, तो बिना किसी
+लंबी प्रक्रिया के <span class="math inline"><em>x</em> = 1</span> रखकर उत्तर
+निकालें।</p></li>
+<li><p><strong><span class="math inline">−2</span> दिखने पर घात (Power)
+की जांच कीजिए:</strong> यदि <span class="math inline">$x + \frac{1}{x} =
+-2$</span> दिया हो, तो <span class="math inline"><em>x</em> = −1</span>
+होगा। घात सम (Even) होने पर <span class="math inline">+1</span> तथा विषम
+(Odd) होने पर <span class="math inline">−1</span> लें।</p></li>
+<li><p><strong>वर्ग एवं घन का मौखिक नियम (<span
+class="math inline"><em>k</em><sup>2</sup> − 2</span> तथा <span
+class="math inline"><em>k</em><sup>3</sup> − 3<em>k</em></span>):</strong></p>
+<ul>
+<li><span class="math inline">$x + \frac{1}{x} = k \implies x^2 +
+\frac{1}{x^2} = k^2 - 2$</span></li>
+<li><span class="math inline">$x + \frac{1}{x} = k \implies x^3 +
+\frac{1}{x^3} = k^3 - 3k$</span></li>
+</ul></li>
+<li><p><strong><span class="math inline">$x + \frac{1}{x} = 1$</span> में
+<span class="math inline"><em>x</em><sup>3</sup> = −1</span>
+नियम:</strong> यदि प्रश्न में <span class="math inline">$x + \frac{1}{x} =
+1$</span> दिया हो, तो <span
+class="math inline"><em>x</em><sup>3</sup> = −1</span> रखें। 3 के अंतर वाले
+घातों का पद-युग्म (<span
+class="math inline"><em>x</em><sup><em>n</em> + 3</sup> + <em>x</em><sup><em>n</em></sup></span>)
+कटकर 0 हो जाता है।</p></li>
+<li><p><strong><span class="math inline">$x + \frac{1}{x} =
+\sqrt{3}$</span> में <span
+class="math inline"><em>x</em><sup>6</sup> = −1</span> नियम:</strong> जब
+<span class="math inline">$x + \frac{1}{x} = \sqrt{3}$</span> दिया हो,
+तो <span class="math inline"><em>x</em><sup>6</sup> = −1</span> रखें। 6 के
+अंतर वाले घातों का योग 0 हो जाता है।</p></li>
+<li><p><strong>शेषफल प्रमेय में शून्यीकरण विधि (Zero Substitution
+Method):</strong> बहुपद <span
+class="math inline"><em>P</em>(<em>x</em>)</span> को <span
+class="math inline">(<em>x</em> − <em>a</em>)</span> से भाग देने पर शेषफल
+<span class="math inline"><em>R</em> = <em>P</em>(<em>a</em>)</span>
+होगा। अतः <span
+class="math inline">(<em>x</em> − <em>a</em>) = 0 ⟹ <em>x</em> = <em>a</em></span>
+व्यंजक में रखें।</p></li>
+<li><p><strong>द्विघात समीकरण में विविक्तकर (<span
+class="math inline"><em>D</em> = <em>b</em><sup>2</sup> − 4<em>a</em><em>c</em></span>)
+से विकल्पों का चयन:</strong> प्रश्नों में मूलों का प्रकार पूछा जाए तो पूरा समीकरण हल
+करने के बजाय केवल <span class="math inline"><em>D</em></span> का चिन्ह (+,
+0, -) देखें।</p></li>
+<li><p><strong>रैखिक निकाय में 10-सेकंड अनुपात तुलना:</strong> गुणांकों के अनुपात
+<span class="math inline">$\frac{a_1}{a_2}, \frac{b_1}{b_2},
+\frac{c_1}{c_2}$</span> लिखकर सीधा हलों का स्वरूप पहचानें।</p></li>
+<li><p><strong>मान रखने की विधि (Value Put Method):</strong> जब बीजीय
+विकल्पों में <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span> के स्थान पर
+संख्याएं दी हों, तो <span
+class="math inline"><em>a</em> = 1, <em>b</em> = 1, <em>c</em> = 1</span>
+या <span class="math inline"><em>a</em> = 0</span> मानकर उत्तर
+पाएं।</p></li>
+<li><p><strong>त्रिघात में <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span>
+शॉर्टकट:</strong> यदि पदों का योग शून्य बन रहा हो, तो <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span>
+सूत्र का उपयोग करें।</p></li>
+</ol>
+<hr />
+<h2 id="समपरण-15-अधययवर-वसतत-गणतय-बरकडउन">4. सम्पूर्ण 15 अध्यायवार विस्तृत
+गणितीय ब्रेकडाउन</h2>
+<h1 id="भग-01-समपरण-बजगणत---परथमक-अवधरणए-एव-पटरन-1-x-frac1x-2">भाग 01:
+सम्पूर्ण बीजगणित - प्राथमिक अवधारणाएँ एवं पैटर्न 1 (<span class="math inline">$x
++ \frac{1}{x} = 2$</span>)</h1>
+<h2 id="मखय-अवधरणए-एव-भमक-core-concepts-context">1. मुख्य अवधारणाएँ एवं
+भूमिका (Core Concepts &amp; Context)</h2>
+<ul>
+<li><strong>परीक्षाओं में बीजगणित का महत्व:</strong> Super TET, UPTET
+(Junior), और अन्य प्रतियोगी परीक्षाओं में बीजगणित (Algebra) एक अत्यंत महत्वपूर्ण
+विषय है। आगामी Super TET और जूनियर परीक्षाओं में इसके प्रश्न निश्चित रूप से पूछे जाएंगे।
+पिछले प्रश्नपत्रों (जैसे 68500 और 69000 शिक्षक भर्ती) में भी बीजगणित के प्रश्नों का
+अच्छा खासा भार रहा है।</li>
+<li><strong>अंकगणित बनाम बीजगणित (Arithmetic vs Algebra):</strong> प्रायः
+छात्रों को लगता है कि यदि उनका अंकगणित कमजोर है, तो बीजगणित समझ में नहीं आएगा।
+लेकिन वास्तविकता यह है कि बीजगणित, अंकगणित की तुलना में कहीं अधिक आसान है। इसके कई
+प्रश्न केवल पैटर्न देखने और छोटे लॉजिक का प्रयोग करने से ही हल हो जाते हैं।</li>
+</ul>
+<h2 id="बजगणतय-सतर-एव-सरवसमकए-mathematical-formulas-identities">2.
+बीजगणितीय सूत्र एवं सर्वसमिकाएँ (Mathematical Formulas &amp; Identities)</h2>
+<ul>
+<li><p><strong>Pattern 1:</strong> यदि किसी प्रश्न में <span
+class="math inline">$x + \frac{1}{x} = 2$</span> की संरचना दी गई हो, तो
+ऐसे प्रश्नों को हल करने के लिए सीधे <span
+class="math inline"><em>x</em> = 1</span> मान लिया जाता है।</p></li>
+<li><p><strong>गणितीय सिद्धता (Mathematical Proof):</strong> दी गई शर्त:
+<span class="math inline">$x + \frac{1}{x} = 2$</span> समीकरण को <span
+class="math inline"><em>x</em></span> से गुणा करने पर: <span
+class="math display"><em>x</em><sup>2</sup> + 1 = 2<em>x</em></span></p>
+<p><span
+class="math display"><em>x</em><sup>2</sup> − 2<em>x</em> + 1 = 0</span></p>
+<p>यह <span class="math inline">(<em>x</em> − 1)<sup>2</sup></span> का
+पूर्ण वर्ग है: <span
+class="math display">(<em>x</em> − 1)<sup>2</sup> = 0 ⟹ <em>x</em> − 1 = 0 ⟹ <em>x</em> = 1</span></p>
+<p>इसलिए, यह सिद्ध होता है कि इस स्थिति में <span
+class="math inline"><em>x</em></span> का मान हमेशा <span
+class="math inline">1</span> होता है।</p></li>
+</ul>
+<h2 id="पवन-सर-क-शरट-टरकस-एव-नयम-short-tricks-rules">3. पवन सर की शॉर्ट
+ट्रिक्स एवं नियम (Short Tricks &amp; Rules)</h2>
+<ul>
+<li><strong>Direct Substitution Rule (<span
+class="math inline"><em>x</em> = 1</span>):</strong> यदि प्रश्न में <span
+class="math inline">$x + \frac{1}{x} = 2$</span> दिया हो, तो बिना किसी
+लंबी गणना के जिस व्यंजक का मान पूछा गया हो, उसमें सीधे <span
+class="math inline"><em>x</em> = 1</span> प्रतिस्थापित (substitute) कर
+दें।</li>
+<li><strong>घात का नियम (<span
+class="math inline">1<sup><em>n</em></sup> = 1</span>):</strong> <span
+class="math inline">1</span> पर चाहे कितनी भी धनात्मक घात (power) हो, उसका
+मान हमेशा <span class="math inline">1</span> ही रहता है। जैसे: <span
+class="math inline">1<sup>17</sup> = 1</span>, <span
+class="math inline">1<sup>20</sup> = 1</span>, <span
+class="math inline">1<sup>100</sup> = 1</span></li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples">4. विस्तृत
+उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>Example 1:</strong> यदि <span class="math inline">$x +
+\frac{1}{x} = 2$</span> हो, तो <span
+class="math inline">3<em>x</em><sup>5</sup> − 2<em>x</em><sup>3</sup> + 5<em>x</em> − 2</span>
+का मान ज्ञात कीजिए। <strong>समाधान (Solution):</strong> - चूंकि <span
+class="math inline">$x + \frac{1}{x} = 2$</span> है, अतः <span
+class="math inline"><em>x</em> = 1</span> होगा। - अब दिए गए व्यंजक में <span
+class="math inline"><em>x</em> = 1</span> रखने पर: <span
+class="math display">3(1)<sup>5</sup> − 2(1)<sup>3</sup> + 5(1) − 2</span></p>
+<p><span class="math display"> = 3(1) − 2(1) + 5(1) − 2</span></p>
+<p><span class="math display"> = 3 − 2 + 5 − 2</span></p>
+<p><span class="math display"> = 1 + 5 − 2</span></p>
+<p><span class="math display"> = 6 − 2 = 4</span></p>
+<p><strong>उत्तर:</strong> <span class="math inline">4</span></p>
+<p><strong>Example 2:</strong> यदि <span class="math inline">$x +
+\frac{1}{x} = 2$</span> हो, तो <span class="math inline">$x^{17} +
+\frac{1}{x^{20}}$</span> का मान ज्ञात कीजिए। <strong>समाधान
+(Solution):</strong> - शर्त के अनुसार <span
+class="math inline"><em>x</em> = 1</span> रखने पर: <span
+class="math display">$$(1)^{17} + \frac{1}{(1)^{20}}$$</span></p>
+<ul>
+<li><p>हम जानते हैं कि <span class="math inline">1</span> की घात कुछ भी हो,
+मान <span class="math inline">1</span> ही होता है: <span
+class="math display">$$= 1 + \frac{1}{1}$$</span></p>
+<p><span class="math display"> = 1 + 1 = 2</span></p></li>
+</ul>
+<p><strong>उत्तर:</strong> <span class="math inline">2</span></p>
+<h2 id="परकष-टपस-एव-पटरन-exam-tips-patterns">5. परीक्षा टिप्स एवं पैटर्न
+(Exam Tips &amp; Patterns)</h2>
+<ul>
+<li><strong>UP Primary &amp; Junior Super TET:</strong> इन परीक्षाओं में
+बीजगणितीय सर्वसमिकाओं, शेषफल प्रमेय (गुणनखंड प्रमेय), और बहुपदों की घात (Degree of
+Polynomials) से संबंधित 2-3 प्रश्न अनिवार्य रूप से आते हैं।</li>
+<li><strong>पैटर्न को पहचानें:</strong> यदि आप परीक्षा में <span
+class="math inline">$x + \frac{1}{x} = 2$</span> जैसी संरचना देखते हैं, तो लंबी
+विधि के बजाय शॉर्ट ट्रिक (<span class="math inline"><em>x</em> = 1</span>)
+का उपयोग करें जिससे समय की बचत होगी।</li>
+</ul>
+<h1 id="भग-02-पटरन-2-x-frac1x--2-एव-x---frac1x-क-वशष-परशन">भाग 02: पैटर्न
+2 (<span class="math inline">$x + \frac{1}{x} = -2$</span>) एवं <span
+class="math inline">$x - \frac{1}{x}$</span> के विशेष प्रश्न</h1>
+<h2 id="मखय-अवधरणए-एव-पटरन-वशलषण-core-concepts-pattern-analysis">1. मुख्य
+अवधारणाएँ एवं पैटर्न विश्लेषण (Core Concepts &amp; Pattern Analysis)</h2>
+<ul>
+<li><strong>Pattern 2</strong>: यदि <span class="math inline">$x +
+\frac{1}{x} = -2$</span> हो, तो <span
+class="math inline"><em>x</em> = −1</span> रखना। यह एक विशेष स्थिति है जो
+परीक्षा में अक्सर पूछी जाती है।</li>
+<li><strong><span class="math inline"><em>x</em> = −1</span> के घात नियम
+(Even Power vs Odd Power Rules)</strong>:
+<ul>
+<li>यदि <span class="math inline">−1</span> पर <strong>सम घात (Even
+Power)</strong> हो, तो परिणाम धनात्मक (Positive) होता है: <span
+class="math inline">(−1)<sup>even</sup> = +1</span></li>
+<li>यदि <span class="math inline">−1</span> पर <strong>विषम घात (Odd
+Power)</strong> हो, तो परिणाम ऋणात्मक (Negative) होता है: <span
+class="math inline">(−1)<sup>odd</sup> = −1</span></li>
+</ul></li>
+<li><strong>अन्य महत्वपूर्ण पैटर्न (Pattern 3)</strong>: यदि <span
+class="math inline">$x + \frac{1}{x} = 1$</span> दिया हो, तो यह <span
+class="math inline"><em>x</em><sup>3</sup> + 1 = 0 ⟹ <em>x</em><sup>3</sup> = −1</span>
+को संतुष्ट करता है।</li>
+</ul>
+<h2 id="बजगणतय-सतर-एव-सरवसमकए-mathematical-formulas-identities-1">2.
+बीजगणितीय सूत्र एवं सर्वसमिकाएँ (Mathematical Formulas &amp; Identities)</h2>
+<ul>
+<li><p><strong>सिद्धता (Proof for <span
+class="math inline"><em>x</em> = −1</span>)</strong>: <span
+class="math display">$$x + \frac{1}{x} = -2$$</span></p>
+<p><span
+class="math display"><em>x</em><sup>2</sup> + 1 = −2<em>x</em> ⟹ <em>x</em><sup>2</sup> + 2<em>x</em> + 1 = 0</span></p>
+<p><span
+class="math display">(<em>x</em> + 1)<sup>2</sup> = 0 ⟹ <em>x</em> + 1 = 0 ⟹ <em>x</em> = −1</span></p></li>
+<li><p><strong>विभिन्न घातों के लिए मान</strong>:</p>
+<ul>
+<li><span class="math inline">$x^n + \frac{1}{x^n}$</span> तथा <span
+class="math inline">$x^n - \frac{1}{x^n}$</span> के मान <span
+class="math inline"><em>n</em></span> (सम या विषम) पर निर्भर करते हैं।</li>
+<li>उदाहरण के लिए, यदि <span class="math inline"><em>n</em></span> विषम
+है, तो <span class="math inline">$x^n + \frac{1}{x^n} = -1 - 1 =
+-2$</span>।</li>
+</ul></li>
+<li><p><strong><span class="math inline">$x + \frac{1}{x} = 1$</span> की
+सिद्धता</strong>: <span
+class="math display"><em>x</em><sup>2</sup> + 1 = <em>x</em> ⟹ <em>x</em><sup>2</sup> − <em>x</em> + 1 = 0</span></p>
+<p>सूत्र <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> = (<em>a</em> + <em>b</em>)(<em>a</em><sup>2</sup> − <em>a</em><em>b</em> + <em>b</em><sup>2</sup>)</span>
+का उपयोग करने पर: <span
+class="math display"><em>x</em><sup>3</sup> + 1<sup>3</sup> = (<em>x</em> + 1)(<em>x</em><sup>2</sup> − <em>x</em> + 1) = (<em>x</em> + 1)(0) = 0</span></p>
+<p><span
+class="math display"> ⟹ <em>x</em><sup>3</sup> + 1 = 0 ⟹ <em>x</em><sup>3</sup> = −1</span></p></li>
+</ul>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-fast-calculation-methods">3. पवन
+सर की शॉर्ट ट्रिक्स (Short Tricks &amp; Fast Calculation Methods)</h2>
+<ul>
+<li><strong>सम/विषम घात पहचानने की ट्रिक</strong>:
+<ul>
+<li>ट्रिक: जब <span class="math inline">$x + \frac{1}{x} = -2$</span>
+दिया हो, तो आपको केवल घात का सम-विषम प्रकृति देखना है और सीधे <span
+class="math inline">+1</span> या <span class="math inline">−1</span> रख
+देना है।</li>
+</ul></li>
+<li><strong>परिणाम के विशेष पैटर्न</strong>: ऐसे प्रश्नों में उत्तर अधिकांशतः <span
+class="math inline">0</span> या <span class="math inline">±2</span> ही
+आता है।</li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-1">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>उदाहरण 1:</strong> यदि <span class="math inline">$x +
+\frac{1}{x} = -2$</span> है, तो <span class="math inline">$x^{13} -
+\frac{1}{x^{24}}$</span> का मान ज्ञात करें। <strong>समाधान:</strong> - दिया
+गया है: <span class="math inline">$x + \frac{1}{x} = -2 \implies x =
+-1$</span> - व्यंजक में <span class="math inline"><em>x</em> = −1</span> रखने
+पर: <span class="math display">$$(-1)^{13} -
+\frac{1}{(-1)^{24}}$$</span></p>
+<ul>
+<li>नियम के अनुसार:
+<ul>
+<li><span class="math inline">13</span> एक विषम (Odd) संख्या है, अतः <span
+class="math inline">(−1)<sup>13</sup> = −1</span></li>
+<li><span class="math inline">24</span> एक सम (Even) संख्या है, अतः <span
+class="math inline">(−1)<sup>24</sup> = +1</span></li>
+</ul></li>
+<li>मान रखने पर: <span class="math display">$$-1 - \frac{1}{+1} = -1 - 1
+= -2$$</span></li>
+</ul>
+<p><strong>उत्तर:</strong> -2</p>
+<h2 id="परकष-टपस-एव-पटरन-exam-tips">5. परीक्षा टिप्स एवं पैटर्न (Exam
+Tips)</h2>
+<ul>
+<li><strong>समय बचाएं</strong>: <span class="math inline">$x +
+\frac{1}{x} = -2$</span> देखते ही तुरंत <span
+class="math inline"><em>x</em> = −1</span> मान लें। समीकरण को हल करने में समय
+नष्ट न करें।</li>
+<li><strong>चिह्न की गलतियों से बचें</strong>: घात सम है या विषम, इसे ध्यान से
+देखें, क्योंकि यहाँ सबसे ज़्यादा गलतियाँ प्लस-माइनस (+/-) में होती हैं।</li>
+<li><strong>भ्रमित करने वाले प्रश्न</strong>: कभी-कभी घातें बहुत बड़ी दे दी जाती हैं
+(जैसे <span class="math inline"><em>x</em><sup>2024</sup></span>)। घात का
+आकार मायने नहीं रखता, केवल उसकी प्रकृति (सम/विषम) मायने रखती है।</li>
+<li><strong>सुपर टेट पैटर्न</strong>: यह पैटर्न यूपी सुपर टेट (UP SUPER TET) और
+अन्य शिक्षक भर्ती परीक्षाओं का पसंदीदा पैटर्न है।</li>
+</ul>
+<h1
+id="भग-03-सरवसमक-आधरत-परशन-x-frac1x-k-स-x2-frac1x2-तथ-x3-frac1x3">भाग
+03: सर्वसमिका आधारित प्रश्न (<span class="math inline">$x + \frac{1}{x} =
+k$</span> से <span class="math inline">$x^2 + \frac{1}{x^2}$</span> तथा
+<span class="math inline">$x^3 + \frac{1}{x^3}$</span>)</h1>
+<h2 id="मखय-अवधरणए-एव-पटरन-core-concepts-patterns">1. मुख्य अवधारणाएँ एवं
+पैटर्न (Core Concepts &amp; Patterns)</h2>
+<ul>
+<li>यदि <span class="math inline">$x + \frac{1}{x} = k$</span> हो, तो:
+<ul>
+<li><span class="math inline">$x^2 + \frac{1}{x^2} = k^2 -
+2$</span></li>
+<li><span class="math inline">$x^3 + \frac{1}{x^3} = k^3 -
+3k$</span></li>
+</ul></li>
+<li>यदि <span class="math inline">$x - \frac{1}{x} = k$</span> हो, तो:
+<ul>
+<li><span class="math inline">$x^2 + \frac{1}{x^2} = k^2 +
+2$</span></li>
+<li><span class="math inline">$x^3 - \frac{1}{x^3} = k^3 +
+3k$</span></li>
+</ul></li>
+<li><strong>विशिष्ट स्थिति (Special Case - पवन सर द्वारा कक्षा में मुख्य
+फोकस):</strong>
+<ul>
+<li>यदि <span class="math inline">$x + \frac{1}{x} = 1$</span> हो, तो
+<span
+class="math inline"><em>x</em><sup>3</sup> + 1 = 0 ⟹ <em>x</em><sup>3</sup> = −1</span>
+होता है।</li>
+<li>(नोट: ट्रांसक्रिप्ट में इसे मौखिक रूप से समझाने के दौरान कई बार <span
+class="math inline"><em>x</em><sup>3</sup> + 1 = 0</span> को <span
+class="math inline"><em>x</em> + 1 = 0</span> के रूप में उच्चारित/लिखा गया है,
+लेकिन गणितीय रूप से यह <span
+class="math inline"><em>x</em><sup>3</sup> = −1</span> है।)</li>
+</ul></li>
+</ul>
+<h2 id="बजगणतय-सतर-एव-वयतपतत-formulas-derivations">2. बीजगणितीय सूत्र एवं
+व्युत्पत्ति (Formulas &amp; Derivations)</h2>
+<ul>
+<li><span
+class="math inline">(<em>a</em> + <em>b</em>)<sup>2</sup> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + 2<em>a</em><em>b</em></span>
+तथा <span
+class="math inline">(<em>a</em> − <em>b</em>)<sup>2</sup> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> − 2<em>a</em><em>b</em></span>
+का प्रयोग।</li>
+<li><span
+class="math inline">(<em>a</em> + <em>b</em>)<sup>3</sup> = <em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + 3<em>a</em><em>b</em>(<em>a</em> + <em>b</em>)</span>
+का प्रयोग।</li>
+<li><strong><span class="math inline">$x + \frac{1}{x} = 1$</span> से
+<span class="math inline"><em>x</em><sup>3</sup> = −1</span> की
+व्युत्पत्ति:</strong>
+<ul>
+<li><span class="math inline">$x + \frac{1}{x} = 1 \implies \frac{x^2 +
+1}{x} = 1 \implies x^2 + 1 = x \implies x^2 - x + 1 = 0$</span></li>
+<li>दोनों पक्षों में <span class="math inline">(<em>x</em> + 1)</span> से गुणा
+करने पर: <span
+class="math inline">(<em>x</em> + 1)(<em>x</em><sup>2</sup> − <em>x</em> + 1) = 0</span></li>
+<li>यह <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup></span>
+का सूत्र है, अतः <span
+class="math inline"><em>x</em><sup>3</sup> + 1<sup>3</sup> = 0 ⟹ <em>x</em><sup>3</sup> = −1</span></li>
+</ul></li>
+</ul>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-direct-formulas">3. पवन सर की
+शॉर्ट ट्रिक्स (Short Tricks &amp; Direct Formulas)</h2>
+<ul>
+<li><span class="math inline"><em>k</em><sup>2</sup> − 2</span> तथा
+<span class="math inline"><em>k</em><sup>3</sup> − 3<em>k</em></span> के
+ओरल (मौखिक) हल की तकनीक।</li>
+<li><strong>घातों का अंतर (Power Difference Trick):</strong> यदि <span
+class="math inline">$x + \frac{1}{x} = 1$</span> दिया हो, तो व्यंजक में जिन
+दो पदों की घातों (powers) के मध्य <span class="math inline">3</span> का अंतर
+होता है, उनका योग शून्य (<span class="math inline">0</span>) हो जाता है।
+(उदाहरण: <span
+class="math inline"><em>x</em><sup>25</sup> + <em>x</em><sup>22</sup> = <em>x</em><sup>22</sup>(<em>x</em><sup>3</sup> + 1) = 0</span>)</li>
+<li><strong>घातों को <span class="math inline">3</span> के गुणज में
+बदलना:</strong> यदि घातों का अंतर <span class="math inline">3</span> न हो,
+तो घात को <span class="math inline">3</span> के गुणज (multiple) में तोड़ें, जैसे
+<span
+class="math inline"><em>x</em><sup>24</sup> = (<em>x</em><sup>3</sup>)<sup>8</sup></span>
+और <span class="math inline"><em>x</em><sup>3</sup> = −1</span> का मान
+सीधे पुट करें।</li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-2">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>प्रश्न 1:</strong> यदि <span class="math inline">$x +
+\frac{1}{x} = 1$</span> हो, तो <span
+class="math inline"><em>x</em><sup>25</sup> + <em>x</em><sup>22</sup> + <em>x</em><sup>10</sup> + <em>x</em><sup>7</sup> + <em>x</em><sup>3</sup> + 1</span>
+का मान ज्ञात करें। <strong>हल:</strong> - <strong>बेसिक तरीका:</strong>
+<span
+class="math display"><em>x</em><sup>25</sup> + <em>x</em><sup>22</sup> + <em>x</em><sup>10</sup> + <em>x</em><sup>7</sup> + <em>x</em><sup>3</sup> + 1</span></p>
+<p>पदों के जोड़े बनाकर कॉमन लेने पर: <span
+class="math display"> = <em>x</em><sup>22</sup>(<em>x</em><sup>3</sup> + 1) + <em>x</em><sup>7</sup>(<em>x</em><sup>3</sup> + 1) + 1(<em>x</em><sup>3</sup> + 1)</span></p>
+<p>चूँकि <span class="math inline">$x + \frac{1}{x} = 1 \implies x^3 + 1 =
+0$</span>, अतः <span
+class="math display"> = <em>x</em><sup>22</sup>(0) + <em>x</em><sup>7</sup>(0) + 1(0) = 0 + 0 + 0 = 0</span></p>
+<ul>
+<li><strong>शॉर्ट ट्रिक:</strong> यहाँ <span class="math inline">25</span>
+और <span class="math inline">22</span> में <span
+class="math inline">3</span> का अंतर है <span
+class="math inline"> ⟹ <em>x</em><sup>25</sup> + <em>x</em><sup>22</sup> = 0</span>
+<span class="math inline">10</span> और <span
+class="math inline">7</span> में <span class="math inline">3</span> का अंतर
+है <span
+class="math inline"> ⟹ <em>x</em><sup>10</sup> + <em>x</em><sup>7</sup> = 0</span>
+<span class="math inline">3</span> और <span class="math inline">0</span>
+(<span class="math inline">1 = <em>x</em><sup>0</sup></span>) में <span
+class="math inline">3</span> का अंतर है <span
+class="math inline"> ⟹ <em>x</em><sup>3</sup> + 1 = 0</span> अतः कुल योग
+= <span class="math inline">0</span></li>
+</ul>
+<p><strong>प्रश्न 2:</strong> यदि <span class="math inline">$x +
+\frac{1}{x} = 1$</span> हो, तो <span
+class="math inline"><em>x</em><sup>24</sup> + <em>x</em><sup>15</sup> + <em>x</em><sup>9</sup> + <em>x</em><sup>3</sup> + 1</span>
+का मान ज्ञात करें। <strong>हल:</strong> - यहाँ घातों के बीच <span
+class="math inline">3</span> का सीधा अंतर नहीं है, इसलिए <span
+class="math inline"><em>x</em><sup>3</sup> = −1</span> का प्रयोग करेंगे। -
+प्रत्येक पद की घात को <span class="math inline">3</span> के गुणज में बदलें: <span
+class="math display"> = (<em>x</em><sup>3</sup>)<sup>8</sup> + (<em>x</em><sup>3</sup>)<sup>5</sup> + (<em>x</em><sup>3</sup>)<sup>3</sup> + (<em>x</em><sup>3</sup>)<sup>1</sup> + 1</span></p>
+<ul>
+<li><p><span class="math inline"><em>x</em><sup>3</sup> = −1</span> रखने
+पर: <span
+class="math display"> = (−1)<sup>8</sup> + (−1)<sup>5</sup> + (−1)<sup>3</sup> + (−1)<sup>1</sup> + 1</span></p>
+<p><span class="math display"> = 1 + (−1) + (−1) + (−1) + 1</span></p>
+<p><span class="math display"> = 1 − 1 − 1 − 1 + 1 = −1</span></p></li>
+</ul>
+<h2 id="परकष-टपस-एव-समनय-गलतय-exam-tips-pitfalls">5. परीक्षा टिप्स एवं
+सामान्य गलतियाँ (Exam Tips &amp; Pitfalls)</h2>
+<ul>
+<li><strong>Pitfall (सामान्य गलती):</strong> छात्र अक्सर <span
+class="math inline">$x+\frac{1}{x}=1$</span> देखकर लंबी गणना में फँस जाते हैं या
+इसे द्विघात समीकरण समझकर <span class="math inline"><em>x</em></span> का
+मान निकालने लगते हैं। हमेशा याद रखें कि यह <span
+class="math inline"><em>x</em><sup>3</sup> = −1</span> का डायरेक्ट संकेत
+है।</li>
+<li><strong>Tip:</strong> परीक्षा में ऐसे बड़े-बड़े घातांक वाले व्यंजक दिखने पर सबसे
+पहले घातों का अंतर <span class="math inline">3</span> चेक करें। यह आपका काफी
+समय बचाएगा।</li>
+<li><strong>Tip:</strong> घातों को <span class="math inline">3</span> के
+गुणज में बदलते समय सम घात (Even Power) होने पर <span
+class="math inline">(−1)<sup>even</sup> = 1</span> तथा विषम घात (Odd
+Power) होने पर <span class="math inline">(−1)<sup>odd</sup> = −1</span>
+का विशेष ध्यान रखें।</li>
+</ul>
+<h1 id="भग-04-उचच-घत-क-रपतरण-x4-frac1x4-x5-frac1x5-x6-frac1x6">भाग 04:
+उच्च घातों के रूपांतरण (<span class="math inline">$x^4 +
+\frac{1}{x^4}$</span>, <span class="math inline">$x^5 +
+\frac{1}{x^5}$</span>, <span class="math inline">$x^6 +
+\frac{1}{x^6}$</span>)</h1>
+<h2 id="मखय-अवधरणए-एव-उचच-घत-रपतरण-higher-power-transformation-rules">1.
+मुख्य अवधारणाएँ एवं उच्च घात रूपांतरण (Higher Power Transformation Rules)</h2>
+<p>बीजगणित में जब <span class="math inline">$x + \frac{1}{x} = k$</span>
+दिया हो, तो उच्च घातों के मान निकालने के लिए निम्नलिखित रूपांतरण नियमों का प्रयोग
+किया जाता है: - <strong>घात 4 (<span class="math inline">$x^4 +
+\frac{1}{x^4}$</span>):</strong> इसके लिए दो बार वर्ग करने की प्रक्रिया अपनाई
+जाती है। पहले वर्ग से <span class="math inline">$x^2 + \frac{1}{x^2} = k^2 -
+2$</span> मिलता है, और पुनः वर्ग करने पर: <span class="math display">$$x^4 +
+\frac{1}{x^4} = (k^2 - 2)^2 - 2$$</span></p>
+<ul>
+<li><p><strong>घात 5 (<span class="math inline">$x^5 +
+\frac{1}{x^5}$</span>):</strong> इसे प्राप्त करने के लिए वर्ग और घन के व्यंजकों का
+गुणा करके आधार व्यंजक को घटाया जाता है: <span class="math display">$$x^5 +
+\frac{1}{x^5} = \left(x^2 + \frac{1}{x^2}\right)\left(x^3 +
+\frac{1}{x^3}\right) - \left(x + \frac{1}{x}\right)$$</span></p></li>
+<li><p><strong>घात 6 (<span class="math inline">$x^6 +
+\frac{1}{x^6}$</span>):</strong> इसके लिए या तो वर्ग वाले व्यंजक का घन किया
+जाता है या घन वाले व्यंजक का वर्ग किया जाता है। यदि <span
+class="math inline">$a = x^2 + \frac{1}{x^2}$</span> और <span
+class="math inline">$b = x^3 + \frac{1}{x^3}$</span>, तो: <span
+class="math display">$$x^6 + \frac{1}{x^6} = a^3 - 3a \quad \text{या}
+\quad b^2 - 2$$</span></p></li>
+<li><p><strong>घात 7 (<span class="math inline">$x^7 +
+\frac{1}{x^7}$</span>):</strong> घात 3 और 4 का गुणा करके आधार को घटाएं:
+<span class="math display">$$x^7 + \frac{1}{x^7} = \left(x^3 +
+\frac{1}{x^3}\right)\left(x^4 + \frac{1}{x^4}\right) - \left(x +
+\frac{1}{x}\right)$$</span></p></li>
+</ul>
+<h2 id="बजगणतय-सतर-एव-सरवसमकए-formulas-identities">2. बीजगणितीय सूत्र एवं
+सर्वसमिकाएँ (Formulas &amp; Identities)</h2>
+<p>यदि <span class="math inline">$x + \frac{1}{x} = k$</span> हो: -
+<span class="math inline">$x^2 + \frac{1}{x^2} = k^2 - 2$</span> - <span
+class="math inline">$x^3 + \frac{1}{x^3} = k^3 - 3k$</span> - <span
+class="math inline">$x^4 + \frac{1}{x^4} = (k^2 - 2)^2 - 2$</span> -
+<span class="math inline">$x^5 + \frac{1}{x^5} = (k^2 - 2)(k^3 - 3k) -
+k$</span> - <span class="math inline">$x^6 + \frac{1}{x^6} = (k^3 -
+3k)^2 - 2$</span> - <span class="math inline">$x^7 + \frac{1}{x^7} =
+(k^3 - 3k)((k^2 - 2)^2 - 2) - k$</span></p>
+<p><strong>विशेष स्थिति:</strong> यदि <span class="math inline">$x +
+\frac{1}{x} = 1$</span> हो, तो <span
+class="math inline"><em>x</em><sup>2</sup> − <em>x</em> + 1 = 0 ⟹ <em>x</em><sup>3</sup> + 1 = 0 ⟹ <em>x</em><sup>3</sup> = −1</span>
+होता है। यह एक अत्यंत महत्वपूर्ण सर्वसमिका है।</p>
+<p><strong>बहुपद (Polynomials) की अवधारणा:</strong> -
+<strong>परिभाषा:</strong> ऐसा व्यंजक जो चर (Variables, उदा. <span
+class="math inline"><em>x</em>, <em>y</em></span>), अचर (Constants, उदा.
+1, 2) और घातांक (Exponents) से मिलकर बना हो। - <strong>शर्त:</strong> बहुपद
+में चर की घात हमेशा पूर्ण संख्या (Whole Number) होनी चाहिए, यह ऋणात्मक
+(negative) या भिन्न (fraction) नहीं हो सकती। - <strong>प्रकार:</strong> -
+एकपदी (Monomial): <span
+class="math inline">5<em>x</em>, 9<em>y</em><sup>2</sup></span> - द्विपदी
+(Binomial): <span
+class="math inline">7<em>x</em> + 5, 3<em>y</em><sup>2</sup> + 6</span>
+- त्रिपदी (Trinomial): <span
+class="math inline">3<em>x</em><sup>2</sup> − 5<em>x</em> + 7</span></p>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-memory-aids">3. पवन सर की शॉर्ट
+ट्रिक्स (Short Tricks &amp; Memory Aids)</h2>
+<ul>
+<li><strong>विशेष नियम:</strong> जैसे ही प्रश्न में <span
+class="math inline">$x + \frac{1}{x} = 1$</span> दिखे, तुरंत समझ लें कि <span
+class="math inline"><em>x</em><sup>3</sup> = −1</span> होगा।</li>
+<li><strong>सम/विषम घात ट्रिक:</strong>
+<ul>
+<li>यदि <span class="math inline">(−1)</span> पर <strong>सम घात (Even
+Power)</strong> है, तो परिणाम <span class="math inline">+1</span>
+आएगा।</li>
+<li>यदि <span class="math inline">(−1)</span> पर <strong>विषम घात (Odd
+Power)</strong> है, तो परिणाम <span class="math inline">−1</span>
+आएगा।</li>
+</ul></li>
+<li><strong>घातों का रूपांतरण:</strong> उच्च घातों को 3 के गुणज में तोड़ें। जैसे घात
+30 है तो <span
+class="math inline">(<em>x</em><sup>3</sup>)<sup>10</sup></span> लिखें, और
+<span class="math inline"><em>x</em><sup>3</sup></span> का मान <span
+class="math inline">−1</span> रखें।</li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-3">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>प्रश्न 1:</strong> यदि <span class="math inline">$x +
+\frac{1}{x} = 1$</span> है, तो <span class="math inline">$x^{30} +
+\frac{1}{x^{18}}$</span> का मान ज्ञात करें। <strong>चरणबद्ध समाधान:</strong>
+1. हम जानते हैं कि यदि <span class="math inline">$x + \frac{1}{x} =
+1$</span> हो, तो <span
+class="math inline"><em>x</em><sup>3</sup> = −1</span> होता है। 2. व्यंजक
+को <span class="math inline"><em>x</em><sup>3</sup></span> के रूप में तोड़ें:
+<span class="math display">$$x^{30} + \frac{1}{x^{18}} = (x^3)^{10} +
+\frac{1}{(x^3)^6}$$</span></p>
+<ol start="3" type="1">
+<li><p><span class="math inline"><em>x</em><sup>3</sup> = −1</span> का
+मान रखें: <span class="math display">$$(-1)^{10} +
+\frac{1}{(-1)^6}$$</span></p></li>
+<li><p>सम/विषम नियम का प्रयोग करें: चूँकि 10 और 6 दोनों सम (even) संख्याएँ हैं,
+<span class="math inline">(−1)<sup>10</sup> = 1</span> और <span
+class="math inline">(−1)<sup>6</sup> = 1</span>.</p></li>
+<li><p>मान जोड़ें: <span class="math inline">$1 + \frac{1}{1} = 1 + 1 =
+2$</span>. <strong>उत्तर:</strong> 2 (Option C सही है)</p></li>
+</ol>
+<h2 id="परकष-रणनत-एव-समय-परबधन-exam-strategy">5. परीक्षा रणनीति एवं समय
+प्रबंधन (Exam Strategy)</h2>
+<ul>
+<li><strong>मानसिक गणना (Mental Math):</strong> <span
+class="math inline">$x + \frac{1}{x} = 1$</span> देखते ही दिमाग में <span
+class="math inline"><em>x</em><sup>3</sup> = −1</span> आ जाना चाहिए।
+घातों को देखकर (सम/विषम) सीधे <span class="math inline">+1</span> या <span
+class="math inline">−1</span> लिखें।</li>
+<li><strong>बहुपद की पहचान:</strong> परीक्षा में बहुपद पहचानने के प्रश्न आते हैं। बस
+यह चेक करें कि किसी भी चर की घात ऋणात्मक या भिन्न तो नहीं है। यदि है, तो वह बहुपद
+नहीं है।</li>
+<li><strong>स्कोरिंग पोटेंशियल:</strong> पवन सर के अनुसार, बीजगणित के ऐसे 90%
+प्रश्न आसानी से हल किए जा सकते हैं, और सुपर-टेट में अच्छे अंक अर्जित किए जा सकते
+हैं।</li>
+</ul>
+<h1 id="भग-05-रखक-बहपद-सरवसमक-a-b-c-0-एव-वशष-पटरन-x-frac1x-1-sqrt3">भाग
+05: रैखिक बहुपद, सर्वसमिका <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> एवं
+विशेष पैटर्न (<span class="math inline">$x + \frac{1}{x} = 1,
+\sqrt{3}$</span>)</h1>
+<h2 id="मखय-अवधरणए-एव-रखक-बहपद-linear-polynomials-special-patterns">1.
+मुख्य अवधारणाएँ एवं रैखिक बहुपद (Linear Polynomials &amp; Special
+Patterns)</h2>
+<ul>
+<li><p><strong>रैखिक बहुपद (Linear Polynomial):</strong> ऐसा बहुपद जिसमें चर
+(Variable) की अधिकतम घात 1 हो, जैसे <span
+class="math inline">7<em>x</em> + 5</span>।</p></li>
+<li><p><strong>सर्वसमिका <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> की
+भूमिका:</strong> जब समीकरण में <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> दिया
+गया हो, तो त्रिघातीय व्यंजकों का मान अत्यंत सरलता से निकाला जा सकता है।</p></li>
+<li><p><strong>विशेष पैटर्न <span class="math inline">$x + \frac{1}{x} =
+1$</span>:</strong> <span class="math display">$$\left(x +
+\frac{1}{x}\right)^2 = 1 \implies x^2 + \frac{1}{x^2} + 2 = 1 \implies
+x^2 + 1 = -x \implies x^3 = -1 \text{ तथा } x^3 + 1 =
+0$$</span></p></li>
+<li><p><strong>विशेष पैटर्न <span class="math inline">$x + \frac{1}{x} =
+\sqrt{3}$</span>:</strong> <span class="math display">$$x^2 +
+\frac{1}{x^2} = (\sqrt{3})^2 - 2 = 1 \implies x^6 = -1 \text{ तथा } x^6
++ 1 = 0$$</span></p></li>
+</ul>
+<h2 id="गणतय-सतर-एव-सदधत-mathematical-proofs-identities">2. गणितीय सूत्र
+एवं सिद्धता (Mathematical Proofs &amp; Identities)</h2>
+<ol type="1">
+<li><strong><span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0 ⟹ <em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span></strong></li>
+<li><strong>बीजीय भिन्न सूत्र:</strong> <span
+class="math display">$$\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab}
+= \frac{a^3 + b^3 + c^3}{abc} = \frac{3abc}{abc} = 3 \quad (\text{यदि }
+a+b+c=0)$$</span></li>
+</ol>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-instant-rules">3. पवन सर की शॉर्ट
+ट्रिक्स (Short Tricks &amp; Instant Rules)</h2>
+<ul>
+<li><strong>3 के अंतर वाली घातों का योग शून्य:</strong> यदि <span
+class="math inline">$x + \frac{1}{x} = 1$</span> हो, तो व्यंजक में 3 के अंतर
+वाले घातों का पद-युग्म (<span
+class="math inline"><em>x</em><sup><em>n</em> + 3</sup> + <em>x</em><sup><em>n</em></sup> = <em>x</em><sup><em>n</em></sup>(<em>x</em><sup>3</sup> + 1) = 0</span>)
+शून्य हो जाता है।</li>
+<li><strong>6 के अंतर वाली घातों का योग शून्य:</strong> यदि <span
+class="math inline">$x + \frac{1}{x} = \sqrt{3}$</span> हो, तो 6 के अंतर
+वाले घातों का पद-युग्म (<span
+class="math inline"><em>x</em><sup><em>n</em> + 6</sup> + <em>x</em><sup><em>n</em></sup> = <em>x</em><sup><em>n</em></sup>(<em>x</em><sup>6</sup> + 1) = 0</span>)
+शून्य हो जाता है।</li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-4">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<hr />
+<h3 id="उदहरण-1">उदाहरण 1:</h3>
+<p>यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> हो,
+तो <span class="math inline">$\frac{a^2}{bc} + \frac{b^2}{ca} +
+\frac{c^2}{ab}$</span> का मान ज्ञात कीजिए। - <strong>हल:</strong> <span
+class="math display">ल.स.व.
+(LCM) = <em>a</em><em>b</em><em>c</em></span></p>
+<p><span class="math display">$$\frac{a^3 + b^3 + c^3}{abc}$$</span></p>
+<p>चूँकि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span>, अतः
+<span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span>।
+<span class="math display">$$\text{मान} = \frac{3abc}{abc} =
+3$$</span></p>
+<hr />
+<h3 id="उदहरण-2">उदाहरण 2:</h3>
+<p>यदि <span class="math inline">$x + \frac{1}{x} = 1$</span> हो, तो
+<span
+class="math inline"><em>x</em><sup>18</sup> + <em>x</em><sup>15</sup> + <em>x</em><sup>12</sup> + <em>x</em><sup>9</sup> + <em>x</em><sup>3</sup> + 1</span>
+का मान ज्ञात कीजिए। - <strong>हल:</strong> चूँकि <span
+class="math inline">$x + \frac{1}{x} = 1 \implies x^3 = -1$</span> तथा
+<span class="math inline"><em>x</em><sup>3</sup> + 1 = 0</span>। <span
+class="math display"><em>x</em><sup>15</sup>(<em>x</em><sup>3</sup> + 1) + <em>x</em><sup>9</sup>(<em>x</em><sup>3</sup> + 1) + (<em>x</em><sup>3</sup> + 1) = 0 + 0 + 0 = 0</span></p>
+<h2 id="परकष-टपस-एव-पटरन-exam-tips-1">5. परीक्षा टिप्स एवं पैटर्न (Exam
+Tips)</h2>
+<ul>
+<li>Super TET एवं UPTET Junior में <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> पर
+आधारित सीधे प्रश्न पूछे जाते हैं।</li>
+</ul>
+<h1 id="भग-06-दवघत-समकरण-quadratic-equations-मल-एव-मल-क-गणधरम">भाग 06:
+द्विघात समीकरण (Quadratic Equations), मूल एवं मूलों के गुणधर्म</h1>
+<h2 id="मखय-अवधरणए-एव-दवघत-समकरण-क-मनक-रप">1. मुख्य अवधारणाएँ एवं द्विघात
+समीकरण का मानक रूप</h2>
+<ul>
+<li><p><strong>मानक रूप (Standard Form):</strong> <span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em> = 0</span>
+(जहाँ <span class="math inline"><em>a</em> ≠ 0</span>)।</p></li>
+<li><p><strong>श्रीधराचार्य सूत्र (Quadratic Formula):</strong> द्विघात
+समीकरण के मूल ज्ञात करने के लिए इस सूत्र का उपयोग किया जाता है: <span
+class="math display">$$x = \frac{-b \pm \sqrt{b^2 -
+4ac}}{2a}$$</span></p></li>
+<li><p><strong>विविक्तकर (Discriminant, <span
+class="math inline"><em>D</em> = <em>b</em><sup>2</sup> − 4<em>a</em><em>c</em></span>):</strong>
+यह समीकरण के मूलों की प्रकृति (Nature of Roots) निर्धारित करता है:</p>
+<ul>
+<li>यदि <span class="math inline"><em>D</em> &gt; 0⟹</span> मूल वास्तविक
+एवं असमान (Real &amp; Distinct roots) होते हैं।</li>
+<li>यदि <span class="math inline"><em>D</em> = 0⟹</span> मूल वास्तविक एवं
+समान (Real &amp; Equal roots) होते हैं।</li>
+<li>यदि <span class="math inline"><em>D</em> &lt; 0⟹</span> मूल काल्पनिक
+(Imaginary / Complex roots) होते हैं।</li>
+</ul></li>
+</ul>
+<h2 id="मल-क-यग-एव-गणनफल-sum-product-of-roots">2. मूलों का योग एवं गुणनफल
+(Sum &amp; Product of Roots)</h2>
+<p>यदि किसी द्विघात समीकरण <span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em> = 0</span>
+के मूल <span class="math inline"><em>α</em></span> और <span
+class="math inline"><em>β</em></span> हों, तो: - <strong>मूलों का योग (Sum
+of Roots):</strong> <span class="math inline">$\alpha + \beta =
+-\frac{b}{a}$</span> - <strong>मूलों का गुणनफल (Product of Roots):</strong>
+<span class="math inline">$\alpha \cdot \beta = \frac{c}{a}$</span> -
+<strong>समीकरण का निर्माण:</strong> यदि मूल दिए गए हों, तो समीकरण इस प्रकार
+लिखा जा सकता है: <span
+class="math display"><em>x</em><sup>2</sup> − (<em>α</em> + <em>β</em>)<em>x</em> + (<em>α</em> ⋅ <em>β</em>) = 0</span></p>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-for-factoring-root-selection">3.
+पवन सर की शॉर्ट ट्रिक्स (Short Tricks for Factoring &amp; Root
+Selection)</h2>
+<ul>
+<li><strong>चिह्न नियम (Sign Rule):</strong> समीकरण <span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em> = 0</span>
+में यदि <span class="math inline"><em>c</em></span> धनात्मक है, तो दोनों मूलों
+के चिह्न समान होंगे (और वे <span class="math inline"><em>b</em></span> के
+विपरीत चिह्न के होंगे)। यदि <span class="math inline"><em>c</em></span>
+ऋणात्मक है, तो दोनों मूल विपरीत चिह्न के होंगे।</li>
+<li><strong>त्वरित गुणनखंडन (Quick Factoring):</strong> <span
+class="math inline"><em>x</em><sup>2</sup></span> के गुणांक <span
+class="math inline"><em>a</em></span> को अचर पद <span
+class="math inline"><em>c</em></span> से गुणा करें (<span
+class="math inline"><em>a</em> × <em>c</em></span>)। अब इस गुणनफल के ऐसे दो
+गुणनखंड खोजें जिनका योग या अंतर <span class="math inline"><em>b</em></span> के
+बराबर हो। फिर सीधे उन गुणनखंडों के चिह्न बदलकर <span
+class="math inline"><em>a</em></span> से भाग दे दें।</li>
+<li><strong>व्यंजक निरीक्षण (Expression Observation):</strong> बीजगणितीय
+व्यंजकों (जैसे <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span>) वाले
+प्रश्नों में, लंबे फॉर्मूले खोलने के बजाय हमेशा दिए गए प्रतिबंध से छोटे पदों का मान
+प्रतिस्थापित करने (Substitution) का प्रयास करें।</li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-5">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p>नीचे दिए गए प्रश्न बीजगणितीय सर्वसमिकाओं (Algebraic Identities) के महत्वपूर्ण
+अनुप्रयोग हैं, जिन्हें कक्षा के भाग 06 में हल किया गया है:</p>
+<p><strong>प्रश्न 1: यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> हो,
+तो <span class="math inline">$\frac{1}{bc} + \frac{1}{ca} +
+\frac{1}{ab}$</span> का मान ज्ञात कीजिए।</strong>
+<strong>समाधान:</strong> 1. व्यंजक: <span
+class="math inline">$\frac{1}{bc} + \frac{1}{ca} + \frac{1}{ab}$</span>
+2. हर (Denominator) <span
+class="math inline"><em>b</em><em>c</em>, <em>c</em><em>a</em>, <em>a</em><em>b</em></span>
+का लघुत्तम समापवर्त्य (LCM) लें, जो <span
+class="math inline"><em>a</em><em>b</em><em>c</em></span> होगा। 3. प्रत्येक
+भिन्न के हर से <span
+class="math inline"><em>a</em><em>b</em><em>c</em></span> में भाग दें और अंश
+में गुणा करें: <span class="math display">$$\frac{a + b +
+c}{abc}$$</span></p>
+<ol start="4" type="1">
+<li>चूँकि दिया गया है कि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span>, अतः
+अंश में <span class="math inline">0</span> रखने पर: <span
+class="math display">$$\frac{0}{abc} = 0$$</span></li>
+</ol>
+<p><strong>उत्तर:</strong> <span class="math inline">0</span></p>
+<p><strong>प्रश्न 2: यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> हो,
+तो <span class="math inline">$\frac{-3abc}{(a+b)(b+c)(c+a)}$</span> का
+मान ज्ञात कीजिए।</strong> <strong>समाधान:</strong> 1. दिया है: <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> 2.
+यहाँ से हम लिख सकते हैं: <span
+class="math inline"><em>a</em> + <em>b</em> = −<em>c</em></span> <span
+class="math inline"><em>b</em> + <em>c</em> = −<em>a</em></span> <span
+class="math inline"><em>c</em> + <em>a</em> = −<em>b</em></span> 3. अब
+इन मानों को व्यंजक के हर में रखें: <span
+class="math display">$$\frac{-3abc}{(-c)(-a)(-b)}$$</span></p>
+<ol start="4" type="1">
+<li>हर का गुणा करने पर: <span
+class="math inline">(−<em>c</em>) × (−<em>a</em>) × (−<em>b</em>) = −<em>a</em><em>b</em><em>c</em></span></li>
+<li>अतः व्यंजक बन जाता है: <span class="math inline">$\frac{-3abc}{-abc} =
+3$</span> <strong>उत्तर:</strong> <span class="math inline">3</span></li>
+</ol>
+<p><strong>प्रश्न 3: यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> हो,
+तो <span class="math inline">$\frac{a^2 + b^2 + c^2}{ab + bc +
+ca}$</span> का मान क्या होगा?</strong> <strong>समाधान:</strong> 1. हम
+जानते हैं कि <span
+class="math inline">(<em>a</em> + <em>b</em> + <em>c</em>)<sup>2</sup> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> + 2(<em>a</em><em>b</em> + <em>b</em><em>c</em> + <em>c</em><em>a</em>)</span>
+2. दिया है <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span>, अतः
+दोनों पक्षों का वर्ग करने पर: <span
+class="math display">0<sup>2</sup> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> + 2(<em>a</em><em>b</em> + <em>b</em><em>c</em> + <em>c</em><em>a</em>)</span></p>
+<ol start="3" type="1">
+<li><p>पक्षांतर करने पर: <span
+class="math display"><em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> = −2(<em>a</em><em>b</em> + <em>b</em><em>c</em> + <em>c</em><em>a</em>)</span></p></li>
+<li><p>इस मान को दिए गए व्यंजक में प्रतिस्थापित करें: <span
+class="math display">$$\frac{-2(ab + bc + ca)}{ab + bc + ca} =
+-2$$</span></p></li>
+</ol>
+<p><strong>उत्तर:</strong> <span class="math inline">−2</span></p>
+<h2 id="परकष-टपस-exam-tips">5. परीक्षा टिप्स (Exam Tips)</h2>
+<ul>
+<li><strong>निरीक्षण (Observation) कौशल विकसित करें:</strong> परीक्षा में कठिन
+दिखने वाले प्रश्न अक्सर सीधे सूत्रों या प्रतिस्थापन पर आधारित होते हैं (जैसे <span
+class="math inline"><em>a</em> + <em>b</em> = −<em>c</em></span> रखना)।
+उन्हें देखकर घबराएं नहीं।</li>
+<li><strong>समय प्रबंधन:</strong> लंबे गुणा-भाग से बचें। यदि मूलों का योग और गुणनफल
+पूछा गया है, तो पूरा समीकरण हल करने के बजाय सीधे <span
+class="math inline">$-\frac{b}{a}$</span> और <span
+class="math inline">$\frac{c}{a}$</span> का उपयोग करें।</li>
+<li><strong>चिह्नों का ध्यान:</strong> माइनस (-) के विषम बार गुणा होने पर
+परिणाम ऋणात्मक होता है, और सम बार गुणा होने पर धनात्मक। छोटी सी चिह्न की गलती
+पूरे प्रश्न को गलत कर सकती है।</li>
+</ul>
+<h1
+id="भग-07-दवघत-समकरण-क-उननत-परशन-शषफल-परमय-remainder-theorem-एव-गणनखड-परमय-factor-theorem">भाग
+07: द्विघात समीकरण के उन्नत प्रश्न, शेषफल प्रमेय (Remainder Theorem) एवं गुणनखंड
+प्रमेय (Factor Theorem)</h1>
+<h2 id="मखय-अवधरणए-एव-सदधत">1. मुख्य अवधारणाएँ एवं सिद्धांत</h2>
+<ul>
+<li><strong>शेषफल प्रमेय (Remainder Theorem):</strong> यदि किसी बहुपद <span
+class="math inline"><em>P</em>(<em>x</em>)</span> को <span
+class="math inline">(<em>x</em> − <em>a</em>)</span> से भाग दिया जाए, तो
+शेषफल <span
+class="math inline"><em>R</em> = <em>P</em>(<em>a</em>)</span> होता
+है।</li>
+<li><strong>गुणनखंड प्रमेय (Factor Theorem):</strong> यदि <span
+class="math inline"><em>P</em>(<em>a</em>) = 0</span> हो, तो <span
+class="math inline">(<em>x</em> − <em>a</em>)</span>, बहुपद <span
+class="math inline"><em>P</em>(<em>x</em>)</span> का एक पूर्ण गुणनखंड होता
+है। अर्थात, यदि कोई व्यंजक किसी भाजक से पूरी तरह विभाज्य है, तो शेषफल शून्य
+होगा।</li>
+</ul>
+<h2 id="गणतय-सतर-एव-नयम">2. गणितीय सूत्र एवं नियम</h2>
+<ul>
+<li><p><strong>विभाजन एल्गोरिथ्म (Division Algorithm):</strong> <span
+class="math display"><em>भ</em>ा<em>ज</em>्<em>य</em> = (<em>भ</em>ा<em>ज</em><em>क</em> × <em>भ</em>ा<em>ग</em><em>फ</em><em>ल</em>) + <em>श</em>े<em>ष</em><em>फ</em><em>ल</em></span></p>
+<p><span
+class="math display"><em>P</em>(<em>x</em>) = <em>Q</em>(<em>x</em>) ⋅ <em>D</em>(<em>x</em>) + <em>R</em>(<em>x</em>)</span></p></li>
+</ul>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-direct-substitution">3. पवन सर की
+शॉर्ट ट्रिक्स (Short Tricks &amp; Direct Substitution)</h2>
+<p>शेषफल निकालने के लिए लंबी भाग विधि (Long Division Method) का प्रयोग करने से
+बचें। इसके बजाय इन तीन सरल चरणों (3-Steps) का पालन करें: 1. <strong>भाजक को
+शून्य के बराबर रखें:</strong> सर्वप्रथम भाजक (जिससे भाग देना है) को <span
+class="math inline">0</span> के बराबर रखें। उदाहरण: यदि भाजक <span
+class="math inline">(<em>x</em> − <em>a</em>)</span> है, तो <span
+class="math inline">(<em>x</em> − <em>a</em>) = 0</span> रखें। 2.
+<strong>चर (Variable) का मान निकालें:</strong> यहाँ से <span
+class="math inline"><em>x</em> = <em>a</em></span> प्राप्त होगा। 3.
+<strong>मान प्रतिस्थापन (Value Substitution):</strong> प्राप्त <span
+class="math inline"><em>x</em></span> के मान को मुख्य व्यंजक (भाज्य) में रख दें।
+जो हल आएगा, वही आपका <strong>अभीष्ट शेषफल</strong> होगा।</p>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-6">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>प्रश्न 1:</strong> व्यंजक <span
+class="math inline">4<em>x</em><sup>3</sup> − 2<em>x</em><sup>2</sup> + 5<em>x</em> − 8</span>
+को <span class="math inline">(<em>x</em> − 2)</span> से भाग देने पर शेषफल
+क्या होगा? <strong>समाधान (Step-by-Step):</strong> - <strong>चरण
+1:</strong> भाजक को <span class="math inline">0</span> के बराबर रखें: <span
+class="math display"><em>x</em> − 2 = 0 ⟹ <em>x</em> = 2</span></p>
+<ul>
+<li><p><strong>चरण 2:</strong> <span
+class="math inline"><em>x</em> = 2</span> को व्यंजक में रखें: <span
+class="math display"><em>P</em>(2) = 4(2)<sup>3</sup> − 2(2)<sup>2</sup> + 5(2) − 8</span></p>
+<p><span class="math display"> = 4(8) − 2(4) + 10 − 8</span></p>
+<p><span class="math display"> = 32 − 8 + 10 − 8</span></p>
+<p><span class="math display"> = 24 + 10 − 8</span></p>
+<p><span class="math display"> = 34 − 8 = 26</span></p></li>
+</ul>
+<p><strong>उत्तर:</strong> शेषफल <span class="math inline">26</span>
+होगा।</p>
+<p><strong>प्रश्न 2:</strong> यदि व्यंजक <span
+class="math inline"><em>x</em><sup>3</sup> + 6<em>x</em><sup>2</sup> + 4<em>x</em> + <em>k</em></span>,
+<span class="math inline">(<em>x</em> + 2)</span> से पूरी तरह विभाज्य है, तो
+<span class="math inline"><em>k</em></span> का मान क्या होगा?
+<strong>समाधान (Step-by-Step):</strong> - <strong>चरण 1:</strong> भाजक
+को <span class="math inline">0</span> के बराबर रखें: <span
+class="math display"><em>x</em> + 2 = 0 ⟹ <em>x</em> = −2</span></p>
+<ul>
+<li><p><strong>चरण 2:</strong> चूंकि यह पूरी तरह विभाज्य है, इसलिए शेषफल शून्य
+(<span class="math inline">0</span>) होगा। अतः <span
+class="math inline"><em>x</em> = −2</span> व्यंजक में रखकर <span
+class="math inline">0</span> के बराबर करें: <span
+class="math display">(−2)<sup>3</sup> + 6(−2)<sup>2</sup> + 4(−2) + <em>k</em> = 0</span></p>
+<p><span class="math display">−8 + 6(4) − 8 + <em>k</em> = 0</span></p>
+<p><span class="math display">−8 + 24 − 8 + <em>k</em> = 0</span></p>
+<p><span
+class="math display">8 + <em>k</em> = 0 ⟹ <em>k</em> = −8</span></p></li>
+</ul>
+<p><strong>उत्तर:</strong> <span
+class="math inline"><em>k</em> = −8</span> होगा।</p>
+<h2 id="परकष-टपस-exam-tips-1">5. परीक्षा टिप्स (Exam Tips)</h2>
+<ul>
+<li>परीक्षा में कभी भी शेषफल प्रमेय के प्रश्नों को हल करने के लिए पारंपरिक लंबी भाग
+विधि का उपयोग न करें, इससे समय बहुत नष्ट होता है। हमेशा <span
+class="math inline"><em>x</em></span> का मान निकाल कर व्यंजक में प्रतिस्थापित
+करें।</li>
+<li>यदि प्रश्न में “पूरी तरह विभाज्य” (completely divisible) या “गुणनखंड है” (is
+a factor) लिखा हो, तो मान रखने के बाद व्यंजक को सीधे शून्य (<span
+class="math inline"> = 0</span>) के बराबर कर दें, इससे अज्ञात चर (<span
+class="math inline"><em>k</em>, <em>m</em>, <em>a</em></span> आदि) का
+मान आसानी से निकल जाएगा।</li>
+<li>ऋणात्मक संख्याओं (Negative numbers) के घात (power) का ध्यान रखें: ऋणात्मक
+संख्या का सम घात (Even Power) हमेशा धनात्मक (Positive) होता है, और विषम घात
+(Odd Power) हमेशा ऋणात्मक (Negative) होता है।</li>
+</ul>
+<h1
+id="भग-08-बहपद-polynomials-बहपद-क-घत-degree-of-polynomial-एव-वरगकरण">भाग
+08: बहुपद (Polynomials), बहुपद की घात (Degree of Polynomial) एवं
+वर्गीकरण</h1>
+<h2 id="मखय-अवधरणए-एव-बहपद-क-नयम">1. मुख्य अवधारणाएँ एवं बहुपद के नियम</h2>
+<ul>
+<li><strong>बहुपद की परिभाषा (Definition of Polynomial):</strong> बहुपद एक
+ऐसा बीजीय व्यंजक (algebraic expression) है जिसे <span
+class="math inline"><em>P</em>(<em>x</em>) = <em>a</em><sub><em>n</em></sub><em>x</em><sup><em>n</em></sup> + <em>a</em><sub><em>n</em> − 1</sub><em>x</em><sup><em>n</em> − 1</sup> + … + <em>a</em><sub>1</sub><em>x</em> + <em>a</em><sub>0</sub></span>
+के रूप में व्यक्त किया जाता है, जहाँ <span
+class="math inline"><em>a</em><sub>0</sub>, <em>a</em><sub>1</sub>, …, <em>a</em><sub><em>n</em></sub></span>
+वास्तविक संख्याएँ (real numbers) हैं।</li>
+<li><strong>बहुपद होने की शर्तें (Conditions for a Polynomial):</strong> चर
+(variable) की घात केवल एक गैर-ऋणात्मक पूर्णांक (non-negative integer) होनी
+चाहिए। अर्थात्, घात कोई भिन्न (fraction), दशमलव (decimal), या ऋणात्मक
+(negative) संख्या नहीं हो सकती।</li>
+<li><strong>बहुपद की घात (Degree of Polynomial):</strong> किसी बहुपद में चर
+(variable) की अधिकतम घात (highest power) को उस बहुपद की घात कहते हैं।</li>
+</ul>
+<h2 id="बहपद-क-वरगकरण-classification-of-polynomials">2. बहुपदों का वर्गीकरण
+(Classification of Polynomials)</h2>
+<p><strong>पदों के आधार पर (Based on Terms):</strong> - <strong>एकपदी
+(Monomial):</strong> जिसमें केवल एक पद हो (जैसे: <span
+class="math inline">5<em>x</em></span>, <span
+class="math inline">3<em>x</em><sup>2</sup></span>) - <strong>द्विपदी
+(Binomial):</strong> जिसमें दो पद हों (जैसे: <span
+class="math inline"><em>x</em> + 2</span>, <span
+class="math inline">3<em>x</em><sup>2</sup> − 5</span>) - <strong>त्रिपदी
+(Trinomial):</strong> जिसमें तीन पद हों (जैसे: <span
+class="math inline"><em>x</em><sup>2</sup> + 5<em>x</em> + 6</span>)</p>
+<p><strong>घात के आधार पर (Based on Degree):</strong> - <strong>रैखिक बहुपद
+(Linear Polynomial):</strong> घात 1 (जैसे: <span
+class="math inline"><em>a</em><em>x</em> + <em>b</em></span>) -
+<strong>द्विघाती बहुपद (Quadratic Polynomial):</strong> घात 2 (जैसे: <span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em></span>)
+- <strong>त्रिघाती बहुपद (Cubic Polynomial):</strong> घात 3 (जैसे: <span
+class="math inline"><em>a</em><em>x</em><sup>3</sup> + <em>b</em><em>x</em><sup>2</sup> + <em>c</em><em>x</em> + <em>d</em></span>)</p>
+<h2
+id="पवन-सर-क-शरट-टरकस-short-tricks-for-identifying-valid-polynomials">3.
+पवन सर की शॉर्ट ट्रिक्स (Short Tricks for Identifying Valid
+Polynomials)</h2>
+<p>पवन सर द्वारा बताई गई बीजगणितीय सर्वसमिकाओं (Algebraic Identities) की
+शॉर्ट ट्रिक्स: यदि <span class="math inline">$x + \frac{1}{x} = a$</span>
+दिया हो, तो: 1. <strong>द्विघात के लिए:</strong> <span
+class="math inline">$x^2 + \frac{1}{x^2} = a^2 - 2$</span> 2.
+<strong>त्रिघात के लिए:</strong> <span class="math inline">$x^3 +
+\frac{1}{x^3} = a^3 - 3a$</span> 3. <strong>चतुर्थ घात के लिए:</strong>
+<span class="math inline">$x^4 + \frac{1}{x^4} = a^4 - 4a^2 +
+2$</span></p>
+<p><em>(नोट: बहुपद की पहचान के लिए हमेशा जाँचें कि चर की घात ऋणात्मक या भिन्न न
+हो।)</em></p>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-7">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>उदाहरण 1: शेषफल प्रमेय (Remainder Theorem) पर आधारित</strong>
+<strong>प्रश्न:</strong> यदि एक व्यंजक <span
+class="math inline"><em>x</em> + 2</span> से पूर्णतः विभाज्य है, तो व्यंजक में
+<span class="math inline"><em>k</em></span> का मान ज्ञात कीजिए?
+<strong>समाधान:</strong> 1. भाजक <span
+class="math inline"><em>x</em> + 2</span> को <span
+class="math inline">0</span> के बराबर रखें: <span
+class="math inline"><em>x</em> + 2 = 0 ⟹ <em>x</em> = −2</span>. 2. व्यंजक
+में <span class="math inline"><em>x</em> = −2</span> रखने पर शेषफल शून्य
+(<span class="math inline">0</span>) होना चाहिए क्योंकि यह विभाज्य है। 3.
+कक्षा के समीकरण के अनुसार गणना करने पर (माना समीकरण में पद <span
+class="math inline">6<em>x</em><sup>2</sup></span> और <span
+class="math inline">4<em>x</em></span> हैं): <span
+class="math inline">6(−2)<sup>2</sup> + 4(−2) + <em>k</em> = 0 ⟹ 24 − 8 + <em>k</em> = 0</span>
+4. हल करने पर: <span
+class="math inline">16 + <em>k</em> = 24 ⟹ <em>k</em> = −8</span>.</p>
+<p><strong>उदाहरण 2: शेषफल 4 बचने पर आधारित</strong>
+<strong>प्रश्न:</strong> एक व्यंजक को <span
+class="math inline"><em>x</em> + <em>a</em></span> से भाग देने पर <span
+class="math inline">4</span> शेष बचता है। यदि व्यंजक में <span
+class="math inline"><em>x</em><sup>2</sup>, −2<em>a</em><em>x</em></span>
+और <span class="math inline"><em>a</em><sup>2</sup></span> के पद हैं, तो
+<span class="math inline"><em>a</em></span> का मान ज्ञात करें।
+<strong>समाधान:</strong> 1. भाजक <span
+class="math inline"><em>x</em> + <em>a</em> = 0 ⟹ <em>x</em> = −<em>a</em></span>.
+2. व्यंजक में <span class="math inline"><em>x</em> = −<em>a</em></span> रखें:
+<span
+class="math inline">(−<em>a</em>)<sup>2</sup> − 2(<em>a</em>)(−<em>a</em>) + <em>a</em><sup>2</sup> = 4</span>
+3. <span
+class="math inline"><em>a</em><sup>2</sup> + 2<em>a</em><sup>2</sup> + <em>a</em><sup>2</sup> = 4 ⟹ 4<em>a</em><sup>2</sup> = 4</span>
+4. <span
+class="math inline"><em>a</em><sup>2</sup> = 1 ⟹ <em>a</em> = ±1</span>.</p>
+<p><strong>उदाहरण 3: बीजगणितीय सर्वसमिका (Algebraic Identity) पर
+आधारित</strong> <strong>प्रश्न:</strong> यदि <span class="math inline">$x
++ \frac{1}{x} = 4$</span> है, तो <span class="math inline">$x^4 +
+\frac{1}{x^4}$</span> का मान क्या होगा? <strong>समाधान:</strong> 1. सूत्र
+का उपयोग करें: <span class="math inline">$x^4 + \frac{1}{x^4} = a^4 - 4a^2
++ 2$</span>. 2. यहाँ <span class="math inline"><em>a</em> = 4</span> दिया
+गया है। 3. मान रखने पर: <span
+class="math inline">(4)<sup>4</sup> − 4(4)<sup>2</sup> + 2 = 256 − 4(16) + 2</span>
+4. <span class="math inline">256 − 64 + 2 = 194</span>.</p>
+<p><strong>उदाहरण 4: <span class="math inline">$x^3 +
+\frac{1}{x^3}$</span> का मान ज्ञात करना</strong> <strong>प्रश्न:</strong>
+यदि <span class="math inline">$x + \frac{1}{x} = 5$</span> है, तो <span
+class="math inline">$x^3 + \frac{1}{x^3}$</span> क्या होगा?
+<strong>समाधान:</strong> 1. सूत्र: <span
+class="math inline"><em>a</em><sup>3</sup> − 3<em>a</em></span>. 2. मान
+रखने पर: <span
+class="math inline">(5)<sup>3</sup> − 3(5) = 125 − 15 = 110</span>.</p>
+<h2 id="परकष-टपस-exam-tips-2">5. परीक्षा टिप्स (Exam Tips)</h2>
+<ul>
+<li><strong>शेषफल प्रमेय का उपयोग:</strong> जब भी प्रश्न में “विभाज्य है” कहा
+जाए, तो भाजक को शून्य के बराबर रखकर <span
+class="math inline"><em>x</em></span> का मान निकालें और उसे मुख्य समीकरण में
+रखकर पूरे समीकरण को शून्य (<span class="math inline"> = 0</span>) के बराबर कर
+दें।</li>
+<li><strong>चिह्नों में सावधानी:</strong> माइनस और प्लस का गुणा करते समय
+सावधानी बरतें, जैसे <span
+class="math inline">(−<em>a</em>) × (−<em>a</em>) = +<em>a</em><sup>2</sup></span>।
+अधिकांश गलतियाँ चिह्न बदलने में होती हैं।</li>
+<li><strong>शॉर्टकट्स (Shortcuts):</strong> <span class="math inline">$x +
+\frac{1}{x} = a$</span> वाले प्रश्नों में सीधे पवन सर के बताए गए सूत्रों का उपयोग
+करें, इससे परीक्षा में बहुत समय बचेगा और पेपर-पेंसिल की जरूरत भी नहीं पड़ेगी।</li>
+</ul>
+<h1
+id="भग-09-द-चर-वल-रखक-समकरण-नकय-system-of-linear-equations-in-two-variables">भाग
+09: दो चरों वाले रैखिक समीकरण निकाय (System of Linear Equations in Two
+Variables)</h1>
+<h2
+id="मखय-अवधरणए-एव-समकरण-नकय-system-of-equations-solution-conditions">1.
+मुख्य अवधारणाएँ एवं समीकरण निकाय (System of Equations &amp; Solution
+Conditions)</h2>
+<p>दो चरों वाले रैखिक समीकरणों का सामान्य रूप:</p>
+<p>$$</p>
+<p>a_1 x + b_1 y + c_1 = 0$$</p>
+<p>$$</p>
+<p>a_2 x + b_2 y + c_2 = 0$$</p>
+<p>समीकरण निकाय की संगति (Consistency) एवं समाधान की तीन प्रमुख स्थितियाँ होती
+हैं:</p>
+<h3 id="अदवतय-हल-सगत-नकय-unique-solution-intersecting-lines">1. अद्वितीय
+हल / संगत निकाय (Unique Solution / Intersecting Lines)</h3>
+<p>जब दोनों रेखाएं एक-दूसरे को केवल एक बिंदु पर काटती हैं:</p>
+<p>$$</p>
+<p> $$</p>
+<h3
+id="अपरमत-रप-स-अनक-हल-सपत-रखए-infinitely-many-solutions-coincident-lines">2.
+अपरिमित रूप से अनेक हल / संपाती रेखाएं (Infinitely Many Solutions / Coincident
+Lines)</h3>
+<p>जब दोनों रेखाएं एक ही रेखा पर स्थित होती हैं:</p>
+<p>$$</p>
+<p> = = $$</p>
+<h3 id="कई-हल-नह-असगत-नकय-no-solution-parallel-lines">3. कोई हल नहीं /
+असंगत निकाय (No Solution / Parallel Lines)</h3>
+<p>जब दोनों रेखाएं समांतर होती हैं और कभी नहीं मिलतीं:</p>
+<p>$$</p>
+<p> = $$</p>
+<h2 id="गणतय-सतर-तलक-mathematical-conditions-table">2. गणितीय सूत्र तालिका
+(Mathematical Conditions Table)</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>स्थिति (Condition)</th>
+<th>रेखाओं का स्वरूप (Graph Type)</th>
+<th>हलों की संख्या (Number of Solutions)</th>
+<th>निकाय का प्रकार (System Nature)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">$\frac{a_1}{a_2} \neq
+\frac{b_1}{b_2}$</span></td>
+<td>प्रतिच्छेदी रेखाएं (Intersecting)</td>
+<td>केवल एक (Unique Solution)</td>
+<td>संगत (Consistent)</td>
+</tr>
+<tr>
+<td><span class="math inline">$\frac{a_1}{a_2} = \frac{b_1}{b_2} =
+\frac{c_1}{c_2}$</span></td>
+<td>संपाती रेखाएं (Coincident)</td>
+<td>अनंत (Infinitely Many)</td>
+<td>संगत एवं आश्रित (Consistent &amp; Dependent)</td>
+</tr>
+<tr>
+<td><span class="math inline">$\frac{a_1}{a_2} = \frac{b_1}{b_2} \neq
+\frac{c_1}{c_2}$</span></td>
+<td>समांतर रेखाएं (Parallel)</td>
+<td>शून्य (No Solution)</td>
+<td>असंगत (Inconsistent)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-for-ratio-verification">3. पवन सर
+की शॉर्ट ट्रिक्स (Short Tricks for Ratio Verification)</h2>
+<ul>
+<li><strong>10 सेकंड अनुपात जांच:</strong> समीकरण को तुरंत <span
+class="math inline"><em>a</em><sub>1</sub>/<em>a</em><sub>2</sub></span>
+और <span
+class="math inline"><em>b</em><sub>1</sub>/<em>b</em><sub>2</sub></span>
+के रूप में लिखें। यदि प्रथम दो भिन्न असमान हैं, तो उत्तर ‘अद्वितीय हल’ होगा।</li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-8">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<hr />
+<h3 id="उदहरण-1-1">उदाहरण 1:</h3>
+<p>समीकरणों <span
+class="math inline">2<em>x</em> + 3<em>y</em> = 7</span> तथा <span
+class="math inline">4<em>x</em> + 6<em>y</em> = 14</span> के हलों का स्वरूप
+ज्ञात कीजिए। - <strong>हल:</strong> <span
+class="math display"><em>a</em><sub>1</sub> = 2, <em>b</em><sub>1</sub> = 3, <em>c</em><sub>1</sub> = −7</span></p>
+<p><span
+class="math display"><em>a</em><sub>2</sub> = 4, <em>b</em><sub>2</sub> = 6, <em>c</em><sub>2</sub> = −14</span></p>
+<p><span class="math display">$$\frac{a_1}{a_2} = \frac{2}{4} =
+\frac{1}{2}, \quad \frac{b_1}{b_2} = \frac{3}{6} = \frac{1}{2}, \quad
+\frac{c_1}{c_2} = \frac{-7}{-14} = \frac{1}{2}$$</span></p>
+<p>चूँकि <span class="math inline">$\frac{a_1}{a_2} = \frac{b_1}{b_2} =
+\frac{c_1}{c_2} = \frac{1}{2}$</span>, अतः इसके <strong>अनंत हल
+(Infinitely Many Solutions)</strong> होंगे।</p>
+<hr />
+<h3 id="उदहरण-2-1">उदाहरण 2:</h3>
+<p><span class="math inline"><em>k</em></span> का वह मान ज्ञात कीजिए जिसके
+लिए निकाय <span
+class="math inline"><em>k</em><em>x</em> + 2<em>y</em> = 5</span> तथा
+<span class="math inline">3<em>x</em> + <em>y</em> = 1</span> का कोई हल
+न हो। - <strong>हल:</strong> कोई हल न होने की शर्त: <span
+class="math inline">$\frac{a_1}{a_2} = \frac{b_1}{b_2} \neq
+\frac{c_1}{c_2}$</span> <span class="math display">$$\frac{k}{3} =
+\frac{2}{1} \implies k = 6$$</span></p>
+<h2 id="परकष-टपस-exam-tips-3">5. परीक्षा टिप्स (Exam Tips)</h2>
+<ul>
+<li>Super TET परीक्षा में अचर <span class="math inline"><em>k</em></span>
+का मान ज्ञात करने वाले प्रश्न बार-बार आते हैं।</li>
+</ul>
+<h1 id="भग-10-सरवसमकओ-क-वशष-अनपरयग-एव-तरघतय-सतर-a3-b3-c3---3abc">भाग 10:
+सर्वसमिकाओं के विशेष अनुप्रयोग एवं त्रिघातीय सूत्र (<span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em></span>)</h1>
+<h2 id="मखय-अवधरणए-एव-सतर-core-concepts-formulas">1. मुख्य अवधारणाएँ एवं सूत्र
+(Core Concepts &amp; Formulas)</h2>
+<ul>
+<li><strong>Identity:</strong> <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em> = (<em>a</em> + <em>b</em> + <em>c</em>)(<em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> − <em>a</em><em>b</em> − <em>b</em><em>c</em> − <em>c</em><em>a</em>)</span></li>
+<li><strong>Alternative Form:</strong> <span class="math inline">$a^3 +
+b^3 + c^3 - 3abc = \frac{1}{2}(a+b+c)[(a-b)^2 + (b-c)^2 +
+(c-a)^2]$</span></li>
+<li><strong>Conditional Special Case:</strong> यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> हो,
+तो <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span></li>
+<li><strong>घात को आधा करने वाले सूत्र (Power Reduction Formulas):</strong>
+<ul>
+<li>यदि <span class="math inline">$x^2 + \frac{1}{x^2} = k$</span> हो,
+तो <span class="math inline">$x + \frac{1}{x} = \sqrt{k +
+2}$</span></li>
+<li>यदि <span class="math inline">$x^2 + \frac{1}{x^2} = k$</span> हो,
+तो <span class="math inline">$x - \frac{1}{x} = \sqrt{k -
+2}$</span></li>
+</ul></li>
+<li><strong>त्रिघातीय रूपांतरण (Cubic Transformations):</strong>
+<ul>
+<li>यदि <span class="math inline">$x - \frac{1}{x} = a$</span> हो, तो
+<span class="math inline">$x^3 - \frac{1}{x^3} = a^3 + 3a$</span></li>
+<li>यदि <span class="math inline">$x + \frac{1}{x} = a$</span> हो, तो
+<span class="math inline">$x^3 + \frac{1}{x^3} = a^3 - 3a$</span></li>
+</ul></li>
+</ul>
+<h2 id="वयतपतत-एव-गणधरम-derivation-properties">2. व्युत्पत्ति एवं गुणधर्म
+(Derivation &amp; Properties)</h2>
+<ul>
+<li><strong><span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em></span>
+की व्युत्पत्ति:</strong> इसे <span
+class="math inline">(<em>a</em> + <em>b</em>)<sup>3</sup></span> के
+विस्तार और गुणनखंडन के माध्यम से सिद्ध किया जा सकता है। यह सूत्र सममित (symmetric)
+है और चक्रीय क्रम (cyclic order) का पालन करता है।</li>
+<li><strong>घातों को घटाने (Power Reduction) की व्युत्पत्ति:</strong> <span
+class="math inline">$(x + \frac{1}{x})^2 = x^2 + \frac{1}{x^2} +
+2$</span> होता है। अतः यदि हमें <span class="math inline">$x^2 +
+\frac{1}{x^2}$</span> का मान ज्ञात हो, तो हम आसानी से दोनों पक्षों का वर्गमूल
+लेकर <span class="math inline">$x + \frac{1}{x}$</span> ज्ञात कर सकते हैं।
+इसी प्रकार, <span class="math inline">$(x - \frac{1}{x})^2 = x^2 +
+\frac{1}{x^2} - 2$</span> का उपयोग करके <span class="math inline">$x -
+\frac{1}{x}$</span> निकाला जाता है।</li>
+</ul>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-for-abc0">3. पवन सर की शॉर्ट ट्रिक्स
+(Short Tricks for <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span>)</h2>
+<ul>
+<li><strong>शॉर्ट ट्रिक 1:</strong> यदि प्रश्न में <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> दिया
+गया है, तो बिना कोई लंबी गणना किए सीधे <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup></span>
+का मान <span class="math inline">3<em>a</em><em>b</em><em>c</em></span>
+रख दें।</li>
+<li><strong>शॉर्ट ट्रिक 2 (घात चार से घात एक पर आना):</strong> चौथी घात
+(<span class="math inline"><em>x</em><sup>4</sup></span>) से सीधे पहली घात
+(<span class="math inline"><em>x</em><sup>1</sup></span>) पर छलांग न
+लगाएं।
+<ul>
+<li><strong>पहला चरण (Step 1):</strong> <span class="math inline">$x^4 +
+\frac{1}{x^4}$</span> के मान में 2 जोड़कर वर्गमूल निकालें, जिससे <span
+class="math inline">$x^2 + \frac{1}{x^2}$</span> प्राप्त होगा।</li>
+<li><strong>दूसरा चरण (Step 2):</strong> अब प्राप्त मान से, यदि <span
+class="math inline">$x + \frac{1}{x}$</span> चाहिए तो 2 जोड़कर वर्गमूल
+निकालें, और यदि <span class="math inline">$x - \frac{1}{x}$</span> चाहिए
+तो 2 घटाकर वर्गमूल निकालें।</li>
+</ul></li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-9">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>उदाहरण 1:</strong> यदि <span class="math inline">$x^2 +
+\frac{1}{x^2} = 34$</span> हो, तो <span class="math inline">$x +
+\frac{1}{x}$</span> का मान ज्ञात करें। <strong>समाधान:</strong> - दिए गए
+मान में 2 जोड़ें: <span class="math inline">34 + 2 = 36</span> - वर्गमूल निकालें:
+<span class="math inline">$\sqrt{36} = 6$</span> -
+<strong>उत्तर:</strong> <span class="math inline">$x + \frac{1}{x} =
+6$</span></p>
+<p><strong>उदाहरण 2:</strong> यदि <span class="math inline">$x^2 +
+\frac{1}{x^2} = 119$</span> हो, तो <span class="math inline">$x +
+\frac{1}{x}$</span> का मान क्या होगा? <strong>समाधान:</strong> - दिए गए
+मान में 2 जोड़ें: <span class="math inline">119 + 2 = 121</span> - वर्गमूल
+निकालें: <span class="math inline">$\sqrt{121} = 11$</span> -
+<strong>उत्तर:</strong> <span class="math inline">$x + \frac{1}{x} =
+11$</span></p>
+<p><strong>उदाहरण 3:</strong> यदि <span class="math inline">$x^2 +
+\frac{1}{x^2} = 83$</span> हो, तो <span class="math inline">$x -
+\frac{1}{x}$</span> का मान ज्ञात करें। <strong>समाधान:</strong> - क्योंकि
+माइनस (<span class="math inline">−</span>) का मान पूछा गया है, दिए गए मान
+में से 2 घटाएं: <span class="math inline">83 − 2 = 81</span> - वर्गमूल निकालें:
+<span class="math inline">$\sqrt{81} = 9$</span> -
+<strong>उत्तर:</strong> <span class="math inline">$x - \frac{1}{x} =
+9$</span></p>
+<p><strong>उदाहरण 4 (कठिन प्रश्न):</strong> यदि <span
+class="math inline">$x^4 + \frac{1}{x^4} = 119$</span> हो, तो <span
+class="math inline">$x^3 - \frac{1}{x^3}$</span> का मान ज्ञात करें।
+<strong>समाधान:</strong> - <strong>चरण 1:</strong> चौथी घात से दूसरी घात
+पर आएं: <span class="math inline">$x^2 + \frac{1}{x^2} = \sqrt{119 + 2} =
+\sqrt{121} = 11$</span> - <strong>चरण 2:</strong> दूसरी घात से पहली घात
+(माइनस वाली) पर आएं: चूँकि हमें <span class="math inline">$x^3 -
+\frac{1}{x^3}$</span> चाहिए, इसलिए पहले <span class="math inline">$x -
+\frac{1}{x}$</span> निकालेंगे। <span class="math inline">$x - \frac{1}{x} =
+\sqrt{11 - 2} = \sqrt{9} = 3$</span> (मान लें इसे <span
+class="math inline"><em>a</em></span>) - <strong>चरण 3:</strong>
+त्रिघातीय सूत्र लागू करें: <span class="math inline">$x^3 - \frac{1}{x^3} =
+a^3 + 3a$</span> <span class="math inline">$x^3 - \frac{1}{x^3} = (3)^3
++ 3 \times 3 = 27 + 9 = 36$</span> - <strong>उत्तर:</strong> <span
+class="math inline">36</span></p>
+<h2 id="परकष-टपस-exam-tips-4">5. परीक्षा टिप्स (Exam Tips)</h2>
+<ul>
+<li><strong>चिह्नों (Signs) का विशेष ध्यान रखें:</strong> जब <span
+class="math inline">$x + \frac{1}{x}$</span> पूछा जाए तो <span
+class="math inline">+2</span> करके वर्गमूल निकालें, और जब <span
+class="math inline">$x - \frac{1}{x}$</span> पूछा जाए तो <span
+class="math inline">−2</span> करके वर्गमूल निकालें।</li>
+<li><strong>हार्ड कॉपी बनाम सॉफ्ट कॉपी:</strong> तैयारी के लिए पीडीएफ (PDF)
+के बजाय स्वयं के हस्तलिखित नोट्स बनाएं। नोट्स में आप महत्वपूर्ण बिंदुओं को मार्क कर सकते
+हैं, जो परीक्षा के समय त्वरित रिवीजन (Quick Revision) में बहुत सहायक होते हैं।</li>
+<li><strong>लक्ष्य (Target):</strong> यदि परीक्षा का पेपर AI आधारित हुआ तो
+मेरिट अधिक जा सकती है, अतः 125+ अंकों का लक्ष्य रखें।</li>
+<li><strong>मानसिक गणना (Mental Math):</strong> इन प्रश्नों को हल करने के लिए
+पेन और पेपर की आवश्यकता नहीं होनी चाहिए। सूत्र दिमाग में सेट होने पर आप प्रश्न देखते
+ही उत्तर निकाल सकते हैं।</li>
+</ul>
+<h1
+id="भग-11-बजय-वयजक-क-सरलकरण-simplification-of-algebraic-expressions-एव-ववध-परशन">भाग
+11: बीजीय व्यंजकों का सरलीकरण (Simplification of Algebraic Expressions) एवं
+विविध प्रश्न</h1>
+<h2 id="मखय-अवधरणए-एव-नयम-core-concepts-rules">1. मुख्य अवधारणाएँ एवं नियम
+(Core Concepts &amp; Rules)</h2>
+<ul>
+<li><strong>घातों का रूपांतरण (Power Conversion):</strong> उच्च घात से निम्न
+घात (जैसे <span class="math inline"><em>x</em><sup>4</sup></span> से <span
+class="math inline"><em>x</em><sup>2</sup></span> या <span
+class="math inline"><em>x</em><sup>2</sup></span> से <span
+class="math inline"><em>x</em></span>) में आने के लिए विशिष्ट नियमों का प्रयोग
+किया जाता है। यदि व्यंजक धनात्मक (plus) में है, तो दिए गए मान में <span
+class="math inline">2</span> जोड़कर उसका वर्गमूल (square root) निकालते
+हैं।</li>
+<li><strong>सर्वसमिकाओं का प्रयोग (Use of Identities):</strong> बीजगणित में
+समय बचाने के लिए मानक सर्वसमिकाओं (Standard Identities) का स्मरण आवश्यक है,
+विशेषकर उन प्रश्नों में जहाँ चरों (variables) की संख्या अधिक हो।</li>
+<li><strong>BODMAS / V-BODMAS नियम का बीजीय पदों में अनुप्रयोग:</strong>
+बीजीय व्यंजकों को हल करते समय कोष्ठकों को सही क्रम में खोलना और गणितीय संक्रियाओं को
+क्रमानुसार हल करना आवश्यक है।</li>
+<li><strong>कोष्ठक तोड़ना (Brackets Removal) एवं चिन्ह परिवर्तन:</strong>
+कोष्ठक के बाहर यदि ऋणात्मक चिन्ह हो, तो अंदर के सभी चिन्ह बदल जाते हैं (Sign
+rules: <span class="math inline">− × − = +</span>, <span
+class="math inline">− × + = −</span>).</li>
+</ul>
+<h2 id="गणतय-सतर-एव-तकनक-formulas-techniques">2. गणितीय सूत्र एवं तकनीकें
+(Formulas &amp; Techniques)</h2>
+<p>इस भाग में मुख्यतः निम्नलिखित विशेष सूत्रों (Special Formulas) पर चर्चा की गई
+है:</p>
+<ol type="1">
+<li><strong>उच्च घात से निम्न घात ज्ञात करना:</strong>
+<ul>
+<li>यदि <span class="math inline">$x^4 + \frac{1}{x^4} = k$</span>, तो
+<span class="math inline">$x^2 + \frac{1}{x^2} = \sqrt{k +
+2}$</span></li>
+<li>यदि <span class="math inline">$x^2 + \frac{1}{x^2} = m$</span>, तो
+<span class="math inline">$x + \frac{1}{x} = \sqrt{m + 2}$</span></li>
+</ul></li>
+<li><strong><span class="math inline">$x + \frac{1}{x}$</span> से <span
+class="math inline">$x^3 + \frac{1}{x^3}$</span> ज्ञात करना:</strong>
+<ul>
+<li>यदि <span class="math inline">$x + \frac{1}{x} = a$</span>, तो <span
+class="math inline">$x^3 + \frac{1}{x^3} = a^3 - 3a$</span></li>
+</ul></li>
+<li><strong>तीन चरों वाले विशेष सूत्र (Very Important):</strong>
+<ul>
+<li><p><span class="math inline">$a^2 + b^2 + c^2 - ab - bc - ca =
+\frac{1}{2} \left[ (a-b)^2 + (b-c)^2 + (c-a)^2 \right]$</span></p></li>
+<li><p><span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em> = (<em>a</em> + <em>b</em> + <em>c</em>)(<em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> − <em>a</em><em>b</em> − <em>b</em><em>c</em> − <em>c</em><em>a</em>)</span></p></li>
+<li><p>उपरोक्त दोनों सूत्रों को मिलाने पर: <span class="math inline">$a^3 +
+b^3 + c^3 - 3abc = \frac{1}{2} (a+b+c) \left[ (a-b)^2 + (b-c)^2 +
+(c-a)^2 \right]$</span></p></li>
+</ul></li>
+<li><strong>शून्य की शर्त (Condition for Zero):</strong>
+<ul>
+<li>यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> हो,
+तो <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em> = 0</span></li>
+<li>अर्थात् <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span></li>
+</ul></li>
+</ol>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-for-value-put-method-a1-b1-c1">3.
+पवन सर की शॉर्ट ट्रिक्स (Short Tricks for Value Put Method <span
+class="math inline"><em>a</em> = 1, <em>b</em> = 1, <em>c</em> = 1</span>)</h2>
+<ul>
+<li><strong>लगातार संख्याओं के लिए ट्रिक (Consecutive Numbers
+Trick):</strong> यदि <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span> के मान
+लगातार (consecutive) दिए गए हों (जैसे: 97, 98, 99), तो व्यंजक <span
+class="math inline"><em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> − <em>a</em><em>b</em> − <em>b</em><em>c</em> − <em>c</em><em>a</em></span>
+का मान सदैव <strong><span class="math inline">3</span></strong> होता है।
+इसके लिए पूरा सूत्र हल करने की आवश्यकता नहीं है।</li>
+<li><strong>Value Put Method:</strong> जब विकल्प स्वतंत्र हों तो प्रश्नों को
+जल्दी हल करने के लिए <span
+class="math inline"><em>a</em> = 1, <em>b</em> = 1, <em>c</em> = 1</span>
+या <span
+class="math inline"><em>a</em> = 0, <em>b</em> = 1, <em>c</em> = −1</span>
+मान रखकर उत्तर प्राप्त करना एक बहुत ही प्रभावी शॉर्ट ट्रिक है।</li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-10">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>उदाहरण 1:</strong> यदि <span class="math inline">$x^4 +
+\frac{1}{x^4} = 194$</span> है, तो <span class="math inline">$x +
+\frac{1}{x}$</span> का मान ज्ञात करें। <strong>समाधान:</strong> -
+<strong>चरण 1:</strong> चौथी घात से दूसरी घात पर आना। <span
+class="math inline">$x^2 + \frac{1}{x^2} = \sqrt{194 + 2} = \sqrt{196} =
+14$</span> - <strong>चरण 2:</strong> दूसरी घात से पहली घात पर आना। <span
+class="math inline">$x + \frac{1}{x} = \sqrt{14 + 2} = \sqrt{16} =
+4$</span> <strong>उत्तर:</strong> <span class="math inline">4</span></p>
+<p><strong>उदाहरण 2:</strong> यदि <span class="math inline">$x +
+\frac{1}{x} = 4$</span> है, तो <span class="math inline">$x^3 +
+\frac{1}{x^3}$</span> का मान ज्ञात करें। <strong>समाधान:</strong> - सूत्र:
+<span class="math inline">$x^3 + \frac{1}{x^3} = a^3 - 3a$</span> (जहाँ
+<span class="math inline"><em>a</em> = 4</span>) - मान रखने पर: <span
+class="math inline">4<sup>3</sup> − 3 × 4 = 64 − 12 = 52</span>
+<strong>उत्तर:</strong> <span class="math inline">52</span></p>
+<p><strong>उदाहरण 3:</strong> यदि <span
+class="math inline"><em>a</em> = 97, <em>b</em> = 98, <em>c</em> = 99</span>
+है, तो <span
+class="math inline"><em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> − <em>a</em><em>b</em> − <em>b</em><em>c</em> − <em>c</em><em>a</em></span>
+का मान ज्ञात करें। <strong>समाधान:</strong> - चूँकि <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span> लगातार
+संख्याएँ हैं, पवन सर की शॉर्ट ट्रिक के अनुसार उत्तर सीधा <span
+class="math inline">3</span> होगा। - <strong>सूत्र द्वारा सत्यता की
+जाँच:</strong> <span class="math inline">$\frac{1}{2} \left[ (97-98)^2 +
+(98-99)^2 + (99-97)^2 \right]$</span> <span class="math inline">$=
+\frac{1}{2} \left[ (-1)^2 + (-1)^2 + (2)^2 \right]$</span> <span
+class="math inline">$= \frac{1}{2} \left[ 1 + 1 + 4 \right] =
+\frac{1}{2} \times 6 = 3$</span> <strong>उत्तर:</strong> <span
+class="math inline">3</span></p>
+<h2 id="परकष-टपस-exam-tips-5">5. परीक्षा टिप्स (Exam Tips)</h2>
+<ul>
+<li>सर्वसमिकाओं को कंठस्थ करना (रटना) आवश्यक है; यदि सूत्र याद नहीं होंगे तो परीक्षा
+में प्रश्न बेसिक तरीके से हल करने में बहुत समय लगेगा, इसलिए प्रश्न छोड़ना ही बेहतर विकल्प
+हो सकता है।</li>
+<li>सुपर टेट (Super TET) और यूपीटेट (UPTET) के पाठ्यक्रम में “सर्वसमिका” सीधे तौर
+पर उल्लिखित है, अतः इन सूत्रों पर आधारित प्रश्न निश्चित रूप से पूछे जाते हैं (हाल ही के
+UPTET और जूनियर परीक्षाओं में इसके सीधे उदाहरण देखे गए हैं)।</li>
+<li>विशेष सूत्र <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em></span>
+पर आधारित प्रश्न कई बार सीधे सूत्र के रूप में ही पूछ लिए जाते हैं, इसलिए इसे अच्छी तरह
+से याद कर लें।</li>
+</ul>
+<h1 id="भग-12-बजगणतय-घतक-एव-करण-indices-and-surds-in-algebra">भाग 12:
+बीजगणितीय घातांक एवं करणी (Indices and Surds in Algebra)</h1>
+<h2 id="मखय-अवधरणए-एव-घतक-क-नयम-laws-of-indices">1. मुख्य अवधारणाएँ एवं
+घातांक के नियम (Laws of Indices)</h2>
+<ul>
+<li><span
+class="math inline"><em>a</em><sup><em>m</em></sup> ⋅ <em>a</em><sup><em>n</em></sup> = <em>a</em><sup><em>m</em> + <em>n</em></sup></span></li>
+<li><span class="math inline">$\frac{a^m}{a^n} = a^{m-n}$</span></li>
+<li><span
+class="math inline">(<em>a</em><sup><em>m</em></sup>)<sup><em>n</em></sup> = <em>a</em><sup><em>m</em><em>n</em></sup></span></li>
+<li><span
+class="math inline"><em>a</em><sup>0</sup> = 1  (<em>a</em> ≠ 0)</span></li>
+<li><span class="math inline">$a^{-n} = \frac{1}{a^n}$</span></li>
+</ul>
+<h2 id="करण-क-नयम-laws-of-surds-rationalization">2. करणी के नियम (Laws of
+Surds &amp; Rationalization)</h2>
+<ul>
+<li><span class="math inline">$\sqrt[n]{a} = a^{1/n}$</span></li>
+<li>Rationalization factor of <span class="math inline">$\sqrt{a} \pm
+\sqrt{b}$</span> is <span class="math inline">$\sqrt{a} \mp
+\sqrt{b}$</span>.</li>
+</ul>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-for-exponential-equations">3. पवन
+सर की शॉर्ट ट्रिक्स (Short Tricks for Exponential Equations)</h2>
+<ul>
+<li><strong>घातांक समीकरण:</strong> जब आधार समान हों तो घातों की तुलना
+(<span
+class="math inline"><em>a</em><sup><em>x</em></sup> = <em>a</em><sup><em>y</em></sup> ⟹ <em>x</em> = <em>y</em></span>).</li>
+<li><strong>बीजगणितीय सर्वसमिकाएँ (Algebraic Identities Special
+Trick):</strong> यदि <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span> लगातार
+संख्याएँ (consecutive numbers) हैं (जैसे 31, 32, 33 या 97, 98, 99), तो:
+<ol type="1">
+<li><span
+class="math inline"><em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> − <em>a</em><em>b</em> − <em>b</em><em>c</em> − <em>c</em><em>a</em> = 3</span>
+(हमेशा सत्य, हल करने की आवश्यकता नहीं)</li>
+<li><span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em></span>
+का मान ज्ञात करने के दो त्वरित तरीके (बिना पेन-पेपर के):
+<ul>
+<li><p><strong>Method 1:</strong> तीनों मानों को जोड़कर 3 से गुणा करें। <span
+class="math display">उत्तर = 3 × (<em>a</em> + <em>b</em> + <em>c</em>)</span></p></li>
+<li><p><strong>Method 2 (Fastest):</strong> बीच वाले पद (Middle Term) में 9
+से गुणा करें। <span
+class="math display">उत्तर = 9 × <em>b</em></span></p></li>
+</ul></li>
+</ol></li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-11">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>उदाहरण 1:</strong> यदि <span
+class="math inline"><em>a</em> = 97, <em>b</em> = 98, <em>c</em> = 99</span>
+है, तो <span class="math inline">$\frac{1}{2}[(a-b)^2 + (b-c)^2 +
+(c-a)^2]$</span> का मान ज्ञात करें। <strong>समाधान:</strong> - <span
+class="math inline"><em>a</em> − <em>b</em> = 97 − 98 = −1 ⟹ (−1)<sup>2</sup> = 1</span>
+- <span
+class="math inline"><em>b</em> − <em>c</em> = 98 − 99 = −1 ⟹ (−1)<sup>2</sup> = 1</span>
+- <span
+class="math inline"><em>c</em> − <em>a</em> = 99 − 97 = 2 ⟹ (2)<sup>2</sup> = 4</span>
+- कुल योग <span class="math inline"> = 1 + 1 + 4 = 6</span> - अतः <span
+class="math inline">$\frac{1}{2} \times 6 = 3$</span> (सिद्ध होता है कि
+लगातार संख्याओं के लिए यह मान हमेशा 3 होता है)।</p>
+<p><strong>उदाहरण 2:</strong> यदि <span
+class="math inline"><em>a</em> = 31, <em>b</em> = 32, <em>c</em> = 33</span>
+है, तो <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em></span>
+का मान ज्ञात करें। <strong>समाधान (पारंपरिक सूत्र से):</strong> सूत्र: <span
+class="math inline">$a^3 + b^3 + c^3 - 3abc = \frac{1}{2}(a+b+c)[(a-b)^2
++ (b-c)^2 + (c-a)^2]$</span> - चूँकि <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span> लगातार हैं,
+बड़े ब्रैकेट का मान 6 होगा। - <span class="math inline">$\frac{1}{2} \times
+(31 + 32 + 33) \times 6$</span> - <span
+class="math inline"> = 3 × (96) = 288</span></p>
+<p><strong>शॉर्ट ट्रिक से समाधान (Method 2):</strong> - बीच का पद <span
+class="math inline"><em>b</em> = 32</span> - सीधे 9 से गुणा करें: <span
+class="math inline">9 × 32 = 288</span></p>
+<h2 id="परकष-टपस-exam-tips-6">5. परीक्षा टिप्स (Exam Tips)</h2>
+<ul>
+<li>जब भी परीक्षा में <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span> के मान
+लगातार (consecutive) दिए गए हों और <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em></span>
+पूछा जाए, तो लंबे सूत्रों में समय नष्ट न करें। सीधे <strong>बीच वाले पद में 9 का
+गुणा</strong> कर दें। इससे आपका समय बचेगा और उत्तर 100% सटीक होगा।</li>
+<li>यदि <span
+class="math inline"><em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> − <em>a</em><em>b</em> − <em>b</em><em>c</em> − <em>c</em><em>a</em></span>
+पूछा जाए, तो उत्तर हमेशा <strong>3</strong> टिक करें। पेपर-पेंसिल की कोई आवश्यकता
+नहीं है।</li>
+</ul>
+<h1
+id="भग-13-सरवसमक-आधरत-अभयस-परशन-एव-परकष-म-पछ-गए-परशन-practice-questions-exam-pyqs">भाग
+13: सर्वसमिका आधारित अभ्यास प्रश्न एवं परीक्षा में पूछे गए प्रश्न (Practice
+Questions &amp; Exam PYQs)</h1>
+<h2 id="मखय-अवधरणए-एव-पनरवतत-core-concepts-practice-overview">1. मुख्य
+अवधारणाएँ एवं पुनरावृत्ति (Core Concepts &amp; Practice Overview)</h2>
+<ul>
+<li>Super TET / UPTET Junior में विगत वर्षों में पूछे गए प्रश्नों का गहन
+विश्लेषण।</li>
+<li>इस भाग में बीजगणित (Algebra) की महत्वपूर्ण सर्वसमिकाओं (Identities) का
+प्रयोग करके जटिल दिखने वाले प्रश्नों को सरलता से हल करने पर जोर दिया गया है।</li>
+<li>विशेष रूप से <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em></span>
+पर आधारित शर्त वाले प्रश्नों की गहराई से चर्चा की गई है।</li>
+</ul>
+<h2 id="गणतय-सतर-एव-सरवसमकए-formulas-checklist">2. गणितीय सूत्र एवं
+सर्वसमिकाएँ (Formulas Checklist)</h2>
+<ul>
+<li><p><strong>मुख्य सर्वसमिका:</strong> <span
+class="math display"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em> = (<em>a</em> + <em>b</em> + <em>c</em>)(<em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> − <em>a</em><em>b</em> − <em>b</em><em>c</em> − <em>c</em><em>a</em>)</span></p></li>
+<li><p><strong>शर्त आधारित सर्वसमिका (Conditional Identity):</strong> यदि
+<span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> हो,
+तो उपर्युक्त समीकरण में दायां पक्ष शून्य हो जाता है। अतः: <span
+class="math display"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em> = 0 ⟹ <em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span></p></li>
+<li><p><strong>वर्गों का योग (Sum of Squares):</strong> यदि किन्हीं वास्तविक
+संख्याओं के वर्गों का योग शून्य हो, तो वे संख्याएँ स्वतंत्र रूप से शून्य होती हैं। यदि <span
+class="math inline"><em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> = 0</span>
+हो, तो <span
+class="math inline"><em>a</em> = 0, <em>b</em> = 0, <em>c</em> = 0</span>
+होगा।</p></li>
+</ul>
+<h2
+id="पवन-सर-क-शरट-टरकस-short-tricks-for-rapid-solving-under-30-seconds">3.
+पवन सर की शॉर्ट ट्रिक्स (Short Tricks for Rapid Solving under 30
+seconds)</h2>
+<ul>
+<li><strong>समान्तर श्रेणी या क्रमिक पदों के लिए:</strong> यदि पदों के बीच समान
+अंतर हो और एक विशिष्ट प्रारूप (Pattern) बन रहा हो, तो गणना को सरल करने के लिए
+<strong>“बीच वाले पद में 9 से गुणा करें”</strong> (Middle term <span
+class="math inline">×</span> 9) का प्रयोग किया जा सकता है। यह शॉर्ट ट्रिक
+समय बचाती है।</li>
+<li><strong><span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span> के बड़े मान
+(Large Values of a, b, c):</strong> जब परीक्षा में <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span> के बहुत बड़े
+मान दिए गए हों (जैसे 331, 336, -667), तो सूत्र खोलने या घन (cube) निकालने की
+गलती कभी न करें। सबसे पहले <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em></span> का मान
+निकालकर चेक करें; प्रायः यह शून्य (<span class="math inline">0</span>) ही आता
+है जिससे उत्तर मात्र 2 सेकंड में आ जाता है।</li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-12">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>प्रश्न 1:</strong> यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> हो,
+तो <span class="math inline">$\frac{a^2}{bc} + \frac{b^2}{ca} +
+\frac{c^2}{ab}$</span> का मान ज्ञात कीजिए। <strong>समाधान:</strong> -
+<strong>चरण 1:</strong> दिए गए व्यंजक का ल.स.प. (LCM) लें। हर <span
+class="math inline"><em>b</em><em>c</em>, <em>c</em><em>a</em>, <em>a</em><em>b</em></span>
+का ल.स.प. <span
+class="math inline"><em>a</em><em>b</em><em>c</em></span> होगा। -
+<strong>चरण 2:</strong> भिन्न जोड़ने की विधि का प्रयोग करें (हर से भाग, अंश में
+गुणा): <span class="math display">$$ \frac{a \cdot a^2 + b \cdot b^2 + c
+\cdot c^2}{abc} = \frac{a^3 + b^3 + c^3}{abc} $$</span></p>
+<ul>
+<li><strong>चरण 3:</strong> शर्त लागू करें। चूँकि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> दिया
+गया है, अतः <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span>
+होगा।</li>
+<li><strong>चरण 4:</strong> मान रखें: <span class="math display">$$
+\frac{3abc}{abc} = 3 $$</span></li>
+</ul>
+<p><strong>उत्तर:</strong> <span class="math inline">3</span></p>
+<p><strong>प्रश्न 2:</strong> यदि <span
+class="math inline"><em>a</em> = 331, <em>b</em> = 336</span> और <span
+class="math inline"><em>c</em> = −667</span> हो, तो <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em></span>
+का मान क्या होगा? <strong>समाधान:</strong> - <strong>चरण 1:</strong> सबसे
+पहले <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em></span> की जाँच
+करें। <span
+class="math display"><em>a</em> + <em>b</em> + <em>c</em> = 331 + 336 + (−667)</span></p>
+<p><span
+class="math display"><em>a</em> + <em>b</em> + <em>c</em> = 667 − 667 = 0</span></p>
+<ul>
+<li><strong>चरण 2:</strong> सूत्र का प्रयोग करें। हम जानते हैं कि यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> हो,
+तो <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em> = 0</span>
+होता है। <strong>उत्तर:</strong> <span class="math inline">0</span></li>
+</ul>
+<p><strong>प्रश्न 3:</strong> यदि <span
+class="math inline"><em>x</em>, <em>y</em>, <em>z</em></span> ऐसी
+वास्तविक संख्याएँ हैं जहाँ <span
+class="math inline">(<em>x</em> − 3)<sup>2</sup> + (<em>y</em> − 4)<sup>2</sup> + (<em>z</em> − 5)<sup>2</sup> = 0</span>
+है, तो <span
+class="math inline"><em>x</em> + <em>y</em> + <em>z</em></span> का मान
+ज्ञात कीजिए। <strong>समाधान:</strong> - <strong>चरण 1:</strong> वर्गों का
+योग शून्य तभी हो सकता है जब प्रत्येक पद स्वयं शून्य हो। (यहाँ <span
+class="math inline">(<em>a</em> − <em>b</em>)<sup>2</sup></span> का सूत्र
+खोलने की आवश्यकता नहीं है।) - <strong>चरण 2:</strong> प्रत्येक को शून्य के बराबर
+रखें: <span
+class="math display">(<em>x</em> − 3)<sup>2</sup> = 0 ⟹ <em>x</em> = 3</span></p>
+<p><span
+class="math display">(<em>y</em> − 4)<sup>2</sup> = 0 ⟹ <em>y</em> = 4</span></p>
+<p><span
+class="math display">(<em>z</em> − 5)<sup>2</sup> = 0 ⟹ <em>z</em> = 5</span></p>
+<ul>
+<li><strong>चरण 3:</strong> अतः <span
+class="math inline"><em>x</em> + <em>y</em> + <em>z</em> = 3 + 4 + 5 = 12</span>
+<strong>उत्तर:</strong> <span class="math inline">12</span></li>
+</ul>
+<h2 id="परकष-टपस-exam-tips-7">5. परीक्षा टिप्स (Exam Tips)</h2>
+<ul>
+<li>बीजगणित में डराने वाले बड़े समीकरण या बड़ी संख्याएँ अक्सर किसी सरल सर्वसमिका पर
+आधारित होती हैं।</li>
+<li>वर्गों के योग वाले प्रश्नों में कभी भी होल स्क्वायर (Whole Square) का सूत्र न
+खोलें, सीधा पदों को शून्य के बराबर रखें।</li>
+<li>किसी भी प्रश्न को हल करने से पहले 5 सेकंड उसे ध्यान से देखें, हो सकता है उसमें <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> वाली
+शर्त छिपी हो।</li>
+</ul>
+<h1
+id="भग-14-बजगणत-क-उचच-सतरय-परशन-advanced-algebraic-word-problems-special-identities">भाग
+14: बीजगणित के उच्च स्तरीय प्रश्न (Advanced Algebraic Word Problems &amp;
+Special Identities)</h1>
+<h2
+id="मखय-अवधरणए-एव-उचच-सतरय-समसयए-advanced-word-problems-formulations">1.
+मुख्य अवधारणाएँ एवं उच्च स्तरीय समस्याएँ (Advanced Word Problems &amp;
+Formulations)</h2>
+<ul>
+<li><strong>बीजीय सर्वसमिकाएँ (Algebraic Identities)</strong>: बीजगणित में
+समीकरणों को हल करने के लिए प्राचीन काल से प्रयोग होने वाले महत्वपूर्ण सूत्र:
+<ul>
+<li><span
+class="math inline">(<em>a</em> + <em>b</em>)<sup>2</sup> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + 2<em>a</em><em>b</em></span></li>
+<li><span
+class="math inline">(<em>a</em> − <em>b</em>)<sup>2</sup> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> − 2<em>a</em><em>b</em></span></li>
+<li><span
+class="math inline">(<em>a</em> + <em>b</em>)<sup>3</sup> = <em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + 3<em>a</em><em>b</em>(<em>a</em> + <em>b</em>)</span></li>
+<li><span
+class="math inline">(<em>a</em> − <em>b</em>)<sup>3</sup> = <em>a</em><sup>3</sup> − <em>b</em><sup>3</sup> − 3<em>a</em><em>b</em>(<em>a</em> − <em>b</em>)</span></li>
+</ul></li>
+<li><strong>शून्य योग की अवधारणा (Zero Sum Concept)</strong>: यदि कई
+धनात्मक या पूर्ण वर्ग पदों का योग शून्य है, तो प्रत्येक पद व्यक्तिगत रूप से शून्य होना
+चाहिए।</li>
+</ul>
+<h2 id="गणतय-समकरण-नरमण-equation-construction-techniques">2. गणितीय
+समीकरण निर्माण (Equation Construction Techniques)</h2>
+<ul>
+<li>यदि <span
+class="math inline">(<em>x</em> − <em>a</em>)<sup>2</sup> + (<em>y</em> − <em>b</em>)<sup>2</sup> + (<em>z</em> − <em>c</em>)<sup>2</sup> = 0</span>
+दिया गया है, तो इसे संतुष्ट करने के लिए:
+<ul>
+<li><span
+class="math inline"><em>x</em> − <em>a</em> = 0 ⟹ <em>x</em> = <em>a</em></span></li>
+<li><span
+class="math inline"><em>y</em> − <em>b</em> = 0 ⟹ <em>y</em> = <em>b</em></span></li>
+<li><span
+class="math inline"><em>z</em> − <em>c</em> = 0 ⟹ <em>z</em> = <em>c</em></span></li>
+</ul></li>
+<li>चरों के योग, अंतर, वर्ग तथा गुणनफल पर आधारित समीकरणों का निर्माण, जैसे <span
+class="math inline"><em>x</em> + <em>y</em> = <em>S</em></span>, <span
+class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup> = <em>Q</em> ⟹ (<em>x</em> + <em>y</em>)<sup>2</sup> = <em>x</em><sup>2</sup> + <em>y</em><sup>2</sup> + 2<em>x</em><em>y</em></span>.</li>
+</ul>
+<h2 id="पवन-सर-क-शरट-टरकस-short-tricks-for-options-elimination">3. पवन
+सर की शॉर्ट ट्रिक्स (Short Tricks for Options Elimination)</h2>
+<ul>
+<li><strong>हिट एंड ट्रायल विधि (Hit &amp; Trial Method - अनुमान
+लगाना)</strong>: बीजगणितीय सूत्रों पर आधारित प्रश्नों को हल करने का सबसे आसान और
+तीव्र तरीका।</li>
+<li>यदि चरों के मान छोटे हैं, तो सीधे सूत्र लगाने के बजाय चरों (Variables) के लिए ऐसे
+मान सोचें जो दी गई शर्तों को संतुष्ट करते हों।</li>
+<li>इससे परीक्षा में पेन और पेपर की आवश्यकता नहीं पड़ती और उत्तर तुरंत आ जाता
+है।</li>
+</ul>
+<h2 id="वसतत-उदहरण-एव-चरणबदध-समधन-step-by-step-solved-examples-13">4.
+विस्तृत उदाहरण एवं चरणबद्ध समाधान (Step-by-Step Solved Examples)</h2>
+<p><strong>उदाहरण 1: पूर्ण वर्ग पदों का शून्य योग</strong> -
+<strong>प्रश्न</strong>: यदि <span
+class="math inline">(<em>x</em> − 3)<sup>2</sup> + (<em>y</em> − 4)<sup>2</sup> + (<em>z</em> − 5)<sup>2</sup> = 0</span>
+हो, तो <span
+class="math inline"><em>x</em> + <em>y</em> + <em>z</em></span> का मान
+क्या होगा? - <strong>समाधान</strong>: - समीकरण को शून्य बनाने के लिए प्रत्येक
+वर्ग पद शून्य होना चाहिए। - <span
+class="math inline"><em>x</em> − 3 = 0 ⟹ <em>x</em> = 3</span> - <span
+class="math inline"><em>y</em> − 4 = 0 ⟹ <em>y</em> = 4</span> - <span
+class="math inline"><em>z</em> − 5 = 0 ⟹ <em>z</em> = 5</span> - अतः
+<span
+class="math inline"><em>x</em> + <em>y</em> + <em>z</em> = 3 + 4 + 5 = 12</span>
+- <strong>उत्तर</strong>: <span class="math inline">12</span></p>
+<p><strong>उदाहरण 2: चरों का मान ज्ञात करना</strong> -
+<strong>प्रश्न</strong>: यदि <span
+class="math inline"><em>a</em> + <em>b</em> = 5</span> और <span
+class="math inline"><em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> = 13</span>
+हो, तो <span class="math inline"><em>a</em><em>b</em></span> का मान ज्ञात
+कीजिए। - <strong>शॉर्ट ट्रिक (Hit &amp; Trial) से समाधान</strong>: - ऐसी दो
+संख्याएँ सोचें जिनका योग 5 हो: 1+4, 2+3। - इनके वर्गों का योग जाँचें: - <span
+class="math inline">1<sup>2</sup> + 4<sup>2</sup> = 1 + 16 = 17 ≠ 13</span>
+- <span
+class="math inline">2<sup>2</sup> + 3<sup>2</sup> = 4 + 9 = 13</span>
+(संतुष्ट) - अतः <span class="math inline"><em>a</em> = 2</span> तथा <span
+class="math inline"><em>b</em> = 3</span> (या <span
+class="math inline"><em>a</em> = 3, <em>b</em> = 2</span>). - इसलिए,
+<span class="math inline"><em>a</em><em>b</em> = 2 × 3 = 6</span>. -
+<strong>सूत्र (Formula) से समाधान</strong>: - <span
+class="math inline">(<em>a</em> + <em>b</em>)<sup>2</sup> = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + 2<em>a</em><em>b</em></span>
+- मान रखने पर: <span
+class="math inline">(5)<sup>2</sup> = 13 + 2<em>a</em><em>b</em></span>
+- <span
+class="math inline">25 = 13 + 2<em>a</em><em>b</em> ⟹ 2<em>a</em><em>b</em> = 25 − 13 = 12</span>
+- <span class="math inline">$ab = \frac{12}{2} = 6$</span>. -
+<strong>उत्तर</strong>: <span class="math inline">6</span></p>
+<h2 id="परकष-टपस-exam-tips-8">5. परीक्षा टिप्स (Exam Tips)</h2>
+<ul>
+<li>परीक्षा में सूत्रों (Formulas) में उलझने से बचें। जहां भी संभव हो, <strong>हिट एंड
+ट्रायल (Hit and Trial)</strong> का प्रयोग करें।</li>
+<li>विशेषकर यूपीटेट (UPTET) और सुपरटेट (SUPERTET) जैसी परीक्षाओं में बीजगणित के
+अधिकांश प्रश्न सीधे अनुमान से हल किए जा सकते हैं।</li>
+<li>समय बचाने के लिए वर्गों (Squares) और घनों (Cubes) के मान कंठस्थ रखें, जिससे
+संख्याओं का अनुमान लगाना आसान हो जाए।</li>
+</ul>
+<h1
+id="भग-15-समपरण-बजगणत-मह-रवजन-master-revision-cheat-sheet-concluding-exam-strategy">भाग
+15: सम्पूर्ण बीजगणित महा-रिवीजन (Master Revision, Cheat Sheet &amp;
+Concluding Exam Strategy)</h1>
+<h2
+id="मखय-अवधरणए-एव-समपरण-वयखयन-नषकरष-master-summary-final-concepts">1.
+मुख्य अवधारणाएँ एवं सम्पूर्ण व्याख्यान निष्कर्ष (Master Summary &amp; Final
+Concepts)</h2>
+<ul>
+<li>पवन सर के इस महा-रिवीजन सत्र में बीजगणित के 80% से 90% महत्वपूर्ण हिस्से को कवर
+किया गया है। यह लेक्चर एक मास्टर क्लास है जो बीजगणित के डर को पूरी तरह से समाप्त
+करता है।</li>
+<li><strong>बीजगणित के 10 प्रमुख पैटर्न का एक नजर में संपूर्ण सारांश:</strong>
+<ol type="1">
+<li><strong>घातांक और करणी के नियम</strong> (Laws of Indices and
+Surds)</li>
+<li><strong>मूल बीजगणितीय सर्वसमिकाएँ</strong> (Basic Algebraic
+Identities)</li>
+<li><strong><span class="math inline">$x + \frac{1}{x}$</span> आधारित
+विशेष प्रतिरूप</strong> (Special Patterns based on <span
+class="math inline"><em>x</em> + 1/<em>x</em></span>)</li>
+<li><strong>द्विघात समीकरण और उनके मूल</strong> (Quadratic Equations and
+Roots)</li>
+<li><strong>शेषफल और गुणनखंड प्रमेय</strong> (Remainder and Factor
+Theorem)</li>
+<li><strong>रैखिक समीकरण प्रणालियाँ</strong> (Systems of Linear
+Equations)</li>
+<li><strong>बहुपदों का सरलीकरण</strong> (Simplification of
+Polynomials)</li>
+<li><strong>सममित व्यंजक</strong> (Symmetric Expressions)</li>
+<li><strong>चक्रीय व्यंजक</strong> (Cyclic Expressions)</li>
+<li><strong>मूल्य पुटिंग विधि</strong> (Value Substitution Method)</li>
+</ol></li>
+</ul>
+<h2 id="सपरण-सतर-चट-शट-complete-master-formula-cheat-sheet">2. संपूर्ण सूत्र
+चीट शीट (Complete Master Formula Cheat Sheet)</h2>
+<p>यहाँ बीजगणित के सभी मास्टर सूत्रों का संग्रह है, जो प्रतियोगी परीक्षाओं में 100%
+सटीकता और गति सुनिश्चित करते हैं:</p>
+<ul>
+<li><p><strong><span class="math inline">$x + \frac{1}{x}$</span> विशेष
+स्थितियां:</strong></p>
+<ul>
+<li>यदि <span class="math inline">$x + \frac{1}{x} = 2 \implies x =
+1$</span></li>
+<li>यदि <span class="math inline">$x + \frac{1}{x} = -2 \implies x =
+-1$</span></li>
+<li>यदि <span class="math inline">$x + \frac{1}{x} = 1 \implies x^3 =
+-1$</span></li>
+<li>यदि <span class="math inline">$x + \frac{1}{x} = -1 \implies x^3 =
+1$</span></li>
+<li>यदि <span class="math inline">$x + \frac{1}{x} = \sqrt{3}$</span> या
+<span class="math inline">$x^2 + \frac{1}{x^2} = 1 \implies x^6 =
+-1$</span></li>
+</ul></li>
+<li><p><strong>द्विघात विविक्तकर (Quadratic Discriminants):</strong>
+समीकरण <span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em> = 0</span>
+के लिए, विविक्तकर <span
+class="math inline"><em>Δ</em> = <em>b</em><sup>2</sup> − 4<em>a</em><em>c</em></span></p>
+<ul>
+<li><span class="math inline"><em>Δ</em> &gt; 0</span>: मूल वास्तविक और
+भिन्न होंगे।</li>
+<li><span class="math inline"><em>Δ</em> = 0</span>: मूल वास्तविक और समान
+होंगे।</li>
+<li><span class="math inline"><em>Δ</em> &lt; 0</span>: मूल काल्पनिक
+होंगे।</li>
+</ul></li>
+<li><p><strong>शेषफल प्रमेय (Remainder Theorem):</strong> यदि किसी बहुपद
+<span class="math inline"><em>P</em>(<em>x</em>)</span> को <span
+class="math inline">(<em>x</em> − <em>a</em>)</span> से विभाजित किया जाता
+है, तो शेषफल <span class="math inline"><em>P</em>(<em>a</em>)</span> होता
+है।</p></li>
+<li><p><strong>रैखिक समीकरण प्रणालियों की संगति (Linear Systems
+Consistency):</strong> समीकरण <span
+class="math inline"><em>a</em><sub>1</sub><em>x</em> + <em>b</em><sub>1</sub><em>y</em> = <em>c</em><sub>1</sub></span>
+और <span
+class="math inline"><em>a</em><sub>2</sub><em>x</em> + <em>b</em><sub>2</sub><em>y</em> = <em>c</em><sub>2</sub></span>
+के लिए:</p>
+<ul>
+<li>अद्वितीय हल: <span class="math inline">$\frac{a_1}{a_2} \neq
+\frac{b_1}{b_2}$</span></li>
+<li>कोई हल नहीं: <span class="math inline">$\frac{a_1}{a_2} =
+\frac{b_1}{b_2} \neq \frac{c_1}{c_2}$</span></li>
+<li>अनंत हल: <span class="math inline">$\frac{a_1}{a_2} = \frac{b_1}{b_2}
+= \frac{c_1}{c_2}$</span></li>
+</ul></li>
+<li><p><strong>सर्वाधिक महत्वपूर्ण सर्वसमिका:</strong> <span
+class="math display"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> − 3<em>a</em><em>b</em><em>c</em> = (<em>a</em> + <em>b</em> + <em>c</em>)(<em>a</em><sup>2</sup> + <em>b</em><sup>2</sup> + <em>c</em><sup>2</sup> − <em>a</em><em>b</em> − <em>b</em><em>c</em> − <em>c</em><em>a</em>)</span></p>
+<p><span class="math display">$$a^3 + b^3 + c^3 - 3abc =
+\frac{1}{2}(a+b+c)\left[(a-b)^2 + (b-c)^2 + (c-a)^2\right]$$</span></p>
+<p><em>विशेष स्थिति:</em> यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> है,
+तो <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span>
+होता है।</p></li>
+</ul>
+<h2
+id="पवन-सर-क-अतम-गर-मतर-टरकस-pawan-sirs-ultimate-exam-tricks-time-management">3.
+पवन सर की अंतिम गुरु-मंत्र ट्रिक्स (Pawan Sir’s Ultimate Exam Tricks &amp; Time
+Management)</h2>
+<ul>
+<li><strong>परीक्षा में 100% सटीक प्रश्न हल करने के नियम:</strong>
+<ul>
+<li><strong>भटकाव (Distraction) से बचें:</strong> दस जगह समय बर्बाद करने से
+बचें। एक विश्वसनीय प्लेटफॉर्म (जैसे चंद्रा इंस्टिट्यूट) पर टिके रहें।</li>
+<li><strong>पैटर्न की पहचान:</strong> परीक्षा में प्रश्नों को बेसिक से हल करने के
+बजाय चीट शीट के सीधे पैटर्न का उपयोग करें। इससे आपका समय बचेगा।</li>
+<li><strong>सकारात्मक मानसिकता:</strong> खुद पर और अपने मेंटर्स पर पूरा भरोसा
+रखें। अच्छे विचार रखें और दूसरों को भी सही सलाह दें, इससे आपका भी कल्याण होगा।</li>
+<li><strong>समय प्रबंधन:</strong> बिना सोचे-समझे किसी भी लाइव क्लास में समय नष्ट
+न करें। केवल अपने सिलेबस और सटीक कंटेंट पर फोकस करें।</li>
+</ul></li>
+</ul>
+<h2 id="वसतत-अतम-अभयस-परशन-final-practice-problems-solutions">4. विस्तृत
+अंतिम अभ्यास प्रश्न (Final Practice Problems &amp; Solutions)</h2>
+<ul>
+<li><p><strong>प्रश्न 1:</strong> यदि <span class="math inline">$x +
+\frac{1}{x} = 1$</span> है, तो <span
+class="math inline"><em>x</em><sup>18</sup> + <em>x</em><sup>12</sup> + <em>x</em><sup>6</sup> + 1</span>
+का मान क्या होगा? <strong>हल:</strong> चूँकि हम जानते हैं कि <span
+class="math inline">$x + \frac{1}{x} = 1 \implies x^3 = -1$</span> दिए
+गए व्यंजक को <span class="math inline"><em>x</em><sup>3</sup></span> के रूप
+में लिखें: <span
+class="math display"> = (<em>x</em><sup>3</sup>)<sup>6</sup> + (<em>x</em><sup>3</sup>)<sup>4</sup> + (<em>x</em><sup>3</sup>)<sup>2</sup> + 1</span></p>
+<p><span
+class="math display"> = (−1)<sup>6</sup> + (−1)<sup>4</sup> + (−1)<sup>2</sup> + 1</span></p>
+<p><span class="math display"> = 1 + 1 + 1 + 1 = 4</span></p>
+<p><strong>उत्तर: 4</strong></p></li>
+<li><p><strong>प्रश्न 2:</strong> यदि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> है,
+तो <span class="math inline">$\frac{a^2}{bc} + \frac{b^2}{ca} +
+\frac{c^2}{ab}$</span> का मान ज्ञात कीजिए। <strong>हल:</strong> व्यंजक का
+ल.स.प. (LCM) <span
+class="math inline"><em>a</em><em>b</em><em>c</em></span> लेने पर: <span
+class="math display">$$ = \frac{a^3 + b^3 + c^3}{abc} $$</span></p>
+<p>चूँकि <span
+class="math inline"><em>a</em> + <em>b</em> + <em>c</em> = 0</span> होने
+पर <span
+class="math inline"><em>a</em><sup>3</sup> + <em>b</em><sup>3</sup> + <em>c</em><sup>3</sup> = 3<em>a</em><em>b</em><em>c</em></span>
+होता है। <span class="math display">$$ = \frac{3abc}{abc} = 3
+$$</span></p>
+<p><strong>उत्तर: 3</strong></p></li>
+</ul>
+<h2
+id="परकष-रणनत-final-exam-strategy-for-super-tet-competitive-exams">5.
+परीक्षा रणनीति (Final Exam Strategy for Super TET / Competitive
+Exams)</h2>
+<ul>
+<li><strong>सटीक मंच का चयन:</strong> “चंद्रा टेस्ट सीरीज” ऐप को अपनाएं और
+पुराने/गलत बैचेस से बचें। सही समय पर सही जगह जुड़ना सफलता की पहली सीढ़ी है।</li>
+<li><strong>रिवीजन ही सफलता की कुंजी है:</strong> जो 80-90% कोर्स इस
+महा-रिवीजन में कवर हुआ है, उसे बार-बार दोहराएं। गणित में सफलता केवल अभ्यास और पैटर्न
+पहचानने की गति से मिलती है।</li>
+<li><strong>आत्मविश्वास:</strong> खुद पर यकीन रखें। यदि आपने इन कक्षाओं को
+गंभीरता से लिया है, तो आपका सिलेक्शन लगभग तय है।</li>
+</ul>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Process GitHub style blockquotes
+    document.querySelectorAll("blockquote").forEach(function(bq) {
+        var text = bq.innerText.trim();
+        if (text.startsWith("[!IMPORTANT]")) {
+            bq.classList.add("important");
+            bq.innerHTML = bq.innerHTML.replace("[!IMPORTANT]", "<strong>IMPORTANT</strong>");
+        } else if (text.startsWith("[!NOTE]")) {
+            bq.classList.add("note");
+            bq.innerHTML = bq.innerHTML.replace("[!NOTE]", "<strong>NOTE</strong>");
+        } else if (text.startsWith("[!TIP]")) {
+            bq.classList.add("tip");
+            bq.innerHTML = bq.innerHTML.replace("[!TIP]", "<strong>TIP</strong>");
+        }
+    });
+
+    // 2. Initialize Mermaid
+    mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+
+    // 3. Render KaTeX Math
+    if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ],
+            throwOnError: false
+        });
+    }
+});
+</script>
+</body>
+</html>

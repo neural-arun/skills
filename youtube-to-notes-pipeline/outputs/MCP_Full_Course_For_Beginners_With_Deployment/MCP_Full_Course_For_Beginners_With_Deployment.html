@@ -1,0 +1,3156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Study Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 15mm 20mm 15mm;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 10pt;
+      line-height: 1.55;
+      color: #1e293b;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Title Block */
+    h1 {
+      font-size: 18pt;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.4px;
+      margin-top: 0;
+      margin-bottom: 10pt;
+      padding-bottom: 6pt;
+      border-bottom: 2.5px solid #2563eb;
+    }
+
+    /* Subsections */
+    h2 {
+      font-size: 13pt;
+      font-weight: 600;
+      color: #0f172a;
+      margin-top: 18pt;
+      margin-bottom: 8pt;
+      padding-bottom: 4pt;
+      border-bottom: 1px solid #e2e8f0;
+      break-after: avoid !important;
+      page-break-after: avoid !important;
+    }
+
+    h3 {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 12pt;
+      margin-bottom: 5pt;
+      break-after: avoid !important;
+      page-break-after: avoid !important;
+    }
+
+    p, li {
+      color: #334155;
+    }
+
+    blockquote {
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 0 6px 6px 0;
+      margin: 10pt 0;
+      padding: 8pt 12pt;
+      font-size: 9.5pt;
+      color: #475569;
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+
+    blockquote p {
+      margin: 0;
+    }
+
+    /* Code & Syntax Highlighting */
+    code {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 8.5pt;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background-color: #0f172a !important;
+      border-radius: 6px;
+      padding: 10pt 12pt;
+      margin: 10pt 0;
+      overflow-x: auto;
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+
+    pre code {
+      background-color: transparent !important;
+      color: #f8fafc !important;
+      font-size: 8pt;
+      line-height: 1.45;
+      padding: 0;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12pt 0;
+      font-size: 9pt;
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 600;
+      text-align: left;
+      padding: 6pt 8pt;
+      border: 1px solid #cbd5e1;
+    }
+
+    td {
+      padding: 6pt 8pt;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    /* Diagrams - Page break protected */
+    .mermaid {
+      text-align: center;
+      margin: 14pt 0;
+      background: #ffffff;
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+      display: block;
+    }
+
+    .mermaid svg {
+      max-width: 100% !important;
+      max-height: 420pt !important;
+      height: auto !important;
+      margin: 0 auto;
+    }
+
+    ul, ol {
+      padding-left: 16pt;
+      margin-top: 4pt;
+      margin-bottom: 8pt;
+    }
+
+    li {
+      margin-bottom: 3pt;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+      }
+      h1, h2, h3 {
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+      }
+      .mermaid, pre, blockquote, table, tr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1 id="mcp-full-course-for-beginners-with-deployment-complete-study-notes">MCP Full Course For Beginners (With Deployment) - Complete Study Notes</h1>
+<blockquote>
+<p><strong>Source:</strong> https://youtu.be/io02ZM0ADqM | <strong>Duration:</strong> 3h 46m (13566s) | <strong>Chapters:</strong> 17 (chapter-based split) | <strong>Video Title:</strong> MCP Full Course For Beginners (With Deployment)
+<strong>Prepared for:</strong> Arun Yadav (neural-arun) - AI Systems Engineer (Healthcare &amp; Medical Education) | Stack: RAG Pipelines, Agentic AI, MCP, FastAPI, LangChain, LangGraph, ChromaDB, Pinecone, Playwright</p>
+</blockquote>
+<h2 id="executive-roadmap">Executive Roadmap</h2>
+<p>This 17-chapter masterclass takes you from zero to production MCP (Model Context Protocol) - the open standard by Anthropic (<code>modelcontextprotocol.io</code>) that replaces brittle per-API integrations with a unified tool platform for agentic AI. The journey is deliberately layered: <strong>why</strong> MCP is needed, <strong>how</strong> it works (paradigm, architecture, transports), <strong>building</strong> both STDIO and Streamable HTTP servers and clients, <strong>leveraging</strong> the ecosystem (LangChain adapters, Inspector, community/hosted servers), and <strong>shipping</strong> via PyPI Hub/Gateway and Docker to production.</p>
+<p><strong>How to use these notes:</strong> Each chapter is self-contained with time codes, yet sequentially builds. If you are prototyping locally, prioritize 01-11. If you are shipping, focus on 09-17. Healthcare/MedEd mappings are woven into every chapter to show how a clinical guideline RAG, vector store (ChromaDB/Pinecone), or EHR tool becomes a governed MCP tool behind FastAPI/NGINX.</p>
+<h2 id="master-table-of-contents">Master Table of Contents</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chapter</th>
+<th>Time</th>
+<th>Duration</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Introduction</td>
+<td>00:00:00 - 00:02:00</td>
+<td>2m 00s</td>
+<td>Course scope, pedagogy, production promise</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Pre-Req and Agenda</td>
+<td>00:02:00 - 00:06:00</td>
+<td>4m 00s</td>
+<td>Prerequisites, 5-phase agenda</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Why do we need MCPs?</td>
+<td>00:06:00 - 00:18:32</td>
+<td>12m 32s</td>
+<td>3 pain points of pre-MCP integrations</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Paradigm of MCP</td>
+<td>00:18:32 - 00:32:33</td>
+<td>14m 01s</td>
+<td>MCP Server as wall, USB-C JSON config</td>
+</tr>
+<tr>
+<td>05</td>
+<td>MCP Architecture</td>
+<td>00:32:33 - 00:41:20</td>
+<td>8m 47s</td>
+<td>Host/Client/Server, rename resilience</td>
+</tr>
+<tr>
+<td>06</td>
+<td>STDIO vs Streamable HTTP</td>
+<td>00:41:20 - 00:49:13</td>
+<td>7m 53s</td>
+<td>Transports + Data vs Transport layers</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Create STDIO MCP Server</td>
+<td>00:49:13 - 01:01:00</td>
+<td>11m 47s</td>
+<td>uv, FastMCP, @mcp.tool</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Create Python MCP Client</td>
+<td>01:01:00 - 01:21:38</td>
+<td>20m 38s</td>
+<td>Raw async client, list_tools, call_tool</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Integrate MCP with Langchain</td>
+<td>01:21:38 - 01:34:04</td>
+<td>12m 26s</td>
+<td>MultiServerMCPClient, tool conversion</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Create Streamable HTTP Server</td>
+<td>01:34:04 - 01:42:44</td>
+<td>8m 40s</td>
+<td>host 0.0.0.0:8050, zero-code switch</td>
+</tr>
+<tr>
+<td>11</td>
+<td>MCP Inspector</td>
+<td>01:42:44 - 01:55:07</td>
+<td>12m 23s</td>
+<td>npx inspector, debug flow</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Langchain Client For HTTP</td>
+<td>01:55:07 - 02:08:17</td>
+<td>13m 10s</td>
+<td>Mixed stdio+http, USB-C composability</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Using Community MCPs</td>
+<td>02:08:17 - 02:23:08</td>
+<td>14m 51s</td>
+<td>DuckDuckGo via uvx, validation</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Using 3rd Party Hosted MCPs</td>
+<td>02:23:08 - 02:36:51</td>
+<td>13m 43s</td>
+<td>Client as connection, vetting</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Deploy MCP to PyPI</td>
+<td>02:36:51 - 03:19:15</td>
+<td>42m 24s</td>
+<td>pyproject.toml, src layout, uv publish</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Creating MCP Gateway</td>
+<td>03:19:15 - 03:31:12</td>
+<td>11m 57s</td>
+<td>Hub/proxy, mount, single URL</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Deploy MCP Server with Docker</td>
+<td>03:31:12 - 03:46:06</td>
+<td>14m 54s</td>
+<td>UV-aware Dockerfile, Render</td>
+</tr>
+</tbody>
+</table>
+<h3 id="learning-path">Learning Path</h3>
+<div class="mermaid">
+flowchart LR
+    A[01-03 Fundamentals] --> B[04-06 Architecture & Transports]
+    B --> C[07-11 Build Local Stack]
+    C --> D[12-14 Ecosystem & HTTP]
+    D --> E[15-17 Production]
+    E --> F[Deployed Gateway + Docker]
+    style A fill:#e3f2fd,stroke:#1565c0
+    style E fill:#e8f5e9,stroke:#2e7d32
+    style F fill:#fff3e0,stroke:#ef6c00
+
+</div>
+<hr />
+<h2 id="chapter-01-introduction-000000-000200">Chapter 01: Introduction (00:00:00 - 00:02:00)</h2>
+<p><strong>Scope:</strong> 4-hour end-to-end MCP (Model Context Protocol) masterclass - zero to production. Structured in 17 chapters for step-by-step progression from fundamentals to deployment.</p>
+<h3 id="what-this-course-covers">What This Course Covers</h3>
+<ul>
+<li><strong>Problems solved by MCP servers</strong> - why MCP is essential for modern AI developer workflows</li>
+<li><strong>MCP layers and MCP types</strong> - conceptual architecture and classification of MCP servers</li>
+<li><strong>Transport comparison: stdio vs Streamable HTTP</strong> - when to use each for local vs remote integration</li>
+<li><strong>Building MCP servers from scratch</strong> - hands-on authoring with code labs</li>
+<li><strong>Integrating MCP servers in code</strong> - direct programmatic consumption in apps and agents</li>
+<li><strong>MCP Inspector for debugging</strong> - tooling to inspect, test, and trace server behavior</li>
+<li><strong>UVX and NPX-based MCP servers</strong> - Python (UVX) and Node (NPX) distribution and execution models</li>
+<li><strong>Third-party MCP service providers</strong> - leveraging existing ecosystem servers</li>
+<li><strong>MCP Hub</strong> - building a hub to host and multiplex multiple MCP servers behind a unified interface</li>
+<li><strong>Production deployment</strong> - deploying MCP servers so they are publicly consumable</li>
+<li><strong>Pedagogy:</strong> hand-drawn doodles for complex concepts + hands-on labs with extensive code; all notes and code examples provided</li>
+</ul>
+<h3 id="why-mcp-matters-core-value-proposition">Why MCP Matters - Core Value Proposition</h3>
+<p>MCP standardizes how LLMs and AI agents access external context, tools, and data sources. Instead of bespoke integrations per tool, MCP provides a single open protocol for:</p>
+<ul>
+<li><strong>Tool exposure</strong> -&gt; models discover and invoke tools uniformly</li>
+<li><strong>Context augmentation</strong> -&gt; inject domain-specific knowledge at inference time</li>
+<li><strong>Composability</strong> -&gt; mix and match servers without rewriting agent logic</li>
+</ul>
+<blockquote>
+<p><strong>Context for AI Systems Engineering:</strong> For Arun's stack, this replaces ad-hoc FastAPI endpoints and LangChain tool wrappers with a protocol-native layer. An agent built with LangGraph can call a ChromaDB/Pinecone vector-search MCP server, a clinical knowledge-base MCP server, and a Playwright automation MCP server through the same client interface - critical for healthcare systems where auditability and governance across data sources is non-negotiable.</p>
+</blockquote>
+<h3 id="course-architecture-preview">Course Architecture Preview</h3>
+<div class="mermaid">
+flowchart LR
+    A[Chapter 01-03: Fundamentals<br/>Problems, Layers, Types] --> B[Chapter 04-06: Transports<br/>stdio vs Streamable HTTP]
+    B --> C[Chapter 07-11: Build & Integrate<br/>Custom Server + UVX/NPX + Inspector]
+    C --> D[Chapter 12-14: Hub & Ecosystem<br/>MCP Hub + 3rd Party Providers]
+    D --> E[Chapter 15-17: Production<br/>Deploy + Secure + Scale]
+    E --> F[Pro: Production MCP Platform]
+
+    style A fill:#e3f2fd,stroke:#1565c0
+    style E fill:#e8f5e9,stroke:#2e7d32
+    style F fill:#fff3e0,stroke:#ef6c00
+
+</div>
+<h3 id="how-the-course-is-structured-for-builders">How the Course is Structured for Builders</h3>
+<ul>
+<li><strong>Chapter-based progression:</strong> Each chapter builds on the previous - no jumping required. Designed for RAG and Agentic AI engineers who need to go from theory to hosted infrastructure.</li>
+<li><strong>Visual-first explanations:</strong> Doodle-driven breakdowns of protocol layers, request lifecycles, and transport negotiation - particularly useful for reasoning about stateful vs stateless server design.</li>
+<li><strong>Code-heavy labs:</strong> You will write servers, clients, and hub logic yourself rather than just configuring existing ones. Mirrors real FastAPI + LangChain/LangGraph development workflow.</li>
+<li><strong>Provided artifacts:</strong> Notes and code samples accompany the video for reproducibility and extension into your own projects.</li>
+</ul>
+<h3 id="relevance-to-healthcare-and-medical-education-systems">Relevance to Healthcare and Medical Education Systems</h3>
+<ul>
+<li><strong>Clinical data governance:</strong> MCP's explicit tool contracts make it easier to enforce scoped access to EHR-derived or curriculum data - a server exposes only approved operations rather than raw DB access.</li>
+<li><strong>RAG pipeline integration:</strong> A vector-store MCP server (ChromaDB for local prototype, Pinecone for managed scale) can be swapped without changing agent code, enabling A/B evaluation of retrieval quality for medical Q&amp;A.</li>
+<li><strong>Agentic workflows:</strong> LangGraph agents orchestrating multi-step clinical reasoning (retrieve guidelines -&gt; query formulary -&gt; draft note) benefit from MCP's standardized tool discovery vs custom glue code.</li>
+<li><strong>Deployment readiness:</strong> The course's end goal - a deployed MCP Hub - directly maps to hosting internal MCP servers behind a FastAPI gateway with auth, logging, and NGINX reverse proxy, the pattern Arun uses for production healthcare AI services.</li>
+</ul>
+<h3 id="key-takeaways">Key Takeaways</h3>
+<ul>
+<li>This is a <strong>beginner-to-pro</strong> track: assumes no prior MCP experience, ends with a deployable MCP Hub in production.</li>
+<li>Expect deep coverage of <strong>both transports</strong> (stdio for local dev, Streamable HTTP for remote/deployment) and <strong>both ecosystems</strong> (Python/UVX and Node/NPX).</li>
+<li>The course emphasizes <strong>building and shipping</strong>, not just consuming - you will author, debug with Inspector, aggregate in a hub, and deploy.</li>
+<li>For AI Systems Engineers, MCP is the abstraction that turns fragmented tool integrations into a reusable, governed platform layer.</li>
+</ul>
+<h3 id="preview-minimal-mcp-server-shape-python">Preview: Minimal MCP Server Shape (Python)</h3>
+<blockquote>
+<p>Establishes the mental model for upcoming hands-on chapters - a server declares tools/resources that any MCP client can discover.</p>
+</blockquote>
+<pre><code class="language-python"># Conceptual preview - full implementation in later chapters
+# Python MCP server (run via uvx) - analogous to a FastAPI service
+# but speaking MCP protocol instead of REST
+
+from mcp.server.fastmcp import FastMCP
+
+mcp = FastMCP(&quot;healthcare-knowledge-server&quot;)
+
+@mcp.tool()
+def search_guidelines(query: str) -&gt; str:
+    &quot;&quot;&quot;Vector search over clinical guidelines (ChromaDB/Pinecone backend).&quot;&quot;&quot;
+    # In production: query ChromaDB/Pinecone, return top-k chunks
+    return f&quot;Results for: {query}&quot;
+
+@mcp.resource(&quot;guidelines://cardiology/acs&quot;)
+def acs_guideline() -&gt; str:
+    &quot;&quot;&quot;Expose curated guideline as MCP resource.&quot;&quot;&quot;
+    return &quot;ACS management protocol...&quot;
+
+if __name__ == &quot;__main__&quot;:
+    mcp.run()  # stdio by default; streamable HTTP for deployment
+</code></pre>
+<ul>
+<li><strong>Mapping to Arun's stack:</strong> <code>search_guidelines</code> mirrors a RAG retriever tool currently exposed via FastAPI - MCP wraps it as a discoverable agent tool. Transport switch (<code>stdio</code> -&gt; <code>Streamable HTTP</code>) is the deployment pivot covered in the production chapters.</li>
+</ul>
+<blockquote>
+<p><strong>Bridge from Chapter 01:</strong> With the full scope mapped, we now check the minimal prerequisites and lay out the 5-phase agenda that structures the next 15 chapters.</p>
+</blockquote>
+<h2 id="chapter-02-pre-req-and-agenda-000200-000600">Chapter 02: Pre-Req and Agenda (00:02:00 - 00:06:00)</h2>
+<h2 id="overview">Overview</h2>
+<ul>
+<li>Masterclass is end-to-end: from fundamentals to production-ready MCP deployment</li>
+<li>Goal is complete coverage so learner needs no external resources</li>
+<li>Positioned as beginner-friendly despite MCP being a new concept (emerged late last year)</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><strong>Only basic Python required</strong> - ability to write functions is sufficient</li>
+<li>No prior AI knowledge needed; MCP concepts taught from scratch</li>
+<li>Prior AI experience is a bonus but not a blocker</li>
+<li>For an AI Systems Engineer, this low barrier maps directly to onboarding clinical or ed-tech teams: a healthcare developer comfortable with Python can start building MCP tools for RAG pipelines or agent workflows without deep LLM theory</li>
+</ul>
+<pre><code class="language-python"># Prerequisite check - if you can write this, you are ready
+def get_clinical_guideline(topic: str) -&gt; str:
+    &quot;&quot;&quot;Example tool function - core skill needed for MCP server development&quot;&quot;&quot;
+    guidelines = {&quot;hypertension&quot;: &quot;Check BP protocol v2.1&quot;}
+    return guidelines.get(topic, &quot;Topic not found&quot;)
+
+# No AI expertise needed - MCP wraps this function as a tool for agents
+</code></pre>
+<h2 id="detailed-agenda">Detailed Agenda</h2>
+<h3 id="phase-1-fundamentals-foundation-building">Phase 1: Fundamentals (Foundation Building)</h3>
+<ul>
+<li><strong>What is MCP and Why MCP</strong> - motivation, advantages over pre-MCP approaches where integrations were already working but fragmented</li>
+<li><strong>MCP Layers</strong> - architectural layers underpinning the protocol</li>
+<li><strong>MCP Types</strong> - taxonomy of MCP variants</li>
+<li>Relevance for healthcare AI: understanding layers/types is critical for clinical governance - choosing the right abstraction for auditability when agents access EHR or medical knowledge bases</li>
+</ul>
+<h3 id="phase-2-transport-layers">Phase 2: Transport Layers</h3>
+<ul>
+<li><strong>STDIO (Standard Input/Output) Transport</strong> - local process-based communication, foundational pattern</li>
+<li><strong>Streamable HTTP Transport</strong> - newer, now-recommended approach for remote/hosted servers</li>
+<li>Maps to FastAPI deployment thinking: STDIO is like local dev execution, Streamable HTTP is production API exposure - essential for scaling a medical-education agent from local prototype to hosted service</li>
+</ul>
+<h3 id="phase-3-build-and-integrate">Phase 3: Build and Integrate</h3>
+<ul>
+<li><strong>Build Your Own MCP Server (Both Types)</strong> - hands-on creation of STDIO and Streamable HTTP servers</li>
+<li><strong>Integrate MCP Servers Within Your Code</strong> - client-side consumption in agentic workflows</li>
+<li><strong>Fetch Hosted MCP Servers via UVX and NPX</strong> - leveraging community/hosted servers, described as the heart of MCP ecosystem</li>
+<li>Direct parallels: building custom MCP servers mirrors wrapping ChromaDB/Pinecone retrievers or LangChain/LangGraph tools as standardized endpoints; UVX/NPX consumption is analogous to pulling a hosted vector-search or Playwright automation server into a clinical agent without rebuilding</li>
+</ul>
+<pre><code class="language-python"># Conceptual preview - agenda leads to this pattern
+# STDIO for local, Streamable HTTP for hosted
+# FastAPI + MCP alignment for healthcare deployment
+
+from fastapi import FastAPI
+# Later in course: MCP server exposes tools like this via both transports
+# Client fetches via stdio (local) or http (hosted/uvx/npx)
+# mcp_client = MCPClient(transport=&quot;streamable_http&quot;, url=&quot;https://mcp.hospital.ai/mcp&quot;)
+</code></pre>
+<h2 id="agenda-roadmap">Agenda Roadmap</h2>
+<div class="mermaid">
+flowchart TD
+    A[Prerequisites: Basic Python] --> B[Fundamentals]
+    B --> B1[What is MCP & Why]
+    B --> B2[MCP Layers]
+    B --> B3[MCP Types]
+    B1 --> C[Transport Layer]
+    C --> C1[STDIO]
+    C --> C2[Streamable HTTP - Recommended]
+    C2 --> D[Build Phase]
+    D --> D1[Build STDIO Server]
+    D --> D2[Build HTTP Server]
+    D --> E[Integration Phase]
+    E --> E1[Integrate in Code]
+    E --> E2[Fetch Hosted via UVX/NPX]
+    E2 --> F[Production Ready]
+
+</div>
+<h2 id="key-takeaways_1">Key Takeaways</h2>
+<ul>
+<li>Entry threshold is intentionally low - Python functions are the only hard requirement</li>
+<li>Agenda is sequenced: theory (what/why/layers/types) -&gt; transports (STDIO then HTTP) -&gt; build -&gt; integrate -&gt; consume ecosystem</li>
+<li>Streamable HTTP is the forward-looking transport to prioritize for deployed healthcare RAG agents</li>
+<li>UVX/NPX ecosystem access is central - enables reuse of existing MCP servers rather than rebuilding clinical tooling from scratch</li>
+<li>Production-readiness is the end goal, not just demos - aligns with clinical governance needs for reliable, deployable AI systems<blockquote>
+<p><strong>Bridge from Chapter 02:</strong> With prerequisites and roadmap clear, we establish why MCP exists at all - the 3 brittleness axes of pre-MCP integrations that make agentic scale untenable.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-03-why-do-we-need-mcps-000600-001832-part-03-of-17">Chapter 03: Why Do We Need MCPs? (00:06:00 - 00:18:32) | Part 03 of 17</h2>
+<h2 id="overview_1">Overview</h2>
+<ul>
+<li>MCP is very new (introduced by Anthropic, originally an internal solution, then renamed and widely adopted) - to understand its value you must understand what came before</li>
+<li>Before MCP, every service integration was bespoke custom code; MCP standardizes this</li>
+<li>Core question this chapter answers: what was the developer experience before MCP and why is it unsustainable, especially in the agentic AI era</li>
+<li>For healthcare AI systems, this maps directly to the fragility of point-to-point integrations with EHRs, vector DBs, and clinical tools</li>
+</ul>
+<h2 id="before-mcp-the-custom-integration-model">Before MCP: The Custom Integration Model</h2>
+<ul>
+<li><strong>Actor:</strong> Developer (named Rahul in lecture) building a solution that consumes external services</li>
+<li><strong>Services:</strong> Any hosted provider - database, data lake, search API, SaaS product. Lecture uses Oracle DB as canonical example, then Azure Synapse Analytics as second service</li>
+<li><strong>Interaction pattern:</strong> Service exposes REST API endpoints; developer talks to service only via those APIs</li>
+<li>Example Oracle endpoints: <code>oracle/v1/create</code>, <code>oracle/v1/query</code>, <code>oracle/v1/update</code>, <code>oracle/v1/delete</code></li>
+<li>Example Synapse endpoints: same CRUD-style set but entirely different host, auth, and payload contracts</li>
+<li><strong>Developer-side logic:</strong> In Python (or any language, Python used as default for data domain), you write:</li>
+<li>Connection/client creation with auth (JWT, user/password, basic auth, tokens)</li>
+<li>Request functions per endpoint</li>
+<li>Response parsing and error handling</li>
+<li>This logic is fully custom per service and lives in your codebase</li>
+</ul>
+<pre><code class="language-python"># Before MCP: custom client per service - duplicated pattern
+
+# Oracle client - one full implementation
+import requests
+
+def get_oracle_client():
+    token = authenticate_oracle(jwt=&quot;...&quot;)  # JWT / basic auth / password
+    return {&quot;base_url&quot;: &quot;https://api.oracle.com/oracle/v1&quot;, &quot;token&quot;: token}
+
+def oracle_create(payload):
+    client = get_oracle_client()
+    resp = requests.post(f&quot;{client['base_url']}/create&quot;,
+                         headers={&quot;Authorization&quot;: f&quot;Bearer {client['token']}&quot;},
+                         json=payload)
+    return resp.json()  # custom parsing per endpoint
+
+# Synapse client - entirely separate implementation, same boilerplate again
+def get_synapse_client():
+    token = authenticate_synapse(tenant_id=&quot;...&quot;, secret=&quot;...&quot;)
+    return {&quot;base_url&quot;: &quot;https://synapse.azure.com/v1&quot;, &quot;token&quot;: token}
+
+def synapse_query(query: str):
+    client = get_synapse_client()
+    resp = requests.post(f&quot;{client['base_url']}/query&quot;,
+                         headers={&quot;Authorization&quot;: f&quot;Bearer {client['token']}&quot;},
+                         json={&quot;query&quot;: query})
+    return resp.json()
+
+# Healthcare mapping: replace Oracle with EHR FHIR API
+# and Synapse with ChromaDB/Pinecone retriever or pathology-report store
+# -&gt; same N x M duplication problem for every clinical tool
+</code></pre>
+<ul>
+<li><strong>Key property:</strong> APIs themselves are the source of truth and cannot be removed - they persist, but ownership and evolution sit with the provider, not the consumer</li>
+</ul>
+<h2 id="three-pain-points-lectures-core-framework">Three Pain Points (Lecture's Core Framework)</h2>
+<h3 id="1-api-url-version-breakage">1. API URL / Version Breakage</h3>
+<ul>
+<li>Provider changes version path, e.g. <code>oracle/v1/create</code> -&gt; <code>oracle/v2/create</code></li>
+<li>Described as extremely common - every 1-3 years across virtually all service providers</li>
+<li>Impact is breaking: hardcoded URLs fail, requires manual discovery and code update</li>
+<li>Mitigation attempted: extract URL to variable, assign someone to monitor docs daily - fragile, operational overhead</li>
+<li>Healthcare/MCP mapping: FHIR API versioning (DSTU2 -&gt; STU3 -&gt; R4), hospital EHR upgrades, or Pinecone/ChromaDB hosted endpoint migrations all cause identical breakage if clients are hand-wired</li>
+</ul>
+<h3 id="2-api-logic-response-schema-change">2. API Logic / Response Schema Change</h3>
+<ul>
+<li>Even if URL stays stable, internal implementation of the endpoint can change</li>
+<li>Response shape, metadata fields, error codes, or required request fields shift</li>
+<li>Developer must re-read documentation, adjust parsing logic, re-test</li>
+<li>Lecture notes this is less frequent than URL changes (providers avoid metadata churn) but still counts as a lag</li>
+<li>RAG relevance: if your retriever wraps a vector DB via raw HTTP, an embedding dimension change or metadata filter syntax change silently breaks retrieval quality - affects clinical citation accuracy and governance audit trails</li>
+</ul>
+<h3 id="3-per-service-connection-duplication-the-biggest-pain">3. Per-Service Connection Duplication (The Biggest Pain)</h3>
+<ul>
+<li>Every new service requires a completely distinct connection code block</li>
+<li>Oracle connection logic cannot be reused for Synapse; auth flow, SDK, base URL, and headers all differ</li>
+<li>Adding a service means writing, testing, and maintaining an entire new integration layer</li>
+<li>Cost scales linearly with number of services: 2 services = 2 clients, 10 services = 10 clients, each with independent auth and error handling</li>
+<li>Playwright/LangChain parallel: wrapping a browser automation tool, a PubMed fetcher, and a ChromaDB retriever each demands its own client boilerplate without a standard</li>
+</ul>
+<h2 id="why-this-breaks-in-the-agentic-era">Why This Breaks in the Agentic Era</h2>
+<ul>
+<li>Agentic workflows need <strong>20 to 50+ tools</strong> (lecture cites 50-100 as realistic, 20 as minimum) wired into a single AI agent</li>
+<li>Under pre-MCP model, each tool = separate integration + ongoing monitoring for upstream changes</li>
+<li>Teams building agents cannot sustain operations cost: constant doc polling, version tracking, and per-tool code patches</li>
+<li>Low-code / no-code users are completely blocked - AI is meant for everyone, but custom client code is developer-only</li>
+<li>Clinical governance lens: a medical-education agent that needs EHR read, guideline search (RAG over ChromaDB/Pinecone), drug-interaction check, and Playwright-based evidence scraping would require 4-5 bespoke clients; scaling to a hospital system with 30+ data sources becomes unmaintainable and un-auditable</li>
+</ul>
+<div class="mermaid">
+flowchart TD
+    subgraph BeforeMCP[Before MCP - N x M Problem]
+        D[Developer Agent Code]
+        D --> C1[Oracle Client<br/>JWT + v1 Endpoints]
+        D --> C2[Synapse Client<br/>OAuth + Different Endpoints]
+        D --> C3[EHR FHIR Client<br/>SMART Auth]
+        D --> C4[ChromaDB Client<br/>Custom Retriever]
+        C1 --> S1[(Oracle DB)]
+        C2 --> S2[(Synapse Warehouse)]
+        C3 --> S3[(EHR System)]
+        C4 --> S4[(Vector DB)]
+    end
+
+    subgraph PainPoints[Failure Modes]
+        P1[URL v1 to v2<br/>Breaks All Calls]
+        P2[Response Schema Shift<br/>Silent Parsing Fail]
+        P3[New Service = New Client<br/>Linear Cost Growth]
+    end
+
+    BeforeMCP --> PainPoints
+
+    subgraph WithMCP[With MCP - Standardized Protocol]
+        A[AI Agent / LLM]
+        A --> MCP[MCP Standard Interface]
+        MCP --> MS1[Oracle MCP Server]
+        MCP --> MS2[Synapse MCP Server]
+        MCP --> MS3[EHR MCP Server]
+        MCP --> MS4[Vector Search MCP Server]
+        MS1 --> S1
+        MS2 --> S2
+        MS3 --> S3
+        MS4 --> S4
+    end
+
+    PainPoints -.->|Solves| WithMCP
+
+</div>
+<h2 id="the-solution-mcp-model-context-protocol">The Solution: MCP (Model Context Protocol)</h2>
+<ul>
+<li><strong>Origin:</strong> Built by Anthropic (Claude team), then formalized and opened as MCP - now a de facto standard</li>
+<li><strong>Name is scarier than concept:</strong> lecture intentionally defers formal definition to first establish the pain; solution is simple - a standardized protocol layer between agents and tools</li>
+<li><strong>What MCP does (preview before deep dive):</strong></li>
+<li>Tools/services expose themselves via MCP servers with a common contract</li>
+<li>Agents/clients consume any MCP server through one uniform interface - no per-service client rewrite</li>
+<li>Shifts responsibility for versioning, auth negotiation, and schema stability to the server side</li>
+<li><strong>Not a replacement for APIs:</strong> underlying APIs still exist; MCP wraps and normalizes them</li>
+<li>Lecture explicitly cautions: functions/custom clients still exist in many orgs and MCP is not overnight replacement - but it is becoming the standard, and near-future default</li>
+<li>FastAPI/LangGraph mapping: think of MCP as FastAPI for agent tools - just as FastAPI standardizes HTTP service exposure with Pydantic schemas, MCP standardizes how LangChain/LangGraph agents discover and call tools, whether that tool is a Pinecone semantic search, a SQL EHR query, or a Playwright web action</li>
+</ul>
+<h2 id="key-takeaways_2">Key Takeaways</h2>
+<ul>
+<li>Pre-MCP integrations are brittle on three axes: URL versioning, response logic drift, and per-service client duplication</li>
+<li>The duplication axis is the dominant cost driver, especially fatal for agentic systems needing dozens of tools</li>
+<li>Manual mitigation (variable-ized URLs, human doc watchers) does not scale and violates clinical operational constraints around reliability and auditability</li>
+<li>MCP centralizes and standardizes tool exposure so agents need one protocol, not N custom clients</li>
+<li>For Arun Yadav's stack: adopting MCP means ChromaDB/Pinecone retrievers, LangChain tools, and FastAPI clinical services can each be published once as MCP servers and reused across every LangGraph agent without re-implementing auth and transport</li>
+<li>Next chapter will formalize MCP layers and mechanics building on this motivation<blockquote>
+<p><strong>Bridge from Chapter 03:</strong> Having surfaced URL drift, schema churn, and N-client duplication, we now introduce the MCP Server as a protection wall and the USB-C JSON that unifies connections.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-04-paradigm-of-mcp-001832-003233-part-04-of-17">Chapter 04: Paradigm of MCP (00:18:32 - 00:32:33) | Part 04 of 17</h2>
+<h2 id="overview_2">Overview</h2>
+<ul>
+<li>Core question: can service providers handle API changes so developers do not have to?</li>
+<li>Introduces the MCP Server as a protection wall in front of raw APIs, with provider-owned functions mapping 1:1 to API endpoints</li>
+<li>Solves three layered pain points: URL/version breakage, maintenance burden, and fragmented connection logic via a single standardized JSON config (USB-C port analogy)</li>
+</ul>
+<h2 id="before-mcp-vs-with-mcp-the-shift">Before MCP vs With MCP — The Shift</h2>
+<h3 id="the-pain-revisited-from-ch-03">The Pain (Revisited from Ch 03)</h3>
+<ul>
+<li>Developer Rahul writes custom wrapper logic per service (e.g., Oracle DB API + Synapse Analytics API)</li>
+<li>Each integration requires hand-coded connection, request handling, response parsing</li>
+<li>When provider changes API URL, version, or metadata, developer code breaks — provider will not notify or fix consumer code</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    subgraph Before["Before MCP - Direct API Wiring"]
+        D1[Rahul - Developer] -- Custom Wrapper 1 --> API1[Oracle API]
+        D1 -- Custom Wrapper 2 --> API2[Synapse API]
+        API1 -. URL/Version Change .-> Break1[Code Breaks]
+        API2 -. URL/Version Change .-> Break2[Code Breaks]
+    end
+
+</div>
+<ul>
+<li>For a healthcare AI Systems Engineer, this mirrors integrating directly against FHIR APIs, EHR endpoints, or a ChromaDB/Pinecone vector store — every schema or endpoint change forces RAG pipeline rewrites and re-validation in clinical workflows</li>
+</ul>
+<h3 id="the-mcp-server-as-protection-wall">The MCP Server as Protection Wall</h3>
+<ul>
+<li>Service provider (Oracle, Synapse, or any data owner) builds an MCP Server that sits in front of its APIs</li>
+<li>Inside the MCP Server, provider creates discrete functions for each API operation:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>MCP Function</th>
+<th>Maps To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create()</td>
+<td>POST /records</td>
+</tr>
+<tr>
+<td>query()</td>
+<td>GET /records/{id}</td>
+</tr>
+<tr>
+<td>update()</td>
+<td>PUT /records/{id}</td>
+</tr>
+<tr>
+<td>delete()</td>
+<td>DELETE /records/{id}</td>
+</tr>
+<tr>
+<td>insert()</td>
+<td>POST /batch</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Each function is a wrapper that internally calls the real API, gets the response, and returns it to the developer</li>
+<li>Developer no longer writes API-call logic — connects directly to the MCP Server functions instead</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    subgraph WithMCP["With MCP - Server Abstraction"]
+        D2[Rahul] -- Connects to --> MCP1[Oracle MCP Server]
+        MCP1 -- function create/query/update --> API1b[Oracle API - Source of Truth]
+        D2 -- Connects to --> MCP2[Synapse MCP Server]
+        MCP2 -- functions --> API2b[Synapse API]
+        MCP1 -. Handles URL/Version Change Internally .-> Shield1[Developer Unaffected]
+        MCP2 -. Handles Internally .-> Shield2[Developer Unaffected]
+    end
+
+</div>
+<ul>
+<li>APIs remain the source of truth — MCP does not replace them, it standardizes access to them</li>
+<li>Healthcare mapping: Think of an EHR provider or medical-guidelines service exposing a <code>search_guidelines()</code> or <code>get_patient_context()</code> MCP function — the hospital IT team updates FHIR endpoint routing inside the MCP Server, while your LangGraph agent or FastAPI RAG service continues calling the same function without redeployment</li>
+</ul>
+<pre><code class="language-python"># Before MCP: developer owns breakage-prone wrapper
+import requests
+
+def query_oracle_legacy(patient_id: str):
+    # Breaks when Oracle changes /api/v1 -&gt; /api/v2
+    url = &quot;https://oracle.example.com/api/v1/query&quot;
+    resp = requests.get(url, params={&quot;id&quot;: patient_id})
+    return resp.json()
+
+# With MCP: developer calls provider-maintained function
+# Provider updates internal URL mapping inside MCP Server
+# mcp_oracle.query(patient_id=&quot;P-123&quot;)  -&gt; always works
+# No URL hardcoding, no manual migration on version bump
+
+# Healthcare analog: vector store as MCP tool
+# Before: direct ChromaDB client with collection name + embedding logic scattered
+# With MCP: mcp_chromadb.query_medical_kb(query=&quot;hypertension guidelines&quot;)
+</code></pre>
+<h2 id="the-deeper-problem-fragmented-connections">The Deeper Problem: Fragmented Connections</h2>
+<ul>
+<li>Even with MCP Servers, Rahul still faces one connection per server — Oracle MCP uses one connection pattern, Synapse MCP another</li>
+<li>If every provider requires distinct connection logic, the integration burden returns at the connection layer</li>
+<li>This is the final pain point MCP was designed to eliminate entirely</li>
+</ul>
+<h2 id="the-usb-c-port-standardized-json-configuration">The USB-C Port — Standardized JSON Configuration</h2>
+<h3 id="analogy">Analogy</h3>
+<ul>
+<li>Before USB-C: laptop needed different holes/cables for mouse, keyboard, webcam, headset — plus dongles/hubs to extend ports; manufacturers and users both paid complexity cost</li>
+<li>After USB-C: single standard port — plug any device with the same cable shape; extensible via hubs but base contract is uniform</li>
+</ul>
+<h3 id="mcp-equivalent">MCP Equivalent</h3>
+<ul>
+<li>JSON configuration object acts as the universal USB-C port for MCP</li>
+<li>To connect a client to any MCP Server, developer declares only the server name and its config (typically URL + transport details) in JSON — no per-provider connection code</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;mcpServers&quot;: {
+    &quot;oracle-db&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;, &quot;@oracle/mcp-server&quot;],
+      &quot;env&quot;: { &quot;ORACLE_URL&quot;: &quot;https://oracle.example.com&quot; }
+    },
+    &quot;synapse-analytics&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;, &quot;@synapse/mcp-server&quot;],
+      &quot;env&quot;: { &quot;SYNAPSE_URL&quot;: &quot;https://synapse.example.com&quot; }
+    }
+  }
+}
+</code></pre>
+<ul>
+<li>Adding a third, fourth, or nth server means appending 2-3 lines to the same JSON — Python client treats all servers uniformly</li>
+<li>Unlimited plugs: unlike a laptop with 2-3 physical ports, the MCP client can host N servers through this config</li>
+</ul>
+<div class="mermaid">
+flowchart TD
+    Client[Python MCP Client - USB-C Hub] --> C1[JSON Config]
+    C1 -- entry: oracle-db --> MCP1[Oracle MCP Server]
+    C1 -- entry: synapse-analytics --> MCP2[Synapse MCP Server]
+    C1 -- entry: + N more ... --> MCPN[Additional MCP Servers]
+    MCP1 --> API1[Oracle API]
+    MCP2 --> API2[Synapse API]
+    MCPN --> APIN[Any API]
+
+</div>
+<ul>
+<li>For Arun's stack: this JSON-registry pattern is exactly how a FastAPI-hosted LangGraph agent can compose multiple clinical tools — one entry for <code>chromadb-medical-kb</code>, one for <code>pinecone-case-store</code>, one for <code>playwright-e2e-validator</code>, one for <code>fhir-ehr-server</code> — all discovered through the same client interface, swapped without code changes</li>
+</ul>
+<pre><code class="language-python"># FastAPI + MCP client - USB-C config pattern for healthcare agent
+# config.json holds all MCP Servers; agent code stays unchanged when swapping providers
+
+import json
+
+# 1. Load single config
+with open(&quot;mcp_config.json&quot;) as f:
+    config = json.load(f)  # {&quot;mcpServers&quot;: {&quot;chromadb-medical-kb&quot;: {...}, &quot;fhir-ehr&quot;: {...}}}
+
+# 2. Client connects to all servers uniformly
+# from mcp import Client
+# client = Client(config)  # internal: iterates mcpServers, establishes each transport
+
+# 3. Agent (LangChain/LangGraph) sees unified tool list
+# tools = await client.list_tools()  # [query_medical_kb, get_patient_record, validate_ui]
+# agent = create_react_agent(tools=tools)
+
+# Adding a new hospital system = one JSON entry, zero agent rewrite
+# Essential for clinical governance: auditable, declarative integration surface
+</code></pre>
+<h2 id="self-hosted-vs-provider-hosted-mcp">Self-Hosted vs Provider-Hosted MCP</h2>
+<ul>
+<li><strong>Provider-hosted:</strong> Oracle/Synapse (or Pinecone, GitHub, Google Maps) ships the MCP Server — developer only consumes via JSON config</li>
+<li><strong>Self-hosted / Organizational MCP:</strong> Enterprise builds its own MCP Server wrapping internal APIs, data lakes, or clinical workflow services so every internal agent and team reuses the same tool contract</li>
+<li>Self-hosted pattern is dominant in the AI era for healthcare orgs: wrap internal EHR, LMS, or RAG retrieval logic as an org-wide MCP Server for auditability and reuse</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    subgraph OrgMCP["Self-Hosted MCP Pattern"]
+        InternalAPI[Internal EHR / LMS / RAG API] --> OrgServer[Org MCP Server - Built In-House]
+        OrgServer -- standardized tools --> Agents[LangGraph Agents / FastAPI Services]
+        OrgServer -- standardized tools --> Teams[Clinical & Education Teams]
+    end
+    subgraph VendorMCP["Provider MCP Pattern"]
+        VendorAPI[Vendor API - Pinecone / Oracle] --> VendorServer[Vendor MCP Server]
+        VendorServer --> Client2[Same Client via Same JSON]
+    end
+
+</div>
+<ul>
+<li>Both patterns coexist — an AI Systems Engineer typically consumes vendor MCPs for commodity services and builds self-hosted MCPs for proprietary clinical logic</li>
+<li>Playwright as a case: a hosted Playwright MCP Server can be consumed for UI validation, or a self-hosted variant can wrap org-specific test harnesses</li>
+</ul>
+<h2 id="what-you-must-learn-course-roadmap-anchor">What You Must Learn (Course Roadmap Anchor)</h2>
+<ol>
+<li><strong>How to use existing MCPs</strong> — connect via JSON config, discover and call tools</li>
+<li><strong>How to build your own MCP</strong> — author functions/tools, expose them via MCP protocol (STDIO and Streamable HTTP)</li>
+<li>
+<p><strong>How to deploy MCP Servers</strong> — host for org or public consumption so agents can reach them in production</p>
+</li>
+<li>
+<p>Instructor emphasizes: mastering the why (this chapter) is prerequisite before diving into components, types, and hands-on builds in upcoming chapters</p>
+</li>
+<li>Official spec reference flagged: <code>modelcontextprotocol.io</code> maintained by Anthropic — source of truth to follow alongside the course</li>
+</ol>
+<h2 id="key-takeaways_3">Key Takeaways</h2>
+<ul>
+<li>MCP Server is a provider-owned abstraction wall: functions map 1:1 to APIs, provider absorbs URL/version churn, developer code stays stable</li>
+<li>Biggest power is not just the server but the <strong>standardized connection</strong> — a 2-3 line JSON entry (USB-C port) replaces bespoke connection logic per provider and scales to N servers</li>
+<li>APIs remain source of truth; MCP is an efficiency and governance layer, not a replacement</li>
+<li>Organizational MCPs are first-class: healthcare/education teams should plan to both consume vendor MCPs (ChromaDB, Pinecone, Playwright) and author self-hosted servers for internal FHIR/RAG/LangGraph tooling</li>
+<li>Next step after paradigm clarity: MCP components, types, and transport layers (STDIO vs Streamable HTTP) — foundational before building and deploying in FastAPI production contexts<blockquote>
+<p><strong>Bridge from Chapter 04:</strong> The wall and USB-C are concrete, now we formalize the 3-component architecture (Host/Client/Server) and the discovery flow that makes renames transparent.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-05-mcp-architecture-003233-004120">Chapter 05: MCP Architecture (00:32:33 - 00:41:20)</h2>
+<h2 id="overview_3">Overview</h2>
+<ul>
+<li>MCP is an open-source standard (modelcontextprotocol.io) for connecting AI applications like Claude and ChatGPT to external systems - databases, files, local data sources, and services like Postgres, GitHub, Google Maps.</li>
+<li>Core idea: a standardized protocol sits between clients (AI apps/agents) and services, replacing bespoke per-API integrations.</li>
+<li>Chapter frames high-level docs overview and then dives into the 3-component architecture: MCP Host, MCP Client, MCP Server.</li>
+</ul>
+<h2 id="what-mcp-enables">What MCP Enables</h2>
+<ul>
+<li>Personalized AI assistants: agent accesses Google Calendar, Notion, drive, EHR/knowledge bases with user context.</li>
+<li>Code generation agents like Claude Code can generate full web apps by calling tools via MCP.</li>
+<li>For Arun Yadav's stack: same pattern lets an Agentic AI tutor or clinical assistant call MedEd tools - RAG over ChromaDB/Pinecone, LangGraph workflows, Playwright for evaluation - through one uniform interface instead of N custom connectors.</li>
+</ul>
+<h2 id="why-mcp-matters-3-stakeholder-benefits">Why MCP Matters - 3 Stakeholder Benefits</h2>
+<ul>
+<li>Developers: reduces development time and complexity; no manual handling of URL changes, API version bumps, or per-service client boilerplate.</li>
+<li>Applications / Agents: instant access to ecosystem of data sources, tools, and apps; composable and discovery-driven.</li>
+<li>End users: more capable, context-aware assistants with live data.</li>
+<li>Extra pain point highlighted: function renames break direct API integrations.</li>
+<li>Before MCP: if provider renames <code>get_data</code> to <code>fetch_data</code>, calling code breaks and needs a redeploy.</li>
+<li>With MCP: server publishes function list (create, update, query, etc.); client discovers at runtime, so renames propagate automatically without code changes. Demonstrated later in course via live client build.</li>
+</ul>
+<h2 id="the-3-component-architecture">The 3-Component Architecture</h2>
+<div class="mermaid">
+graph LR
+    subgraph Services["External Services"]
+        DB[(Postgres / Vector DB)]
+        GH[GitHub]
+        GM[Google Maps]
+        FS[Local Files / Notion / Calendar]
+    end
+
+    Host["MCP Host<br/>Claude Desktop / AI App"]
+    Client["MCP Client<br/>Protocol Client inside Host"]
+    Server["MCP Server<br/>Protection Wall / Adapter"]
+
+    Host --> Client
+    Client <-->|JSON-RPC over Transport| Server
+    Server <--> Services
+
+    classDef host fill:#e1f5fe,stroke:#0288d1
+    classDef client fill:#fff3e0,stroke:#ef6c00
+    classDef server fill:#e8f5e9,stroke:#2e7d32
+    class Host host
+    class Client client
+    class Server server
+
+</div>
+<ul>
+<li><strong>MCP Host</strong>: The AI application that wants to use tools - e.g., Claude Desktop, ChatGPT, or a custom FastAPI + LangGraph agent. Host manages lifecycle, UX, and permissions; can hold multiple clients.</li>
+<li><strong>MCP Client</strong>: Protocol-aware client inside the Host. One client per server connection. Handles handshake, capability negotiation, tool discovery, and JSON-RPC messaging.</li>
+<li><strong>MCP Server</strong>: Lightweight adapter (the "protection wall") that sits in front of the real API/source of truth. Exposes standardized functions/tools, resources, and prompts. Built and maintained by service owner, so URL/version/function renames are handled server-side.</li>
+<li>Flow: Host -&gt; Client discovers <code>tools/list</code> on connect -&gt; presents tools to LLM -&gt; LLM decides to call <code>tool/call</code> -&gt; Client forwards to Server -&gt; Server executes against real service -&gt; result returns to LLM.</li>
+</ul>
+<div class="mermaid">
+sequenceDiagram
+    participant H as Host (AI App)
+    participant C as MCP Client
+    participant S as MCP Server
+    participant API as External API / DB
+    H->>C: Initialize + discover capabilities
+    C->>S: tools/list
+    S-->>C: [create, update, query]
+    C-->>H: Expose as LLM tools
+    H->>C: tool/call query {id: 123}
+    C->>S: JSON-RPC tool/call
+    S->>API: Native call
+    API-->>S: Result
+    S-->>C: Tool result
+    C-->>H: Context for generation
+
+</div>
+<h2 id="mental-model-for-healthcare-meded-systems">Mental Model for Healthcare / MedEd Systems</h2>
+<ul>
+<li>Think Host = your MedEd copilot app (FastAPI backend serving students/clinicians), Client = LangChain/LangGraph MCP client, Server = wrappers around ChromaDB (curriculum RAG), Pinecone (case bank), Postgres (FHIR-like records), or Playwright (autograde UI checks).</li>
+<li>Value for Arun: service teams own renames/versioning; your agent stays stable. Swap ChromaDB to Pinecone behind same MCP tool <code>semantic_search</code> without touching agent logic.</li>
+<li>Pattern aligns with RAG/Agentic AI best practice: tool abstraction over direct SDK calls, enabling evaluation and reuse.</li>
+</ul>
+<h2 id="minimal-code-sketch-client-discovers-tools-dynamically">Minimal Code Sketch - Client Discovers Tools Dynamically</h2>
+<pre><code class="language-python"># pip install mcp
+import asyncio
+from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import stdio_client
+
+# Arun's MedEd agent connects to a Postgres/RAG MCP server
+server_params = StdioServerParameters(
+    command=&quot;python&quot;,
+    args=[&quot;./mcp_servers/med_rag_server.py&quot;],
+    env=None
+)
+
+async def run():
+    async with stdio_client(server_params) as (read, write):
+        async with ClientSession(read, write) as session:
+            await session.initialize()
+            # No hardcoded function names - discover at runtime
+            tools = await session.list_tools()
+            print([t.name for t in tools.tools])  # e.g. ['create', 'update', 'query']
+
+            # LLM would choose this; here we call directly
+            result = await session.call_tool(&quot;query&quot;, arguments={&quot;q&quot;: &quot;management of DKA&quot;})
+            print(result.content)
+
+asyncio.run(run())
+</code></pre>
+<ul>
+<li>Note the rename resilience: if server renames <code>query</code> to <code>query_records</code>, next <code>list_tools()</code> returns new name automatically - no client redeploy, unlike <code>from sdk import query</code> hardcoding.</li>
+<li>Production variant replaces <code>stdio_client</code> with <code>streamablehttp_client</code> for scalable FastAPI deployment (covered in Ch. 06).</li>
+</ul>
+<h2 id="key-takeaways_4">Key Takeaways</h2>
+<ul>
+<li>MCP standardizes how any AI app connects to any service via Host-Client-Server triad documented at modelcontextprotocol.io.</li>
+<li>Servers act as stable adapters; clients auto-discover tools, so breaking changes stay server-side.</li>
+<li>Architecture sets up next chapter on transports (stdio vs streamable HTTP) and why stdio dominates local dev while HTTP wins for deployed Agentic RAG services.<blockquote>
+<p><strong>Bridge from Chapter 05:</strong> With Host/Client/Server established, we compare the two transports that determine scaling - local STDIO vs production Streamable HTTP - and the transport vs data layer split.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-06-stdio-vs-streamable-http-mcps-004120-004913-part-06-of-17">Chapter 06: STDIO vs Streamable HTTP MCPs (00:41:20 - 00:49:13) | Part 06 of 17</h2>
+<h2 id="overview_4">Overview</h2>
+<ul>
+<li>Two transport options define how an MCP server communicates: STDIO and Streamable HTTP</li>
+<li>STDIO runs the entire MCP server locally as a child process via standard input/output</li>
+<li>Streamable HTTP exposes the MCP server as a remote HTTP endpoint supporting GET/POST, headers, and auth tokens</li>
+<li>Streamable HTTP is newer (introduced last year) and now the recommended choice for scalable, production agentic workflows</li>
+<li>STDIO was the original recommended transport, remains widely used in GitHub repos, and is still relevant for local and small-group use</li>
+<li>Instructor introduces two conceptual layers: transport layer (how client and server talk) and data layer (what is exchanged and how it is structured)</li>
+<li>Prerequisites to build MCP servers from next chapters: VS Code and Python 3.11 or 3.10+</li>
+</ul>
+<h2 id="stdio-transport-local-process-model">STDIO Transport - Local Process Model</h2>
+<ul>
+<li>Execution model: download the MCP package and run it locally on your machine as a subprocess</li>
+<li>Communication via stdin/stdout between one client and one server instance</li>
+<li>Characteristics:</li>
+<li>Simple to set up for personal prototypes and small-team tools</li>
+<li>Limited to one client per local server process at a time</li>
+<li>No built-in remote auth or multi-tenant scaling</li>
+<li>Historical context: very popular choice when MCP first launched and the only officially recommended option</li>
+<li>Healthcare/MedEd parallel for Arun Yadav: like a standalone clinical utility running on a single workstation - for example a local de-identification script, a pathology slide classifier, or a bedside quiz generator for med students that a single instructor runs locally without networking</li>
+</ul>
+<h2 id="streamable-http-transport-scalable-remote-model">Streamable HTTP Transport - Scalable Remote Model</h2>
+<ul>
+<li>Execution model: host the MCP server as a standard web service reachable over HTTP</li>
+<li>Client interacts via normal HTTP requests, sending auth tokens in headers or query parameters</li>
+<li>Characteristics:</li>
+<li>Handles many concurrent clients and requests</li>
+<li>Fits standard web-app patterns for authentication, authorization, and load balancing</li>
+<li>Required when moving from a personal tool to a product used by many users</li>
+<li>Why it is gaining adoption:</li>
+<li>Agentic AI workflows increasingly need shared, scalable services</li>
+<li>Aligns with how FastAPI and other production APIs are already deployed</li>
+<li>Recommendation: use Streamable HTTP when building production applications intended for broad use</li>
+<li>Healthcare/MedEd parallel: like exposing a clinical decision-support tool as a secured hospital API - for example a drug-interaction checker or RAG over clinical guidelines behind an OAuth gateway, consumable by multiple wards, EHR integrations, or ed-tech frontends simultaneously</li>
+</ul>
+<h2 id="why-both-still-matter">Why Both Still Matter</h2>
+<ul>
+<li>Most existing community MCP servers on GitHub are still STDIO-based because that was the standard at MCP inception</li>
+<li>Knowledge of both transports is mandatory to consume the ecosystem and to maintain backwards compatibility</li>
+<li>STDIO is not legacy in the deprecated sense - it remains appropriate for local dev, testing, single-user agents, and privacy-sensitive offline use</li>
+<li>Streamable HTTP is the forward path for hosted, multi-user, deployed systems</li>
+<li>Practical guidance from chapter: learn STDIO first to understand fundamentals and ecosystem, then adopt Streamable HTTP for production</li>
+</ul>
+<h2 id="two-architectural-layers-of-mcp">Two Architectural Layers of MCP</h2>
+<h3 id="1-transport-layer-how-client-and-server-communicate">1. Transport Layer - How Client and Server Communicate</h3>
+<ul>
+<li>Defines the communication channel</li>
+<li>Two variants map directly to the two server types:</li>
+<li>STDIO transport: client talks to a local process via stdin/stdout</li>
+<li>Streamable HTTP transport: client talks to a remote server via HTTP</li>
+<li>Determines deployment, scaling, and auth characteristics</li>
+</ul>
+<h3 id="2-data-layer-what-is-exchanged">2. Data Layer - What Is Exchanged</h3>
+<ul>
+<li>Defines the payload structure, typically JSON</li>
+<li>Specifies what is being requested and returned: tools, prompts, resources, and other capabilities</li>
+<li>Handles schema definitions and contracts for what is shared between client and server</li>
+<li>Ensures consistent interpretation of tool inputs/outputs regardless of transport</li>
+<li>Healthcare/MedEd angle: the data layer is where clinical safety lives - Pydantic schemas for dosage, ICD codes, or guideline citations remain identical whether the transport is local STDIO or remote HTTP, enabling validation before any patient-facing output</li>
+</ul>
+<div class="mermaid">
+flowchart TD
+    A[MCP Architecture] --> B[Transport Layer<br/>How to communicate]
+    A --> C[Data Layer<br/>What to communicate]
+
+    B --> B1[STDIO<br/>Local stdin/stdout<br/>1 client : 1 process]
+    B --> B2[Streamable HTTP<br/>Remote GET/POST<br/>Auth via headers]
+
+    C --> C1[JSON Payload]
+    C --> C2[Schema & Contracts]
+    C1 --> C3[Tools / Prompts / Resources]
+
+    B1 --> D[Use When: Local prototype<br/>Single user / Offline]
+    B2 --> E[Use When: Production<br/>Multi-user / Scalable]
+
+    D -.-> F[Example: Local MedEd quiz tool<br/>on instructor laptop]
+    E -.-> G[Example: Hosted guideline RAG API<br/>for hospital-wide agents]
+
+</div>
+<h2 id="prerequisites-before-building-mcp-servers">Prerequisites Before Building MCP Servers</h2>
+<ul>
+<li>Code editor: VS Code recommended, any editor works</li>
+<li>Python: 3.11 recommended as stable, 3.10 also acceptable, versions older than 3.10 not recommended (3.9 explicitly discouraged due to missing changes)</li>
+<li>No other heavy prerequisites - remaining frameworks and packages will be installed during the hands-on build sections</li>
+<li>All demos in upcoming chapters will cover both STDIO and Streamable HTTP implementations</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    A[Prerequisites] --> B[VS Code]
+    A --> C[Python 3.11 or 3.10+]
+    C --> D[Next: Build STDIO Server]
+    C --> E[Next: Build Streamable HTTP Server]
+    D --> F[Local Testing<br/>Single Client]
+    E --> G[Hosted Deployment<br/>Multi-Client + Auth]
+    F --> H[Production Choice:<br/>HTTP for Scale,<br/>STDIO for Local]
+    G --> H
+
+</div>
+<h2 id="key-takeaways-for-ai-systems-engineering">Key Takeaways for AI Systems Engineering</h2>
+<ul>
+<li>Choose transport by deployment context, not ideology: STDIO for local, fast iteration and privacy-sensitive single-user tools; Streamable HTTP for shared services</li>
+<li>For Arun Yadav portfolio: prototype a clinical extractor or MedEd tutor via STDIO on localhost, then promote the same tool logic to Streamable HTTP behind FastAPI with token-based auth for student cohorts or clinical teams</li>
+<li>Scaling pivot is explicit in course: one-client-per-process does not meet hospital or cohort scale; HTTP enables connection pooling, horizontal scaling, and centralized logging/auditing required for healthcare governance</li>
+<li>Data layer discipline is transport-agnostic: keep JSON schemas and Pydantic validation consistent so a tool validated locally can be deployed remotely without rewriting contracts</li>
+<li>Ecosystem fluency requires both: you will encounter STDIO servers in the wild and will deploy Streamable HTTP servers for new products - be fluent in each<blockquote>
+<p><strong>Bridge from Chapter 06:</strong> Transport trade-offs decided, we build the first local server with uv + FastMCP to anchor the abstract model in running code.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-07-create-stdio-mcp-server-004913-010100-part-0717">Chapter 07: Create STDIO MCP Server | 00:49:13 - 01:01:00 | Part 07/17</h2>
+<h2 id="overview_5">Overview</h2>
+<ul>
+<li>Hands-on build of first local MCP server using Python, <code>uv</code>, and <code>FastMCP</code>.</li>
+<li>As an AI Systems Engineer, Arun Yadav frames this as the foundational systems pattern: isolate environment, define tool contracts, choose transport (STDIO for local), then verify serve locally before exposing to any host or client.</li>
+<li>Covers project bootstrap from empty folder to running STDIO server with two tools (<code>fetch</code> and <code>process</code>), emphasizing environment hygiene and LLM-readable tool design.</li>
+</ul>
+<h2 id="setup-isolated-environment-with-uv">Setup: Isolated Environment with uv</h2>
+<ul>
+<li>Create empty project folder (e.g., <code>MCP masterclass</code>) in VS Code via File &gt; Open Folder.</li>
+<li>Industry standard: never build on global Python. Create a virtual environment first.</li>
+<li>Install <code>uv</code> - Rust-based Python package manager, significantly faster than <code>pip</code>:
+  <code>bash
+  pip install uv        # macOS: pip3 install uv
+  uv --version</code></li>
+<li>Initialize project (equivalent to <code>npm init</code>):
+  <code>bash
+  uv init
+  uv sync   # creates .venv and syncs pyproject.toml</code></li>
+<li>Adding dependencies the idiomatic way:
+  <code>bash
+  uv add fastmcp
+  # alternative兼容: uv pip install &lt;package&gt;</code></li>
+<li><code>pyproject.toml</code> tracks dependencies automatically; <code>uv sync</code> reproduces the env deterministically.</li>
+<li>Systems lens for Arun Yadav: <code>uv</code> gives reproducible, fast env creation critical for shipping agentic systems across machines and CI. Version-lock <code>pyproject.toml</code> before sharing server with a team.</li>
+</ul>
+<h2 id="activating-and-verifying-the-environment">Activating and Verifying the Environment</h2>
+<ul>
+<li>VS Code may auto-activate <code>.venv</code> in a new terminal; if not, activate manually:
+  <code>bash
+  # Windows
+  .venv\Scripts\activate
+  # macOS/Linux
+  source .venv/bin/activate</code></li>
+<li>Verify isolation:
+  <code>bash
+  pip list
+  fastmcp --help   # or: python -m fastmcp --help</code></li>
+<li>Transcript note: instructor forgot to activate before <code>uv add</code>, but <code>uv</code> still installed into <code>.venv</code>. Verifies with <code>pip list</code> and <code>fastmcp</code> CLI responding <code>usage: fastmcp ...</code>.</li>
+<li>Systems takeaway: always confirm <code>which python</code> points to <code>.venv</code> before <code>run</code>. Global pollution is a common failure mode in local MCP development.</li>
+</ul>
+<h2 id="building-the-first-stdio-server-with-fastmcp">Building the First STDIO Server with FastMCP</h2>
+<h3 id="architecture">Architecture</h3>
+<div class="mermaid">
+flowchart TD
+    A[Empty Folder + .venv] --> B[FastMCP Server Instance]
+    B --> C1[Tool: fetch_data]
+    B --> C2[Tool: process_data]
+    B --> D[Transport: stdio]
+    D --> E[Local Client / Host / Claude Config]
+    C1 --> F[API / DB / Any Backend]
+    C2 --> F
+
+</div>
+<h3 id="minimal-server-code">Minimal Server Code</h3>
+<ul>
+<li>Pattern mirrors <code>FastAPI</code>: import class, instantiate app, decorate functions, run with transport.</li>
+</ul>
+<pre><code class="language-python"># file: mcp_simple/first_mcp_server_stdio.py
+from fastmcp import FastMCP
+
+mcp = FastMCP(&quot;first-mcp-server&quot;)
+
+@mcp.tool
+def fetch_data() -&gt; str:
+    &quot;&quot;&quot;Use this tool to fetch data from a source.&quot;&quot;&quot;
+    # Systems hook: replace with real API call, DB query, or internal service
+    # e.g., requests.get(&quot;https://internal-api.company.com/data&quot;)
+    data = &quot;hello MCP&quot;
+    return data
+
+@mcp.tool
+def process_data() -&gt; str:
+    &quot;&quot;&quot;Use this tool to process the fetched data.&quot;&quot;&quot;
+    # Add transformation / enrichment logic here
+    return &quot;data has been processed&quot;
+
+if __name__ == &quot;__main__&quot;:
+    mcp.run(transport=&quot;stdio&quot;)
+</code></pre>
+<ul>
+<li>Key details from transcript:</li>
+<li>Decorator: <code>@mcp.tool</code> converts any Python function into an MCP tool. Optional <code>name</code> param exists but instructor recommends keeping function name and tool name identical to avoid confusion.</li>
+<li>Docstring is non-negotiable: LLMs use the docstring as the tool contract to decide when to call it. More detailed description = better agent routing.</li>
+<li>Comments inside function indicate where to insert real backend logic (API, database).</li>
+</ul>
+<h3 id="why-stdio">Why STDIO</h3>
+<ul>
+<li><code>transport="stdio"</code> means server runs locally via stdin/stdout. Server owner chooses transport; STDIO is for local development where client downloads and spawns the server as a subprocess.</li>
+<li>Contrasts with <code>sse</code> / <code>streamable-http</code> for remote deployment (covered later). For Arun Yadav's systems work, STDIO is the lowest-latency, Zero-network local loop for prototyping tool contracts before remote deployment.</li>
+<li>Boilerplate <code>if __name__ == "__main__":</code> is required entry point.</li>
+</ul>
+<h2 id="running-and-verifying-the-server">Running and Verifying the Server</h2>
+<ul>
+<li>Run inside activated <code>.venv</code>:
+  <code>bash
+  python mcp_simple/first_mcp_server_stdio.py</code></li>
+<li>Expected output: FastMCP banner / CLI visual confirming server is up and running, waiting on stdio.</li>
+<li>At this point server is ready but needs a client/host + config to connect (next chapter). STDIO servers are not hit via HTTP; they are spawned by the host process.</li>
+<li>Troubleshooting mentioned: long file paths make run command verbose; keep project structure shallow during prototyping.</li>
+</ul>
+<h2 id="key-systems-principles-for-arun-yadav">Key Systems Principles for Arun Yadav</h2>
+<ul>
+<li>Isolation first: <code>uv init</code> + <code>uv add</code> + <code>.venv</code> activation ensures reproducible builds across dev, staging, prod.</li>
+<li>Contract first: tool function + <code>@mcp.tool</code> + precise docstring is the API contract. Treat docstring as you would OpenAPI description.</li>
+<li>Transport as architecture decision: choose <code>stdio</code> for local, single-machine agents; choose SSE/HTTP for shared, deployed services. Decision impacts scaling and observability.</li>
+<li>Local verification loop: build -&gt; <code>pip list</code> -&gt; <code>fastmcp --help</code> -&gt; <code>python ...</code> -&gt; see server up, before wiring to Claude Desktop or any LLM host. This prevents coupling env errors with client config errors.</li>
+<li>Next step: create a client that spawns this STDIO server and lists/calls tools, validating end-to-end flow before deployment.</li>
+</ul>
+<h2 id="tldr-for-revision">TL;DR for Revision</h2>
+<ul>
+<li><code>uv init</code> -&gt; <code>uv add fastmcp</code> -&gt; <code>source .venv/bin/activate</code> -&gt; verify with <code>fastmcp</code>.</li>
+<li><code>FastMCP("name")</code> -&gt; <code>@mcp.tool</code> + docstring -&gt; <code>mcp.run(transport="stdio")</code>.</li>
+<li>STDIO = local subprocess transport; docstring = LLM tool selection context; verify server starts before adding client.<blockquote>
+<p><strong>Bridge from Chapter 07:</strong> Server is live but inert without a client - we now craft the raw async Python client that discovers tools and invokes them, exposing the protocol internals.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-08-create-python-mcp-client-010100-012138-part-0817">Chapter 08: Create Python MCP Client (01:01:00 - 01:21:38) — Part 08/17</h2>
+<h2 id="overview_6">Overview</h2>
+<ul>
+<li>This chapter builds the first Python MCP client that connects to a stdio-based MCP server.</li>
+<li>Two approaches are presented: a raw, low-level approach for learning the internals, and a recommended production approach using LangChain.</li>
+<li>Focus in this chunk is the raw client: understanding every import, path, and async primitive before abstracting it away.</li>
+</ul>
+<h2 id="why-two-ways-to-build-a-client">Why Two Ways to Build a Client</h2>
+<ul>
+<li><strong>Raw approach:</strong> Not used in production, but essential to understand the behind-the-scenes flow — how a client discovers tools, reads schemas, and routes calls.</li>
+<li><strong>Recommended approach:</strong> Simplified, opinionated framework (LangChain) that hides boilerplate for production-grade agentic systems.</li>
+<li>For Arun Yadav's stack, this maps directly to the AI Systems Engineer workflow: first instrument the protocol manually (MCP/FastAPI), then standardize on LangChain/LangGraph for maintainability in Healthcare/MedEd deployments.</li>
+</ul>
+<h2 id="prerequisites-and-dependencies">Prerequisites and Dependencies</h2>
+<ul>
+<li><code>fastmcp</code> is for building MCP servers; for the client you need the core <code>mcp</code> package.</li>
+<li>Install with:</li>
+</ul>
+<pre><code class="language-bash">uv add mcp
+# verify in pyproject.toml / dependencies that mcp is present
+</code></pre>
+<ul>
+<li>Required imports for the raw stdio client:</li>
+</ul>
+<pre><code class="language-python">import os
+import asyncio
+from mcp.client.stdio import stdio_client
+from mcp import ClientSession, StdioServerParameters
+</code></pre>
+<h2 id="dynamic-path-resolution-for-the-server-script">Dynamic Path Resolution for the Server Script</h2>
+<ul>
+<li>Never hardcode the server path like <code>C:/mcp-masterclass/server.py</code> — it breaks across Mac/Linux/Windows and in containers.</li>
+<li>Use <code>os.path</code> to compute a portable absolute path relative to the client file:</li>
+</ul>
+<pre><code class="language-python"># Build path dynamically so it works on any OS / deployment target
+mcp_server_script = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    &quot;first_mcp_server_stdio.py&quot;  # your stdio server filename
+)
+print(mcp_server_script)  # sanity check the resolved path
+</code></pre>
+<ul>
+<li>Pattern used: <code>os.path.abspath(__file__)</code> -&gt; <code>os.path.dirname()</code> -&gt; <code>os.path.join(dir, filename)</code>.</li>
+<li>In a Healthcare/MedEd system where MCP servers might live in a dedicated <code>mcp_servers/</code> directory alongside FastAPI services and RAG pipelines, this pattern lets you centralize servers and route clients to them without config drift between local dev and Linux deployment.</li>
+</ul>
+<h2 id="creating-stdio-server-parameters">Creating Stdio Server Parameters</h2>
+<ul>
+<li><code>StdioServerParameters</code> tells the client how to spawn the server subprocess.</li>
+</ul>
+<pre><code class="language-python">server_params = StdioServerParameters(
+    command=&quot;python&quot;,
+    args=[mcp_server_script],
+    env={}  # no env vars needed for basic stdio; pass dict if required
+)
+</code></pre>
+<ul>
+<li><code>command</code>: executable to run the server (<code>python</code> for <code>python server.py</code>).</li>
+<li><code>args</code>: list containing the server script path (cast to string if needed).</li>
+<li><code>env</code>: empty dict when no environment variables are required.</li>
+<li>This parameter object is reusable across clients — define once, reuse for every stdio connection.</li>
+</ul>
+<h2 id="async-architecture-why-everything-is-async">Async Architecture — Why Everything Is Async</h2>
+<ul>
+<li>MCP stdio servers are asynchronous; clients must use <code>asyncio</code> and the <code>async</code>/<code>await</code> event-loop model.</li>
+<li><code>async def</code> defines a coroutine; <code>await</code> yields control until the I/O operation completes instead of blocking the thread.</li>
+<li><code>async with</code> is an asynchronous context manager — it ensures the stdio transport and session are opened and closed cleanly.</li>
+</ul>
+<div class="mermaid">
+sequenceDiagram
+    participant Client as Python Client (asyncio)
+    participant Transport as stdio_client
+    participant Session as ClientSession
+    participant Server as MCP Server (stdio)
+
+    Client->>Transport: async with stdio_client(server_params) as (read, write)
+    Transport->>Server: spawn subprocess: python server.py
+    Client->>Session: async with ClientSession(read, write) as session
+    Client->>Session: await session.initialize()
+    Session->>Server: initialize handshake
+    Server-->>Session: ready
+    Client->>Session: await session.list_tools()
+    Server-->>Client: tools + inputSchema
+    Client->>Session: await session.call_tool(name, arguments)
+    Server-->>Client: tool result
+
+</div>
+<ul>
+<li>FastMCP expects async functions only; if you write <code>def tool():</code> without <code>async</code>, it wraps it to async internally. Always author <code>async def</code> for tool handlers to avoid hidden thread-blocking — critical when your MCP tools wrap I/O-heavy operations like vector search (ChromaDB/Pinecone), EHR FHIR calls, or LLM inference.</li>
+</ul>
+<h2 id="full-raw-client-wiring-transport-session-and-tools">Full Raw Client — Wiring Transport, Session, and Tools</h2>
+<pre><code class="language-python">import os
+import asyncio
+from mcp.client.stdio import stdio_client
+from mcp import ClientSession, StdioServerParameters
+
+# 1. Resolve server path portably
+mcp_server_script = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    &quot;first_mcp_server_stdio.py&quot;
+)
+
+# 2. Define how to launch the server
+server_params = StdioServerParameters(
+    command=&quot;python&quot;,
+    args=[mcp_server_script],
+    env={}
+)
+
+# 3. Async main — all MCP I/O happens here
+async def main():
+    # Outer context: stdio transport (read/write streams)
+    async with stdio_client(server_params) as (read, write):
+        # Inner context: MCP session over that transport
+        async with ClientSession(read, write) as session:
+            await session.initialize()
+            print(&quot;Session initialized&quot;)
+
+            # Discover tools exposed by the server
+            tools = await session.list_tools()
+            print(tools)
+            # tools: meta, nextCursor, tools=[Tool(name, description, inputSchema)]
+
+            # Call a tool with arguments (example: process)
+            result = await session.call_tool(&quot;process&quot;, arguments={&quot;path&quot;: &quot;/data/notes.pdf&quot;})
+            print(result)
+
+            # Call a no-arg tool (example: fetch)
+            result2 = await session.call_tool(&quot;fetch&quot;, arguments={})
+            print(result2)
+
+if __name__ == &quot;__main__&quot;:
+    asyncio.run(main())
+</code></pre>
+<ul>
+<li>Run with <code>python python_client.py</code> or <code>python -m python_client</code>.</li>
+<li>Expected console output after <code>list_tools()</code> includes <code>Available tools -&gt; tools=[Tool(name='fetch', description='Use this tool to fetch data from a source', inputSchema=...), Tool(name='process', ...)]</code>.</li>
+</ul>
+<h2 id="tool-discovery-what-list_tools-returns">Tool Discovery — What list_tools() Returns</h2>
+<ul>
+<li><code>await session.list_tools()</code> returns a structured response:</li>
+</ul>
+<pre><code class="language-text">meta=None, nextCursor=None,
+tools=[
+  Tool(name='fetch', title=None, description='Use this tool to fetch data from a source', inputSchema={'additionalProperties': False, 'properties': {}, 'type': 'object'}),
+  Tool(name='process', description='Process data at path', inputSchema={'properties': {'path': {'type': 'string'}}, 'required': ['path']})
+]
+</code></pre>
+<ul>
+<li>Key fields:</li>
+<li><code>name</code>: function identifier the agent will call.</li>
+<li><code>description</code>: auto-populated from the Python docstring under <code>@mcp.tool</code> — whatever you write as the function's docstring becomes the LLM-facing description.</li>
+<li><code>inputSchema</code>: JSON Schema describing arguments — <code>properties</code>, <code>type</code>, <code>required</code>, <code>additionalProperties</code>.</li>
+<li><code>title</code>: optional, None if not provided.</li>
+<li>Relevance for agentic workflows: the LLM does not just get function names; it gets names + natural language descriptions + typed JSON schemas. This lets a LangChain/LangGraph agent decide <em>which</em> tool to call, <em>what</em> arguments to supply, and <em>in what format</em> (JSON), without custom prompting.</li>
+<li>In Arun's MedEd context, a tool like <code>retrieve_guideline(disease: str)</code> would automatically expose <code>disease: string</code> in <code>inputSchema</code>, so an agent triaging clinical queries can ground tool selection in structured metadata rather than brittle prompt parsing.</li>
+</ul>
+<h2 id="docstring-to-description-the-mcptool-decorator">Docstring to Description — The @mcp.tool Decorator</h2>
+<ul>
+<li>On the server side:</li>
+</ul>
+<pre><code class="language-python">from mcp.server.fastmcp import FastMCP
+mcp = FastMCP(&quot;demo&quot;)
+
+@mcp.tool
+def fetch():
+    &quot;&quot;&quot;Use this tool to fetch data from a source&quot;&quot;&quot;
+    return &quot;data&quot;
+
+@mcp.tool
+def process(path: str):
+    &quot;&quot;&quot;Process data at path&quot;&quot;&quot;
+    return f&quot;data has been processed at {path}&quot;
+</code></pre>
+<ul>
+<li>The decorator introspects the function signature and docstring and converts them into the MCP <code>Tool</code> metadata. Adding a typed parameter <code>path: str</code> automatically adds <code>properties: {path: {type: string}}</code> to <code>inputSchema</code>.</li>
+<li>This is why MCP is in demand: a single decorator produces everything an agentic workflow needs — no manual OpenAPI spec, no separate schema file.</li>
+</ul>
+<h2 id="calling-tools-programmatically">Calling Tools Programmatically</h2>
+<ul>
+<li>Once the session is initialized, any exposed tool can be invoked:</li>
+</ul>
+<pre><code class="language-python"># No arguments
+result = await session.call_tool(&quot;fetch&quot;, arguments={})
+
+# With arguments — arguments must match inputSchema and are sent as JSON
+result = await session.call_tool(&quot;process&quot;, arguments={&quot;path&quot;: &quot;/data/clinical_notes.pdf&quot;})
+print(result)
+# -&gt; &quot;data has been processed at /data/clinical_notes.pdf&quot;
+</code></pre>
+<ul>
+<li>Whether the tool is called by a human, an automation pipeline, or an LLM agent, the path is identical: <code>session.call_tool(name, arguments)</code>. The client abstracts the JSON-RPC over stdio; no manual JSON handling is required.</li>
+<li>For Arun's RAG pipeline, this means the same <code>call_tool</code> path serves both unit tests (deterministic Python calls) and agentic orchestration (LangChain agent dynamically selecting <code>vector_search</code> vs <code>fetch_guideline</code>).</li>
+</ul>
+<h2 id="raw-vs-recommended-where-langchain-fits">Raw vs Recommended — Where LangChain Fits</h2>
+<ul>
+<li>Raw client teaches the transport/session/initialize/list/call lifecycle — valuable for debugging, custom transports, and understanding why MCP tools need async.</li>
+<li>Production client (next section in the course, not detailed in this transcript chunk) uses LangChain's MCP adapters to reduce the entire flow to a few lines, handle retries, and plug directly into LangGraph state machines.</li>
+<li>Mental model for team adoption: prototype raw to validate schema and latency, then promote to LangChain MCP toolkit for deployment behind FastAPI, with observability and auth consistent with the rest of the stack.</li>
+</ul>
+<h2 id="common-pitfalls-and-fixes">Common Pitfalls and Fixes</h2>
+<ul>
+<li>Missing <code>mcp</code> dependency: <code>uv add mcp</code> if <code>ClientSession</code> import fails — <code>fastmcp</code> alone is not enough.</li>
+<li>Hardcoded paths: always use <code>os.path</code> dynamic resolution; fails silently on deployment otherwise.</li>
+<li>Forgetting <code>await</code> on <code>session.initialize()</code>, <code>list_tools()</code>, or <code>call_tool()</code>: raises coroutine-never-awaited errors.</li>
+<li>Forgetting <code>asyncio.run(main())</code> or <code>import asyncio</code>: the coroutine never executes.</li>
+<li>Using synchronous <code>def</code> for tools when they perform I/O: thread blocking under load; prefer <code>async def</code>.</li>
+<li>Passing <code>args</code> as a string instead of list: <code>args</code> expects <code>list[str]</code>.</li>
+</ul>
+<h2 id="key-takeaways_5">Key Takeaways</h2>
+<ul>
+<li>Stdio client requires three pieces: <code>StdioServerParameters</code>, <code>stdio_client</code> transport, and <code>ClientSession</code>.</li>
+<li><code>os.path</code> dynamic joins make the client portable across dev and deployment environments.</li>
+<li><code>await session.initialize()</code> is mandatory before any tool discovery or invocation.</li>
+<li><code>list_tools()</code> returns LLM-consumable metadata — the contract that enables autonomous tool selection.</li>
+<li><code>call_tool()</code> is the unified invocation surface for humans, pipelines, and agents.</li>
+<li>For Arun Yadav's Healthcare/MedEd systems, this raw client is the foundation for wrapping clinical tools, vector stores, and FastAPI microservices as MCP tools that LangChain agents can orchestrate reliably.<blockquote>
+<p><strong>Bridge from Chapter 08:</strong> Raw internals mastered, we pivot to the production client - LangChain's MultiServerMCPClient that converts MCP tools into agent-ready LangChain tools.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-09-integrate-mcp-with-langchain-012138-013404-part-09-of-17">Chapter 09: Integrate MCP with Langchain (01:21:38 - 01:34:04) | Part 09 of 17</h2>
+<h2 id="overview_7">Overview</h2>
+<ul>
+<li>Focus is client-side consumption of MCP servers using LangChain instead of raw Python MCP SDK</li>
+<li>Introduces <code>langchain-mcp-adapters</code> package and its <code>MultiServerMCPClient</code> utility as the preferred way to connect to any MCP server</li>
+<li>Demonstrates end-to-end flow: install, configure JSON, instantiate client, call <code>get_tools()</code>, and verify tool conversion for LangChain agents</li>
+<li>For Arun Yadav as AI Systems Engineer, this is the bridge between isolated MCP tools and production LangChain/LangGraph agentic workflows in healthcare and medical education systems</li>
+</ul>
+<h2 id="why-langchain-client">Why LangChain Client</h2>
+<ul>
+<li>Raw Python client shown in previous chapters works, but requires manual handling</li>
+<li>LangChain ecosystem is where real agents are built, so MCP tools must be compatible with LangChain's tool abstraction</li>
+<li>Instructor emphasizes LangChain is not the focus of this course, only one function is borrowed, and recommends learning LangChain before LangGraph since LangGraph is built on top of LangChain</li>
+<li>References his dedicated LangChain and LangGraph full courses as up-to-date (post v1.0) resources, but this chapter needs no prior LangChain depth</li>
+</ul>
+<div class="mermaid">
+flowchart TD
+    A[MCP Server - e.g. fetch tools] --> B[MultiServerMCPClient]
+    B --> C[Raw MCP Tools]
+    C --> D[Adapter Conversion]
+    D --> E[LangChain Tools - agent compatible]
+    E --> F[LangChain Agent + Custom Tools 1-3]
+    F --> G[Unified Tool Execution]
+
+</div>
+<h2 id="setup-and-installation">Setup and Installation</h2>
+<ul>
+<li>Base install <code>langchain</code> alone is insufficient for MCP integration</li>
+<li>Required adapter package must be added explicitly:</li>
+<li><code>uv add langchain-mcp-adapters</code> or <code>uv add mcp-adapters</code> variant as shown in demo</li>
+<li>Import path used:</li>
+<li><code>from langchain_mcp_adapters.client import MultiServerMCPClient</code></li>
+<li>For an AI Systems Engineer, this mirrors <code>pip install</code> patterns for ChromaDB/Pinecone or FastAPI extensions where core library does not bundle protocol adapters by default</li>
+<li>Arun Yadav note: pin this adapter version in <code>pyproject.toml</code> / <code>uv.lock</code> to avoid drift between dev and hosted deployment</li>
+</ul>
+<h2 id="client-configuration-json-structure">Client Configuration JSON Structure</h2>
+<ul>
+<li>Same conceptual JSON introduced in earlier MCP client chapters, now passed to <code>MultiServerMCPClient</code></li>
+<li>
+<p>Four required keys per server entry:</p>
+</li>
+<li>
+<p><strong>Server name</strong> - arbitrary key, example <code>fetch</code> or <code>data_fetch_mcp</code> or <code>data_fetch_mcp_stdio</code> for clarity</p>
+</li>
+<li><strong>transport</strong> - <code>stdio</code> for local process communication (Streamable HTTP covered earlier as production alternative)</li>
+<li><strong>command</strong> - Python executable that runs the server</li>
+<li>Can be <code>python</code>, but in virtual environment dev setup should point to absolute <code>venv/Scripts/python.exe</code> path</li>
+<li>Demo copies absolute path via right-click copy path on Windows</li>
+<li>Handles Windows backslashes via raw string <code>R"..."</code> or double-escaped backslashes</li>
+<li>
+<p><strong>args</strong> - path to server file, example <code>chapter/mcp_create/mcp_server.py</code> or forced <code>mcp_forced</code> path</p>
+</li>
+<li>
+<p>Dev vs prod distinction highlighted:</p>
+</li>
+<li>Dev: absolute venv python path ensures correct interpreter and dependencies</li>
+<li>Prod: no venv, dependencies installed directly in environment, so <code>python</code> command is fine</li>
+</ul>
+<pre><code class="language-python"># Pattern taught for Arun Yadav style service setup - LangChain MCP client
+import asyncio
+from langchain_mcp_adapters.client import MultiServerMCPClient
+
+client = MultiServerMCPClient({
+    &quot;data_fetch_mcp&quot;: {
+        &quot;transport&quot;: &quot;stdio&quot;,
+        &quot;command&quot;: R&quot;C:\path\to\venv\Scripts\python.exe&quot;,
+        &quot;args&quot;: [&quot;chapter/mcp_create/mcp_server.py&quot;]
+    }
+})
+
+async def main():
+    tools = await client.get_tools()
+    print(&quot;Available tools:&quot;, tools)
+
+if __name__ == &quot;__main__&quot;:
+    asyncio.run(main())
+</code></pre>
+<h2 id="building-and-running-the-client">Building and Running the Client</h2>
+<ul>
+<li>Define <code>async def main()</code> and wrap with <code>asyncio.run()</code></li>
+<li>Instantiate <code>MultiServerMCPClient</code> with the config dict</li>
+<li>Call <code>await client.get_tools()</code> (shown in transcript as <code>client.get_tools()</code> / <code>list_tools</code> variant)</li>
+<li>Print and verify output, re-running after <code>clear</code> to confirm deterministic fetch</li>
+<li>Adapter handles all connection, stdio negotiation, and session management under the hood</li>
+</ul>
+<h2 id="core-insight-tool-conversion-for-agent-compatibility">Core Insight: Tool Conversion for Agent Compatibility</h2>
+<ul>
+<li>Both raw Python client and LangChain client fetch the same underlying MCP tools, for example <code>fetch</code> with description</li>
+<li>Difference is post-processing:</li>
+<li>Raw client returns native MCP tool objects</li>
+<li><code>MultiServerMCPClient.get_tools()</code> fetches raw tools then converts each into LangChain <code>Tool</code> objects</li>
+<li>Why this matters:</li>
+<li>LangChain agents expect tools decorated via <code>@tool</code> pattern</li>
+<li>Arun Yadav typically builds custom tools (tool 1, tool 2, tool 3) for EHR search, guideline retrieval, or ChromaDB RAG</li>
+<li>MCP-fetched tools must share the same interface as those custom tools to be combined in a single agent executor</li>
+<li>Without conversion, two incompatible tool types would break agent routing</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    subgraph Native["Existing LangChain Stack"]
+        T1[Custom Tool 1]
+        T2[Custom Tool 2]
+        T3[Custom Tool 3]
+    end
+    subgraph MCP["MCP Server"]
+        M1[Raw Tool A - fetch]
+        M2[Raw Tool B]
+    end
+    M1 --> C[Adapter Transform]
+    M2 --> C
+    C --> L1[LangChain Tool A]
+    C --> L2[LangChain Tool B]
+    L1 --- T1
+    L2 --- T2
+    L1 --> Agent[LangChain Agent Executor]
+    T1 --> Agent
+
+</div>
+<ul>
+<li>Instructor analogy: developer has 3 LangChain tools and fetches 2 from MCP; adapter re-colors them into LangChain style so all 5 can run together</li>
+<li>Benefit for ecosystem: smooth conjunction of MCP providers and LangChain, reducing friction when building agents that consume external MCP servers</li>
+<li>Arun Yadav takeaway: this conversion is what enables a FastAPI-hosted LangGraph agent to expose a unified toolset that mixes internal vector DB retrievers and external MCP Playwright or filesystem servers without custom wrapping</li>
+</ul>
+<h2 id="comparison-at-a-glance">Comparison At A Glance</h2>
+<ul>
+<li><strong>Raw Python client</strong> - manual, demonstrates protocol, good for learning</li>
+<li><strong>LangChain client</strong> - same fetch logic underneath, adds LangChain Tool conversion, ready for <code>create_agent</code> / <code>AgentExecutor</code> integration</li>
+<li>Tool name and description appear similar in logs, but types differ, LangChain variant is agent-ready</li>
+<li>Decision going forward in course: standardize on LangChain client for all subsequent agent builds</li>
+</ul>
+<h2 id="key-takeaways-for-arun-yadav-ai-systems-engineer">Key Takeaways for Arun Yadav - AI Systems Engineer</h2>
+<ul>
+<li>Standardize on <code>MultiServerMCPClient</code> for any RAG or agentic service that will eventually run under LangGraph or FastAPI, because it guarantees tool compatibility from day one</li>
+<li>Treat the config JSON as environment-specific, inject <code>command</code> and <code>args</code> via env variables, especially when moving from Windows <code>venv</code> path to Docker <code>python</code> in deployment</li>
+<li>Validate tool conversion early by logging <code>type(tool)</code> and <code>tool.name</code> after <code>get_tools()</code>, prevents runtime mismatches when merging MCP tools with internal <code>@tool</code> functions</li>
+<li>Catalog LangChain and LangGraph as sequential upskilling steps, LangChain first for tool and chain fundamentals, LangGraph next for stateful multi-agent clinical workflows</li>
+<li>For medical education agents, this pattern lets Arun Yadav mix local STDIO MCP servers during development with Streamable HTTP hosted servers in production without changing agent code, only the JSON transport block<blockquote>
+<p><strong>Bridge from Chapter 09:</strong> LangChain consumption is proven on STDIO; we now switch the server transport to Streamable HTTP on 0.0.0.0:8050 with zero tool-code changes, bridging local to hosted.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-10-create-streamable-http-mcp-server-013404-014244-part-10-of-17">Chapter 10: Create Streamable HTTP MCP Server (01:34:04 - 01:42:44) | Part 10 of 17</h2>
+<h2 id="overview_8">Overview</h2>
+<ul>
+<li>Completes dynamic client hardening started in prior chapter, then pivots to Streamable HTTP transport for MCP servers</li>
+<li>Core message: building a Streamable HTTP server requires zero changes to tool logic - only transport declaration - decorators handle the rest</li>
+<li>Establishes local-hosted HTTP as the bridge to production deployment where clients call a URL instead of a local package</li>
+<li>For Arun Yadav AI Systems Engineer: this transport switch is the exact pattern for moving a healthcare RAG agent from local prototype (STDIO) to hosted service that clinical UIs can consume without local code</li>
+</ul>
+<h2 id="part-a-make-langchain-client-dynamic">Part A: Make LangChain Client Dynamic</h2>
+<ul>
+<li>Hardcoded paths break across environments; dynamic resolution is production-grade</li>
+<li>Use <code>import os</code> and path manipulation to locate MCP server script relative to current file</li>
+<li>Virtual environment nuance: project has <code>.venv</code> at repo root, not inside chapter subfolder - requires traversing up two <code>dirname</code> levels before joining</li>
+<li>Construct Python executable path as <code>.venv/Scripts/python</code> (Windows) or <code>.venv/bin/python</code> and pass as command to client</li>
+</ul>
+<pre><code class="language-python">import os
+from pathlib import Path
+
+# Dynamic path resolution - both client and server at same level
+current_file = Path(__file__).resolve()
+# Need two dirname calls to reach repo root where .venv lives
+project_root = current_file.parent.parent  # chapter folder -&gt; root
+venv_python = project_root / &quot;.venv&quot; / &quot;Scripts&quot; / &quot;python.exe&quot;  # or bin/python on Linux
+
+# Instead of hardcoded paths
+mcp_server_script = current_file.parent / &quot;mcp_server.py&quot;
+
+# Client uses dynamic python + script path
+# command = str(venv_python)
+# args = [str(mcp_server_script)]
+</code></pre>
+<ul>
+<li>Verification: run client - tools like <code>fetch</code> now discovered dynamically - confirms path logic works</li>
+<li>Note from chapter: in real production you often skip venv reliance (containerized / managed runtime), but dynamic paths remain best practice</li>
+</ul>
+<pre><code class="language-python"># Healthcare lens: same pattern for MedEd agent
+# Avoids breakage when deploying to hospital staging vs local dev
+import os
+from pathlib import Path
+
+def get_mcp_server_config():
+    root = Path(__file__).resolve().parent.parent
+    venv_python = root / &quot;.venv&quot; / &quot;Scripts&quot; / &quot;python.exe&quot;
+    server_script = Path(__file__).parent / &quot;clinical_mcp_server.py&quot;
+    return {&quot;command&quot;: str(venv_python), &quot;args&quot;: [str(server_script)]}
+</code></pre>
+<h2 id="part-b-create-streamable-http-mcp-server">Part B: Create Streamable HTTP MCP Server</h2>
+<h3 id="zero-code-change-principle">Zero-Code-Change Principle</h3>
+<ul>
+<li>Existing MCP server code needs no modification to switch transports</li>
+<li>Only difference is how you declare you want to run it - decorators abstract transport handling</li>
+<li>File organization: create new folder for HTTP variant (e.g., <code>http_mcp/</code>) and new file <code>http_mcp.py</code></li>
+</ul>
+<h3 id="transport-configuration">Transport Configuration</h3>
+<ul>
+<li>Declare transport as <code>streamable_http</code> (not <code>stdio</code>)</li>
+<li>Set host and port: <code>host="0.0.0.0"</code> and <code>port=8050</code></li>
+<li>Port 8080 is common for backends; 8050 chosen to avoid conflict - any free port works</li>
+<li><code>0.0.0.0</code> binds to all interfaces locally; not a browsable domain itself, but serves on localhost</li>
+</ul>
+<pre><code class="language-python"># http_mcp.py - Streamable HTTP MCP Server
+from mcp.server.fastmcp import FastMCP
+
+# Same tool definitions as STDIO server - no logic change
+mcp = FastMCP(&quot;healthcare-http-server&quot;)
+
+@mcp.tool()
+def search_guidelines(query: str) -&gt; str:
+    &quot;&quot;&quot;Example clinical tool - reused unchanged from STDIO version&quot;&quot;&quot;
+    return f&quot;Guideline results for: {query}&quot;
+
+@mcp.tool()
+def fetch_drug_info(drug: str) -&gt; str:
+    &quot;&quot;&quot;Fetch formulary data - same function, new transport&quot;&quot;&quot;
+    return f&quot;Info for {drug}&quot;
+
+if __name__ == &quot;__mcp__&quot;:
+    pass
+
+# Run configuration - transport declaration is the only delta
+# Option A: via FastMCP settings
+# mcp.run(transport=&quot;streamable_http&quot;, host=&quot;0.0.0.0&quot;, port=8050)
+
+# Option B: CLI / decorator config depending on SDK version
+# FastMCP(host=&quot;0.0.0.0&quot;, port=8050) with streamable_http transport
+</code></pre>
+<pre><code class="language-python"># Equivalent minimal - what the chapter shows conceptually
+from mcp.server.fastmcp import FastMCP
+
+mcp = FastMCP(&quot;http-mcp&quot;, host=&quot;0.0.0.0&quot;, port=8050)
+
+@mcp.tool()
+def add(a: int, b: int) -&gt; int:
+    return a + b
+
+# Transport declared at init/run - &quot;streamable_http&quot;
+# mcp.run(transport=&quot;streamable_http&quot;)
+</code></pre>
+<h3 id="stdio-vs-streamable-http-execution-model">STDIO vs Streamable HTTP - Execution Model</h3>
+<div class="mermaid">
+flowchart TD
+    subgraph STDIO["STDIO Transport - Local Execution"]
+        C1[Client Process] -- stdin/stdout --> S1[MCP Server Package Local]
+        S1 --> T1[Tools: fetch, add, search]
+    end
+
+    subgraph HTTP["Streamable HTTP - Remote/Hosted"]
+        C2[Client] -- HTTP POST /mcp --> U[Uvicorn Server<br/>localhost:8050/mcp]
+        U --> S2[MCP Server Remote]
+        S2 --> T2[Same Tools Exposed via URL]
+    end
+
+    STDIO -.->|Migrate| HTTP
+    HTTP --> D[Deploy Anywhere<br/>No Local Code Needed]
+
+</div>
+<ul>
+<li>STDIO: client executes server package locally via standard input/output - requires code on client machine</li>
+<li>Streamable HTTP: requests go to a URL over HTTP - server can run locally now, later on any domain after deployment</li>
+<li>
+<p>Advantage: consumers do not need local code checkout; they call the hosted endpoint - critical for healthcare platform where frontend, agent orchestrator, and MCP servers scale independently</p>
+</li>
+<li>
+<p>For Arun's healthcare systems: this maps directly to exposing a ChromaDB/Pinecone-backed RAG retriever or a clinical guideline service as <code>https://mcp.hospital.ai/mcp</code> behind FastAPI + NGINX, enabling LangGraph agents to call it without bundling the vector DB locally</p>
+</li>
+</ul>
+<h3 id="running-and-verifying">Running and Verifying</h3>
+<ul>
+<li>Execute via play button / <code>python http_mcp.py</code> - Uvicorn starts and logs <code>Uvicorn running on http://0.0.0.0:8050</code></li>
+<li>Auto-exposes endpoint at <code>/mcp</code> -&gt; full URL is <code>http://localhost:8050/mcp</code></li>
+<li>Host nuance: <code>0.0.0.0</code> in logs is not a clickable domain - to verify locally, open browser and navigate to <code>http://localhost:8050/mcp</code></li>
+</ul>
+<pre><code class="language-bash"># Server start
+python http_mcp.py
+# Logs: Uvicorn running on http://0.0.0.0:8050
+# Endpoint: http://localhost:8050/mcp
+</code></pre>
+<ul>
+<li>Browser test: visiting <code>http://localhost:8050</code> alone returns Not Found - must append <code>/mcp</code></li>
+<li>Visiting <code>http://localhost:8050/mcp</code> in a regular browser returns JSON-RPC error:</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: null,
+  &quot;error&quot;: {
+    &quot;code&quot;: -32600,
+    &quot;message&quot;: &quot;Client must accept text/event-stream&quot;
+  }
+}
+</code></pre>
+<ul>
+<li>This error is expected - browser sends <code>text/html</code>, but Streamable HTTP requires <code>Accept: text/event-stream</code> (Server-Sent Events)</li>
+<li>Confirms server is running correctly; it is not a web app with a UI, it is an MCP endpoint</li>
+</ul>
+<h3 id="why-this-matters-and-what-comes-next">Why This Matters and What Comes Next</h3>
+<ul>
+<li>MCP server is not a web application - do not expect a rendered page at the URL</li>
+<li>Proper inspection requires MCP Inspector tool - provides UI to discover tools, invoke them, and trace requests - introduced next in the course</li>
+<li>Transition sets up hosted development: same server will be deployed remotely so external clients can fetch via URL without local install</li>
+</ul>
+<h2 id="key-takeaways_6">Key Takeaways</h2>
+<ul>
+<li>Dynamic client paths using <code>os</code>/<code>pathlib</code> with double <code>dirname</code> to reach <code>.venv</code> makes LangChain MCP clients environment-portable</li>
+<li>Streamable HTTP server needs no tool-code changes - only <code>transport="streamable_http"</code>, <code>host="0.0.0.0"</code>, <code>port=8050</code> declaration</li>
+<li>Uvicorn serves the MCP server at <code>localhost:8050/mcp</code> - verify via <code>localhost</code>, not <code>0.0.0.0</code>, and always include <code>/mcp</code> suffix</li>
+<li>Browser JSON-RPC error about <code>text/event-stream</code> is correct behavior, not a failure - signals SSE-based Streamable HTTP is active</li>
+<li>STDIO is local process I/O; Streamable HTTP is URL-based and enables deployment - choose STDIO for dev, Streamable HTTP for any hosted healthcare/MedEd agent</li>
+<li>Next step is MCP Inspector for proper tool testing, followed by remote deployment patterns directly applicable to FastAPI-hosted clinical AI services<blockquote>
+<p><strong>Bridge from Chapter 10:</strong> HTTP endpoint is up but returns SSE errors in a browser - we introduce Inspector (npx) as the protocol-native debugger that validates tools before any agent wiring.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-11-mcp-inspector-014244-015507-part-11-of-17">Chapter 11: MCP Inspector (01:42:44 - 01:55:07) | Part 11 of 17</h2>
+<h2 id="overview_9">Overview</h2>
+<ul>
+<li>Introduces MCP Inspector as the interactive developer tool for testing and debugging MCP servers without writing client code</li>
+<li>Covers the Node.js prerequisite for running the Inspector: installing Node, verifying <code>node</code>, <code>npm</code>, <code>npx</code>, and initializing <code>package.json</code></li>
+<li>Demonstrates launching the Inspector via <code>npx @modelcontextprotocol/inspector</code>, connecting over Streamable HTTP to <code>http://localhost:8050/mcp</code>, and exercising tools through the browser UI</li>
+<li>For Arun Yadav as AI Systems Engineer, Inspector is the local validation gate before integrating any MCP server into FastAPI, LangChain/LangGraph, or a hosted MCP Hub</li>
+</ul>
+<h2 id="what-mcp-inspector-is">What MCP Inspector Is</h2>
+<ul>
+<li>Official interactive UI provided by the Model Context Protocol for inspecting local and production MCP servers</li>
+<li>Provides visual listing of resources, prompts, and tools exposed by a server</li>
+<li>Allows running tools directly from the UI with input parameters and inspecting JSON results</li>
+<li>For Arun Yadav, equivalent to Swagger UI for FastAPI or Playground for GraphQL but protocol-native for MCP: fast feedback loop before committing to agent wiring</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    A[MCP Server<br/>Streamable HTTP :8050/mcp] --> B[MCP Inspector Proxy :6277]
+    B --> C[Browser UI]
+    C --> D[List Tools / Resources / Prompts]
+    D --> E[Run Tool with Params]
+    E --> F[Inspect JSON Result]
+    F --> G[Fix Server -> Re-test]
+
+</div>
+<h2 id="prerequisite-nodejs-runtime">Prerequisite: Node.js Runtime</h2>
+<ul>
+<li>Inspector is distributed as a Node package, so Node.js is required regardless of Python stack</li>
+<li>Instructor framing: Node is a runtime similar to Python for executing JavaScript</li>
+<li>Installation:</li>
+<li>Search <code>node download</code> -&gt; nodejs.org -&gt; choose Windows or Mac installer -&gt; next/next/install</li>
+<li>Restart terminal or machine if <code>node -v</code> is not recognized after install</li>
+<li>Verification commands taught in chapter:</li>
+<li><code>node -v</code> -&gt; e.g. <code>v22.17.0</code> in demo (transcript shows <code>2022.17.0</code> typo)</li>
+<li><code>npm -v</code> -&gt; npm ships with Node, package manager analogous to <code>pip</code></li>
+<li><code>npx -v</code> -&gt; runner for packages without global install</li>
+<li>Failure mode: if any of the three commands is missing, reinstall Node</li>
+<li>For Arun Yadav, this is a one-time environment setup comparable to ensuring <code>uv</code> / <code>python</code> is on PATH before any MCP or FastAPI work</li>
+</ul>
+<h2 id="node-project-setup-without-virtual-environments">Node Project Setup Without Virtual Environments</h2>
+<ul>
+<li>Node does not use Python-style <code>venv</code>; isolation is handled via <code>package.json</code></li>
+<li>Instructor demo flow:</li>
+<li><code>npm init</code> -&gt; interactive prompts for name, version, description, entry point, test command</li>
+<li>Preferred shortcut: <code>npm init -y</code> -&gt; accepts defaults from working directory, no prompts, saves time</li>
+<li>Result: <code>package.json</code> created at project root containing dependencies and scripts</li>
+<li><code>package.json</code> is the Node equivalent of <code>pyproject.toml</code> / virtual environment manifest</li>
+<li>Instructor explicitly states deep Node knowledge is not needed for this course; only one package will be used</li>
+<li>Arun Yadav note: treat <code>package.json</code> as the counterpart to <code>pyproject.toml</code> and <code>uv.lock</code> for reproducibility, commit it if Inspector is part of the repo tooling</li>
+</ul>
+<h2 id="installing-and-launching-mcp-inspector">Installing and Launching MCP Inspector</h2>
+<ul>
+<li>Package name: <code>@modelcontextprotocol/inspector</code></li>
+<li>The chapter shows two equivalent paths: via <code>npm</code> documentation or direct <code>npx</code> invocation; instructor recommends <code>npx</code> to avoid global install</li>
+<li>Core command:</li>
+</ul>
+<pre><code class="language-bash">npx @modelcontextprotocol/inspector
+</code></pre>
+<ul>
+<li>Behavior:</li>
+<li><code>npx</code> automatically fetches the package if not present, prints <code>Need to install the following packages ... ? y</code></li>
+<li>Starts a proxy server listening on <code>http://localhost:6277</code></li>
+<li>Prints <code>Proxy server listening on localhost:6277</code> and <code>Opening in browser</code></li>
+<li>Auto-opens the Inspector UI in the default browser</li>
+<li>Precondition stressed: MCP server must already be running before launching Inspector</li>
+<li>Demo server running on <code>http://localhost:8050/mcp</code> with logs like <code>Uvicorn running on ...</code></li>
+<li>For Arun Yadav as AI Systems Engineer, this mirrors <code>uv run fastapi dev</code> -&gt; then opening <code>http://localhost:8000/docs</code>: server first, tooling second</li>
+</ul>
+<h2 id="connecting-inspector-to-the-mcp-server">Connecting Inspector to the MCP Server</h2>
+<ul>
+<li>Inspector does not auto-discover the server URL; user must configure transport and endpoint</li>
+<li>Two transport options shown in UI dropdown:</li>
+<li><code>STDIO</code> for local process-spawned servers</li>
+<li><code>Streamable HTTP</code> for HTTP servers (used in this chapter)</li>
+<li>Demo configuration:</li>
+<li>Transport: <code>Streamable HTTP</code></li>
+<li>URL: <code>http://localhost:8050/mcp</code></li>
+<li>Action: click <code>Connect</code> -&gt; status <code>Connected: FastMCP server</code></li>
+<li>Once connected, Inspector is bound to that server instance; output in VS Code terminal confirms proxy forwarding</li>
+<li>Production relevance: same UI works for deployed servers by replacing <code>http://localhost:8050/mcp</code> with <code>https://&lt;host&gt;/mcp</code></li>
+<li>No code change needed, only URL swap, which is exactly the local-to-hosted pivot Arun Yadav needs for healthcare staging vs prod</li>
+</ul>
+<div class="mermaid">
+sequenceDiagram
+    participant Dev as Developer
+    participant Server as MCP Server :8050
+    participant Inspector as Inspector Proxy :6277
+    participant UI as Browser UI
+    Dev->>Server: start server (python mcp_server.py)
+    Dev->>Inspector: npx @modelcontextprotocol/inspector
+    Inspector->>UI: open http://localhost:6277
+    Dev->>UI: set Transport=Streamable HTTP, URL=/mcp
+    UI->>Inspector: Connect
+    Inspector->>Server: handshake + list capabilities
+    Server-->>UI: tools, resources, prompts
+
+</div>
+<h2 id="navigating-the-inspector-ui">Navigating the Inspector UI</h2>
+<ul>
+<li>Three top-level sections reflect the MCP protocol primitives:</li>
+<li><strong>Resources</strong> -&gt; none in demo, because no <code>mcp.resource()</code> was defined</li>
+<li><strong>Prompts</strong> -&gt; none in demo, no <code>mcp.prompt()</code> defined</li>
+<li><strong>Tools</strong> -&gt; two entries: <code>fetch</code> and <code>process</code></li>
+<li>Listing tools:</li>
+<li>Click <code>Tools</code> -&gt; <code>List Tools</code> -&gt; Inspector enumerates tool names, descriptions, and JSON schemas derived from Python function signatures</li>
+<li>Instructor commentary on prevalence:</li>
+<li>Roughly 99.999% of real MCP servers expose only tools; prompts and resources exist but are secondary</li>
+<li>Prompts are described as analogous to Claude Code skills (markdown prompt files) where a reusable prompt is hosted on the server rather than a callable function</li>
+<li>Most teams handle prompt and resource logic inside the tool itself; creating separate prompts/resources is optional and low-demand</li>
+<li>Arun Yadav takeaway: for clinical RAG or medical education agents, standardize on tools first; add prompts only if a reusable system-prompt template needs server-side governance</li>
+</ul>
+<h2 id="running-and-debugging-tools">Running and Debugging Tools</h2>
+<ul>
+<li>Flow for <code>process</code> tool with a parameter:</li>
+<li>Select <code>process</code> -&gt; UI renders input form with field <code>path</code> derived from function signature</li>
+<li>Enter value e.g. <code>my path</code> or leave empty for parameterless tools</li>
+<li>Click <code>Run Tool</code> -&gt; Inspector sends <code>tools/call</code> request to server</li>
+<li>Result pane shows <code>Tool result: Success</code> with returned JSON/dictionary payload</li>
+<li>Scroll to inspect the exact dictionary returned by <code>return</code> in the Python server file</li>
+<li>Flow for parameterless tool (e.g. <code>fetch</code> variant in demo):</li>
+<li>No input form rendered, directly <code>Run Tool</code> -&gt; success payload visible</li>
+<li>Validation with Pydantic mentioned: server can integrate Pydantic for strict input/output schema validation, and Inspector will surface schema violations immediately</li>
+<li>Value proposition repeated: no client code needed to verify server correctness; iterate quickly on arguments and observe output</li>
+<li>For third-party or hosted MCP servers, same flow applies: paste the hosted URL, list tools, run with test inputs, verify before wiring into LangGraph</li>
+</ul>
+<div class="mermaid">
+flowchart TD
+    A[Select Tool in Inspector] --> B{Has Input Schema?}
+    B -->|Yes - e.g. path| C[Fill Params in Form]
+    B -->|No| D[Direct Run]
+    C --> E[Click Run Tool]
+    D --> E
+    E --> F[MCP tools/call -> Server]
+    F --> G[Server executes Python function]
+    G --> H[Return dict / JSON]
+    H --> I[Inspector shows Success + Payload]
+    I --> J{Output correct?}
+    J -->|No| K[Fix server.py -> Restart -> Re-run]
+    J -->|Yes| L[Proceed to Python client code]
+
+</div>
+<h2 id="without-client-vs-with-client-testing">Without-Client vs With-Client Testing</h2>
+<ul>
+<li>Inspector covers the without-client path: UI-driven validation that the MCP server is running and returning correct data</li>
+<li>Instructor bridges to next step: as developers, the with-client path is still required where Python code programmatically discovers and calls tools via <code>MultiServerMCPClient</code> or raw MCP SDK</li>
+<li>Inspector is intentionally positioned as the pre-flight check before writing that integration code</li>
+<li>For Arun Yadav, this establishes a two-stage QA pattern:</li>
+<li>Stage 1 local: Inspector on <code>localhost</code> for rapid iteration during FastAPI service development</li>
+<li>Stage 2 integrated: Python LangChain client in <code>chapter/mcp_create/mcp_client.py</code> style, then CI and deployment checks against the hosted Streamable HTTP endpoint</li>
+</ul>
+<h2 id="practical-tips-from-the-chapter">Practical Tips from the Chapter</h2>
+<ul>
+<li>Use <code>npm init -y</code> over interactive <code>npm init</code> to avoid repetitive prompts</li>
+<li>Do not worry about <code>package.json</code> scripts or <code>index.js</code> entry point for this course; they are scaffolding only</li>
+<li>If Inspector shows empty Resources/Prompts, that is expected when only <code>@mcp.tool()</code> decorators are used</li>
+<li>If <code>Connect</code> fails, verify the MCP server process is still running and the URL path includes <code>/mcp</code></li>
+<li>For Arun Yadav, add Inspector to the team runbook as the first debug step when any new MCP server for EHR, guideline, or vector-store access is authored</li>
+</ul>
+<h2 id="key-takeaways-for-arun-yadav-ai-systems-engineer_1">Key Takeaways for Arun Yadav - AI Systems Engineer</h2>
+<ul>
+<li>Adopt Inspector as the mandatory smoke test for every MCP server before it enters any FastAPI or LangGraph pipeline: if it does not list and run cleanly in Inspector, do not wire it to an agent</li>
+<li>Treat Node/npm/npx as lightweight tooling dependencies, not a stack shift; pin Inspector invocation to <code>npx @modelcontextprotocol/inspector</code> in onboarding docs so Python-focused teammates do not need Node expertise</li>
+<li>Standardize local transport to <code>Streamable HTTP</code> at <code>http://localhost:8050/mcp</code> during development and swap to <code>https://&lt;prod-host&gt;/mcp</code> in deployment, validating both endpoints with Inspector before releasing</li>
+<li>Design servers around tools first, keep prompts/resources for future governance needs, and enforce Pydantic schemas on tool I/O so Inspector surfaces contract violations early</li>
+<li>Capture Inspector success payloads as regression fixtures: the dictionary returned for <code>fetch</code> and <code>process</code> becomes the expected output for automated integration tests in CI</li>
+</ul>
+<blockquote>
+<p><strong>Bridge from Chapter 11:</strong> Single HTTP server is verifiable, but scale demands mixed transports - we extend the LangChain client to 4 servers (3x stdio + 1x HTTP) via USB-C composability.</p>
+</blockquote>
+<h2 id="chapter-12-langchain-client-for-http-mcp-server-015507-020817-part-12-of-17">Chapter 12: Langchain Client For HTTP MCP Server (01:55:07 - 02:08:17) | Part 12 of 17</h2>
+<h2 id="overview_10">Overview</h2>
+<ul>
+<li>Builds on Chapter 09 LangChain client, now switching transport from <code>stdio</code> to <code>streamable HTTP</code> for hosted MCP servers</li>
+<li>Demonstrates the core MCP composability promise using USB-C port analogy - adding new servers is plug-and-play via JSON config without rewriting client logic</li>
+<li>Shows how to extend an existing <code>MultiServerMCPClient</code> with an additional HTTP server alongside existing stdio servers, resulting in 4 concurrent MCP servers</li>
+<li>For Arun Yadav as AI Systems Engineer, this is the production pivot where local dev servers and remote hosted servers coexist behind a single LangChain agent</li>
+</ul>
+<h2 id="the-usb-c-analogy-why-mcp-client-is-powerful">The USB-C Analogy - Why MCP Client is Powerful</h2>
+<ul>
+<li>Instructor frames MCP as USB-C: standardized port where any compliant device plugs in instantly</li>
+<li>Value proposition: want another tool server, just add its entry to the client JSON, no code refactor</li>
+<li>LangChain client (<code>langchain-mcp-adapters</code>) is presented as the best approach for this because it normalizes all plugged-in servers into unified LangChain tools</li>
+<li>Arun Yadav angle: mirrors FastAPI microservice aggregation where new internal services (guideline retriever, formulary lookup, ChromaDB RAG) are onboarded by config, not by rewriting the agent orchestrator</li>
+</ul>
+<h2 id="prerequisites_1">Prerequisites</h2>
+<ul>
+<li>HTTP MCP server must already be running before creating or running the client</li>
+<li>Demo verifies server is running nicely on <code>http://localhost:8050</code> before touching client code</li>
+<li>Client file work is done by copying the existing <code>langchain client</code> file pattern established earlier, not writing from scratch</li>
+</ul>
+<div class="mermaid">
+flowchart TD
+    A[Verify HTTP MCP Server Running<br/>localhost:8050/mcp] --> B[Copy Existing langchain_client.py]
+    B --> C[Edit Client JSON Config]
+    C --> D{Transport Type?}
+    D -->|stdio| E[command + args + file path]
+    D -->|streamable HTTP| F[url only]
+    F --> G[Add New Server Entry]
+    E --> G
+    G --> H[Restart Client - run file]
+    H --> I[MultiServerMCPClient Aggregates Tools]
+    I --> J[LangChain Agent Consumes Unified Tool List]
+
+</div>
+<h2 id="stdio-vs-streamable-http-config-difference">Stdio vs Streamable HTTP - Config Difference</h2>
+<ul>
+<li><strong>stdio config</strong> - local execution model:</li>
+<li>Requires <code>command</code> - python executable to spawn the server process</li>
+<li>Requires <code>args</code> - path to the server Python file</li>
+<li>Client actually launches the server as a child process</li>
+<li>
+<p>Needs <code>mcp_server</code> script / file on disk locally</p>
+</li>
+<li>
+<p><strong>Streamable HTTP config</strong> - remote/hosted model:</p>
+</li>
+<li>No <code>command</code> needed - not executing locally</li>
+<li>No <code>args</code> needed - no local file to point to</li>
+<li>No <code>mcp_server</code> script reference at all</li>
+<li>Only needs <code>transport</code> and <code>url</code></li>
+<li>
+<p>Host URL contains full endpoint including <code>/mcp</code> suffix: <code>http://localhost:8050/mcp</code></p>
+</li>
+<li>
+<p>For Arun Yadav, this decouples deployment: same agent code runs against local stdio servers in dev and remote HTTP servers in Docker / cloud without conditional logic, only config changes</p>
+</li>
+</ul>
+<h2 id="step-by-step-adding-an-http-server-to-langchain-client">Step-by-Step - Adding an HTTP Server to LangChain Client</h2>
+<ul>
+<li>Start from existing working client that already has stdio servers defined</li>
+<li>Instructor chooses to add, not replace: keep existing servers as-is and append one more entry to prove composability</li>
+<li>Optional cleanup: can rename tools / function names for clarity around HTTP handling, then restart server to ensure clean state</li>
+<li>Edit the <code>MultiServerMCPClient</code> JSON dict:</li>
+<li>Add trailing comma after last existing server entry</li>
+<li>Paste new server block with distinct key name, example <code>http_server</code> or <code>mcp_http_4th</code></li>
+<li>New server entry structure:</li>
+</ul>
+<pre><code class="language-python"># Pattern for Arun Yadav style multi-transport client
+from langchain_mcp_adapters.client import MultiServerMCPClient
+
+client = MultiServerMCPClient({
+    # Existing stdio servers kept intact
+    &quot;fetch_stdio&quot;: {
+        &quot;transport&quot;: &quot;stdio&quot;,
+        &quot;command&quot;: &quot;python&quot;,
+        &quot;args&quot;: [&quot;chapter/mcp_servers/fetch_server.py&quot;]
+    },
+    # New - 4th server via Streamable HTTP
+    &quot;custom_http_server&quot;: {
+        &quot;transport&quot;: &quot;streamable_http&quot;,
+        &quot;url&quot;: &quot;http://localhost:8050/mcp&quot;
+    }
+})
+
+# No other client code changes required
+# tools = await client.get_tools() works across all 4 servers
+</code></pre>
+<ul>
+<li>Key details stressed in demo:</li>
+<li>Transport value must be <code>streamable_http</code> not <code>stdio</code></li>
+<li>URL key is literally <code>url</code>, not <code>host</code> or <code>endpoint</code></li>
+<li>Must include <code>/mcp</code> path segment at end of URL or connection fails</li>
+<li>Localhost port <code>8050</code> is the server's exposed HTTP port from previous chapter setup</li>
+</ul>
+<h2 id="building-and-running">Building and Running</h2>
+<ul>
+<li>After editing JSON, re-run the client file directly</li>
+<li>Demo confirms client starts and aggregates tools from all servers including the new HTTP one</li>
+<li>Adapter handles heterogeneous transports internally: stdio subprocess negotiation plus HTTP streaming, same <code>get_tools()</code> call returns combined LangChain tool list</li>
+<li>Verifies that adding the 4th server required zero changes to tool invocation or agent executor logic beyond the JSON entry</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    subgraph STDIO["Local STDIO Servers"]
+        S1[Server 1 - stdio]
+        S2[Server 2 - stdio]
+        S3[Server 3 - stdio]
+    end
+    subgraph HTTP["Hosted HTTP Server"]
+        H1[Server 4 - streamable_http<br/>localhost:8050/mcp]
+    end
+    S1 --> C[MultiServerMCPClient]
+    S2 --> C
+    S3 --> C
+    H1 --> C
+    C --> T[Unified LangChain Tools<br/>get_tools]
+    T --> A[Agent Executor]
+
+</div>
+<h2 id="core-insight-for-production">Core Insight for Production</h2>
+<ul>
+<li>Single client abstraction hides transport heterogeneity from the agent</li>
+<li>This is what makes MCP behave like USB-C for AI systems: swapping or adding a ChromaDB RAG server, Playwright automation server, or healthcare guideline server is a config edit, not a code deploy</li>
+<li>Previous step of renaming tool functions to <code>tool</code> names with HTTP suffix is organizational, not required for functionality, but helps Arun Yadav trace which tools came from which transport during debugging</li>
+</ul>
+<h2 id="key-takeaways-for-arun-yadav-ai-systems-engineer_2">Key Takeaways for Arun Yadav - AI Systems Engineer</h2>
+<ul>
+<li>Standardize all forward builds on <code>MultiServerMCPClient</code> with mixed transports: keep <code>stdio</code> for fast local iteration, add <code>streamable_http</code> for shared or deployed services</li>
+<li>Treat <code>url</code> as an environment variable, inject <code>http://localhost:8050/mcp</code> in dev and <code>https://mcp.yourdomain.com/mcp</code> in production, same pattern as FastAPI service URLs</li>
+<li>Enforce <code>/mcp</code> suffix validation in config loader to avoid silent connection failures when onboarding new hosted MCP servers</li>
+<li>Log <code>len(await client.get_tools())</code> per transport after startup to confirm all 4 servers contributed tools, critical for observability in healthcare agents where missing guideline or formulary tools could degrade clinical answers</li>
+<li>Copy-and-extend workflow shown is intentional for reliability: duplicate a working <code>langchain_client.py</code> rather than templating from scratch to preserve working stdio entries while adding HTTP</li>
+</ul>
+<blockquote>
+<p><strong>Bridge from Chapter 12:</strong> Multi-transport is intrinsic, now we exploit the ecosystem - consuming a community DuckDuckGo MCP via uvx instead of rebuilding search locally.</p>
+</blockquote>
+<h2 id="chapter-13-using-community-mcps-020817-022308-part-13-of-17">Chapter 13: Using Community MCPs (02:08:17 - 02:23:08) | Part 13 of 17</h2>
+<h2 id="overview_11">Overview</h2>
+<ul>
+<li>Focus is on consuming third-party and community MCP servers instead of building everything from scratch</li>
+<li>Core argument: if a well-coded, well-tested open-source MCP already exists for a capability like web search, reuse it rather than reimplementing edge cases and maintenance</li>
+<li>Demonstrated end-to-end using the community DuckDuckGo Search MCP as the reference example</li>
+<li>Shows how to discover, validate, install via <code>uvx</code>/<code>npx</code>, and wire the server into the existing <code>MultiServerMCPClient</code> (LangChain) workflow from Chapter 09</li>
+<li>For Arun Yadav as AI Systems Engineer, this is the ecosystem leverage pattern - assembling production agents from curated community servers for search, filesystem, or browser automation while reserving custom builds for proprietary healthcare logic</li>
+</ul>
+<h2 id="why-community-mcps-matter">Why Community MCPs Matter</h2>
+<ul>
+<li><strong>Build vs reuse decision:</strong></li>
+<li>You have most tools built, but lack one capability such as search for the agent</li>
+<li>First check if a community MCP already covers it; build only if no viable server exists</li>
+<li>Reuse avoids duplicated effort, inherits edge-case handling, testing, and ongoing community fixes</li>
+<li><strong>Distribution model:</strong></li>
+<li>Community MCPs are published as open-source packages on GitHub and on package registries</li>
+<li>Anyone can consume them once published; availability is not restricted to the author</li>
+<li><strong>Validation before adoption - Arun Yadav checklist:</strong></li>
+<li>Check GitHub stars (example server had 1000+ stars), open issues, and last update timestamp (example was updated 2 weeks ago)</li>
+<li>Test locally before promoting to shared or production environments</li>
+<li>Confirm license, maintenance activity, and description quality before pinning in production</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    A[Agent Needs Search Capability] --> B{Community MCP Exists?}
+    B -- No --> C[Build Custom MCP Server]
+    B -- Yes --> D[Validate - Stars, Issues, Last Update, Local Test]
+    D --> E[Install via uvx or npx]
+    E --> F[Wire into MultiServerMCPClient]
+    F --> G[Unified Agent Toolset]
+
+    style D fill:#e3f2fd,stroke:#1565c0
+    style F fill:#e8f5e9,stroke:#2e7d32
+
+</div>
+<h2 id="example-duckduckgo-search-mcp">Example: DuckDuckGo Search MCP</h2>
+<ul>
+<li><strong>Why this example:</strong></li>
+<li>Search is the most common missing piece when assembling agents</li>
+<li>DuckDuckGo provides a free search engine alternative to paid Google Search MCPs, which instructor notes exist but are not used in this demo</li>
+<li>Instructor also promises to show a paid search provider later for completeness</li>
+<li><strong>Source clarification:</strong></li>
+<li>No official DuckDuckGo MCP - the server is built and maintained by a community developer, not by DuckDuckGo itself</li>
+<li>This illustrates the typical community pattern: wrapper MCPs around third-party APIs built by independent contributors</li>
+<li><strong>What it provides:</strong></li>
+<li>Two tools discovered at runtime:<ul>
+<li><code>search</code> - search the web via DuckDuckGo, returns list of results with titles, URLs, snippets; used for current information and research</li>
+<li><code>fetch</code> / <code>fetch_content</code> - fetch content of a specific result page</li>
+</ul>
+</li>
+<li><code>search</code> description is verbose and well-documented, which helps LLM tool selection</li>
+</ul>
+<h2 id="distribution-uvx-vs-npx-and-registry-mapping">Distribution: uvx vs npx and Registry Mapping</h2>
+<ul>
+<li><strong>Two distribution paths cover the ecosystem:</strong></li>
+<li><code>uvx</code> - for Python-based MCP servers, package lives on PyPI</li>
+<li><code>npx</code> - for Node-based MCP servers, package lives on npm</li>
+<li><strong>Author publishing side:</strong></li>
+<li>Author chooses one stack (Python or Node) and publishes to the corresponding registry (PyPI or npm)</li>
+<li><strong>Consumer side - key MCP advantage:</strong></li>
+<li>Consumer does not need to match the author's stack</li>
+<li>Only requirement is having both <code>python</code>/<code>uvx</code> and <code>node</code>/<code>npx</code> installed locally</li>
+<li><code>npx &lt;package&gt;</code> downloads the npm package and runs it locally via stdio</li>
+<li><code>uvx &lt;package&gt;</code> downloads the PyPI package and runs it locally via stdio</li>
+<li>Prior chapter's Inspector was already run via <code>npx &lt;package&gt;</code> - same mechanism</li>
+<li><strong>Verification shown:</strong></li>
+<li>Instructor searches PyPI for the DuckDuckGo package to confirm it exists as a public Python package</li>
+<li>Confirms standard distribution path: community author pushes to PyPI, consumer pulls via <code>uvx</code></li>
+</ul>
+<div class="mermaid">
+flowchart TD
+    A[Community MCP Author] --> B{Author Stack}
+    B -- Python --> C[Publish to PyPI]
+    B -- Node --> D[Publish to npm]
+    C --> E[Consumer runs uvx package-name]
+    D --> F[Consumer runs npx package-name]
+    E --> G[stdio Transport - Local Process]
+    F --> G
+    G --> H[MultiServerMCPClient get_tools]
+
+</div>
+<h2 id="integrating-into-langchain-client-json-to-config-conversion">Integrating Into LangChain Client - JSON to Config Conversion</h2>
+<ul>
+<li><strong>Starting point:</strong></li>
+<li>Community MCP README provides a ready-made JSON snippet for the server configuration</li>
+<li>Instructor copies this JSON directly for use in the client</li>
+<li><strong>Transport identification:</strong></li>
+<li>If the run command is <code>uvx</code> or <code>npx</code> with no URL, the transport is <code>stdio</code></li>
+<li>No HTTP URL means not Streamable HTTP - same stdio pattern used for local custom servers in earlier chapters</li>
+<li><strong>Mapping to <code>MultiServerMCPClient</code> config:</strong></li>
+<li>From README JSON to LangChain JSON is a minimal translation</li>
+<li><code>command</code>: set to <code>"uvx"</code> - not a venv-specific <code>python</code> path, because <code>uvx</code> will globally download and run the package via standard input/output</li>
+<li><code>args</code>: package name array, e.g. <code>["duckduckgo-mcp-server"]</code> - the argument that follows <code>uvx</code> on the command line</li>
+<li><code>transport</code>: <code>"stdio"</code></li>
+<li><strong>Arun Yadav pattern:</strong></li>
+<li>Dev workflow using venv python path (<code>C:\path\to\venv\Scripts\python.exe</code> with raw string) still applies for custom servers</li>
+<li>For community servers, switch to global <code>uvx</code>/<code>npx</code> command - no venv path needed, isolates community package from local env</li>
+<li>Keep the config dict environment-specific so the same agent code works locally and in Docker/FastAPI deployment</li>
+</ul>
+<pre><code class="language-python"># Pattern taught - community MCP wired into LangChain client
+# File: chapter_03/community_mcp.py (created in this chapter)
+import asyncio
+from langchain_mcp_adapters.client import MultiServerMCPClient
+
+client = MultiServerMCPClient({
+    &quot;duckduckgo_search&quot;: {
+        &quot;transport&quot;: &quot;stdio&quot;,
+        &quot;command&quot;: &quot;uvx&quot;,
+        &quot;args&quot;: [&quot;duckduckgo-mcp-server&quot;]
+    }
+})
+
+async def main():
+    tools = await client.get_tools()
+    print(f&quot;Available tools: {len(tools)}&quot;)
+    for tool in tools:
+        print(f&quot;- {tool.name}: {tool.description[:120]}&quot;)
+
+    # Invoke first tool - search
+    search_tool = tools[0]  # search
+    result = await search_tool.ainvoke({&quot;query&quot;: &quot;what is the capital of France?&quot;})
+    print(result)
+
+if __name__ == &quot;__main__&quot;:
+    asyncio.run(main())
+</code></pre>
+<h2 id="hands-on-walkthrough-shown">Hands-On Walkthrough Shown</h2>
+<ul>
+<li><strong>Project setup:</strong></li>
+<li>Create new section <code>chapter 3 - third party MCPs</code></li>
+<li>Create file <code>community_mcp.py</code> and paste the README JSON, then adapt to LangChain client format</li>
+<li>Reuse the LangChain client boilerplate from Chapter 09 - imports, <code>MultiServerMCPClient</code> instantiation, <code>async main()</code> with <code>asyncio.run()</code></li>
+<li><strong>Running and inspecting:</strong></li>
+<li>Run the file, clear terminal and re-run to verify deterministic output</li>
+<li>First run prints full tool objects including names and long descriptions</li>
+<li>Simplify to <code>len(tools)</code> - confirms exactly 2 tools</li>
+<li>Loop <code>for tool in tools: print(tool.name)</code> - outputs <code>search</code> and <code>fetch_content</code></li>
+<li><strong>Tool invocation:</strong></li>
+<li>Initial attempt with <code>client.call_tool</code> fails - no such method on <code>MultiServerMCPClient</code></li>
+<li>Instructor checks LangChain docs - correct pattern is to treat fetched tools as native LangChain tools</li>
+<li>Fetch tool handle: <code>fetch_tool = tools[0]</code></li>
+<li>Invoke via <code>await fetch_tool.ainvoke({"query": "what is the capital of France?"})</code> - async invoke is the LangChain tool contract</li>
+<li><code>ainvoke</code>/<code>invoke</code> are native to LangChain tools, not to the MCP client itself</li>
+<li>Result returns 9 search results with titles, Wikipedia links, URLs, and snippets - confirms the community server works end-to-end</li>
+<li>For Arun Yadav, this confirms the adapter conversion from Chapter 09 works identically for community servers - fetched tools behave like custom <code>@tool</code> functions in LangGraph</li>
+</ul>
+<h2 id="key-takeaways-for-arun-yadav-ai-systems-engineer_3">Key Takeaways for Arun Yadav - AI Systems Engineer</h2>
+<ul>
+<li>Treat community MCPs as the default for commodity capabilities (web search, fetch, filesystem, browser automation) and reserve custom MCP builds for proprietary healthcare operations like EHR queries, ChromaDB/Pinecone RAG over clinical guidelines, or medical curriculum resources</li>
+<li>Enforce a validation gate before pinning any community server: stars, last commit date, issue triage, and local <code>uvx</code>/<code>npx</code> smoke test; pin exact package version in <code>pyproject.toml</code> / <code>uv.lock</code> to prevent supply-chain drift between dev and FastAPI deployment</li>
+<li>Standardize all consumption through <code>MultiServerMCPClient</code> with <code>stdio</code> transport for local dev and Streamable HTTP only when consuming hosted community providers; this keeps LangGraph agent code unchanged across environments</li>
+<li>Remember the transport heuristic: <code>command: uvx</code> or <code>npx</code> with <code>args: [package-name]</code> and no URL always means <code>stdio</code>; URL-based config means Streamable HTTP as covered in the hub and deployment chapters</li>
+<li>Log <code>tool.name</code> and <code>len(tools)</code> immediately after <code>get_tools()</code> during integration - catches breaking changes when a community author renames tools or splits functionality across releases</li>
+<li>Plan for mixed toolsets: community search tools plus internal vector-store tools will co-exist in the same agent executor because the adapter normalizes both into LangChain Tool types - design prompts and tool descriptions to help the LLM disambiguate when to search the web vs query internal knowledge base</li>
+</ul>
+<blockquote>
+<p><strong>Bridge from Chapter 13:</strong> One community server validated, we generalize to any 3rd-party hosted MCP and formalize the client-as-connection pattern plus a vetting checklist.</p>
+</blockquote>
+<h2 id="chapter-14-using-3rd-party-hosted-mcps-022308-023651-part-14-of-17">Chapter 14: Using 3rd party hosted MCPs (02:23:08 - 02:36:51) | Part 14 of 17</h2>
+<h2 id="overview_12">Overview</h2>
+<ul>
+<li>Focus shifts from building your own MCP server to reusing community-driven hosted MCPs</li>
+<li>Core message: do not rebuild what already exists — explore the MCP ecosystem first, you can find an MCP for literally everything today</li>
+<li>Demonstrates that the client is only responsible for connection, all tool execution is delegated to the agent</li>
+<li>Contrasts two consumption styles: manual <code>get_tools()</code> fetch for debugging vs automatic fetch via <code>agent.invoke()</code> in LangChain</li>
+<li>For Arun Yadav as AI Systems Engineer, this is the leverage point for healthcare and medical education platforms: compose validated community MCPs with internal FastAPI and RAG services instead of reimplementing standard integrations</li>
+</ul>
+<h2 id="client-is-just-the-connection">Client Is Just the Connection</h2>
+<ul>
+<li>Client has a single job: establish the transport and register the server</li>
+<li>Once <code>MultiServerMCPClient</code> is instantiated with config, its work is done — no manual API calls through the client</li>
+<li>Pattern seen in official docs and in the course code: create client, fetch tools, hand off to agent, then never touch client again</li>
+<li>Instructor reinforces prior lesson: same approach used earlier — register tools from the server, save them, hand them to the agent</li>
+<li>Arun Yadav note: treat the client config as infrastructure wiring, not business logic — isolate it in a factory function so deployment can swap stdio for Streamable HTTP without touching agent code</li>
+</ul>
+<div class="mermaid">
+flowchart TD
+    A[3rd Party Hosted MCP Server] --> B[MultiServerMCPClient - Connection Only]
+    B --> C[get_tools - Fetch and Convert]
+    C --> D[LangChain Tool Objects]
+    D --> E[LangChain Agent]
+    E --> F[Agent Auto-Selects and Executes Tool]
+    F --> G[Result Returned to User]
+
+</div>
+<ul>
+<li>Client does not execute tools directly in production flow</li>
+<li>Agent handles tool selection, argument mapping, and invocation via its invoke loop</li>
+</ul>
+<h2 id="two-patterns-shown">Two Patterns Shown</h2>
+<h3 id="pattern-1-manual-fetch-for-inspection">Pattern 1: Manual Fetch for Inspection</h3>
+<ul>
+<li>Used when not building an agent, or when debugging a new community MCP</li>
+<li>Steps:</li>
+<li>Instantiate client with hosted MCP config</li>
+<li>Call <code>tools = await client.get_tools()</code></li>
+<li>Inspect tool name, description, and inputSchema in logs</li>
+<li>Optionally call a tool manually to verify behavior</li>
+<li>Purpose is validation only — confirms the hosted MCP is reachable and its tools convert cleanly to LangChain format</li>
+</ul>
+<h3 id="pattern-2-agent-auto-fetch-for-production">Pattern 2: Agent Auto-Fetch for Production</h3>
+<ul>
+<li>Used when building a real agent</li>
+<li>Steps:</li>
+<li>Create tools via client once</li>
+<li>Pass tool list to <code>create_agent</code> or <code>AgentExecutor</code></li>
+<li>Invoke agent with <code>await agent.ainvoke({"input": "..."})</code></li>
+<li>Agent automatically fetches and decides which MCP tool to call — no manual <code>call_tool</code> needed</li>
+<li>Instructor emphasizes: these tools are native to LangChain after adapter conversion, so the agent picks them up exactly like custom <code>@tool</code> functions</li>
+<li>For Arun Yadav this means a FastAPI-hosted LangGraph agent can merge internal tools (ChromaDB retriever, FHIR lookup) with external community tools (GitHub, Notion, Playwright, fetch) in a single executor</li>
+</ul>
+<pre><code class="language-python"># Pattern 1 - manual inspection - Arun Yadav debug style
+import asyncio
+from langchain_mcp_adapters.client import MultiServerMCPClient
+
+client = MultiServerMCPClient({
+    &quot;community_mcp&quot;: {
+        &quot;transport&quot;: &quot;stdio&quot;, # or &quot;streamable_http&quot; for hosted endpoint
+        &quot;command&quot;: &quot;python&quot;,
+        &quot;args&quot;: [&quot;path/to/server.py&quot;] # hosted MCPs often provide npx or URL instead
+    }
+})
+
+async def inspect():
+    tools = await client.get_tools()
+    for t in tools:
+        print(t.name, t.description, t.args_schema)
+
+asyncio.run(inspect())
+
+# Pattern 2 - agent auto-fetch - production use
+from langchain.agents import create_agent
+
+async def run_agent():
+    tools = await client.get_tools()
+    agent = create_agent(model=&quot;gpt-4o&quot;, tools=tools)
+    result = await agent.ainvoke({&quot;messages&quot;: &quot;Summarize the latest data from the MCP&quot;})
+    print(result)
+
+asyncio.run(run_agent())
+</code></pre>
+<ul>
+<li>Both patterns start from the same <code>get_tools()</code> output — difference is who invokes the tool: developer in manual mode vs LLM agent in auto mode</li>
+</ul>
+<h2 id="why-reuse-community-hosted-mcps">Why Reuse Community Hosted MCPs</h2>
+<ul>
+<li>Time saving is the primary driver — the exact same code you would write is already published and maintained by the community</li>
+<li>Ecosystem maturity: MCP registry and GitHub now cover filesystem, database, browser automation, fetch, Slack, GitHub, and domain-specific hosted servers</li>
+<li>Consistent interface: community MCPs expose standard Tool metadata (name, description, inputSchema) so your agent code does not change per provider</li>
+<li>For Arun Yadav building AI systems for healthcare and medical education, this enables rapid composition: pick a validated hosted MCP for GitHub or web fetch, and reserve custom MCP development for proprietary clinical retrieval or curriculum logic only</li>
+</ul>
+<h2 id="vetting-checklist-before-adopting-a-3rd-party-mcp">Vetting Checklist Before Adopting a 3rd Party MCP</h2>
+<ul>
+<li>Instructor advises a lightweight due diligence pass before adding any community MCP to your stack:</li>
+<li>Check documentation and install commands for clarity and completeness</li>
+<li>Inspect the module and codebase structure — is it actively maintained</li>
+<li>Review GitHub issues, open PRs, and recent commits for responsiveness and bug backlog</li>
+<li>Verify stars, download counts, and maintainer credibility as proxy for trust</li>
+<li>Test locally with manual <code>get_tools()</code> before wiring into an agent</li>
+<li>If everything looks healthy, use it — no need to rewrite identical logic</li>
+<li>Arun Yadav engineering rule: add this checklist to the internal MCP catalog review — block adoption of unmaintained or unaudited hosted MCPs that will touch patient-adjacent data or production RAG pipelines</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    A[Find Candidate MCP] --> B{Docs and Commands Clear?}
+    B -->|No| C[Skip - Poor DX]
+    B -->|Yes| D{Module and Code Healthy?}
+    D -->|No| C
+    D -->|Yes| E{GitHub Issues - Active and Triaged?}
+    E -->|No| C
+    E -->|Yes| F[Manual get_tools Test]
+    F --> G{Adopt and Wire to Agent}
+
+</div>
+<ul>
+<li>This vetting step is especially important for hosted MCPs that call external APIs with credentials — validate auth handling and data exfiltration risk before production</li>
+</ul>
+<h2 id="integration-flow-for-arun-yadav-ai-systems-engineer">Integration Flow for Arun Yadav - AI Systems Engineer</h2>
+<ul>
+<li>Treat hosted MCP adoption as a three-stage workflow:</li>
+<li>Discover: search MCP registry, GitHub, and Smithery for a hosted server matching the integration need</li>
+<li>Validate: instantiate client in a sandbox script, run <code>get_tools()</code>, log schemas, run one manual invocation</li>
+<li>Promote: move config to environment-driven factory, merge tools with internal LangChain tools, expose through LangGraph agent behind FastAPI</li>
+<li>Keep transport abstracted:</li>
+<li>Dev: <code>stdio</code> with local npx or python command for fast iteration</li>
+<li>Prod: <code>streamable_http</code> with hosted URL and auth header for scalable deployment</li>
+<li>Log tool counts and names at startup — gives observability when a hosted MCP updates and adds or deprecates tools</li>
+</ul>
+<h2 id="comparison-at-a-glance_1">Comparison At A Glance</h2>
+<ul>
+<li><strong>Manual fetch</strong> - developer controls invocation, good for learning and debugging, shows raw tool objects</li>
+<li><strong>Agent auto-fetch</strong> - LangChain agent controls invocation, tools are native LangChain tools, production pattern</li>
+<li><strong>Build your own MCP</strong> - needed for proprietary domain logic, full control, higher maintenance</li>
+<li><strong>Reuse hosted MCP</strong> - needed for commodity integrations, faster delivery, requires vetting but no custom code</li>
+</ul>
+<h2 id="key-takeaways-for-arun-yadav-ai-systems-engineer_4">Key Takeaways for Arun Yadav - AI Systems Engineer</h2>
+<ul>
+<li>Client lifecycle is minimal: connect, fetch, hand off — do not build business logic inside the client layer</li>
+<li>Standardize on <code>await client.get_tools()</code> plus agent auto-invoke as the production path, use manual fetch only for validation and onboarding new hosted MCPs</li>
+<li>Prioritize discovery over development: search for a community hosted MCP before writing a new server, especially for generic integrations like fetch, filesystem, or third-party APIs</li>
+<li>Enforce a vetting gate (docs, module health, GitHub issues) before any community MCP enters a healthcare or MedEd codebase — aligns with security and reliability requirements for clinical systems</li>
+<li>Maintain a unified tool registry where community MCP tools and internal <code>@tool</code> functions are merged after adapter conversion, so LangGraph agents can reason over a single toolset regardless of origin</li>
+<li>For deployment, externalize MCP transport and credentials via environment variables so the same agent can run against local stdio in development and Streamable HTTP hosted endpoints in Docker or cloud hosting<blockquote>
+<p><strong>Bridge from Chapter 14:</strong> Ecosystem reuse covers commodity tools; we now package our own server for distribution - the 42-minute PyPI deep dive with pyproject.toml and src layout.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-15-deploy-mcp-to-pypi-023651-031915-2544s">Chapter 15: Deploy MCP to PyPI (02:36:51 - 03:19:15, 2544s)</h2>
+<p><strong>Scope:</strong> Longest chapter (42m) - end-to-end Python packaging and PyPI deployment for an MCP server using modern UV tooling. Builds a real distributable package (<code>agentic-terminal</code>) and publishes it for consumption via <code>pip</code> / <code>uv add</code> / <code>uvx</code>.</p>
+<h3 id="why-this-chapter-matters">Why This Chapter Matters</h3>
+<ul>
+<li><strong>From local server to distributable platform:</strong> Until now the MCP server only ran from source. Packaging makes it <code>pip install</code>-able for any environment - the same transition Arun needs when moving a healthcare RAG/MCP tool from a notebook prototype to a reusable service consumed by LangGraph agents or FastAPI gateways.</li>
+<li><strong>Modern Python packaging:</strong> Replaces legacy <code>setup.py</code> with <code>pyproject.toml</code> + UV (<code>uv init</code>, <code>uv build</code>, <code>uv publish</code>) - the current standard the industry has converged on.</li>
+<li><strong>Isolation discipline:</strong> Instructs to create a fresh empty folder (e.g., <code>mcp-pypi</code> / <code>agentic-terminal</code>) to avoid conflicts with existing UV projects - critical when you maintain multiple MCP servers for different clinical domains in one monorepo.</li>
+</ul>
+<h3 id="1-scaffolding-the-package-project">1. Scaffolding the Package Project</h3>
+<ul>
+<li>Create isolated folder, then initialize:</li>
+</ul>
+<pre><code class="language-bash">mkdir mcp-pypi &amp;&amp; cd mcp-pypi
+uv init          # creates pyproject.toml, README, main.py stub
+# Do NOT run uv sync yet - edit pyproject.toml first
+</code></pre>
+<ul>
+<li><code>pyproject.toml</code> is the backbone for deployment; during normal dev it just tracks deps, but for publishing it defines name, version, description, build system, and entry points.</li>
+</ul>
+<h3 id="2-configuring-pyprojecttoml-identity">2. Configuring pyproject.toml - Identity</h3>
+<ul>
+<li><strong>Name:</strong> Change default (folder name) to a meaningful PyPI name. Example <code>agentic-terminal</code> instead of <code>mcp-pypi</code> - analogous to <code>pandas</code>/<code>numpy</code> naming. This name is what users type for <code>pip install agentic-terminal</code> and <code>uv add agentic-terminal</code>.</li>
+<li><strong>Version:</strong> Start at <code>0.1.0</code>, bump to <code>0.1.1</code>, <code>0.2.0</code> etc. on each publish iteration - PyPI requires a version bump for every upload.</li>
+<li><strong>Description:</strong> Short pitch - e.g., <code>A terminal-based agentic interface - MCP which adds terminal capabilities to an agent</code> - shown on PyPI listing.</li>
+</ul>
+<pre><code class="language-toml">[project]
+name = &quot;agentic-terminal&quot;
+version = &quot;0.1.0&quot;
+description = &quot;A terminal-based agentic interface - MCP adding terminal capabilities to an agent&quot;
+readme = &quot;README.md&quot;
+requires-python = &quot;&gt;=3.10&quot;
+dependencies = [
+    &quot;fastmcp&quot;,
+]
+</code></pre>
+<ul>
+<li>After editing, create environment and add FastMCP:</li>
+</ul>
+<pre><code class="language-bash">uv sync
+uv add fastmcp
+</code></pre>
+<blockquote>
+<p><strong>Arun lens:</strong> For a healthcare MCP (e.g., <code>meded-guideline-mcp</code>), the same fields govern discoverability. A clear <code>name</code> + <code>description</code> and semantic versioning are essential when clinical teams pin <code>meded-guideline-mcp==0.2.1</code> in a FastAPI service's lockfile for reproducible, auditable deployments.</p>
+</blockquote>
+<h3 id="3-source-layout-the-src-pattern">3. Source Layout - The <code>src</code> Pattern</h3>
+<ul>
+<li>Recommended deployable layout:</li>
+</ul>
+<pre><code>mcp-pypi/
+  pyproject.toml
+  src/
+    __init__.py              # marks src as package container
+    agentic_terminal/        # MUST match project name (convention, not enforced)
+      __init__.py            # marks package
+      tools.py               # core MCP tools
+      main.py                # entry point that runs the server
+  dist/                      # generated by uv build (wheel + sdist)
+</code></pre>
+<ul>
+<li><strong>Why <code>src</code>?</strong> Prevents <code>import agentic_terminal</code> from resolving to the local folder during dev and forces testing against the installed distribution - catches packaging bugs early.</li>
+<li><strong>Why folder name matches project name?</strong> So <code>pip install agentic-terminal</code> and <code>import agentic_terminal</code> stay intuitive. Mismatch (<code>pip install X</code> but <code>import Y</code>) confuses users.</li>
+<li>Delete the top-level <code>main.py</code> stub that <code>uv init</code> creates - all code lives under <code>src/agentic_terminal/</code>.</li>
+</ul>
+<h3 id="4-the-example-mcp-agentic-terminal-lightweight-claude-code">4. The Example MCP - Agentic Terminal (Lightweight Claude Code)</h3>
+<ul>
+<li>Purpose demo: a full-featured MCP that gives any LLM terminal autonomy - 8-9 tools covering the operations an agent needs to work directly with a codebase.</li>
+<li>
+<p>Tools included (representative set):</p>
+</li>
+<li>
+<p><code>run_bash</code> / <code>bash_code</code> - execute shell commands</p>
+</li>
+<li><code>run_python_code</code> - execute inline Python</li>
+<li><code>run_python_file</code> - execute a Python file</li>
+<li><code>read_file</code> / <code>write_file</code> / <code>create_file</code></li>
+<li><code>create_folder</code> / <code>delete_folder</code></li>
+<li>
+<p><code>glob</code> / <code>grep</code> - codebase search</p>
+</li>
+<li>
+<p>Core <code>tools.py</code> pattern:</p>
+</li>
+</ul>
+<pre><code class="language-python"># src/agentic_terminal/tools.py
+from fastmcp import FastMCP
+
+mcp = FastMCP(&quot;agentic-terminal&quot;)
+
+@mcp.tool()
+def run_bash(command: str) -&gt; str:
+    &quot;&quot;&quot;Execute a bash command and return stdout.&quot;&quot;&quot;
+    import subprocess
+    result = subprocess.run(command, shell=True, capture_output=True, text=True)
+    return result.stdout or result.stderr
+
+@mcp.tool()
+def read_file(path: str) -&gt; str:
+    with open(path) as f:
+        return f.read()
+
+@mcp.tool()
+def write_file(path: str, content: str) -&gt; str:
+    with open(path, &quot;w&quot;) as f:
+        f.write(content)
+    return f&quot;Wrote {path}&quot;
+
+# ... + glob, grep, run_python_code, run_python_file etc. (8-9 total)
+# each decorated with @mcp.tool()
+</code></pre>
+<ul>
+<li>Each function becomes an MCP tool via <code>@mcp.tool()</code> - the same FastMCP pattern used throughout the course.</li>
+</ul>
+<h3 id="5-the-main-entry-point-package-root-principle">5. The Main Entry Point - Package Root Principle</h3>
+<ul>
+<li>Never run the server from <code>tools.py</code> directly when distributing. Create a dedicated <code>main.py</code> that imports from the package root - this makes the installed package self-contained and allows future subfolders without changing imports.</li>
+</ul>
+<pre><code class="language-python"># src/agentic_terminal/main.py
+from agentic_terminal.tools import mcp
+
+def main():
+    mcp.run(transport=&quot;stdio&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<ul>
+<li><strong>Critical import discipline:</strong> Use <code>from agentic_terminal.tools import mcp</code> (absolute from package root), NOT <code>from tools import mcp</code> or <code>from src...</code>. After packaging, <code>src</code> disappears - only <code>agentic_terminal</code> exists inside the wheel. Testing from source with <code>from tools import mcp</code> passes locally but breaks after install.</li>
+<li>For quick local testing before building, a temporary <code>from tools import mcp</code> works, but revert to absolute import before building.</li>
+<li>Transport note: <code>stdio</code> for <code>uvx</code> CLI usage; swapping to <code>streamable-http</code> with a port (e.g., 8050) powers hosted services like Apache Airflow-style daemons - relevant when Arun wraps the MCP behind FastAPI/NGINX for HTTP consumption.</li>
+</ul>
+<h3 id="6-packaging-config-pyprojecttoml-build-sections">6. Packaging Config - pyproject.toml Build Sections</h3>
+<ul>
+<li>Three essential blocks beyond <code>[project]</code>:</li>
+</ul>
+<pre><code class="language-toml"># 1. Tell setuptools where to find packages
+[tool.setuptools.packages.find]
+where = [&quot;src&quot;]
+
+# 2. Declare build backend
+[build-system]
+requires = [&quot;setuptools&quot;, &quot;wheel&quot;]
+build-backend = &quot;setuptools.build_meta&quot;
+
+# 3. Expose CLI entry point for uvx
+[project.scripts]
+agentic-terminal = &quot;agentic_terminal.main:main&quot;
+</code></pre>
+<ul>
+<li><code>where = ["src"]</code> - only package folders under <code>src/</code>; prevents <code>src</code> itself from becoming an importable package (<code>import src.agentic_terminal</code> would be wrong).</li>
+<li><code>[build-system]</code> - declares how to build; <code>wheel</code> produces the highly portable <code>.whl</code> format. Do not add <code>setuptools</code> to <code>dependencies</code> (runtime) - it belongs only in <code>build-system</code>.</li>
+<li><code>[project.scripts]</code> - maps shell command <code>agentic-terminal</code> to <code>agentic_terminal.main:main</code>. When a user runs <code>uvx agentic-terminal</code>, UV downloads the package from PyPI and executes this function. Keeping the script name identical to the package name is industry convention; divergence (<code>agentic-terminal-start</code>) forces <code>uvx --from agentic-terminal agentic-terminal-start</code> and confuses users.</li>
+</ul>
+<h3 id="7-building-the-distribution">7. Building the Distribution</h3>
+<pre><code class="language-bash">uv build
+</code></pre>
+<ul>
+<li>Creates <code>dist/</code> with two artifacts:</li>
+<li><code>agentic_terminal-0.1.0-py3-none-any.whl</code> (wheel - preferred for installs)</li>
+<li><code>agentic_terminal-0.1.0.tar.gz</code> (sdist - source tarball)</li>
+<li>Wheel is a zip archive - verify by renaming <code>*.whl</code> to <code>*.zip</code> and unpacking. Expected contents:</li>
+</ul>
+<pre><code>agentic_terminal/
+  __init__.py
+  main.py
+  tools.py
+</code></pre>
+<ul>
+<li>No <code>src</code> prefix inside the wheel - <code>tool.setuptools.packages.find where = ["src"]</code> strips it, so the installed import is <code>agentic_terminal.tools</code> as intended.</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    A[src/agentic_terminal<br/>tools.py + main.py] --> B[pyproject.toml<br/>where=src + build-system + scripts]
+    B --> C[uv build]
+    C --> D[dist/<br/>.whl + .tar.gz<br/>wheel contains agentic_terminal/]
+    D --> E{Distribution}
+    E -->|Internal| F[Share .whl via private repo<br/>Azure DevOps / GitHub private]
+    E -->|Public| G[uv publish -> PyPI<br/>pip install agentic-terminal]
+    G --> H[Consumer<br/>uv add / uvx agentic-terminal]
+    D --> I[Local verify<br/>uv pip install dist/*.whl]
+
+    style D fill:#e3f2fd,stroke:#1565c0
+    style G fill:#e8f5e9,stroke:#2e7d32
+    style H fill:#fff3e0,stroke:#ef6c00
+
+</div>
+<h3 id="8-local-verification-before-publishing">8. Local Verification Before Publishing</h3>
+<ul>
+<li><strong>Editable install (development mode) vs snapshot install:</strong></li>
+</ul>
+<pre><code class="language-bash"># Editable - live link to source (reflects edits instantly)
+uv pip install -e .
+
+# Snapshot - installs frozen wheel (what users will get)
+uv pip install dist/agentic_terminal-0.1.0-py3-none-any.whl
+# or: uv pip install dist/agentic_terminal-0.1.0-py3-none-any.whl --force-reinstall
+</code></pre>
+<ul>
+<li>Editable (<code>-e .</code>) is convenient during dev but masks packaging errors - source renames/deletions still appear to work. The transcript demonstrates the failure: after <code>uv pip install -e .</code>, renaming/deleting <code>src</code> still leaves <code>import agentic_terminal</code> working via the live link, hiding that the wheel was correct. For a true test, uninstall and install the wheel snapshot.</li>
+</ul>
+<pre><code class="language-bash">uv pip list | grep agentic  # verify installed
+# if testing snapshot, delete src folder - import should still work
+</code></pre>
+<ul>
+<li><strong>Test imports from a fresh file outside the package:</strong></li>
+</ul>
+<pre><code class="language-python"># test.py (at project root, no agentic_terminal folder nearby)
+from agentic_terminal.tools import mcp
+mcp.run(transport=&quot;stdio&quot;)  # should start server
+</code></pre>
+<ul>
+<li>If this runs while <code>src/</code> is deleted/renamed, the installed package is correct.</li>
+<li><strong>Test the CLI entry point:</strong></li>
+</ul>
+<pre><code class="language-bash">agentic-terminal  # runs agentic_terminal.main:main
+# should start MCP server with stdio transport
+</code></pre>
+<ul>
+<li>This is the same command <code>uvx agentic-terminal</code> will invoke after PyPI publish.</li>
+</ul>
+<blockquote>
+<p><strong>Healthcare packaging lesson:</strong> For Arun's RAG MCPs that wrap ChromaDB/Pinecone retrievers, this local wheel-install-then-delete-src test is the gate before publishing <code>clinical-rag-mcp</code> internally. It guarantees a FastAPI service that does <code>from clinical_rag_mcp.retriever import search</code> will resolve in a clean Docker image that only has the installed wheel, not the source tree.</p>
+</blockquote>
+<h3 id="9-internal-distribution-without-pypi">9. Internal Distribution Without PyPI</h3>
+<ul>
+<li>Wheel alone is sufficient for organizational sharing - avoids external exposure when needed.</li>
+<li>Options:</li>
+<li>Private GitHub / Azure DevOps repo hosting the <code>.whl</code></li>
+<li>Internal artifact registry (JFrog, Azure Artifacts)</li>
+<li>Version control governs wheel evolution alongside code</li>
+<li>Users install via direct path: <code>uv pip install https://internal.repo/agentic_terminal-0.1.0-py3-none-any.whl</code></li>
+<li>Instructor notes orgs often prefer this for IP reasons, but for open MCP ecosystem work PyPI is the path.</li>
+</ul>
+<h3 id="10-publishing-to-pypi">10. Publishing to PyPI</h3>
+<ul>
+<li><strong>One-time account setup:</strong></li>
+<li>Create account at https://pypi.org (register -&gt; login)</li>
+<li>
+<p>Profile -&gt; Account settings -&gt; API tokens -&gt; Add API token -&gt; copy token (shown once)</p>
+</li>
+<li>
+<p><strong>Publish with UV (PowerShell example from video):</strong></p>
+</li>
+</ul>
+<pre><code class="language-powershell">$env:UV_PUBLISH_TOKEN = &quot;pypi-xxxxxxxxxxxxxxxx&quot;
+uv publish
+</code></pre>
+<ul>
+<li>Alternative: <code>twine</code> (<code>pip install twine; twine upload dist/*</code>) also works, but UV publish is the modern, single-tool path.</li>
+<li>Token env var name is <code>UV_PUBLISH_TOKEN</code> (must be upper case in PowerShell; case-insensitive on some shells but upper is convention).</li>
+<li>
+<p><code>uv publish</code> uploads both <code>*.whl</code> and <code>*.tar.gz</code> to PyPI.</p>
+</li>
+<li>
+<p><strong>Verification:</strong></p>
+</li>
+<li>PyPI project page: <code>https://pypi.org/project/agentic-terminal/</code> - shows <code>agentic-terminal 0.1.0 released 2 minutes ago</code></li>
+<li>Search PyPI for <code>agentic-terminal</code> (may take 5-10 minutes to index)</li>
+<li>Install commands displayed on PyPI:
+    <code>bash
+    pip install agentic-terminal
+    uv add agentic-terminal
+    uvx agentic-terminal</code></li>
+</ul>
+<h3 id="11-consuming-the-published-mcp-as-a-third-party-package">11. Consuming the Published MCP as a Third-Party Package</h3>
+<ul>
+<li><strong>As a library dependency:</strong></li>
+</ul>
+<pre><code class="language-bash">uv add agentic-terminal
+# pyproject.toml now shows:
+# dependencies = [&quot;agentic-terminal&gt;=0.1.0&quot;]
+</code></pre>
+<pre><code class="language-python"># Any project's client can now import it
+from agentic_terminal.tools import mcp
+mcp.run(transport=&quot;stdio&quot;)
+</code></pre>
+<ul>
+<li><strong>As an <code>uvx</code> tool (no install, ephemeral execution):</strong></li>
+</ul>
+<pre><code class="language-python"># client.py - connecting to the published MCP via stdio
+from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import stdio_client
+
+params = StdioServerParameters(
+    command=&quot;uvx&quot;,
+    args=[&quot;agentic-terminal&quot;],
+    env=None
+)
+
+async with stdio_client(params) as (read, write):
+    async with ClientSession(read, write) as session:
+        await session.initialize()
+        tools = await session.list_tools()
+        print([t.name for t in tools])
+        # bash, run_python_code, read_file, write_file, glob, grep, etc.
+</code></pre>
+<ul>
+<li>
+<p>Instructor verifies: <code>uvx agentic-terminal</code> correctly discovers all 8-9 tools (bash, python_code, python_file, glob, grep, read_file, write_file, create_folder, delete_folder) - confirms the <code>[project.scripts]</code> entry point survives the PyPI round-trip.</p>
+</li>
+<li>
+<p><strong>When script name != package name:</strong></p>
+</li>
+<li>If <code>pyproject.toml</code> had <code>[project.scripts] agentic-terminal-start = "agentic_terminal.main:main"</code>, users would need <code>uvx --from agentic-terminal agentic-terminal-start</code> - extra indirection that breaks the <code>uvx &lt;package&gt;</code> convention. Always align them.</li>
+</ul>
+<h3 id="key-takeaways-for-ai-systems-engineering_1">Key Takeaways for AI Systems Engineering</h3>
+<ul>
+<li><strong>pyproject.toml is the deployment contract:</strong> Name, version, package discovery (<code>where = ["src"]</code>), build system, and entry point must be correct before the first <code>uv build</code> - get this right and distribution is mechanical.</li>
+<li><strong>src layout prevents false positives:</strong> Forces imports through the installed package, not the source tree - essential for reproducible healthcare deployments where Docker images must behave identically to dev.</li>
+<li><strong>Wheel is the truth:</strong> Inspect it (rename to zip) to confirm only <code>agentic_terminal/</code> is bundled; <code>src/</code> must not leak into imports.</li>
+<li><strong>Two install modes serve two purposes:</strong> <code>-e .</code> for iteration, wheel snapshot for fidelity testing - never ship after only testing editable install.</li>
+<li><strong>Publishing is token + one command:</strong> <code>UV_PUBLISH_TOKEN</code> + <code>uv publish</code> replaces legacy <code>twine</code> workflows; the same pattern applies when Arun publishes domain-specific MCPs like <code>medqa-rag-mcp</code> or <code>clinical-notes-mcp</code> for internal LangGraph agents.</li>
+<li><strong>Consumption is standardized:</strong> Once on PyPI, any agent framework (LangGraph, CrewAI, custom FastAPI orchestrator) can <code>uvx</code> or <code>uv add</code> the MCP without copying code - the foundation for a composable, governable healthcare AI platform where each tool's scope is explicitly declared and auditable.</li>
+</ul>
+<blockquote>
+<p><strong>Bridge from Chapter 15:</strong> Published package is globally installable but still point-to-point at scale - we build the Gateway/Hub that federates many MCP servers behind one Streamable HTTP URL.</p>
+</blockquote>
+<h2 id="chapter-16-creating-mcp-gateway-031915-033112-part-16-of-17">Chapter 16: Creating MCP Gateway (03:19:15 - 03:31:12) | Part 16 of 17</h2>
+<h2 id="overview_13">Overview</h2>
+<ul>
+<li>Core pattern for scaling MCP adoption: aggregate many MCP servers behind a single Gateway/Hub URL</li>
+<li>Solves URL sprawl and code churn when moving from 3 servers to 100+ servers</li>
+<li>Demonstrates building a gateway with FastMCP, mounting diverse servers via proxy, and exposing via Streamable HTTP on localhost:8050</li>
+<li>Verified via MCP Inspector (npx @modelcontextprotocol/inspector on port 6274) listing unified tools</li>
+<li>For Arun Yadav as AI Systems Engineer, this is the platform abstraction that turns fragmented RAG and agent tooling into a governable, deployable gateway - analogous to a FastAPI API gateway / NGINX reverse proxy for internal healthcare services</li>
+</ul>
+<h2 id="the-problem-direct-connections-do-not-scale">The Problem - Direct Connections Do Not Scale</h2>
+<ul>
+<li>Common workflow: developer connects directly to each MCP server with its own URL/command</li>
+<li>Works for 2-3 servers, breaks at scale: tomorrow you need 10, 100 community, custom, and third-party servers</li>
+<li>Pain points highlighted:</li>
+<li>Managing N URLs/commands across codebase</li>
+<li>Every add/remove requires code changes in every consumer file</li>
+<li>Mixing transport types (stdio, hosted HTTP, third-party) increases complexity</li>
+<li>Real-world need is hybrid: own servers + community servers (e.g., DuckDuckGo Search) + hosted/third-party servers (e.g., agentic terminal) combined</li>
+<li>Without abstraction, team cannot add/remove capabilities without redeploying all clients</li>
+</ul>
+<h2 id="gateway-hub-solution">Gateway / Hub Solution</h2>
+<ul>
+<li>Introduce a single Gateway (also called Hub) that hosts all MCP servers behind one URL</li>
+<li>Developer/client connects only to the gateway (e.g., <code>http://localhost:8050</code>), gateway fans out to mounted servers internally</li>
+<li>Gateway is itself an MCP server created with FastMCP and run as Streamable HTTP</li>
+<li>Benefits:</li>
+<li>Single URL to manage in client code</li>
+<li>Add or remove a server by editing gateway config only, no consumer code touch</li>
+<li>Central place to combine stdio servers, community UVX servers, and remote hosted servers</li>
+<li>Enables versioning, logging, and access control at the gateway boundary - critical for clinical governance</li>
+</ul>
+<div class="mermaid">
+flowchart TD
+    Client[Client / Agent / VS Code] --> Gateway[MCP Gateway<br/>FastMCP Streamable HTTP<br/>localhost:8050]
+    Gateway --> S1[Custom Tools<br/>fetch + process]
+    Gateway --> S2[Community Server<br/>DuckDuckGo Search via uvx<br/>ddgs-mcp-server]
+    Gateway --> S3[Custom Hosted<br/>agentic-terminal MCP]
+    Gateway --> S4[Future: Any stdio / HTTP /<br/>Third-Party Server]
+
+    style Gateway fill:#e3f2fd,stroke:#1565c0
+    style Client fill:#fff3e0,stroke:#ef6c00
+
+</div>
+<h2 id="building-the-gateway-hands-on-construction">Building the Gateway - Hands-On Construction</h2>
+<h3 id="1-project-setup">1. Project Setup</h3>
+<ul>
+<li>Inside VS Code, create new chapter/folder for gateway (e.g., chapter 05 / <code>mcp-gateway</code>)</li>
+<li>Create <code>gateway.py</code> as the gateway server definition</li>
+</ul>
+<h3 id="2-base-server-with-own-tools">2. Base Server with Own Tools</h3>
+<ul>
+<li>Import FastMCP and instantiate gateway server:</li>
+<li><code>from fastmcp import FastMCP</code> then <code>mcp = FastMCP("gateway")</code></li>
+<li>Add custom tools directly on the gateway (reuse existing <code>data_fetch</code> and <code>process</code> examples)</li>
+<li>These tools live natively on the gateway and are exposed alongside mounted server tools</li>
+</ul>
+<h3 id="3-mounting-external-mcp-servers-via-proxy">3. Mounting External MCP Servers via Proxy</h3>
+<ul>
+<li>Use mount mechanism to attach external servers: <code>mcp.mount()</code></li>
+<li>Because gateway runs as Streamable HTTP but many servers are stdio-based, wrap via proxy:</li>
+<li><code>FastMCP.proxy.as_proxy()</code> - required bridging for stdio -&gt; Streamable HTTP</li>
+<li>Each mount takes a command specification:</li>
+<li><code>command</code>: launcher like <code>uvx</code></li>
+<li><code>args</code>: package name like <code>duckduckgo-mcp-server</code> or custom terminal server command</li>
+<li>Example structure taught:</li>
+</ul>
+<pre><code class="language-python">from fastmcp import FastMCP
+from fastmcp.proxy import as_proxy  # conceptual: FastMCP.proxy.as_proxy
+
+mcp = FastMCP(&quot;mcp-gateway&quot;)
+
+@mcp.tool()
+def fetch(query: str) -&gt; str:
+    return f&quot;fetch: {query}&quot;
+
+@mcp.tool()
+def process(data: str) -&gt; str:
+    return f&quot;processed: {data}&quot;
+
+# Mount 1: Community DuckDuckGo Search
+mcp.mount(as_proxy(
+    {&quot;command&quot;: &quot;uvx&quot;, &quot;args&quot;: [&quot;duckduckgo-mcp-server&quot;]}
+), name=&quot;ddg-mcp&quot;)
+
+# Mount 2: Custom hosted / agentic terminal (separate mount for removability)
+mcp.mount(as_proxy(
+    {&quot;command&quot;: &quot;agentic-terminal&quot;, &quot;args&quot;: []}
+), name=&quot;agentic-terminal-mcp&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    mcp.run(transport=&quot;streamable_http&quot;, host=&quot;0.0.0.0&quot;, port=8050)
+</code></pre>
+<ul>
+<li>Alternative shown: single dict with multiple entries (<code>mcp_servers = { "ddg-mcp": {...}, "agentic-terminal": {...} }</code>) then one mount call - functional but less maintainable</li>
+<li>Recommended pattern: separate <code>mount()</code> per server so a server can be disabled by commenting one block without editing a shared dict</li>
+</ul>
+<h3 id="4-running-the-gateway">4. Running the Gateway</h3>
+<ul>
+<li>Run with Streamable HTTP transport:</li>
+<li><code>transport="streamable_http"</code>, <code>host="0.0.0.0"</code>, <code>port=8050</code></li>
+<li>Produces a single URL (<code>http://localhost:8050</code> then <code>/mcp</code> or <code>/sse</code> depending on FastMCP version) for all clients</li>
+<li>For Arun's stack, this maps directly to deploying behind FastAPI + NGINX on a managed host - port 8050 is the internal service port that the reverse proxy exposes securely</li>
+</ul>
+<h2 id="verification-via-mcp-inspector">Verification via MCP Inspector</h2>
+<ul>
+<li>Start Inspector: <code>npx @modelcontextprotocol/inspector</code> (launches on <code>http://localhost:6274</code>)</li>
+<li>Connect Inspector to gateway URL (<code>http://localhost:8050</code>)</li>
+<li>List tools - unified view shows:</li>
+<li><code>fetch</code>, <code>process</code> (native gateway tools)</li>
+<li><code>search</code>, <code>fetch_content</code> (from DuckDuckGo Search MCP)</li>
+<li><code>bash</code>, <code>python_code</code>, <code>python_file</code> (from agentic terminal MCP)</li>
+<li>Confirms gateway correctly aggregates and proxies tool discovery and invocation</li>
+<li>Comment-out test: disabling one <code>mount()</code> line immediately removes that server's tools from Inspector without touching any client code - demonstrates operational agility</li>
+</ul>
+<h2 id="pattern-comparison">Pattern Comparison</h2>
+<div class="mermaid">
+flowchart LR
+    subgraph Direct[Direct Pattern - Not Scalable]
+        D1[Client] --> DS1[MCP 1]
+        D1 --> DS2[MCP 2]
+        D1 --> DS3[MCP 3]
+        D1 -.-> DSN[MCP N<br/>URL sprawl]
+    end
+    subgraph Gateway[Gateway Pattern - Scalable]
+        G1[Client] --> GW[Gateway :8050]
+        GW --> GS1[MCP 1]
+        GW --> GS2[MCP 2]
+        GW --> GS3[MCP 3]
+        GW --> GSN[MCP N<br/>add/remove in one place]
+    end
+
+    style GW fill:#e3f2fd,stroke:#1565c0
+    style G1 fill:#e8f5e9,stroke:#2e7d32
+
+</div>
+<h2 id="key-takeaways_7">Key Takeaways</h2>
+<ul>
+<li>Gateway solves the N-URL problem: one URL in clients, N servers managed at the gateway edge</li>
+<li>Combination of transports is transparent to clients - stdio servers are proxied to Streamable HTTP inside the gateway</li>
+<li>Hybrid composition (custom + community + third-party) is the production norm, not exception</li>
+<li>Separate mounts are the maintainable default - enables feature-flag style enable/disable of capabilities</li>
+<li>Inspector is the mandatory smoke test before exposing the gateway to agents - confirms tool schema merging works</li>
+<li>Operational cost shifts from client code churn to gateway config - aligns with platform engineering for healthcare AI where auditability requires central governance of which tools an agent can reach</li>
+</ul>
+<h2 id="relevance-for-arun-yadav-ai-systems-engineer">Relevance for Arun Yadav - AI Systems Engineer</h2>
+<ul>
+<li><strong>Platform thinking:</strong> Gateway mirrors an internal AI platform gateway for medical-education and clinical RAG agents - a single authenticated endpoint fronts vector-search (ChromaDB/Pinecone), guideline lookup, EHR-safe tools, and automation servers</li>
+<li><strong>Governance:</strong> Centralizing mounts allows RBAC and logging at the gateway - you can audit which agent called which_tool, when, and revoke a community server without redeploying LangGraph workflows</li>
+<li><strong>Deployment path:</strong> Local <code>localhost:8050</code> is the dev target; production promotion is <code>0.0.0.0:8050</code> behind NGINX/TLS + FastAPI auth middleware, consistent with prior FastAPI deployment patterns in the course</li>
+<li><strong>Hybrid RAG design:</strong> Keep proprietary curriculum retrievers as native gateway tools while mounting Pinecone-hosted or community search servers - swap implementations by changing a mount, not agent logic, enabling A/B evaluation of retrieval quality for medical Q&amp;A</li>
+<li><strong>Team velocity:</strong> New services (e.g., Playwright MCP for UI testing, new clinical KB) are onboarded by adding a mount and restarting the gateway - no client PRs required across multiple agent repos<blockquote>
+<p><strong>Bridge from Chapter 16:</strong> Federated gateway is logical but still localhost-bound - we close the loop with a UV-aware Dockerfile and Render deployment that ships it with a public domain.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="chapter-17-deploy-mcp-server-with-docker-033112-034606-part-17-of-17">Chapter 17: Deploy MCP Server with Docker (03:31:12 - 03:46:06) | Part 17 of 17</h2>
+<h2 id="overview_14">Overview</h2>
+<ul>
+<li>Final chapter of 17, closes the full MCP masterclass with production deployment via Docker</li>
+<li>Goal: containerize the MCP Gateway built in previous chapter so it can be shipped to any cloud with a domain, instead of localhost only</li>
+<li>Contrasts earlier Streamable HTTP and PyPI deployment with Docker as the universal solution for creating a shippable product</li>
+<li>Walks through two iterations of a Dockerfile: a naive pip-only version that fails with <code>uvx</code>, then a corrected UV-aware version that succeeds</li>
+<li>Ends with deployment option on Render and course wrap-up, emphasizing Docker as non-negotiable for data and AI engineers</li>
+</ul>
+<h2 id="why-docker-for-mcp-servers">Why Docker for MCP Servers</h2>
+<ul>
+<li>Streamable HTTP gives a URL but still needs hosting and a domain to be useful outside localhost</li>
+<li>Docker packages the gateway, its Python runtime, and all dependencies into a portable image that runs identically on any cloud, laptop, or CI runner</li>
+<li>For Arun Yadav as AI Systems Engineer, this is the same pattern used to ship FastAPI + LangGraph + ChromaDB/Pinecone RAG services in healthcare: one image per service, reproducible across dev, staging, and hospital pilot environments</li>
+<li>Instructor flags Docker fundamentals as mandatory background and points to his free 4+ hour Docker Tutorial for Beginners on YouTube for anyone needing a refresher</li>
+</ul>
+<h2 id="prerequisites_2">Prerequisites</h2>
+<ul>
+<li>Docker Desktop installed and Docker Engine running, verify empty Containers/Images view before starting</li>
+<li>Basic Docker concepts: image, container, WORKDIR, COPY, RUN, CMD, port mapping, and <code>docker build</code> / <code>docker run</code></li>
+<li>Project to containerize: the MCP Gateway from Chapter 6/16, reorganized for professional layout</li>
+</ul>
+<h2 id="project-layout-before-dockerizing">Project Layout Before Dockerizing</h2>
+<ul>
+<li>Copy gateway project into a dedicated deploy folder, example <code>chapter-6/mcp-docker/</code></li>
+<li>Move application code into <code>app/</code> subfolder for clean separation, so gateway lives at <code>app/gateway.py</code></li>
+<li>Two files must sit at the root of the build context alongside <code>app/</code>:</li>
+<li><code>requirements.txt</code> - traditional pip dependencies</li>
+<li><code>Dockerfile</code> - build instructions</li>
+</ul>
+<div class="mermaid">
+flowchart TD
+    A[chapter-6 / mcp-docker Build Context] --> B[requirements.txt]
+    A --> C[Dockerfile]
+    A --> D[app/gateway.py]
+    D --> E[MCP Gateway - mounts multiple MCP servers]
+    B --> F[pip install at build time]
+    C --> G[docker build -> Image]
+    G --> H[docker run -> Container on port 8050]
+
+</div>
+<h2 id="step-1-requirementstxt-pin-the-runtime-dependencies">Step 1: requirements.txt - Pin the Runtime Dependencies</h2>
+<ul>
+<li>Instructor notes <code>uv</code> and <code>pyproject.toml</code> do not work well inside Docker because UV is relatively new, so fall back to classic <code>requirements.txt</code> + <code>pip</code></li>
+<li>For the gateway demo, only one entry is needed, add more if the gateway imports additional libraries:</li>
+</ul>
+<pre><code class="language-text">fastmcp
+</code></pre>
+<ul>
+<li>Arun Yadav note: in healthcare deployments, pin exact versions <code>fastmcp==x.y.z</code> and add audit-relevant deps like <code>pydantic</code>, <code>httpx</code>, or <code>chromadb</code> here to guarantee reproducible builds for clinical validation</li>
+</ul>
+<h2 id="step-2-first-dockerfile-simple-pip-version">Step 2: First Dockerfile - Simple Pip Version</h2>
+<ul>
+<li>Purpose: establish baseline understanding before fixing the UV issue</li>
+</ul>
+<pre><code class="language-dockerfile">FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD [&quot;python&quot;, &quot;app/gateway.py&quot;]
+</code></pre>
+<ul>
+<li>Line by line:</li>
+<li><code>FROM python:3.11-slim</code> - pull Python runtime as base image</li>
+<li><code>WORKDIR /app</code> - creates <code>/app</code> inside the container, all subsequent commands run there</li>
+<li><code>COPY requirements.txt .</code> - copy requirements from build context (chapter-6 folder) to <code>/app</code> inside image</li>
+<li><code>RUN pip install --no-cache-dir -r requirements.txt</code> - install deps without cache to keep image small</li>
+<li><code>COPY . .</code> - copy entire project including <code>app/gateway.py</code> into <code>/app</code></li>
+<li><code>CMD ["python", "app/gateway.py"]</code> - run gateway on container start, note the <code>app/</code> prefix because code was moved into subfolder</li>
+</ul>
+<h2 id="step-3-build-and-run-the-first-image">Step 3: Build and Run the First Image</h2>
+<ul>
+<li>Build from the directory containing the Dockerfile:</li>
+</ul>
+<pre><code class="language-bash">docker build -t mcp-gateway .
+</code></pre>
+<ul>
+<li>Confirm image appears in Docker Desktop under Images</li>
+<li>Run detached with port mapping host:container on 8050:</li>
+</ul>
+<pre><code class="language-bash">docker run -d -p 8050:8050 --name mcp-container mcp-gateway
+</code></pre>
+<ul>
+<li>Check status and logs:</li>
+</ul>
+<pre><code class="language-bash">docker ps
+docker logs mcp-container
+</code></pre>
+<ul>
+<li>Verify via browser at <code>http://localhost:8050</code> and via MCP Inspector</li>
+</ul>
+<pre><code class="language-bash">npx @modelcontextprotocol/inspector
+</code></pre>
+<ul>
+<li>Then connect to <code>http://localhost:8050</code> inside Inspector and list tools</li>
+</ul>
+<h2 id="the-failure-uv-uvx-tools-missing-inside-container">The Failure: UV / UVX Tools Missing Inside Container</h2>
+<ul>
+<li>Symptom observed in Inspector: only 2 tools visible instead of full gateway set, or gateway fails to mount sub-servers that are launched via <code>uvx</code></li>
+<li>Logs show <code>uvx: command not found</code> or mount failures on <code>mcp.mount</code></li>
+<li>Root cause: gateway uses <code>uvx</code> to spawn child MCP servers, but official <code>python:3.11-slim</code> images only ship <code>pip</code>, not <code>uv</code>/<code>uvx</code></li>
+<li>Python base images do not natively include Astral's UV toolchain, so any <code>uv tool install</code> or <code>uvx</code> invocation at runtime fails</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    A[Container python:3.11-slim] --> B[Has pip]
+    A --> C[Missing uv and uvx]
+    D[gateway.py calls uvx to mount servers] --> E{Fails - binary not found}
+    E --> F[Only 2 tools or Not Found]
+
+</div>
+<ul>
+<li>Arun Yadav context: this mirrors healthcare RAG gateways where sub-servers for EHR query, guideline vector search, or terminology lookup are each distributed as <code>uvx</code> packages - container must bundle the launcher or the whole tool federation collapses</li>
+</ul>
+<h2 id="step-4-fixed-dockerfile-uv-aware-version">Step 4: Fixed Dockerfile - UV-Aware Version</h2>
+<ul>
+<li>Solution: copy <code>uv</code> and <code>uvx</code> binaries from official Astral image and pre-install the MCP servers inside the image, plus expose UV on PATH</li>
+</ul>
+<pre><code class="language-dockerfile">FROM python:3.11-slim
+
+# Bring uv and uvx into the image from Astral's official image
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uvx /usr/local/bin/uvx
+
+WORKDIR /app
+
+# Pre-install the MCP servers that gateway mounts via uvx
+RUN uv tool install &lt;your-mcp-server-package&gt;
+
+# Install FastMCP and other Python deps
+RUN pip install --no-cache-dir fastmcp
+
+COPY . .
+
+# Ensure uv-installed tools are on PATH for runtime
+ENV PATH=&quot;/root/.local/bin:$PATH&quot;
+
+CMD [&quot;python&quot;, &quot;app/gateway.py&quot;]
+</code></pre>
+<ul>
+<li>What changed from the simple version:</li>
+<li>Two <code>COPY --from</code> lines fetch <code>uv</code> and <code>uvx</code> (plus <code>bin</code> for Mac-style builds mentioned by instructor)</li>
+<li><code>RUN uv tool install ...</code> natively installs the servers gateway will mount, alternatives are <code>RUN pip install -r requirements.txt</code> if all deps are listed there</li>
+<li><code>ENV PATH="/root/.local/bin:$PATH"</code> makes <code>uv</code>/<code>uvx</code> shims discoverable when <code>gateway.py</code> spawns subprocesses</li>
+<li>
+<p>Instructor notes this can be adapted: use <code>requirements.txt</code> approach or explicit <code>pip install fastmcp</code> both work as long as UV is present</p>
+</li>
+<li>
+<p>For Arun Yadav healthcare variant, add ChromaDB or Pinecone client and internal guideline packages in the same step:</p>
+</li>
+</ul>
+<pre><code class="language-dockerfile">RUN pip install --no-cache-dir -r requirements.txt
+# requirements.txt includes fastmcp, chromadb, pinecone-client, pydantic
+</code></pre>
+<h2 id="step-5-rebuild-and-verify-the-fixed-image">Step 5: Rebuild and Verify the Fixed Image</h2>
+<ul>
+<li>Remove old container and image if iterating:</li>
+</ul>
+<pre><code class="language-bash">docker rm -f mcp-container
+docker rmi mcp-gateway
+</code></pre>
+<ul>
+<li>Rebuild with new Dockerfile, optionally new tag to avoid cache confusion:</li>
+</ul>
+<pre><code class="language-bash">docker build -t mcp-image .
+</code></pre>
+<ul>
+<li>Run with corrected image name:</li>
+</ul>
+<pre><code class="language-bash">docker run -d -p 8050:8050 --name mcp-container mcp-image
+</code></pre>
+<ul>
+<li>Verify:</li>
+<li><code>docker ps</code> shows container running</li>
+<li><code>docker logs mcp-container</code> shows FastMCP starting with no <code>uvx</code> errors</li>
+<li>MCP Inspector at <code>http://localhost:6274</code> or <code>6277</code> depending on version, connect to <code>http://localhost:8050</code>, then Tools -&gt; List Tools shows full toolset</li>
+<li>Instructor emphasizes this rebuild loop is expected when containerizing UV-based MCP servers, seeing and fixing the error is part of the learning</li>
+</ul>
+<h2 id="shipping-anywhere-render-and-beyond">Shipping Anywhere - Render and Beyond</h2>
+<ul>
+<li>Once image builds and Inspector lists all tools, the same build context (<code>app/</code>, <code>requirements.txt</code>, <code>Dockerfile</code>) is shippable to any platform that accepts Dockerfiles</li>
+<li>Render highlighted as a popular zero-CI/CD option: push Dockerfile + code, Render builds and serves with a public domain</li>
+<li>Value for portfolio and hiring: <code>localhost:8050</code> is not a deliverable, a public URL is - it proves the MCP server is hosted, discoverable, and consumable by remote Claude Desktop or LangChain clients</li>
+<li>Equivalent targets for Arun Yadav healthcare deployments: Render, Fly.io, AWS ECS/Fargate, or hospital-private registry behind NGINX with auth, all consume the same image without code changes</li>
+<li>Provide domain to resume, agent playground, or pilot users so clinical reviewers test against live tools, not local mocks</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+    A[Local Docker Image Verified via Inspector] --> B[Push to GitHub with Dockerfile]
+    B --> C[Render / Fly.io / ECS]
+    C --> D[Public Domain + HTTPS]
+    D --> E[Remote MCP Client - Claude Desktop / LangGraph Agent]
+    E --> F[Tool Invocation Logged and Governed]
+
+</div>
+<h2 id="course-wrap-up-full-journey-01-to-17">Course Wrap-Up - Full Journey 01 to 17</h2>
+<ul>
+<li>Masterclass arc: problems MCP solves, layers and types, stdio vs Streamable HTTP, building servers from scratch, Inspector, uvx/npx distribution, third-party providers, MCP Hub, and finally Docker + Render deployment</li>
+<li>Pedagogical point repeated: tutorials surface real errors, resolving them is the learning - the UV-in-Docker issue was intentionally left in to demonstrate debugging</li>
+<li>Call to action: like, subscribe, comment, and search channel for next videos by topic + instructor name</li>
+</ul>
+<h2 id="key-takeaways-for-arun-yadav-ai-systems-engineer_5">Key Takeaways for Arun Yadav - AI Systems Engineer</h2>
+<ul>
+<li>Treat the UV-aware Dockerfile as the template for all healthcare MCP gateways that federate sub-servers via <code>uvx</code>, copy <code>uv</code>/<code>uvx</code> from Astral and set <code>PATH</code>, otherwise mount failures are silent and tool counts drop</li>
+<li>Use <code>app/</code> layout and <code>app/gateway.py</code> in CMD to keep gateway, vector-store adapters, and clinical tool modules separated, which simplifies code review for governance</li>
+<li>Pin <code>requirements.txt</code> and <code>uv tool install</code> versions together, then log the image digest on deploy so medical education pilots can reproduce exact guideline retrieval behavior</li>
+<li>Validate every image with <code>docker logs</code> + MCP Inspector before pushing to Render or internal registry, checking tool count is the fastest smoke test for a federated RAG gateway</li>
+<li>For production healthcare, replace Render example with private registry + NGINX reverse proxy, add auth and audit logging around <code>gateway.py</code>, but keep the Docker build unchanged - portability is the point</li>
+</ul>
+<hr />
+<h2 id="appendix-quick-reference">Appendix: Quick Reference</h2>
+<h3 id="transport-decision-matrix">Transport Decision Matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>STDIO</th>
+<th>Streamable HTTP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scope</td>
+<td>Local process (1 client:1 server)</td>
+<td>Remote HTTP (N clients)</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>None / local</td>
+<td>Headers / OAuth</td>
+</tr>
+<tr>
+<td>Scale</td>
+<td>Single workstation</td>
+<td>Multi-tenant, load-balanced</td>
+</tr>
+<tr>
+<td>Use When</td>
+<td>Prototype, offline, privacy-sensitive</td>
+<td>Production agent, hospital-wide service</td>
+</tr>
+<tr>
+<td>Client Config</td>
+<td><code>command</code> + <code>args</code></td>
+<td><code>url</code> only</td>
+</tr>
+<tr>
+<td>Verify</td>
+<td>Direct spawn</td>
+<td><code>http://localhost:8050/mcp</code> + Inspector</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-commands-cheat-sheet">Key Commands (Cheat Sheet)</h3>
+<pre><code class="language-bash"># Env &amp; server
+uv init &amp;&amp; uv add fastmcp &amp;&amp; uv sync
+uv add mcp langchain-mcp-adapters
+python mcp_server_stdio.py          # stdio server
+python http_mcp.py                  # Streamable HTTP on 0.0.0.0:8050
+
+# Inspector
+npm init -y
+npx @modelcontextprotocol/inspector # proxy :6277 -&gt; connect to localhost:8050/mcp
+
+# Community server
+uvx duckduckgo-mcp-server
+# or npx @modelcontextprotocol/inspector for Node servers
+
+# Packaging
+uv build                             # -&gt; dist/*.whl + *.tar.gz
+uv pip install dist/*.whl --force-reinstall
+UV_PUBLISH_TOKEN=pypi-xxx uv publish
+
+# Gateway
+# gateway.py with FastMCP + mcp.mount(as_proxy({command: uvx}))
+python gateway.py                    # -&gt; http://localhost:8050
+
+# Docker (UV-aware)
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uvx /usr/local/bin/uvx
+RUN uv tool install &lt;mcp-package&gt;
+ENV PATH=&quot;/root/.local/bin:$PATH&quot;
+docker build -t mcp-gateway . &amp;&amp; docker run -d -p 8050:8050 mcp-gateway
+</code></pre>
+<h3 id="spec-ecosystem">Spec &amp; Ecosystem</h3>
+<ul>
+<li><strong>Spec:</strong> <code>modelcontextprotocol.io</code> (Anthropic)</li>
+<li><strong>Distribution:</strong> PyPI (<code>uvx</code>) for Python, npm (<code>npx</code>) for Node - consumer needs both</li>
+<li><strong>Tool contract:</strong> <code>@mcp.tool()</code> docstring -&gt; <code>description</code>, signature -&gt; <code>inputSchema</code> - LLMs use this for routing</li>
+</ul>
+<hr />
+<p><em>End of Notes - 17 chapters, 20,512 words of summaries stitched with zero content loss. Next steps for Arun: pick one clinical retriever (ChromaDB local -&gt; Pinecone managed), wrap as MCP with gateway, and validate via Inspector before LangGraph integration behind FastAPI.</em></p>
+<script>
+  hljs.highlightAll();
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: "default",
+    securityLevel: "loose"
+  });
+</script>
+</body>
+</html>

@@ -1,5 +1,4 @@
 # Module 1: Become an AI Strategist
-
 *   Your Path from AI Strategist to AI Leader
 *   Advance from AI Strategist to AI Leader: Framework and Roadmap
 *   Your Path to Driving Real AI Impact
@@ -17,9 +16,7 @@
 *   Quantifying Business Benefits
 *   Mapping Technical, Operational, and Strategic Risks
 *   Planning Data, Talent, and Change Management
-
 # Module 2: Become an AI Decision Maker
-
 *   AI Strategy for Executives: Adoption, Implementation, and Business Impact
 *   Internal Use versus Customer-Facing Solutions
 *   Leveraging Prompting, Fine-Tuning, and RAG
@@ -41,9 +38,7 @@
 *   Guiding Stakeholder Discussions
 *   Assessing Data, Costs, Risks, and Metrics
 *   Promoting a Science-Led, Experimental Culture
-
 # Module 3: Become an AI Leader
-
 *   AI Project Ideation: Finding Value in Predictive, Generative & Agentic Solutions
 *   Evaluating Ideas by Pain Points and Data Readiness
 *   Measuring Measurable ROI for High-Impact Adoption

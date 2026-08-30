@@ -5,6 +5,5 @@ __pycache__
 *.pyc
 .opencode/
 who_am_i.md
-*:Zone.Identifier
-
+personal_who_am_i.md
 

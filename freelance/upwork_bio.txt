@@ -1,0 +1,33 @@
+I build AI systems that work in production — agentic workflows, retrieval pipelines you can trust, and backends that don't fall over. Not demos, not wrappers around ChatGPT: deployed systems solving real problems in healthcare, legal, and education.
+
+WHAT I BUILD:
+
+Agentic AI Systems — multi-step agents with tool-calling, memory, and graceful fallbacks using LangGraph and modern orchestration patterns. I design the guardrails: execution traces, human checkpoints, verification steps — so agents are reliable enough to ship.
+
+MCP Servers & LLM Integrations — certified in MCP development. I connect LLMs directly to your databases, internal tools, and APIs through secure, standardized Model Context Protocol servers.
+
+RAG Pipelines That Don't Hallucinate — hybrid retrieval combining vector search (ChromaDB/Pinecone), BM25 keyword matching, and Cohere reranking. Citation-grounded answers across 100k+ page document libraries. If your domain is legal, medical, or technical, accuracy isn't optional — it's the product.
+
+FastAPI Production Backends — async APIs, data pipelines, conversational systems with memory, deployed on Render/HuggingFace. Clean architecture your team can maintain.
+
+High-Volume Data Extraction — Playwright-based async scrapers that handle Cloudflare-protected targets; I've built extraction systems for India's largest real-estate platform.
+
+LLM Fine-Tuning — QLoRA training pipelines when retrieval isn't enough and your domain needs a model that speaks its language natively.
+
+WHY CLIENTS TRUST ME WITH HARD PROBLEMS:
+
+I came to engineering through the medical education world — building exam-prep AI where a wrong answer has real consequences taught me one thing: verified output beats clever output. Every system I deliver includes the validation layer most freelancers skip.
+
+Recent work:
+• Legal RAG system for Indian legislative documents — citation-grounded responses
+• AI Digital Twin running in production with lead capture and conversational memory
+• Clinical reasoning assistant with guardrails and full execution traces
+
+HOW I WORK:
+
+• Clear communication — updates you don't have to chase
+• Architecture decisions explained in plain language
+• On-time delivery with documentation your team inherits happily
+• Honest scoping — I'll tell you if AI isn't the right answer for your problem
+
+Building something serious? Message me with your problem — even unpolished — and I'll come back with an approach, honest timeline, and fixed scope within hours.

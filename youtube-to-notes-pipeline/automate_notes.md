@@ -42,17 +42,17 @@ Read the first line as title, second line as duration (in seconds).
 - Remove special characters (keep letters, numbers, underscores, hyphens)
 - Truncate if longer than 80 chars
 
-**Calculate chunk count** from duration:
+**Calculate chunk count** from duration (~1 chunk per 20 minutes):
 
 | Duration | Chunks |
 |----------|--------|
-| < 10 min | 2 |
-| 10–30 min | 4 |
-| 30–60 min | 6 |
-| 60–120 min | 10 |
-| > 120 min | 15 |
+| < 20 min | 1 |
+| 20–40 min | 2 |
+| 40–60 min | 3 |
+| 60–90 min | 4 |
+| > 90 min | 5+ |
 
-Formula: `chunks = max(2, min(20, round(duration_seconds / 360)))` (~1 chunk per 6 min)
+Formula: `chunks = max(1, min(10, round(duration_seconds / 1200)))` (~1 chunk per 20 min)
 
 **Allow user override** — if the user specifies a chunk count in their prompt, use that instead.
 
@@ -105,32 +105,27 @@ Read the `.vtt` file. Parse it to extract only the text content:
 
 ---
 
-## Step 6: User Context (Personalized)
+## Step 6: User Context (Personalized & Blended Integration)
 
 The user is **Arun Yadav (neural-arun)** — an AI Systems Engineer building AI systems for Healthcare and Medical Education. His stack includes RAG Pipelines, Agentic AI, MCP, FastAPI, LangChain, LangGraph, ChromaDB, Pinecone, and Playwright.
 
-His GitHub bio reads:
-> AI Systems Engineer | Building AI systems for Healthcare and Medical Education | RAG Pipelines • Agentic AI • MCP • FastAPI • SQL • Data Scraping
-
-This bio is the **default context** for all summaries. Every subagent uses this to tailor notes to Arun's background — connecting concepts back to AI systems, healthcare, automation, and RAG pipelines.
-
-**If the user wants a different context**, they can override by passing an explicit bio/background in the initial prompt.
+> **CRITICAL INSTRUCTION FOR CONTEXT:**  
+> Do **NOT** put personalized context as a separate section at the very end of the notes.  
+> Instead, **seamlessly blend** context mappings (AI systems, RAG pipelines, FastAPI, vector search, clinical data governance, MCP) **throughout the entire note** within each relevant technical topic.
 
 ---
 
-## Step 7: Create N Subagent Summaries
+## Step 7: Create Subagent Summaries & Note Formatting Rules
 
-Launch **N subagents in parallel** (N = chunk_count from Step 2), one per chunk. Each agent:
+Each summary must be **concise yet complete**, providing thorough explanations without being overly verbose:
+- Include complete explanations, architectural diagrams (Mermaid), and practical code/config snippets (FastAPI, Python, SQL, NGINX).
+- Ensure 100% technical completeness while maintaining clear headings, bullet points, and high readability.
 
-```
-Input:  {output_dir}/part_{XX}.md
-Task:   Summarize the content as concise, actionable study notes
-Style:  Extract key concepts, frameworks, and lessons clearly
-Context: Arun Yadav (neural-arun) — AI Systems Engineer building AI for Healthcare & Medical Education.
-         Stack: RAG Pipelines, Agentic AI, MCP, FastAPI, LangChain, LangGraph, ChromaDB, Pinecone.
-         Connect lessons to what Arun builds — AI systems, automation, document intelligence.
-Output: {output_dir}/summary_{XX}.md
-```
+> **CRITICAL FORMATTING RULES FOR PDF & MARKDOWN CLEANLINESS:**  
+> 1. **NO EMOJIS IN HEADINGS**: Do NOT use emojis (e.g. 🎯, 📘, 📌, 🌐, 🚫, 💡) in `#`, `##`, `###` headings or titles. Emojis cause missing glyph box (`.notdef` rectangle) artifacts in PDF font rendering.  
+> 2. **NO RAW LATEX MATH IN TEXT**: Do NOT use LaTeX math code like `$\rightarrow$`, `\rightarrow`, `\times`, etc. in text or inline code blocks. Use clean Unicode characters (`→`, `*`, `x`) or ASCII (`->`).  
+> 3. **NO RAW CHECKBOX ARTIFACTS**: Use standard bullet points (`-`) instead of `- [x]` or `- [ ]` in summary lists.  
+> 4. **VALID MERMAID SYNTAX ONLY**: Ensure all Mermaid diagrams are valid flowcharts or sequence diagrams that render cleanly without syntax error boxes.
 
 Each subagent returns a confirmation. Collect all N confirmations before proceeding.
 
@@ -154,9 +149,14 @@ Read `combined.md` and weave the chunks into a unified, unbroken master document
 4. **Normalize Hierarchy & Architecture:** Unify header levels (`#`, `##`, `###`), ensure code/formula blocks are properly formatted, and insert a Master Table of Contents / Executive Roadmap at the top.
 5. **Preserve Deep Analogies:** Ensure all personal context mappings (e.g., trust engineering, AI systems architecture, clinical reasoning) remain rich, actionable, and prominent.
 
-**8c. Write final output:**
+**8c. Write final outputs:**
 
-Write the comprehensive, seamlessly connected document to `{output_dir}/{normalized_title}.md`.
+1. Write the comprehensive document to `{output_dir}/{normalized_title}.md`.
+2. Generate Standalone HTML and Chrome Print PDF using `build_html_and_pdf.py`:
+
+```bash
+python3 build_html_and_pdf.py "{output_dir}/{normalized_title}.md" "{output_dir}/{normalized_title}.html" "{output_dir}/{normalized_title}.pdf"
+```
 
 ---
 

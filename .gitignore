@@ -7,3 +7,5 @@ __pycache__
 who_am_i.md
 personal_who_am_i.md
 
+# gstack - local tooling, never commit
+gstack/

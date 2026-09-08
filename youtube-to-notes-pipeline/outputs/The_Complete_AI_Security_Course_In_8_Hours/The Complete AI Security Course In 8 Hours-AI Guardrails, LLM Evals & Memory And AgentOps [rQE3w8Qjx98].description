@@ -1,0 +1,104 @@
+🚀 AI Security, Agentic Memory & AgentOps Masterclass
+
+A huge thanks to our amazing mentors — Divesh, Yash, Chirantan, and Paul — for sharing their expertise and making this masterclass possible.
+
+Linkedin Profiles
+Chrantan : https://www.linkedin.com/in/chirantanlonkar/?skipRedirect=true
+Divesh: https://www.linkedin.com/in/dhackmt/?skipRedirect=true
+Yash :https://www.linkedin.com/in/yash-patil-ai/
+
+📚 Resources & Materials
+
+🔹 LLM Gateways
+GitHub: https://github.com/d-hackmt/LIVE-WEBINAR-25-MAY-GATEWAYS
+Demo App: https://letsgateway.streamlit.app/
+
+🔹 NVIDIA NeMo Guardrails
+GitHub: https://github.com/d-hackmt/guardrails-webinar
+Demo App: https://guardthisrag.streamlit.app/
+
+🔹 LLM Evaluation Materials
+Demo App: https://ragasz.streamlit.app/
+GitHub: https://github.com/divesh-sse/ragas/blob/main/app.py
+
+🔹 AgentOps & Agentic RAG
+GitHub: https://github.com/sourangshupal/Agentic-RAG-project
+
+━━━━━━━━━━━━━━━━━━━━━━
+As AI Agents move from prototypes to production, building intelligent systems is not enough. Modern AI systems must be secure, reliable, observable, scalable, and capable of maintaining long-term context.
+
+In this masterclass, we cover four critical pillars of production AI:
+
+✅ AI Guardrails
+✅ LLM Evaluations (Evals)
+✅ Agentic Memory Systems
+✅ AgentOps & Production Deployment
+
+🎯 Key Topics Covered
+
+• Prompt Injection & Jailbreak Protection
+• PII & Data Security
+• LLM & RAG Evaluation Frameworks
+• Hallucination Detection
+• Agentic Memory Architectures
+• Short-Term & Long-Term Memory
+• Monitoring & Observability
+• Cost & Performance Optimization
+• Production Deployment of AI Agents
+• Scaling Autonomous AI Systems
+
+Whether you're building AI Agents, RAG applications, or enterprise GenAI solutions, this session will help you understand the foundations of production-ready AI systems.
+
+
+Timestamp 
+00:00:00 Welcome and Crash Course Overview
+00:03:08 Introduction to LLM Security & AI Guardrails
+
+Module 1: AI Guardrails & LLM Security
+00:16:38 Guardrail Frameworks (Nemo Guardrails, Meta Llama Firewall, AWS Bedrock)
+00:20:50 Demo: Handling Prompt Injections, Off-topic Queries, and Jailbreaks
+00:36:20 Nemo Guardrails Deep Dive & Colang Expression Language
+00:51:04 LLM Observability with Pydantic Logfire
+01:03:01 Setting up API Keys (Groq & Pydantic Logfire)
+
+Module 2: LLM Evaluations (Evals)
+01:13:30 Transition to Evals & Evaluating Production-Grade RAG
+01:23:18 Custom Evaluations vs. Benchmarks
+01:30:44 Defining "Goldens" (Truth Datasets for Evals)
+01:49:54 Using LLMs as a Judge
+01:52:46 Understanding the Ragas Framework Metrics
+02:04:58 Metric 1: Faithfulness (Groundedness)
+02:12:35 Metric 2: Answer Relevancy
+02:18:02 Metric 3: Context Precision (Ranking Evaluation)
+02:24:48 Metric 4: Context Recall
+02:30:46 Metric 5: Answer Correctness (Factual & Semantic Similarity)
+02:40:31 Reviewing Automated Test Results and Dashboards
+
+Module 3: Agentic Memory Techniques
+02:47:50 Introduction to Agentic Memory Systems
+03:01:00 Conversational Buffer Memory & Token Bloating
+03:12:43 Sliding Window Memory
+03:37:24 Summary Memory (Abstractive & Progressive Summarization)
+03:56:30 Summary Buffer Memory
+04:20:05 Token Buffer Memory
+04:24:41 Vector Store Memory (Long-term Context)
+04:41:29 Entity Memory (Structured Named Entity Extraction)
+04:56:29 Episodic Memory (Time-aware Session Recall)
+05:15:54 Semantic Memory (Distilled Facts & Behavioral Patterns)
+05:20:14 Procedural Memory (Dynamic System Instruction Updates)
+05:25:56 Self-Reflection Memory (Agent Postmortems)
+05:33:13 Memory Routing (Intent Classification)
+05:40:23 Forgetting and Decay (Half-Life & Ebbinghaus Curve)
+
+Module 4: AgentOps & Production Workflows
+05:50:47 AgentOps Overview: From Prototype to Production
+05:55:27 Infrastructure Setup: Airflow, Neon DB (PostgreSQL), and OpenSearch
+06:08:10 Fast API Setup & Agentic Endpoints
+06:10:58 Langfuse Integration for Deep Agent Tracing
+06:19:11 Implementing AWS Bedrock Guardrails
+06:40:41 Dense Vector Search vs. BM25 Hybrid Search Implementation
+06:45:01 Redis Caching for RAG Pipelines
+06:53:12 Model Context Protocol (MCP) Server Integration
+07:08:50 Deploying the Application on Amazon EKS (Kubernetes)
+07:22:25 Load Testing with Locust (Handling Concurrent Users)
+07:31:42 Horizontal Pod Autoscaling (HPA) & Vertical Scaling

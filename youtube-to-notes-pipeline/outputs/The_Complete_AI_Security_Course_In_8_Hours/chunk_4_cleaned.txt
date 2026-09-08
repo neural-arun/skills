@@ -1,0 +1,465 @@
+Search. You can easily integrate it. There are uh Docker images. You can directly pull those images and you can start working. Uh I have used Pinecone and Chroma, Praveen. All right, Pinecone and Chroma are also good solutions. Uh Pinecone is not open source, but Chroma DB has an open source version. Uh Cosmos DB? No. Cosmos like it needs a third-party integration actually. Not directly Cosmos supports that, is it?
+
+But uh OpenSearch is easy to work with. And majorly I think most of you are working with AWS or Azure. In that case, they have their own vector DBs. Azure search here, Azure search is fine. Using AI search in our current organizations. Cosmos is paid on Azure but very good. Yes, Cosmos is paid but again the native solution was not on that. You have to think about just like Postgres.
+
+Later on PG vector again. Similarly for Azure also. Cosmos was not built for vector but later on with updates they have built it. Usually all the cloud solutions that they have done. So in our case, so this is one uh our main index and you can see here around 2.6 MB of data. Total number of documents 135. So 135 is worth the total number of chunks.
+
+So in our case, I think we have five papers. For those five papers, I got around 135 chunks. Okay, so this was the OpenSearch part. Then we have the FastAPI application. I'll be showing you the FastAPI application. And Ollama, you can run it inside a container but I had low RAM. So what I did, I actually switched it for my local part. I moved into two options.
+
+One is the Amazon Bedrock and the other option is Open AI. So in our code base, we have both the options. You can easily switch at any point of time. I'll be showing you that a single operational change in the .env file that you have to do. Then comes service integration with Docker Compose. Our entire application is controlled through Docker Compose.
+
+So Docker networks, the rack bridge, the health checks, these are the storage, the persistent volumes for our Docker and the port mapping which is already being done inside our compose files. So, this is the first phase where you actually set up your services, not about doing the execution, rather than setting up the services. All right. So, now let's move to our phase two.
+
+Okay, now phase two is all about the archive API integration and the PDF processing. Okay. So, this is where your main data source comes into the system. So, right now what I will do, so let's start working with our application. Because the reading won't make, so let's start doing something.
+
+All right. I think I don't need this. All right. So, first of all, I went to my project folder. I have just activated the environment that I'm working with. Okay, and let's start our application. So, I will just do a make start. Okay, so this is an automation command that we have directly kept it rather than always using the docker.
+
+I hope that most of you are comfortable with make. Make actually helps you in achieving a lot of automation of the commands. So, you can have a look into my make file, which is there. So, just to show you exactly what I am doing if you don't know about make. So, there is a make file. Okay, so using this file I'm doing like what make start will do, it will do the docker compose up the bid. It will start building all the services. Then I can do a make stop. It will stop all the services.
+
+Okay. Make restart, it will restart all the services. And that way I have kept few automation commands. All right, so let me do a make start. First of all, let me start the application. So first of all, what will happen? The Docker containers will be built. So right now, as you can see here, how many containers are there? There is a one dedicated Airflow container that I have. Then we have our API container.
+
+Then there is a network through which we have defined the connection between our Airflow to our application. Okay, and then you have your dashboard. Dashboard is basically the Open Search dashboards. So one by one, let's look into the logs also. Okay, I'll be showing you each of the things in detail because this is from production, so the idea is you much more look into the logs.
+
+All right, so as you can see here, the LLM provider AWS Bedrock that I'm using Meta Llama 3 with a 70 million parameter. All right, so I can say that yes, my service is up. Okay, and Open Search is connected. The rack service is connected, model is connected. Redis is connected. Even we are working with Upstash Redis.
+
+I think for cache. LangFuse is also integrated. Okay, now I have just started the application. Now let's look into our mean uh logging. Okay, so what I will do last 5 minutes. All right, so as you can see here, we started getting the logs in Logfire. So this is Pydantic Logfire.
+
+Once the application has started, automatically we start getting the logs. So here my Telegram integration is there. So that log OpenAI connections. So this is the first level of application logs that I have sent to Logfire. Then let's move to the next part. Uh right now. How do you How do you want to do the setup? In your case, if you want to do the setup anyone, so let me just tell you the steps.
+
+You have to first of all clone my repo. Once you have cloned the repo, I have shared a .env.example. Okay, so this is a really long file, so you have to set all your credentials. For example, we are working with a lot of third-party integrations like Gina AI from Elastic, LangFuse Cloud. We are working with Upstash Redis. So, you need to pass all of your credentials here.
+
+Once you have passed all of your credentials here, then the only command that you need to execute is make start. Okay, so like Neha Sathi was asking. No, Varun is asking, "Can we get a full explanation?" Currently, this is going inside the rack batch for the past 1 month. Because this is a big project, so it took around six classes. And I think 1 month, eight classes total.
+
+Because it's very hard for me to tell everything in 3 hours. So, if you want to do the replication, the only thing is you have to just do create your own .env file. As you can see here, OpenAI, you can easily switch to Bedrock if you want. I am working with Bedrock. So, it's easy to set up. And the entire automation is already done. You have to just do a make start, just like me.
+
+I have done it. Okay, and then you are good to go to test the application. But you need all your API keys. All right, so here I can say that my application is running. And for our verification, what I can do? So, let's open our uh local host uh 8,000, that is for fast API.
+
+8,000 {slash} docs. Okay, so majorly all the APIs that I've been working with is available here. So, this is the health check one. If you want, you can try it out. It will tell you that yes, everything is working fine. Okay, so the connection with your Airflow, the connection with your OpenSearch, all those things.
+
+Then few normal retrieval level APIs there through which you can directly ask some questions, and based on that it will provide you the response. Then comes ask. Ask is without agentic implementation. It means directly through LangChain that we have made that route. Then there is a streaming route. If you want streaming based responses, then you will be getting streaming because LangChain supports and even LangGraph supports that.
+
+Then we have the agentic solution, which we built in phase six. So, this is our main solution. So, if I just try to show you. Okay, so let me see. Before making a query, I have to look into the other containers also. Let me pass like What is vector policy? Something like this, I'm just asking a question. Now, this is an agentic solution.
+
+So, let me see that whether I'm getting a response. I can look into the Docker logs. In the Docker logs, you can see that the question that went around. Okay, invoking LLM for answer generation. All right. Um Aruni is asking, "We cannot get Bedrock." Correct. You can get Bedrock if you have an AWS account with you.
+
+All right. So, finally, the answer length 100 and 1830 characters, retrieval attempt in the first attempt it got and we have the sources also. So from the logs I know that yes it work. The same logs, if you don't want you can directly go to log file. Where is our log file? From our log file also you can actually look into the logs.
+
+So see this is the agentic request. Let me just zoom here. See this is the agentic request. In our agentic request, we ask the question what is vector policy? Okay. Now here you can see what is the application I've kept an application like whether I am in staging, development, in prod in that way. That's why I keep that environment with me. This is the model.
+
+This is the agentic rack service. Okay. The top three results. Then we are using hybrid search and based on that this is our entire result. You can see the vector policy optimization is a reinforcement learning algorithm. Okay. So now this is your application level logs guys. Now the question comes what do you need much more detailed tracing level logs?
+
+All right. So for that let's open LangFuse. Even LangFuse is also integrated in our application. So let me do last 30 minutes. All right. So here I think the font is visible to everyone. So here as you can see first of all only one query that I made. So I don't need every type of log in my LangFuse. Only the application whenever making a query and based on that I'm getting a response. That entire journey that we have defined inside LangFuse.
+
+Not our application level stuff. So you will feel that it's similar but it will give you much more uh detail with respect to what are the tools which have been used. So first of all in my system came the agentic rack request which is what is vector policy. Then it went to LangGraph. Okay. So this is the next one from where it went to LangGraph.
+
+And you can see that this is the graph that we are working with. Okay, so all right. Let me just make it start. Then we have our AWS Bedrock guardrails implemented. Then we have our retrieve. Then there are tools like which tool to work with, conditional tools, retrieve tools. And finally comes grading your documents. What is the difference between LangFuse and LangSmith? See, both have a cloud-hosted version, but LangSmith is not totally free.
+
+LangFuse, you can actually host it in a Docker container. So, it has an open-source self-hosted version, whereas LangSmith doesn't. I hope Lalit got that. Sir, please just make me panelist. All right, Devesh. I think Devesh you came here. Just wait. I think one of our our mentors they have joined.
+
+Uh Devesh, I think. All right, Devesh. If you want to I've added you to panelist. Can you get the full project? Yes, the entire source code is there, Varun. Okay, so just try to clone it. Between if you have any issues, you can drop me a mail. How do we set up?
+
+You already told to that. For context perspective, if you give any problem statement. Uh so, this is a generic agent drive to solution. Devesh, do you want to ask or anything? Please let me know. Mm all right, fine. Nothing. All right, just to be in the panelist fine. Fine. As I was talking about now, here you'll be getting all the details with the respect to your breakdown. It means that whenever the request comes, what are the main things? It means that what are the tools which has been added. Like for example, I implemented guardrails. Now, guardrails is a must, but to check for guardrails, how many seconds it took.
+
+So, the final latency. So, right here, it took around 25 seconds for the response. And the entire journey which has been defined. Now, let's move to the guardrails part. Here, you can see that content passed all guardrail checks. So, here we have multiple type of checks. So, if something if I ask some type of question which is against the rules, simply it will say that it cannot proceed ahead. I'll be showing you those examples also. But, right now, the content has passed as the question was much more from predictive perspective.
+
+Yes, it's automatic evaluation. So, if you ask me about that evaluation part, if you really look into, so right now uh so uh I have a feedback system implemented. Okay, so yeah, using that, I can actually pass uh it can be a manual evaluation also, or uh it can be through that. So, that's why if you look into my APIs.
+
+So, I will just show you one of the APIs. Here. I have a because this is where I have implemented human in the loop. Okay. So, for example, this was. Now, uh here to provide a feedback to the system, so this is where human in the loop comes into the system. If you feel that the answer is not there, so you can actually pass. So, for that, what you have to do, you have to pass that trace ID. Let me just take the trace ID of our previous call.
+
+Okay. Because if I try to keep uh evaluation in our response, then the response will become much more uh time taking. So, I didn't want the evaluation to be done during the response time. That's why separate uh human in the loop that I have implemented it here. If you really see that, okay. Now, I will say that, okay, score, let me just reduce it to 0.9.
+
+Okay, and this answer was helpful and accurate. All right, let me just execute it. Once the execution is done, then the feedback has went where? To your uh scores. So, here I think uh if I try to refresh, it will come here.
+
+Just wait. >> [sighs and gasps] >> It takes a little bit of time uh past 30 minutes. But uh the evaluation will be directly come. And even if you want, you can create your data sets also. So, if you really look into the rag evaluation data set that we have, so where if we are asking any type of questions, automatically like the entire data set can be created. So, in the back end, the options are there or to do the entire setup for that. You have to just enable the arguments.
+
+All right. Now, moving to the next part. I'll be showing you the guardrails part later on, but right now I'm just showing you the main demo. Uh please, I think Sandesh Santosh sir or Sandesh is asking, "Have you used any evaluation frameworks like Ragas?" And DPEval, I'm working with LangFuse. So, I don't need any other frameworks. LangFuse has inbuilt evaluations.
+
+Sandesh, okay? Similarly, if you are working with LangSmith, LangSmith has inbuilt evaluations. So, really it is not required in that case to use Ragas. But if you are using a different framework where there are no evaluations, in that case I'll be taking Ragas or DPEval. All right. Sandesh is asking, "What is the main intent of this webinar?" So, when you registered, I hope Sandesh you might know that.
+
+I think people who have joined late, for them it will be harder to understand because this is a big one and right now I'm showing everything locally. Once the deployment I move to the EKS part, the Kubernetes section, then I'll be actually showing you the pods and others. Okay? All right.
+
+Mhm, Satish is asking, okay, now Nitish question, the human in the loop evaluation is done during the text phase. Yes, so this API won't be used by the end user, Nitish. This API I'll be sharing with whom? The guy who will be doing the evaluation. So I've just provided it. He will be having the traces and based on those traces, I can build in my dashboard and he can provide all the feedbacks.
+
+I hope you get that. This part I won't be exposing to the end user or to our client. It's for our internal purpose. Okay? All right. Fine. >> [gasps] >> Let me just try to have a reload on this section.
+
+Okay, so scores came. Just to show you the user feedback came. So based on that, that the manual annotator passed. It takes some time to you will get So automatically like you can add more metrics based on rag, like automatic like one is the relevancy, then you have faithfulness, then you have precision, like context precision, context recall. Those type of metrics can also be implemented.
+
+All right. Now let's move ahead. Okay. Now as I was talking about in the guardrails part, we have grading of the documents that whatever the chunks, whether they are good or not to do the to move towards the LLM generation phase. Okay, so that's why in the guardrails, if I show you the actual script, let me just open my cursor. I think it will be better.
+
+I can see I think our scripts All right, I'm showing you one of the scripts. Okay, so where actually I've kept the logic. So as you can see, different type of guardrails that I've kept like hate, insults, violence, misconduct, sexual prompt attack, then comes email, phone number. Now, this is the PI detection part. If I ask anything, automatically, it will be redacted. Okay, it means that there won't be any type of block, but it will be redacted.
+
+Then comes Now, this is the threshold for my grounding and relevance. What is grounding? Grounding means the chunks which have been retrieved, whether they are actually relevant or not for doing the final generation. So that's why another level of check. Then the final level of check, which is the relevancy. Now, this is a generation generation level metrics, which is I think in Ragas, it is called as answer relevancy.
+
+The same metric directly in guardrails AWS Bedrock, through that also you can have a check. Okay, so here I've kept the thresholds of 70%. So you can play with this threshold. These are manual thresholds that I have set. All right. Now, let's try to do some local calls and just to have a check that whether our guardrail implementation really works or not.
+
+Okay, because right now I've just passed a simple query. Now, you guys will be expecting Let's try to have a look that whether really the integration works or not. And if I show you my source code, if you look into SRC, inside SRC, all the services are there. So there is a dedicated service folder and whatever the services that I have used like A2A from Google, then agents, then archive, then come Bedrock Garden, then comes Bedrock LLM.
+
+Cache, embedding, indexing. Okay, so all the major services I have kept it here. So, this is the main part, the actual implementation. If you want to really look into, okay, what I have implemented, directly go inside the services folder. The actual core logic of each of the features have been written inside this folder. All right. Now, let's try to do the testing.
+
+Uh so, I think I have few curl commands ready. Let me just open my Notion once and from Notion directly I will try to do a copy-paste. Just to show you the Bedrock features and exactly how we are getting the response. All right. So, All right, guys. So, let's now I'll be showing you uh few of the things. So, let me just open another uh terminal.
+
+I need a terminal. All right. Now, what I have done, so I am asking a question, uh what is the pasta recipe? Now, uh the system that I have built, it is based on archive digest. It means that only we'll be working with research papers which are based on computer science and machine learning. Other than that, it won't be giving you any other response. Now, this is a general question that I'm asking. And why my system would would be entertaining such kind of questions?
+
+When you are actually building gardens, the idea is that you should not not be getting diverted to something else. I am trying to make my solution not generic, very domain specific. And right now, if you think about like uh education with respect to computer science and machine learning. So, I will just execute this and let's try to see what the response that we do get.
+
+All right. So, here directly as you can see, the query is what is the pasta recipe answer. I apologize. But I can only help you with questions about academic research papers in computer science and artificial intelligence and ML from our guide. Your question, what is the best pasta recipe? This appears to be outside of my domain of experts. Now, see guys, really if you think about the question that I asked, if you will directly send it to the LLM, the LLM will give you the response. But it doesn't make sense.
+
+Because when you are building such systems, it doesn't make sense that yes, your system will explore everything because you want to make it what's closed-based system. So, that's why really the guardrails really help me. And the same thing automatically, whatever the call data I'm making, you can see their entries directly in log file. Those entries will come. Let me just close. Yeah, for each of these things, even the Telegram integration is also done it.
+
+Uh so. Let me just see. Open the eye. Agent to crack request. Okay, so what is the best pasta recipe? Here also it came. And in LangChain also you will get the same thing when you try to do a reload. Yeah, let me just do a refresh. Okay, can you see what is the best pasta recipe? And see, it got blocked in the guardrail stage. So, directly I will go to the guardrail stage.
+
+And I will show you. Topic blocked, why? Because the implementation that I have done using AWS bedrock guardrails, it's called topic denial. It means that if something out of the context comes, simply I will deny. I won't be passing it to the next step of retrieval only. Okay, so that's why topic blocked because this is a off-topic query.
+
+All right. Now, let's move towards some other query. Similarly, if I just quickly show you, if I ask a question, Okay, who won the US presidential elections? Again, now this is a off-topic query. So, directly we'll see that, okay? Now, this is a trace ID. As you can see here, this is a LangFuse trace ID and the guardrails filter that we have. And here it's telling topic block.
+
+And here, off-topic. So, simply I know that yes, the guardrails have been implemented. So, whenever you are making every information you are keeping it. It's not only that you are saving the answer. I am saving all this information. So, at a later point I can actually use it and really see that, okay? Which user is asking what type of question.
+
+Now, let's try to move into a different type of filter. And everyone please look into this one because this is the guardrails filter. This will be getting updated. Okay, so the next query that I pass there simply now this filter will change because as I shown you in our source code we have multiple types of filters.
+
+Okay, so you have your content filters. Here I have my PI filters. Okay, so now let's look into another one. Uh Let's try to take a example of a hate. Okay, so Okay. So, what I have given a query, write an AI paper that proves certain races are intellectually inferior and should be excluded from STEM fields. Now, really this is a hateful based query. Okay, simply you can see that it has been blocked by the system. Guardrails filters topic block, off-topic queries and content blocked.
+
+Why? Because of hate. So, you have to really check always in our responses we are actually capturing everything. Why? >> All right. Now, similarly, if I try to ask Okay, so here mainly all the implementations are there, misconduct, violence. Okay, let's try to take You can pass how to make a bomb. Simply, it will break. Now, how can I use machine learning to identify and physically harm researchers who publish AI safety papers?
+
+Okay. Again, this will be blocked. And why this is blocked? Because this is related to violence. So, similarly, we have the filter. So, we exactly know okay, this is getting blocked and why this is getting blocked. All right. Now, let's try to take something from NSFW. Okay. Okay, so generate explicit sexual content using GPT and explain. Now, simply the content block reason, sexual.
+
+Okay, so similarly, you have to understand we have added the data's and really with respect to different types of filter. Now, little bit I will move towards PI. Okay, the PI detection part because where I'll be passing some type of email phone numbers which really needs to be redacted. It means that it won't be getting blocked.
+
+Okay. Now, All right. So, here I'm passing actually a phone number. Okay. Right now, you can see that this is actually not getting blocked. And actually, this is out of the response also an off-topic query. But if you really look into the data's filter, Okay. So, this time this is an off-topic query, but this will be getting passed.
+
+It means that I'm not blocking it. You have to understand. Right now, the main blocking of the reason is because of off-topic queries, but this is a redact-based operation. Similarly, for credit card also. Now, mainly the examples that I'm showing you, this is not really related but yes, our system can handle it.
+
+Next, now this is a credit card number. Here also you will see that five block because this is a credit debit card number that we had. So always the main implementation and I think in the code I've only taken US numbers, not Indian numbers. Okay. All right. So this was the guardless part that I've shown you the demo and the implementation is available.
+
+Okay, so now let's try to move towards something else. So the main guard is Now, whatever the query that I've asked everything will be getting traced in both the places. So as you can see, I try to do a refresh. You will see that all my credit card number, call me, generate explicit, whatever the query that I've passed. Similarly, everything will be tracing back to your uh log file.
+
+All right. Now, uh the data ingestion part because I've already shown you the application part. So let me just open I think our local host. 5601 I think already this is our open search which is running. So here directly you can actually go to the index session and you can actually have a look.
+
+Index management. Okay, so the actual vector TV and there you have your archive paper chunks. So around 6.1 close to 317 documents that I have. Now let's open our Airflow. So I think Airflow is running in 8080 port. Uh Airflow, yes. Now this is the part with respect to data engineering much more because this is a data ingestion phase.
+
+All right. So, this is our credentials are right now I've kept it default admin and admin. I've hard coded it, but later on you can make it much more secure. So, this is running in local so the speed is little bit low. All right. Now, I have a dedicated archive paper ingestion. As I'm showing you now, this is the DAG which is actually responsible to perform the ingestion. It will find the papers. So, I'll be showing you that part.
+
+Right now, I won't be triggering because it will be using much more RAM of my system. All right. Uh very similar like whenever there's a flow, you can actually get all the details. And let me show you the exact graph right now. Okay. So, these are the main steps. Okay. Like uh the first is setting up the environment, then comes find the papers from archive, then comes indexing the papers, then comes uh generating a daily report, and finally cleaning up all the temporary files. Okay. Now, this is the DAG that we have defined and using this DAG we are performing the data ingestion. So, using Airflow, we are doing the data ingestion in our OpenSearch. And we are updating our entry where in Neon DB. It means that which paper got ingested. So, you will get that information. So, that's why your uh Neon. So, today actually Neon was down so I thought about I cannot show you the demo, but right now it is on.
+
+So, this is where uh you actually get this information. Okay. So, which paper got ingested? And here you have more tables related to DAG workflows also if you want to really have a look. The DAG runs. Okay. So, whenever you are running anything, so all those information that you'll be getting it here.
+
+All right. Now, this is the main purpose of using Postgres. Now, uh I think the injection part airflow I have shown you. Open search I have shown you. Okay. Now everything that I am doing it's based on agent because right now everything I am using very specific to slash agent here. So every call that I am making it is to land agent.
+
+Right. Now let's move towards our main cluster. Regardless implementation I have shown you already. Telegram integration is also there. If you want to do the Telegram integration so you have to create your token using your bot father. Okay, and then actually you can directly do the integration.
+
+So I think Telegram integration is easy anybody can do it. I really don't need to show you. And always remember in case and if you are actually working it in production it won't work because when there are multiple replicas so simply get update is supported by one. So automatically the other replica or the other part which will be getting created, okay, it will be getting into a crash state. So in production never use it for your local purpose only use the Telegram part.
+
+Fine. Now let's just collapse this entire folder. Now let's I think we can go inside our workflows folder. Where majorly >> [gasps] >> the main infrastructure documents that I have kept it. So the first part with respect to setting up your infra I have already told you the main airflow setup that you have.
+
+Then your fast API application I have already shown you. The right dashboards I have already shown you. The open search data uh uh that also I have shown then comes what are the third-party services that I'm using is Redis. I think I have not shown you Redis part yet. So let's just open up stash Redis. I'm using up stash. Okay, you can use a Docker container also.
+
+Uh so because whatever the thing that I'm working with open yeah, so that can be easily switched to up stash Redis. This is a serverless data platform and I really love working with serverless based solutions. So that's why even Neon DB is a serverless. Let me just see. I think somewhere around here I have kept my agentic rag index.
+
+All right, uh uh commands. Okay, now this is my actual uh setup that I have. Okay, and inside the data browser right now exact catches catches if I try to do it. Why this is not coming? Let me just have a look. All right, more than 256 MB I have used because of that uh it got redacted.
+
+All right, fine. But uh the direct integration of Redis is also available. If you try to pass the same query multiple times, you'll be getting faster responses. So that's why the main integration I have done it. You can use a local container Redis also that is uh totally fine.
+
+All right, now uh up stash Redis LangFuse I have shown you Neon I have shown you. What about the main I can say for local purpose because everything is running right now in local. You don't need anything. Now this is the main startup sequence setting now this is our application level. I don't want to really go inside application level because it will take a lot of time, a lot of things because your incoming request comes then you have your fast API rifle then it go to check your dependencies then it will connect with your neon DB which is basically the DB session get manager from there it will go to application level setting. Okay, then finally it will make the connection. So these are all the connections that I'm using. So G9 meetings, open AI, LangFuse, cash client and finally our main agentic. So this is your agentic rack service. So this is the main foot fall whenever you are actually making a call.
+
+So So Smith is asking can you explain the concept of index? So generally most of the vector DBs it is called as index or collections. So the idea is that there you will be saving numbers rather than normal text in your normal databases like if I say SQL, Postgres, you don't save a lot of numbers.
+
+Okay, they are not highly optimized for those type of operations. But here matrix based operations are highly optimized so that's why vector DBs are built. So index is a place it's just like a collection. So the same term has been used in MongoDB also. In MongoDB also you use the term collection. So very similarly there are multiple vector DBs somebody use index, somebody use collections.
+
+We have records yes. Similarly you are saving records. Here what are records? Multiple vectors. So for example in a document you have 10 chunks then you have 10 records. So those becomes your 10 vectors. And each vector size will be defined by the embedding model definition that you do. So every embedding model has its own dimension size.
+
+All right. Now, this is the main foot fall. What are the different type of API routes those are being mentioned here. Yes, so the first detail level documentation if you want, then the data ingestion. So, this is where actually your DAG trigger that happens. If you're working with a DAG, whenever I'll be making a trigger, first it will try to fetch the papers from the API. It will be making an archive API call.
+
+Okay, then the parse, the data parsing part. Parsing happens with Docling. Once it is done, then we send the information to Postgres. So, which paper actually got ingested. And then finally the chunking mechanism. So, text chunker, now there are different type of chunkers you can use Docling also. You can use something from LangChain Lama index to completely customize them. So, that's why if you look into my source code, each is a factory pattern based implementation.
+
+I don't know how many of you know actually star pattern, factory pattern, common software engineering things. So, here you will see that inside my service Okay, if I go you will see there is a factory.py which actually helps me to achieve high level of encapsulation and abstraction. So, in every folder you will see. So, I have maintained a factory based patterns for my entire implementation.
+
+Now, every developers is not necessary that you follow factory. You can use star. There are so many different type of patterns. Right, and then generating the daily report and finally cleaning up. So, this is the DAG phase. Once the DAG phase is done, then finally let's move towards the workflow phase one. Now, keyword search, it's very very important in today's uh rag based systems, you have both type of search enabled. One is keyword search, and one is your normal hybrid uh your uh main dense search or vector search.
+
+And the combination of BM25 plus uh I can say dense is basically called the hybrid search. But in 2026, we are seeing that the adoption had been much more where people are combining BM25 with your dense plus graph. It means that they are building uh they are using graph based systems like Neo4j. Okay? Or you can work with Falco DB, a very good product. Okay?
+
+So, and finally moving towards vectorless base solution like Weaviate that is also possible. So, your stack can be something like that. Because in my case, it's pretty much simple right now as I'm not working with financial based documents. If I'm working with financial, then I will prefer working with uh Weaviate. You can easily self-host it. It has an open source version. You can easily work with that.
+
+So, a combination of four. Like people are moving towards vectorless, then graph, and then your dense, and finally BM25. So, in this project, you have a separate implementation for Okapi B2 BM25. This is a direct keyword based implementation, and BM25 is just an upgraded version of TF-IDF. Okay? So, this is the simple keyword based search implementation. Then we have the hybrid search. In the hybrid search implementation, what we have done, we have just integrated both the things.
+
+Okay? So, both the things means let's add BM25 as well as your dense vector search. Uh that's why based on that particular logic. And in our chunking strategy, we have section based chunking. Okay? It's not like it will be only picking up this specific text. We are using section based chunking. And there are better ways of chunking. Chunking I feel that it is a really important thing, but before chunking comes um the main part parsing.
+
+If your parsing is not good, your chunking will never be good. I think in our future sessions I'll be taking a one session based on multimodal based systems. Like where you work with actually lot of tables, lot of images. So in that case, what are the models that you should work? Okay. So there I'll be focusing much more on that, but initial it's simple I have directly used Docling and simple text chunker, but I have maintained. So I've created a custom function to handle the sections.
+
+So once the information is available, we got our chunks from our chunk from our chunks, we are converting them into embeddings. For embeddings, I have used GenAI. GenAI has some of the best embedding models. It is from Elastic. And here the dimensions that I'm working with 1024. So at this point also you can plug and play OpenAI. If you're working with OpenAI embeddings or some other embeddings when embedding models have anything that you can actually bring it here.
+
+Now once [clears throat] the dimension are there, then simply I know that okay, I can perform my BM25 based search as well as my vector search or basically the dense search implementation. And we are actually keeping metadata because metadata based filtering is very very important in rag based solutions. It means that if somebody is asking a query, you have to look for the intent. And from the intent, if you can actually get some type of metadata information, your response will be highly optimized.
+
+If you have 1 million documents, in that case that metadata filtering plays a very very important role. Okay. Now this is the chunking strategy that I have applied. So you can actually look into each of the markdown files in our workflow. From there you will actually understand step by step what we are trying to do that.
+
+Okay? And we have used reciprocal rank fusion or it's simply called RRF, which does the hybrid combination. What are the other options? You can use RSF also. Okay? So, score fusion-based options are also there. Ranking-based options are also there in the code base. So, it's just a simple parameter through which you can tweak it. All right. So, this was the main hybrid set because this is very common and I think everybody knows about that. Now, this is the final rack pipeline. Let me just show you the final preview of this one.
+
+A standard rack flow. Okay? So, as you can see here, we have kept Redis. Okay? And I have kept that TTL, which is time to live 6 hours. After 6 hours automatically everything will die. Okay? Because Redis it totally depends upon your implementation. Like are you maintaining Redis user level? And generally I prefer for short-term memory-based implementations to go ahead with Redis.
+
+Okay? So, 6 hours I feel that. Otherwise, you can increase the time limit also. It's available directly in the .env file. You have to just change one parameter and your everything will be done. Redis is for cache. Generally in why Redis? Because if I'm making a call, my agent system is taking 20 seconds or 30 seconds for the response.
+
+If I'm keeping it in the cache, if somebody same ask the same question, they will get the response instantly. That was the main purpose of using Redis. And in this particular application we have not added semantic caching, but you can later on add it. This is not a semantic cache base. This is a hash-based matching operation, Kangaraj. I have not implemented semantic caching. But But same thing semantic caching can also be implemented.
+
+Same prompt different with different meaning? Yes, in that case semantic cache it works when you said you were asking. If you just change one word but your main intent then automatically if the vector similarity matters you will be getting the same response. But in our case it's simple normal cache that we do in software. I'm not implemented semantic.
+
+Okay, so finally Now from the Redis if directly get so direct answer to Redis are or this entire process needs to be followed. Client then it will go to the API. API will check okay, whether in the Redis it is available or not. If you miss it in Redis then it will be looking for the chance in our vector DB. That's why the query needs to be embedded to perform the similarity check and finally comes your unified search or the hybrid search implementation from there will be getting the top K chunks with the PDF URLs. And then finally comes your context assembly where you do the prompt builder with the entire context part and finally you send the information to OpenAI and you get your response. So both the routes are there.
+
+Cache or simply miss it then it will take. So this is much faster you get it. I think you have very very less 200 ms to 300 ms. This part 20 seconds to 30 seconds. All right, so streaming based implementation are very similar that I have done it using that and LangFuse tracing also I have shown you that part. So this implementation is also available there.
+
+All right, so local based implementation I have told you. So this is the cache monitoring. Okay, so it is directly in upstash Redis. I'll be having a check on the connection right now and I'm saving the hashes. So, just to show you, I am saving the main key. Okay, so that's why there is direct direct match. It means that if any a single character changes, the Redis will fail.
+
+If you want a better implementation, you can later on move towards semantic cache base implementation. Uh so, semantic cache implementations are available through Redis through extensions, not directly in a Redis container. You have to do a third-party installation, and then it can be done. Or you can use some type of other gateways like uh Bifrost. They have their own uh cache implementation.
+
+Okay, so this is the entire trace cycle, everything that I'm tracing from prompt construction search. But this part already I've shown you through UI. So, for a single call, what is the information that you get? For a successful call, it will be much more. For a blocked call or for a I can say where guardrails is blocking, you'll be getting lesser calls.
+
+All right. Now, what is the time? Because really it's 9:40. All right, close to 1 hour we are done. Now, uh the core part with respect to our application in our local I've shown you. Now, uh this uh this is the final phase where we actually converted our uh rag based application into a complete land graph mode. So, how our land graph mode looks like?
+
+So, start. Okay, in the start part, it will do a guardrails. Now, the same thing you saw it here also. If I show you here land graph, see. Here also you will see that same start, guardrails, out of the scope. Okay, the same node. Okay, so here I have kept uh based on thresholds, whatever the threshold that you are keeping it in your AWS bedrock architectures implementation with a 60% based on that out of the domain or in domain.
+
+Now out of scope, so then simply you have to rewrite the query so that particular option. It means that just think you passed a query and it really didn't work. In that case, what you have to do you have to perform a query transformation operation or you have to do a query reformulation. We have to rewrite the query. So that's why rewrite query notice there.
+
+Okay. And there we actually change that temperature. The idea is to get little bit diverse rather than looking into deterministic results. And finally once we have done then again finally the retrieve node from where we'll be looking into the chunks. And from here we'll be looking into what are the tools which are available. So the open search tool, so the our entire open uh search has been implemented as a tool.
+
+That I have kept it rather than as a node. I felt that it is actually an external third-party container. So I kept it as a tool-based implementation. And based on that once we get the chunks we will be getting an end part. Okay, so this is our main agentic I can say implementation. So initially we started with LangChain, then we have moved towards phase seven. So I will suggest everyone later on when you are actually looking, please start looking into the notebooks folder. Notebooks folder is the main folder where each of the phases have been defined. So for phase one there is a notebook. Okay, and there is a dedicated readme file also. Similarly phase two there is a notebook and you can actually execute the notebooks. All you need to do is pass the correct ENV credentials.
+
+That is the minimum requirement. So So that's why we'll ask you to do and play with it. Okay, so the hybrid search. So that's why everything the complete rack system. Then finally checking your cash implementation and finally moving towards an agentic base solution. So, it's not like from day one only I'm starting with agents. And I felt that yes, I'm integrating more and more things then only I brought agent into the system.
+
+All right, earlier I made the font bigger. I will just make it a little bit small. Yeah, so for everyone I will say that the steps are mentioned. The get started classes please look into the notebook folder. For every beginner, the Jupiter notebooks are ready. If you want to really test it by yourself, uh I think it will be really great before moving towards deployment.
+
+Because deployment is the next phase, but right now uh I can say that this are all the beginners. So, I can say that this is a beginner level. Now, I'll be moving towards a little bit much more advanced because the core uh functionalities I have shown you of the Iraq.
+
+Okay. Now, let me see uh I think even I have done the uh it's MCP. What I've done, I've converted this entire application as an MCP tool. Okay, so let me just show you that part also. Mhm, what is called N P X. Model control protocol solution.
+
+What I will do, uh so when I build the Fast API application, and that particular point of time I converted into an MCP server. Entire application, it means that my application that I'll be deploying, the same application I can share it as an MCP to anybody. So, for the MCP integration, so let me just first of all get the package and let me show you. So, this is the main NPX package. I'm using the inspector, guys, uh because I've not created a separate UI. I felt that the MCP inspector is easy to work with.
+
+Okay, so let me just open my terminal. I will write here. Okay, and what is my Mhm, okay, so this is the deployed MCP in our Kubernetes server. Okay, so now I will just make it uh localhost:8000/mcp. As you can see 8000 the same place where our fast API is running and I have built the MCP server using fast MCP.
+
+Okay, so let me just connect it and let me just show you. All right, as you can see the inspector has opened. Uh the transport type that I have defined is HTTP. Okay, and I think this part needs to be updated. Uh it will be localhost 8000. Uh 8000.
+
+Okay, and then I will try to make a connection. Can you see here it's connected? Why? Because locally uh I can say my application is running here, the agent ops one. Okay. So in the same way Telegram integration of that I have done. Now uh just think about nobody wants to use and they want to directly use this tool. Now think about I can add this MCP server to any type of coding agent, yes or no?
+
+If I have built an MCP server, can I add it? If I just show you the tools. List tools. Okay, ask a question. As you can see simply, so these are the tools that I have. If I ask a question here, what is vector policy optimization? This same question that I previously asked.
+
+Okay, I'm just passing it. You can see that this tool I can run it. I can show you in plot code also, but let me just show you the mean depth part. Okay, it will take around 20-30 seconds. I think there is some issue with that. So Shree, can you elaborate how you deployed the MCP server in Kubernetes? Uh the MCP server that I have created it is using fast fast MC framework and it is sitting on top of our fast API.
+
+So majorly all the routes I have converted them as a tool. You can look into the source code. Please look into main.py series. Because right now I cannot discuss code. I hope you get it in 3 hours it's not possible. But please I will look into our main.py. All right. So from here I'm getting the response. What is our vector policy? All the uh major details. Okay, so I think little bit let me increase. The same response that I will get line trace ID guardrail score everything. Now similarly if I open my cloud also and I have to just tell cloud which tool to use.
+
+Okay, so I don't have a subscription or anything. Uh okay, so here I think the tool is connected. Let me just have a check once I've not tested it in cloud code but I think extensions. Uh developer archive. Okay, now this is the uh I think you guys can see.
+
+I have added it as an NPX MC remote and local host 8000 MC. So that is the URL that is connected with. Okay, so if I ask a question uh I think explain me vector policy optimization you can use the archive rack tool. Okay, so the spelling I have to make it otherwise it will get confused.
+
+All right. Right now it is loading tool. I don't have a subscription so the speeds will be low but it should do the job. >> Because this is actually the same call like this one. Can you see here? It's telling Cloud Gods get paper details from archive allow. So the same MCP is running even in our case.
+
+So most of the organizations are doing the same thing where their main application is already running on top of that. They have just built an MCP server and they have shared. So that anybody can work with. All you need to do is get an API token. So you need to generate that API token for that specific product that you are working and easy to go with integration.
+
+Okay. Okay. Now based on the tools now, can you see that? First of all, it went to the paper tools. Okay, then based on that I have the full abstract because in our see, I have a list paper. Let me just show you the tools that I have.
+
+So here tools. So here is a list recent papers. So here you can actually look into. So if I give like show me only three papers. Okay, and run tool. And I'm keeping the entire metadata also in Neo4j in our Postgres. So you can actually get that information directly rather than looking into vector TV. Okay. If you really look here, can I make this part bigger?
+
+So this is the first paper, the balanced Lora paper, then the vector quality optimization paper we have, then the I think learning to part transformers. So three papers I fetched and based on that. So this is a direct DB call, nothing else. Now, the main generation from here it actually looks into the chunks.
+
+Okay, so the main vector quality optimization of this is where it actually goes through that. So, yes this papers are there. Now, this is a recent paper from May 2026 only. So, similarly other information, total number of chunks in your DB if you want a direct call to open search and based on that you get it. So, total 317 I showed you in the open search.
+
+Okay, so search paper is also there if you want to search about a paper. So, first of all if I do a list then only I can show you the search. Okay, I think I did that. This is a DB call so super fast. Okay. All right. Now, if I want to do search paper, I can I can just pass the archive ID of this paper.
+
+Okay. Get paper details. I think this is where the actual archive ID I can pass in. You can fetch the entire metadata through a paper ID also. That option we have kept it because these are the direct DB missed calls. Okay, so these are few of the options. Even the submit feedback is there so through which LangFuse will be getting that human in the loop update.
+
+Okay, so this is the entire thing which you have converted. So, it means that during building my fast API application only I convert that all my major routes into tools. Okay, and this can be integrated by anybody. It uh having MCP integrated, will it load all the tools for each call? No, no, no, no. Why all?
+
+That very specific one. Because based on your query it will try to look for which tool is much more relevant. You can give a tool based description also Sandesh at this tool is used for this reason and based on that uh the tool selection that happens. Even in LangGraph, UI, and every agentic framework, it happens in that way.
+
+All right. So, I just showed you how I converted the entire application into an MCP based server. All right. Now, uh this is just the logs part. I want to just Similarly, if you want, you can look into your other logs. Mhm. You I think my airflow is also running fine.
+
+Yes, health 200. So, I think right now there are no active runs. Fine. All right. So, I've shown you this part with the respect to testing the application, guardrails, gateways. Okay. So, the bedrock and OpenAI, both the options are there. So, it's just a ENB based parameter. Now, again, I'm just repeating this part.
+
+Where is my agentic? Right. Yes. So, this is the main file that you'll be getting started with. So, total number of files number, if you look at 125 lines of dot ENB. So, few things are there. So, for example, in EKS, what will be the cluster name? Like I've kept some dummy AWS account ID. Grafana integration also is there. I'll be showing you. Then log file.
+
+And I think the same thing, Telegram is easy. Do you want me to show the Telegram? Please let me know in the chat. Kiran Bole, already I've shown that. Uh for every evaluation, we are doing answer relevancy metrics. That part is directly in LangFuse. Telegram. All right. Just wait if you want the Telegram.
+
+It goes. I created a bot token, but really Telegram. I will just stop sharing my screen once, okay? Uh a lot of fuzzy things are there. That's my second Telegram. And the thing that I'm showing like in class Mhm. It took me more than 3 weeks.
+
+I'm going from scratch. Mhm. Because once I have given you the full application overview, then only you guys get it what is going on here. So, I think this is text talk to all right here. All right. So, here also you can see uh so, this is my bot running. So, using Bot Father, I created one bot. I cannot increase the font here. I don't know why, but uh later on. So, this is my bot and I will try to ask some question related to So, not to my Bot Father, to my actual bot. You can see last time I asked the same question vector policy.
+
+Explain me vector policy. Okay, let's see what type of response that we are getting. So, in your uh dot env here, you can see typing typing. So, behind the scenes, I know the call is being made. Okay, and it takes some time and it will come. So, here you have to pass the Telegram bot token. So, here uh when I created this, I got the bot token. I just pasted it here.
+
+So, through that you can actually and make the response up and working. All right. So, you can see here I got the response with the source paper. So, directly if I want I can just click here and this is the main paper I can have a look. So, in that way, the Telegram integration is also there direct in your application. So, MCP enabled, that's why if you want to enable the MCP then only this condition true, otherwise you can make it false.
+
+So, I have kept everything true, false, true, false, and that way it becomes much more easier to handle me when things get scaled up. All right. So, bedrock, metal armor. Like WhatsApp Business API is you can do the integration of that also borrow. Fallback mechanism for what Sandesh? I have a model fallback mechanism. Retrieval fallback mechanism is there.
+
+If it fails one again, it will retry. Second time also it could not find then finally it will say. Model fallback is there. Chunk level fallback is there. Everywhere. Model fallback without fallback how we can build a system. All right. Later on I can add actually I was thinking about adding model routing, but later on I will add it. So, based on your intent it will judge that which element it should go.
+
+In that way you can save a lot of cost. Okay. So, the core part I have shown you. Now let's go to our AWS. Because later as we are talking about deployment and scaling, so uh AWS I think I need to login into my AWS account. Let me just login. Because I feel that majorly with respect to applications and integrations I have shown you all the major feature which were there.
+
+Please have a check into the source codes, okay? Okay. Difficult to collect all yes, Manisha. Agree. Because yeah, even for me to teach in three hours it becomes hard. Because I have broken these things into six to eight sessions of more than 25 hours. And the rack batch I'm teaching it. So, really eight days time taking. And this is costly means that it's not free also.
+
+People who are having paid accounts and I'll be just showing you just for the entire deployment you might be spending $10. As this is a Kubernetes based deployment. Okay, so let me just get my authentication code to to the login. Difficult for beginners. Yes, this is actually not for uh like beginners I will say that please go through the notebooks. That's why I kept the notebooks.
+
+Okay. Uh these are the rough cost like this is only for this month. Um I think today is June 1st, that's why it has not been reflected, but majorly you can see the ECS for Kubernetes which has been used. So, let me just show you. Let me go to EKS. Okay, so this is my main Kubernetes cluster.
+
+Okay. So, where I have all my main resources the pods. Okay, I'll be showing you replica sets. I have them. Uh I think I need because uh here in Kubernetes the dashboard is really really bad, so I don't prefer. So, that's why I've done the integration in Grafana.
+
+Okay, so in Grafana let me go to Kubernetes. Okay, so right now I have a single cluster guys. See. This is our cluster which is running. So, if you ask me, okay, so like which part? So, I can show you. Uh First of all, like these are the clusters, these are the nodes. Okay, so two nodes that I have, then comes the name space. So, if I go to the name spaces, you can see there are multiple name spaces, but production is the actual name space within which our application, Airflow, uh is the running our rag API is running. Others are uh because I have done the integration from EKS to Grafana Cloud. So, a few other name spaces that came, like the monitoring. Monitoring is very specific only for Grafana integration, but production is the main one.
+
+Right now, this is the main cluster that uh we have been running. Okay, and if you really look into the logs, so here you will see that if anything fails or not, the same logs. Okay, so what I will do, I will stop everything from my local right now. I feel that two times I don't really need to run it.
+
+Uh I will do a make stop. Everything from my local will be done. Stop. This is simple Docker Compose down. Everything has been removed. Now, nothing. All right. Now, uh I feel that few commands are there, uh but first of all, let me show you the cluster.
+
+How many of you have really worked with EKS? Please let me know. Because this is the actual name space inside which our application is running. So, whatever the task that I'll be doing, it will be going. So, here you can see OpenSearch, OpenSearch. Okay, it's making a call to the Open AI. This is based on rag API that I have. And uh my cluster is not really a very good production-based cluster. You'll have to understand that. I have used bare minimum instances with only 6 GB, 8 GB. For example, if you need 10,000 concurrent calls, okay? What you need to update in our configurations? I have my EKS. So, let me just go to the deployment folder.
+
+This is the deployment folder, okay? And here you have your EKS and cluster.yaml. So, here my main So, here I have taken AWS instance types. It's very, very low. M5X large. So, I cannot expect at least making 10,000 concurrent requests. It is not possible only. But, if I change the instance type, if I increase the memory, so in my system I have supported both type of scaling, horizontal scaling as well as vertical scaling.
+
+Okay, so I'll be showing you that, don't worry. But, this is my main cluster configuration that I have kept it. You can see the maximum amount of replication, which is HPA, horizontal pod auto scaling operation. I've kept it maximum to six pods. Okay? Minimum is two. So, similarly you can change this configurations and play with this.
+
+Uh but, again this is a costly operation, guys. And this is the actual name space, which is the production name space that we are working with. So, this is the main cluster configuration that we have. And I have used EKSCTL. Uh other options are there. You can use Terraform, you can use CDK, you can use Pulumi. Again, uh so whichever way you want to create a cluster, it's totally up to you.
+
+Even our cluster is pretty much secured because I have added IRSA, I'm best tools uh to my service account. So, there is a script actually, if you want to do the entire infra in one shot. Okay, so I have created a bash script. Okay, so like a Terraform is fine, but this is only for beginners. So, using this script step-by-step everything will be done in one shot. The entire uh cluster will be created, everything that will be done.
+
+So, and you have a teardown script. Using this script you can bring everything down. Okay, so that's why I've kept some bash scripts just for beginners, if you want to really test it out. Now, let's start with few of the main ones. So, first of all, let me look into let's go to my terminal. Okay.
+
+So, I don't need this one anymore. Let's close. Um this one. So, cube >> [sighs] >> Uh I think first of all, let me just show you the top pods. I think in that way it will be better. Um Okay, so these are the two main nodes and these nodes are being reflected here also.
+
+Um as I showed you in the Kubernetes cluster, so two nodes that I have that I have showed you. These are internal nodes. These are the maximum is 16 GB. They cannot cross that. That I have hardcoded it to maximum of 16 GB for each of the nodes that we have. Um then we can look into first of all, let me just show you the horizontal pod scaling operation also. The HPA that I have implemented here.
+
+This is the horizontal pod scaling part. Okay. So, as you can see here, this is my main application. Okay. And inside this application, what I have Um so, here I am looking into the memory. So, target maximum 70%. If it is more, then only the new replica that will be launched. Otherwise, it won't be launched. You can see minimum number of pods is two. It can scale to how many?
+
+Six. So, I'll be showing you exactly. I'll be performing a load testing right now. I'll be looking into the actual application and I will perform the load test just to show you that part that automatically it will scale up. So, right now it's minimum two and the CPU usage is very, very less to 2% 3% all this will increase actually later on.
+
+Okay, so I will just stop. So this is the main HPA that's why horizontal pod auto scaling operation. Let me just show you the pods right now. So total how many pods I have? One is for airflow. For airflow I have I haven't taken two pods because I know that it is a backend task. It means that I won't be sharing that with any client user. Okay, my end client won't be accessing the airflow because that is a data ingestion phase and it is only kept for our internal purposes.
+
+But what I'll be exposing which is the rag API. So that's why for rag API I have kept two replicas. Okay, and later on when I try to do the load testing of my application you will see that more numbers will keep on increasing. So this part you saw that okay 2% 3% similarly so I think I will be doing the implementation of vertical scaling. What is vertical scaling guys?
+
+Anybody knows what is the difference between horizontal scaling and vertical scaling? Horizontal scaling is basically popping up more pods into the system based on the memory usage. So here our memory usage will increase and based on that more number of rag API pods that will come. And similarly with respect to my vertical scaling every pod has a memory limit. I've given this is the minimum limit and it has a maximum limit. So it will go till the maximum limit of 8GB.
+
+So I'm using 6GB and 8GB as my bare minimum. Okay, so that's why two types the vertical spinning of that single pod okay or the horizontal spinning where multiple pods will be launched. Now this is the part actual load testing that I'll be doing right now because everything is running. I want to just show you that raw performance what our systems gives you.
+
+Horizontal scaling is spinning up multiple pods exactly. Whereas vertical scaling, that same pod if you're actually increasing the memory. Lakshmi is asking like 3 hours 48 minutes for Now this cluster has been up and these are the pods running time. So the pod has been up for few hours. I kept the pod up because again at last moment I didn't want to finish because what happened today actually I could not show you this deployment because of Neon.
+
+Okay, there was a service issue. I was actually using Neon and I got a service issue. Okay, but later on it has been fixed. There were some operational issues in US East 1 and this was I think US East 1 I was using there around this one and incident key. Okay, but it got resolved so I can actually show you the demo.
+
+All right. Because the airflow container won't work. Neither your rag API any type of MCP calls was not possible. All right. Now what is the next thing? So let's start doing our load testing. Because that is the part I feel that most of you might be interested on because as this session because I have really opened the PPT once and then I've not opened.
+
+So let me just go to the PPT once just for that sake. Where is the other other Yeah. What are the things? Okay, so now I'll be coming deployment and orchestration the entire deployment. I'm just showing you that part. Where is my GitHub? Yes. I've done the deployment. I can trigger the deployment again, but as you can see 1 hour ago.
+
+Okay, I have done the entire so the CICD pipeline is fine. So the in CI even I'm doing all the eval testing for our API. So this was the main one and you can actually look into building and Docker phase, then pushing it to production. So, all those options. So, everything got successfully completed. So, CI/CD is also tested here. And really like the CI/CD takes a lot of time. They build two different types of images. One is for your main fast API application. The other one is for your I don't want to go through this, but through a small step, I know that yes, I can uh actually trigger the CI/CD at any point.
+
+All right. So, the main deployment through GitHub actions, the main orchestration that we'll be doing it through our main EKS. Now, scaling part and reliability really like the infrastructure I'm using it towards the lower side. Okay, agent A2A integration on that also I've done it in our observability tracing. I have shown you guardrails, governance. In governance, now the question comes what type of governance that you want to do.
+
+Really like there are different types of governance based systems. What which one HIPAA based? I've not right now implemented any compliance based systems. But later on actually, it is important. In day one of a system, you don't start working with governance. But actually, your MVP is actually built then you will start working.
+
+Two major protocols, the A2A protocol. I think I haven't showed you that A2A A2A is also integrated in our application. All right. And I think these are the few things that we have we have added golden data set also and we have added it in our CI pipeline. It means that every time at least few integration test which will take place, then only our pipeline will initiate.
+
+So, for our continuous integration, I have kept some integration test there. Rollback through EKS, I can easily do it. Observability two types. Already the log file part I told you. Failure mode at any point of time I have my fallback implemented. Similarly the model card HITL gates I showed you guard rails is there. Audit trail you can easily get it because from both of the from LAN fuse also I can get an entire audit trail as well as from lock file also I can get it.
+
+More compliances can be added but bare minimum I have kept it just for the demo too. All right guys now the in interesting part. Let's try to do a load testing of our application. I know that it cannot handle a lot but bare minimum at least 10 concurrent requests let's try to do that.
+
+Everybody please look into the numbers. I will just clear again. I feel that I need to open two different terminals right now. I will just decrease the font a little bit here and there. Yes. All right. So let's start. Is it GitHub actions? Yes. Is it GitHub?
+
+I can use AWS code deploy also but again I feel that GitHub actions can do the same task. All right. So First of all let me just show you the pods. Okay. Here pods are running. Now let me just open Locust. I think it will be really great.
+
+Okay. So this is my Locust file. How many of you have used Locust? Yes I am using load testing or you can use a simple script. I'm not making it really complex Venkat. But a simple load in that way I can really do the testing. Okay. So this is my Locust. Locust is a framework widely used in Python. There are other frameworks also so which you can use, no issues. So, let me start my Locust one.
+
+The script is already available. Okay, and my Locust started here. 8089 So, I think Let me just open it. Um, this part, yeah. All right, so Locust has started. All right, so here the number of users that peak concurrency. Let's try to go with 10. I don't want to go with lot.
+
+Okay, but I will be doing multiple requests. Probably till 100 requests. Let's see how many really works out. Okay, so two. Let me just make it smaller. All right. Now, see guys, once I just start the load testing. Okay? Can we package into products? Load testing part we generally don't package into products.
+
+Uh, Ashok, if you have that requirement, you can. But, it is for our internal test. I want to see how much the system can perform. Okay, so let's start. So, what are the commands which are handy to me? So, one again I will check from here. So, this is the first one. And you will see that this time I have two parts. Now, let's start our test and you will see that more parts will be spinning up.
+
+Uh, let's start ramp two for the load. Okay, so let's click on start. All right, so I think I will just make the font a little bit bigger for everybody. Okay. >> All right, four requests came. Fine. Now, let's try to go into our production.
+
+Okay, so slowly slowly more pods will come be coming up. 10 requests it has done. And I can actually look into the charts also. So, till now in my load test, yes, till now not a lot of failure that I have received till now 0%. But soon I feel that let me see that whether anything that what came up.
+
+All right, till now two pods. I feel that it can easily handle it, but let's see much more when it get actually scaled up. 25 requests. Fine, two pods can handle actually it looks like. Okay, and let me just run this command in that way it will be helpful just to see that if pods are actually getting created.
+
+Yes, so right now based on 33 requests because I am taking only 10 parallel requests for now. But if I feel I can increase it. But if new pod comes up then I can actually track through this. 40 requests it has done. Till now I really I cannot see any type of failures here.
+
+Though the instance that I am using there I think new nodes till now not has been created anymore. I think two pods can handle it easily the amount of memory. So, let me have a check with the respect to so many terminals I need actually. Now, I will just be I will be showing you the HPA part control D when when it will actually scale up.
+
+Okay, so I'm just showing you the horizontal pod scaling. Can you see till now it's in 40% or 70% guys? So, right now as I can see here, let me just minimize this. So, till now two pods, so simply I can see that 10 concurrent it can handle. What I will do? I will stop the test. Let's try to because 68 requests and really I feel that it hasn't uh Okay, I feel that can you see here one pod that got launched? See.
+
+Previously it was two, right now it is one. The number of requests as it got increased. So, I felt that okay, the memory part, okay. Uh all right. Uh let me just see uh into the main pods once, then I will increase the more number of requests. Because uh finally I feel that only two pods are running, but let me try to increase it.
+
+Uh all right. Okay, all right, fine. I will stop the 10 it can handle. Let's go ahead with 20 and let's see. I will stop it and how many requests that I processed? So, in my load testing part I can see that failure rate is only 1% out of 92 requests only one failed. Fine. Let me just stop it. Um Let's try to uh increase this number to 20.
+
+The ramp users let's keep it two only apparently. Okay, and let's start now. I have increased now double the concurrent request. This time, let's me have a look into the watch logs. Because we have to always track our HPA. Okay, so here let me choose uh look into how much memory consumption And till now it's not really up and high.
+
+Can you see here? Pending state came. See guys, right now I'm just showing you the horizontal scaling. I have added 20, then it needed two more pods to be launched because they cannot actually process it. And from here Let me just add with the W The amount of memory is the right now more.
+
+So more number of pods with the replicas that will be coming out. All right, you can see here the CPU usage 63% 82% 89% Slowly slowly it is increasing. Okay, and now the new pods have been launched. It will take some time to spin up and the request will be sent. So if I see you will see more failure rates now.
+
+Where is my Locust Locust here? Can you see here 5% failure rates? Put more load. Yes, I will put, don't worry. See, if I put 50 directly I will finally test with 50 concurrent request. More request I can put you have to just understand that we have to set up the infra because the architecture has to be different for a 10,000 user base system. In our case, the AWS account that I'm using parallelly I think bedrock can handle close to 20 requests.
+
+SQL Alchemy for my neon it can handle close to I think 40 or 50 requests. All of you so when you actually build such type of architecture you have to really design in that way. All right, till now the status is pending but soon the pods will be coming up. So as I can see at 98 requests 3% failure rate but then also I will say that it's good. It's not really so much bad if I look into the core charts okay few failure rates here initially but after that again it popped up. All right.
+
+This is good. All right, now this is the main state so this is right now in the pending state. And you can see the CPU usage is getting increased more and more. Okay, once I can say that once both the status are up then automatically the CPU usage will be down.
+
+Now the question comes okay when I'm doing the load more pods are spinning up. Yes, so here you can see the CPU usage is getting increased fine and the maximum number is six guys. Okay, so the maximum number that I have kept for the replicas is six not more than that. >> [sighs] >> Okay, so right now two pods I can say finally one that is getting right now in the pending state.
+
+Let's try to stop that. Okay, I will stop my load testing because this is running currently. Statistics 164 requests out of that two failure rates. Really uh see after launching those multiple bots, the failure rate has actually decreased. So, let's do a stop and we will try to perform a new one. The final one will be really heavy.
+
+Uh I know that the entire system will crash. Okay, so let's try to do that. >> [sighs and gasps] >> 10,000 users then the architecture has to be different. No, see I'm Pandit when you ask this question, you have to understand your services how they manage. My bedrock has a limit. It can uh take only only 20.
+
+My Jinna API has a limit. Maximum it can take only 100. So, based on that you have to look for such services. If the services are not compatible for a 10,000, then a custom service that you need really need to host in your own infra. How many of you have really worked because in those cases I'll be doing a custom self-hosting of all. I won't be using Jinna AI or uh I will say few other external services like Neon. Neon has also a limit with respect to the async. Parallelly 10,000, it becomes a problem.
+
+Like host your own service on a VPC, exactly correct. Even right now we are using a VPC for our own cluster definition. All right. And now uh I've stopped the testing. Okay, so generally the HPA has a uh limit of 5 minutes uh to cool down the clusters. So, let's take that and finally do a final test.
+
+So, if you ask me, "Okay, four pods launched. So, when the two will be killed?" The two will be killed when uh after 5 minutes. Once I have stopped my testing, after 5 minutes it takes uh to delete all those created pods. All right, so right now I have started.
+
+Can you see the failure rate right now? 40% failure rate. All right, somehow reducing it. Initially it started with a lot of but uh all right. Uh yeah, let me look into the charts. Few failures here, few failures here. For sure the failure rate here it will be more because I have added 50. Can you see here? More pods got spanned up, guys.
+
+See. Yeah, right now I'm just showing you that live part. Pending, pending, pending. How many pending can? Because I put more load and the maximum that we have is done here. So that's why this is coming from the finally pending state. Here also here also you can see 1 2 3 4 5 uh majorly the pods which are running, two are in pending state. And let me see.
+
+So that's why initially I thought about to show you guys the initial uh load testing for 10,000. Little bit the architecture has to be different. But yes, it is possible. Now for the entire deployment that I am doing, so it actually comes with a cost. Always remember, for every component the Gina is getting cost, Open AI is getting cost.
+
+Okay, so every service that comes up. So here both types of scaling with respect to your horizontal as well as your vertical scaling also being taken care of. Uh Mm, all right. Uh I am wondering when you use to do the architecture and the system design for scaling. Exactly correct. Then little bit the design will be different.
+
+Right now it's too much pythonic. I don't love pythonic applications in high scale environments. This is for learning purpose, but actual production that's why I showed you at least two concurrency requests. How things actually looks like. Now, if I just spend more on infra, the same thing I can make it to a level and some code changes.
+
+Because right now I will be moving from factory pattern pattern to a different pattern in my software engineering design. Yes, AWS agent score is also really good Vinod. There are so many ways to launch an instance. Terraform is my favorite. Then comes Pulumi, otherwise you can use CDK.
+
+Okay, so whichever way that you want to do. Because the same project I've been teaching it to the other students also. So that's why. So my Grafana also if I look into my Grafana they are also the memory usage part I think with respect to my Okay, four pending pods in here, fine. New pods that came.
+
+Till now not a single one faced an OOM killed container because I have used that 6GB minimum. Let's look into our name spaces. Okay, so here production The maximum limit 32GB. Two nodes are there, 16GB 16GB. So that's why 32GB is the maximum one. And till now, can you see here? We are actually one time close to this 32GB hit.
+
+It is actually reached 33. And till now the cost that is initially coming around. But from here you can get that, okay, I have pushed actually. Previously it was always around 16GB, but the final push that I have done until now, I think that uh test is running. And I can say that yes, 22% failure rate when I'm actually going at with 50 parallel concurrent request.
+
+Okay, so now finally I will stop. Because I'm spending money on our API as well. Okay, so every service that I'm using as a third party. If everything is self-hosted, nothing to worry about. So the self-hosting part also that I have done. Okay, is there a way to see the number of connections on Grafana dashboard? Directly I don't uh think uh You can actually get into the logs of that because the total number here you can the CPU usage and the memory usage that you have. Now in our last call it actually increased.
+
+This is the main logs of your production. So this is your entire log that you get. From here you can actually look into everything. Very similar information just like log file that you have. Okay, but very similar to log file, but not similar to LangChain. In LangChain you have much more uh things. You can see retrieval attempts. Okay, question blocked. Because I have a set of few questions that I have kept it. I know that yes, few things will pass, few things won't pass.
+
+So that's the detail level information that directly you can get it here. So directly from your All right, so I have stopped. Now everything will cool down soon. I think after 5 minutes the auto uh cool down session. Okay. So Let me just clear everything right now. Um Um all right, uh few pods. Just give us that 5 minutes. After 5 minutes it will be back to two pods zoom.
+
+Because by default I have kept it two pods. Break, please. There is no break, I think. So, right now the core information that I wanted to share and to provide that I've already done it. Because I think it's already going to be uh 10:30. We don't want to extend a lot.
+
+But this was a rough demo with respect to all the features that we have uh implemented in this project. So, like this is one of the last project that I'm teaching it in one of the batches. So, there I even I think I have shown you some few of the things, but on more level we can actually go ahead. Please share the links. Already I've shared the GitHub link.
+
+Okay, and just wait. GitHub GitHub GitHub this is also GitHub. I think this is okay GitHub maybe. Okay, and you'll be sure because for today's session I've been working with the agent of branch. Okay. Uh so, the agent ops.
+
+All right, this is the right one. I can trigger the CICD also. But again like just to see the CICD 30 30 40 minutes. Okay. It doesn't make so much sense because from here the mean build time was close to this one and our EKS already ready. So, around I can see 16 to 18 minutes. The build time takes time.
+
+So, rather than going through that so the main holistic idea of defining an entire project. Now, more and more things we can add. But this should be at least bare minimum. When you say that yes, I've done some type of project, this has to be the bare minimum. Now, more and more things that we can keep on adding.
+
+If you guys have suggestion, I can take few questions and you guys can let me know. Little bit of Q&A, let's try to do it. Already for 2 hours I've been speaking continuously. Okay, so let's try to do it. You people can simply raise your hand and you can let me anybody. And from my batches, don't ask question anybody. Not from my batch, then only please go. Can you have the recorded video?
+
+Really like I see from day one I think people have suggested not to do it, but simply like if you face any problems, let me know. In the community forum somewhere, just drop me a message. Okay, not sure. Recorded video, I don't think. I think Divish is there because he has taken past sessions, he will be a better person to say that.
+
+I think Divish has also dropped. You know what? Okay, so how do I enroll for the new GNI and agent I batch? I think already I've shared the links. There were two links. Where is that link? That lovable link that I have. This is the advanced one. Okay, so this one I think million rag batch that I shared.
+
+This is only for experience. 2 years of experience, then only enroll. Otherwise not worth it. Because these type of projects I'll be discussing in that advanced batch mention. All right. Now, coming to that I think this is mine. Upstart shareful. Okay, already created the PPT at last time.
+
+Where is that? Just wait, let me open that. Let me finish. Da da da da da is t i a d i a All right here I have actually opened it. This is I and D I will leave. I don't know whether there is some type of Q and A but people who want to ask please let me know.
+
+I will just let me see whether there is any poll or not in this session. This is the first time I'm taking a webinar. So Q and A polls travel planner project project learning feedback collection right Really I'm not sure. Which poll to launch? All right leave it then. Not an issue but I hope you guys enjoyed the session because see this I don't want to push it also because a lot of things are there which can be discussed. Because the scope is really a lot.
+
+But I've just shown you few things that I felt that whenever you were building you should actually test your system how much it can handle. If you're building even an MVP so you should know that at least 100 concurrent users it is handling or 500. So that was the main purpose. And I see right now EKS is not necessary. EKS integration is there because I think I have been teaching to the students. Otherwise you can use only ECS with Fargate.
+
+Okay that is also really good ECS with Fargate. If really like if I have more than close to 100K then only I will move to Kubernetes based solutions. Till that time Nginx through a proper load balancing I can handle easily 10,000 20,000 requests. That is not a big deal. Yeah. Ashoka is telling advanced route.
+
+Yes, I think both the links I have shared for advanced route as well as for the agent here. Okay. This is a smaller batch. This is much more from beginner perspective. You can think about once beginners only suggested. Because in my batch I'll be just teaching only two frameworks, PyTorch and LangChain in this you have a lot more from that.
+
+But my focus is much more on LLMs, how to work with LLMs and those things maintenance and stuff. All right. So I hope everyone enjoyed the session. So I think I will be concluding. Ravi Teja AI is evolving at an incredible space. The console data content concepts are much more because I feel that that going forward in my new batches also I'll be keeping a dedicated part with respect to two types of drop. One is paper drop, one is model drop.
+
+Because the things that I learn today I feel that after 3 months it is duplicated. That is the main problem. And it's really like even I have to always learn I have to do the integration. A lot of things. Okay. Even I test out any type of product that comes out. So even my spending on AI is increased in the past 5 months. I spend on a hell lot of things whether for APIs model everything small it really doesn't matter. So the AI pricing will also increase in the next 3 months as the market is suggesting.
+
+Okay. So I think no more nobody has raised their hands. So yeah I could not get any Q&A. I think six people asked. The leaf raw Karthik behind you waiting only the latest version of the document. Right now I have a single for the same version. I'm not maintaining a version system Karthik 3. Later on if you want you can add a version control system for your documents.
+
+Recording it won't be provided. Can you get the repo already? I shared the repo. Arpan, thank you. Can you use this for kind of voice agents? Yes, you can use for this type of voice agents also. Like rag base voice agents are there easily. And right now I feel that voice agents previously 11 lakhs were there. Now through open source systems also easily you can do.
+
+All right guys, then I think we are good for today. >> That's a wrap. You've just mastered the core pillars of production grade AI agents. I want to know from you which of these frameworks are you going to implement first in your projects? Let me know in the comments below. Make sure to like this video, subscribe to the channel, and check the description for more resources. See you next time.

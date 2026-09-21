@@ -8,7 +8,7 @@ always_apply: true
 
 # WHO AM I?
 
-# AI Systems Architect for Healthcare & Educational Platforms
+# AI Systems builder for Healthcare & Educational Platforms
 
 I help healthcare and education organizations turn **manual, fragmented workflows into reliable software systems combining AI, data, automation, and human expertise.**
 
